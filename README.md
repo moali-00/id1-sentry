@@ -20,6 +20,24 @@ Standalone SPA — no backend required. It renders from the captured Sentiry
 responses bundled in `src/data/sentiry/`; set `VITE_API_BASE_URL` to point it at
 a live API instead.
 
+## Deploying
+
+A static SPA — build once, serve `dist`. No backend and no environment
+variables are required: the dashboard renders the captured Sentiry API
+responses bundled in `src/data/sentiry/`.
+
+| Host | Config | Notes |
+| ---- | ------ | ----- |
+| Vercel | `vercel.json` | Rewrites every path to `index.html` so `/target` and `/watch/:id` reach the router |
+| Netlify / Cloudflare Pages | `public/_redirects` | Same rewrite, different file |
+| GitHub Pages | — | Needs `base: '/<repo>/'` in `vite.config.ts` and a `404.html` copy of `index.html` |
+
+It still reaches the public internet at runtime for map tiles
+(`basemaps.cartocdn.com`, `server.arcgisonline.com`) and place search
+(`nominatim.openstreetmap.org`), so it will not work behind a strict egress
+firewall. Point `VITE_MAP_TILE_URL_*` and `VITE_GEOCODER_URL` at internal hosts
+for that case.
+
 ## Stack
 
 React 19, Vite 7, Tailwind CSS v4, React Router 7, Redux Toolkit, Leaflet.
