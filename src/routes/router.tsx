@@ -1,0 +1,23 @@
+import { createBrowserRouter, Navigate } from 'react-router-dom'
+import MainLayout from '@/layouts/main_layout'
+import { RouteError } from '@/pages/route_error'
+import TargetDetailPage from '@/pages/target_detail'
+import WatchDetailPage from '@/pages/watch_detail'
+
+/**
+ * The dashboard is a single surface, so routing exists to make one thing
+ * shareable: which watch is open. Anything unrecognised falls back to the map
+ * rather than a dead end.
+ */
+export const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <MainLayout />,
+    errorElement: <RouteError />,
+    children: [
+      { path: 'target', element: <TargetDetailPage /> },
+      { path: 'watch/:watchId', element: <WatchDetailPage /> },
+      { path: '*', element: <Navigate to="/" replace /> },
+    ],
+  },
+])

@@ -1,0 +1,54 @@
+{
+  "name": "thermal_hotspots_pad",
+  "request": {
+    "method": "GET",
+    "path": "/v1/thermal/hotspots",
+    "params": {
+      "box": "pad",
+      "day_range": 3
+    }
+  },
+  "status_code": 200,
+  "elapsed_ms": 1339,
+  "captured_at": "2026-08-03T14:10:14.720663+00:00",
+  "error": null,
+  "response": {
+    "source": "firms",
+    "status": "empty",
+    "detail": null,
+    "fetched_at": "2026-08-03T14:10:14.720210+00:00",
+    "latency_ms": 1337,
+    "meta": {
+      "sensors_queried": [
+        "VIIRS_SNPP_NRT",
+        "VIIRS_NOAA20_NRT",
+        "MODIS_NRT"
+      ]
+    },
+    "data": {
+      "bbox": {
+        "west": 87.055,
+        "south": 20.728,
+        "east": 87.116,
+        "north": 20.788
+      },
+      "day_range": 3,
+      "detection_count": 0,
+      "pad_detection_count": 0,
+      "detections": []
+    },
+    "indicator": {
+      "key": "thermal_anomaly",
+      "label": "Thermal anomaly over launch complexes",
+      "weight": 0.12,
+      "score": 0.05,
+      "available": true,
+      "detail": "no thermal detections over the launch complexes",
+      "evidence": {
+        "detection_count": 0,
+        "pad_detection_count": 0
+      }
+    },
+    "interpretation": "Detections inside the pad box sit on an uninhabited 160 ha island with no routine fire source. Detections elsewhere in the range box are frequently agricultural burning and are scored far lower."
+  }
+}

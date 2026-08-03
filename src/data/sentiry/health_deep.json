@@ -1,0 +1,230 @@
+{
+  "name": "health_deep",
+  "request": {
+    "method": "GET",
+    "path": "/health/deep",
+    "params": {}
+  },
+  "status_code": 200,
+  "elapsed_ms": 0,
+  "captured_at": "2026-08-03T14:10:50.030602+00:00",
+  "error": null,
+  "response": {
+    "status": "degraded",
+    "indicator_feeds_usable": [
+      "opensky",
+      "sealagom",
+      "firms",
+      "notam_aai",
+      "skylink_notam",
+      "social"
+    ],
+    "indicator_feeds_total": 7,
+    "poller": {
+      "running": true,
+      "started_at": "2026-08-03T14:10:11.016087+00:00",
+      "last_level": "elevated",
+      "loops": [
+        {
+          "name": "aircraft",
+          "interval_seconds": 180,
+          "runs": 1,
+          "failures": 0,
+          "last_run_at": "2026-08-03T14:10:12.862301+00:00",
+          "last_duration_ms": 1846,
+          "last_error": null
+        },
+        {
+          "name": "assessment",
+          "interval_seconds": 900,
+          "runs": 1,
+          "failures": 0,
+          "last_run_at": "2026-08-03T14:10:25.377641+00:00",
+          "last_duration_ms": 14340,
+          "last_error": null
+        }
+      ],
+      "stream": {
+        "subscribers": 0,
+        "events_published": 2,
+        "events_dropped": 0
+      }
+    },
+    "sources": [
+      {
+        "source": "opensky",
+        "status": "ok",
+        "detail": null,
+        "fetched_at": "2026-08-03T14:10:12.805935+00:00",
+        "latency_ms": 1768,
+        "meta": {
+          "credits_charged": 1
+        },
+        "configured": true,
+        "used_for_assessment": true,
+        "cache_ttl_seconds": 60.0
+      },
+      {
+        "source": "sealagom",
+        "status": "degraded",
+        "detail": "free tier: no pre-parsed coordinates, positions derived from message text",
+        "fetched_at": "2026-08-03T14:10:12.686679+00:00",
+        "latency_ms": 1649,
+        "meta": {
+          "message_count": 34,
+          "tokens_used": 1,
+          "free_tokens_remaining": 78
+        },
+        "configured": true,
+        "used_for_assessment": true,
+        "cache_ttl_seconds": 1800.0
+      },
+      {
+        "source": "firms",
+        "status": "empty",
+        "detail": null,
+        "fetched_at": "2026-08-03T14:10:12.994369+00:00",
+        "latency_ms": 1956,
+        "meta": {
+          "sensors_queried": [
+            "VIIRS_SNPP_NRT",
+            "VIIRS_NOAA20_NRT",
+            "MODIS_NRT"
+          ]
+        },
+        "configured": true,
+        "used_for_assessment": true,
+        "cache_ttl_seconds": 600.0
+      },
+      {
+        "source": "firms_wfs",
+        "status": "empty",
+        "detail": null,
+        "fetched_at": "2026-08-03T14:10:50.000710+00:00",
+        "latency_ms": 2351,
+        "meta": {
+          "layers_queried": [
+            "ms:fires_snpp_24hrs",
+            "ms:fires_noaa20_24hrs",
+            "ms:fires_modis_24hrs"
+          ],
+          "refresh_interval": "15 minutes"
+        },
+        "configured": true,
+        "used_for_assessment": false,
+        "cache_ttl_seconds": 300.0
+      },
+      {
+        "source": "firms_wms",
+        "status": "ok",
+        "detail": null,
+        "fetched_at": "2026-08-03T14:10:47.650734+00:00",
+        "latency_ms": 0,
+        "meta": {
+          "note": "getmap_url and capabilities_url embed the MAP_KEY \u2014 treat as a credential. Fetch tiles from the browser, not through this API."
+        },
+        "configured": true,
+        "used_for_assessment": false,
+        "cache_ttl_seconds": 86400.0
+      },
+      {
+        "source": "notam_aai",
+        "status": "degraded",
+        "detail": "AAI monthly Series A/C summary for Kolkata FIR \u2014 does not include en-route danger areas; absence of a hit is not evidence of open airspace",
+        "fetched_at": "2026-08-03T14:10:13.980467+00:00",
+        "latency_ms": 2942,
+        "meta": {
+          "series_parsed": [
+            "A",
+            "C"
+          ]
+        },
+        "configured": true,
+        "used_for_assessment": true,
+        "cache_ttl_seconds": 21600.0
+      },
+      {
+        "source": "skylink_notam",
+        "status": "ok",
+        "detail": null,
+        "fetched_at": "2026-08-03T14:10:12.557826+00:00",
+        "latency_ms": 1448,
+        "meta": {
+          "total_returned": 209,
+          "note": "the feed serves expired NOTAMs; expired_dropped reports how many were filtered out rather than hiding them"
+        },
+        "configured": true,
+        "used_for_assessment": true,
+        "cache_ttl_seconds": 600.0
+      },
+      {
+        "source": "gdelt",
+        "status": "error",
+        "detail": "HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the",
+        "fetched_at": "2026-08-03T14:10:25.335259+00:00",
+        "latency_ms": 14225,
+        "configured": true,
+        "used_for_assessment": true,
+        "cache_ttl_seconds": 900.0
+      },
+      {
+        "source": "social",
+        "status": "ok",
+        "detail": null,
+        "fetched_at": "2026-08-03T14:10:16.788006+00:00",
+        "latency_ms": 5678,
+        "meta": {
+          "feeds_ok": [
+            "google_news",
+            "reddit_search"
+          ],
+          "reddit_mode": "authenticated_search",
+          "rsshub_enabled": false,
+          "rsshub_base_url": null
+        },
+        "configured": true,
+        "used_for_assessment": true,
+        "cache_ttl_seconds": 900.0
+      },
+      {
+        "source": "nga_msi",
+        "status": "ok",
+        "detail": "supplementary only \u2014 NGA does not carry NAVAREA VIII, so an empty result says nothing about Indian ITR warnings",
+        "fetched_at": "2026-08-03T14:10:48.236182+00:00",
+        "latency_ms": 585,
+        "meta": {
+          "active_upstream": 146,
+          "in_aoi": 1
+        },
+        "configured": true,
+        "used_for_assessment": false,
+        "cache_ttl_seconds": 1800.0
+      },
+      {
+        "source": "up42",
+        "status": "ok",
+        "detail": null,
+        "fetched_at": "2026-08-03T14:10:48.214184+00:00",
+        "latency_ms": 562,
+        "meta": {
+          "hosts_queried": [
+            "oneatlas"
+          ]
+        },
+        "configured": true,
+        "used_for_assessment": false,
+        "cache_ttl_seconds": 3600.0
+      },
+      {
+        "source": "sentinel1",
+        "status": "error",
+        "detail": "HTTP 406: {\"code\":406,\"description\":\"HTTP 406 Not Acceptable\"}",
+        "fetched_at": "2026-08-03T14:10:47.822875+00:00",
+        "latency_ms": 171,
+        "configured": true,
+        "used_for_assessment": false,
+        "cache_ttl_seconds": 3600.0
+      }
+    ]
+  }
+}

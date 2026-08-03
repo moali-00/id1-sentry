@@ -1,0 +1,34 @@
+{
+  "name": "aircraft_observe",
+  "request": {
+    "method": "POST",
+    "path": "/v1/aircraft/observe",
+    "params": {}
+  },
+  "status_code": 200,
+  "elapsed_ms": 256,
+  "captured_at": "2026-08-03T14:10:13.376188+00:00",
+  "error": null,
+  "response": {
+    "recorded": {
+      "id": 2,
+      "observed_at": "2026-08-03T14:10:13.373502+00:00",
+      "aircraft_count": 2,
+      "airborne_count": 2
+    },
+    "baseline": {
+      "total_observations": 2,
+      "first_observation": "2026-08-03T14:10:12.859961+00:00",
+      "last_observation": "2026-08-03T14:10:13.373502+00:00",
+      "min_samples_required": 8,
+      "hours_with_usable_baseline": [],
+      "per_hour": [
+        {
+          "hour_utc": 14,
+          "samples": 2,
+          "mean_airborne": 2.0
+        }
+      ]
+    }
+  }
+}

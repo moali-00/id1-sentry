@@ -1,0 +1,22 @@
+{
+  "name": "health",
+  "request": {
+    "method": "GET",
+    "path": "/health",
+    "params": {}
+  },
+  "status_code": 200,
+  "elapsed_ms": 4,
+  "captured_at": "2026-08-03T14:10:11.114167+00:00",
+  "error": null,
+  "response": {
+    "status": "ok",
+    "version": "0.1.0",
+    "cache": {
+      "entries": 0,
+      "hits": 0,
+      "misses": 8
+    },
+    "poller_running": true
+  }
+}

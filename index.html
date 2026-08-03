@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#e8ecec" />
+    <meta
+      name="description"
+      content="ID1 Sentry Dashboard — geospatial live monitoring of OSINT watches, clusters and activity."
+    />
+    <title>ID1 · Sentry Dashboard</title>
+
+    <!-- The theme class is applied before first paint so the page never flashes
+         the wrong palette. Kept in sync with src/store/slices/theme-slice.ts. -->
+    <script>
+      ;(function () {
+        try {
+          var stored = localStorage.getItem('sentry-theme')
+          var theme = stored === 'light' || stored === 'dark' ? stored : 'light'
+          document.documentElement.classList.add(theme)
+        } catch (_) {
+          document.documentElement.classList.add('light')
+        }
+      })()
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

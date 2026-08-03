@@ -1,0 +1,2623 @@
+{
+  "name": "social",
+  "request": {
+    "method": "GET",
+    "path": "/v1/social",
+    "params": {}
+  },
+  "status_code": 200,
+  "elapsed_ms": 5995,
+  "captured_at": "2026-08-03T14:10:25.589800+00:00",
+  "error": null,
+  "response": {
+    "source": "social",
+    "status": "ok",
+    "detail": null,
+    "fetched_at": "2026-08-03T14:10:25.585361+00:00",
+    "latency_ms": 5990,
+    "meta": {
+      "feeds_ok": [
+        "google_news",
+        "reddit_search"
+      ],
+      "reddit_mode": "authenticated_search",
+      "rsshub_enabled": false,
+      "rsshub_base_url": null
+    },
+    "data": {
+      "item_count": 94,
+      "total_fetched": 209,
+      "aoi_relevant_count": 94,
+      "story_count": 68,
+      "top_stories": [
+        {
+          "title": "India conducted the successful flight-trial of an Advanced Agni missile with Multiple Independently Targeted Re-Entry Vehicle (MIRV) system from Dr APJ Abdul Kalam Island, Odisha.",
+          "outlet_count": 6,
+          "published_at": "2026-05-09T14:50:20+00:00",
+          "url": "https://www.reddit.com/r/justincaseyoumissedit/comments/1t871xb/india_conducted_the_successful_flighttrial_of_an/"
+        },
+        {
+          "title": "India successfully test-fires Agni-1 Ballistic Missile off Odisha Coast - ODISHA RAY",
+          "outlet_count": 5,
+          "published_at": "2026-06-28T00:09:17+00:00",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFByODctMjFDWUhiZTBVd0Zvd1pwTEVwb2JFZUdjRFNqZUtrdEZ5NFBFSVd3UGc3SFpuX2Itek1tRjMzYXdhRnBETTRCOGI5S1pkekZkajlaUVV1OE44VzJJdGFrWlFJYlZyV01WNQ?oc=5"
+        },
+        {
+          "title": "Successful launch of Intermediate Range Ballistic Missile, Agni-4 conducted in Odisha - News On AIR",
+          "outlet_count": 5,
+          "published_at": "2026-06-09T02:24:32+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPR1VOVzJfRExRU3diTVlNZ3N6NGxVWm9VOWUtS0RuTFh1WEM1X2RGZ3ZtMDc5X2dmdnJKUnBCZ1VxMGdlWEFHU1A3Nkl0SnJuSDFlamVsaEdONzhqamRKd3BlaGsySXd0Z2dHdExTcWExUl9kMHpkaVRWT3lrejlGbDBDWWF4MjlSejg0eFYtR2EtalRYeFZUc1RQUWxYVnNEblAwRkdCRVhUaGY3aVM5OGJuQQ?oc=5"
+        },
+        {
+          "title": "India Test-Fires Agni-1 Short-Range Ballistic Missile - GK Today",
+          "outlet_count": 4,
+          "published_at": "2026-05-23T07:00:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZmp6SVNVSmhrYXVoMWZ3WGFVUzU3Qk9oMFdwN1d2bHVrM0JubWNoMi1DR1BXanhPZlM1S20yRE1pdTVScjRBSHZ2LTdJdWxpVy1JQjJDcWpNWUxQend0VmdaNEZNZEVKNzlXMW5JYUJRbHlRVmdEYnFRQVZ0M0pkaVlRZw?oc=5"
+        },
+        {
+          "title": "DRDO successfully conducted the maiden flight test of Long-Range Surface-to-Air Missile Kusha (M-2 intercepter) today from the APJ Abdul Kalam Island off the coast of Odisha.",
+          "outlet_count": 2,
+          "published_at": "2026-07-23T14:53:42+00:00",
+          "url": "https://www.reddit.com/r/IndianAirForce/comments/1v4g7sz/drdo_successfully_conducted_the_maiden_flight/"
+        },
+        {
+          "title": "India conducts successful test-launch of Agni-1 ballistic missile - The Times of India",
+          "outlet_count": 2,
+          "published_at": "2026-05-22T07:00:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQRHVmTDVVbmd5NHAwTHNRNkJGVTNocFZEY0NDT1p3cV94TDBrVEgyNHBObFoxQ1dRVVV5MVlkdUJzTC1pVVVUVkZVV3AwT0puR0hzODRYeU9BdDRsODR2Qm05d09DNTlUT2JDUnZmN20tZUViYWVMQkVIU0NTek5zQTBUcEFiV2hBT3JLRkg5aDdNdW9ySTNLZWtxU2g2VUVNRkNMZEVVSHE0Q25NM0gxSFJZQkIteHc1Xzg5VzY0ODVoYjTSAcgBQVVfeXFMT0IzdUxKcklqbFhGdHBXY3ByV3VCNlF1WXdLNkZFQkczSG9POFNiZlRCdWdDaWQzS1BFNTVmN0R1eGgybER0NFRoaFVRS0Y3Y3ZVLTlrMldaeFYzdHhYcGowRzd0b09lQmFZam15ZS11bVFMeUYzS0lmb2E2TzQwcmxEcVl4V241WWxTSVVsTU5jYlREQ2licnJBSzdITHg1WEhzMTh4anc1dGVzVG1Bdm0xdnVFdWhXU3dzYUp1dXlTaFM2RmNiRUs?oc=5"
+        },
+        {
+          "title": "India Tests Advanced Agni Missile Designed To Strike Multiple Targets - NDTV",
+          "outlet_count": 2,
+          "published_at": "2026-05-11T07:00:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQZU9HaHlsT3ZsOER1MDVJcVhlTFFpcy1GVGNzUEdodzZIOEw1RmRtSmw5MGtQbS00U3dYSlRXaVpFcG05bzJFcDBVQW1XODRRUnduU0x1RXg4d3JBMzAtWkFhSnhBU3FMdEwxOUg4Wm5ScC02U1dfR0taLTNRdjhIbXctYllKOXh4ZW1Wd1N1ZHFFcDI3SEp4dU5hdjhzV1BXYW5DNnBBZFFIcVBXY01NeUU1ZHpnbjBXa2t3MUtQNmhTRVJJRXfSAc4BQVVfeXFMUFRnUE5mMEJTQVBkV1NaQ2pvaUJxTEl6TEU4VWk0bVdpbDZmODROY1BxVUNkQWhOclNqbkh1R0VpNUFwWlFWSHlKWExYUEtlNDNPQ1JaYV9oa3RpNkd0OTAzellUdzBoTG96UmxjYzN5c0NzRTJNUjM5WEpYakI4cVJ1RUx3RkM3ZzFlMHhlOUZZYmIyLWx6dTlPYU9GYmViOGZob2E2SDc1RGNnQkttYUFpcUdaV1E0VlNtZFJEOGMyS0I3MlFXMzlEWG92b0E?oc=5"
+        },
+        {
+          "title": "India successfully tests advanced Agni missile with MIRV technology: Capable of carrying multiple nuclear w... - Bhaskar English",
+          "outlet_count": 2,
+          "published_at": "2026-05-09T13:38:03+00:00",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaGVlanBGNUlnMml4N3lhdGJWSUlxSGtMNW03ZUZDQ3VTcDNFTEtVTTUtSWFuS1ctTVhTV1ZwbERfRkVaYktHMVo2NUFrZm9CVHlramxweERrUk5zb0RUWFd4Q09EZW40eHJRaWxBUjdTZkdfQXRURzl4Y21HQV9FeVh2bWlYV2VBRHVNR3dRVXcya0VqVlRHeGtPWmZMaGQ30gGmAUFVX3lxTE1nZVNMdHRPcDB2MkIzUjZIMHJRUkVEN1FMeHFubW16VWk5VlhEc25UR05fUl9CRXZLOVRpUmlBdzl2VERnX3pTSzY4OEZ5MEpET1JrV1hGRXVWWmlFOVI2WnZjMW9WMldfQ2R1Vk9abzBTTE9laWg0eHlQbENaOHRiSnUzRmNFd1FPR2M4d20tWXhMUy10bFpkQ1F6aV9lZlZuN1doOXc?oc=5"
+        },
+        {
+          "title": "Advanced Agni missile with multi-payloads test-fired - BusinessLine",
+          "outlet_count": 2,
+          "published_at": "2026-05-09T07:00:00+00:00",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQR0RJMlRiMmt2TFVBRkV4RS0yazRaV09HdVRrOXFZd1c4SndsU1BjYk5ROFFtdVVNTDNUYXJwcG9TZ05YYy1KYk5GN3o0aHdjS3dlTGFCc2U3em1fcFBPekRrY1BuVEJfRVp1NFBIR3ZGWmJ2RnpuemFseFU3MUNnWWNRTG1YOXdSckNVTnlrVGZCVVdoY2xzaEtZWG9KUHNlRnR2c0hWSS1rM1lMS044czdVaGLSAbsBQVVfeXFMUEMyXzdOLXBJOGZ1YkZyejYzLUtray1IV09QYTlwZkVTY3VfdXg4RGY1X3dGVDBFWjgyX3dWdUxGZEpGRTBRS1lsN2ZiZlN1OVM0SGFfeDFvVlI2NHFvV1RQOVdUSWMwN2ZWRDd4dWhtUE1uTjJyN1ZMbl8wVkRudzlfY2NnM01DeEFZd3RqTlpvUnIxZ0s0SUFwSlZDMDJTTU91a3ZOTWFPU053SWpDRHo5LTJjdk5tTWMxcw?oc=5"
+        },
+        {
+          "title": "Lanciato con successo il missile balistico indiano Agni-3",
+          "outlet_count": 2,
+          "published_at": "2026-02-15T11:11:43+00:00",
+          "url": "https://www.reddit.com/r/AresDifesa/comments/1r5c3mv/lanciato_con_successo_il_missile_balistico/"
+        }
+      ],
+      "evacuation_count": 7,
+      "logistics_count": 0,
+      "forward_looking_count": 6,
+      "evacuation_items": [
+        {
+          "title": "#breaking India carried out a highly secretive missile test from the Chandipur range in Odisha",
+          "url": "https://www.reddit.com/r/AllindiaStudentUnion/comments/1u40lh3/breaking_india_carried_out_a_highly_secretive/",
+          "published_at": "2026-06-12T16:42:26+00:00",
+          "summary": "\\#breaking India carried out a highly secretive missile test from the Chandipur range in Odisha, on 10 June at 1550h. Over 11,000 residents including livestocks were evacuated in a radius of 3.5 km , probably because it was launch of either Agni 6 ICBM or a completely new type of ICBM. No official confirmation or any data has yet been issued. Range of Agni 6 is likely to be 12000 km + \ud83d\ude0c\ud83d\ude4f\ud83c\uddee\ud83c\uddf3\ud83c\uddee\ud83c\uddf3\ud83d\udc47\ud83d\udc47",
+          "author": "r/AllindiaStudentUnion",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [
+            "evacuated"
+          ],
+          "forward_looking_terms": [
+            "likely"
+          ],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        },
+        {
+          "title": "11 villages evacuated ahead of missile test in Odisha: Over 11,000 people moved from areas around Chandipur... - Bhaskar English",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPeWNqcnBrbW1zNGRZSmlwWTZRRnVmMDNXSTc4R0g3Z3dpVkxEckR5RnJadGJpX25Dclg5eVRHYUhoaXRVN0pQSTVBeHJyRlN1WFNpdUtmUjEzN1BUSWRiSGY2VWhycmMtdjRqX19nUXRQUXR3anFMTW1vcFRHQU9QMmRpQUdtaFN2b25BT3dGTS1VbUhrQ2VldTg0UGNnWV95QUVEci0yNkFaZ01mMmdtRlZlZzVfc05lU2JYb3FR0gHDAUFVX3lxTE9LdF8yX09EQ2JESzJxQWRWQjJfWjNaYV9fSDFwcnFaVFgxOS1fQXR4UU9qT1R3VmIyRkNjdURhNVBITGRsVzk1R095dFU5QTNDd2lWYkJaNHI4NmhJT0habjRUYUNHMU95X25rZ0pJdkU2ZzhuVTZiR0ZIcHg1eXpjWFNOYUVYRmJFVFRVSjlId292aXhucjlmcUI4NjhJdlhmTy1mMXNERFVlekgtWEpWZU9LNVhiYVpiVHV3UVlmS2pkQQ?oc=5",
+          "published_at": "2026-06-11T15:57:44+00:00",
+          "summary": "11 villages evacuated ahead of missile test in Odisha: Over 11,000 people moved from areas around Chandipur... &nbsp;&nbsp; Bhaskar English",
+          "author": "Bhaskar English",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "chandipur"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [
+            "evacuated"
+          ],
+          "forward_looking_terms": [
+            "ahead of"
+          ],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Large-Scale Evacuation At Balasore's Chandipur For Missile Test At ITR - ETV Bharat",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOa3p6Zm4zNFhKM2xXYzB5ZVVGdWlaRlNlLTExa0Jlbi1BOFlDR0ZydG5yVEpuM0xQRExSZWFPYmRKMFBxX3JnbjQzNGVYMUk4bE9UMmdRZHNZeWNWT21haGdyRndtbTRENHFuaVlfZUgyTmNHeXM4TUZoVngtZHlSY0ppN0RZSGRYNHl3bWpxQUk0YXhWUzI5ZG1ZaHdzOC1NS01WY3ZCVm16RmljNG55NFRpRHp3czVES1pz0gHAAUFVX3lxTE5HeUVYZEFyWjR5bHhYel9Va0l1MFFxdDltUV9ldmVvWDAzeEYxYy1GZ2ZEMXl3Y1lLR1hxNS05cWl0dnh6VzZpZ3ZsWUlFX1FyY25qXzB1NGlzTzFaMGVzZkxJbE43OHQ0ZlJHUE1TaU5LbmVETVAzaHlGN3hjUHNnRXIwbFZJZG10QXdvVHdoV0lHaDRERFpONllYRHoycnFkWDRpanBUeGZMUFBrNkJWUWtQYWFuSW16bkN5alJRMQ?oc=5",
+          "published_at": "2026-06-11T07:00:00+00:00",
+          "summary": "Large-Scale Evacuation At Balasore's Chandipur For Missile Test At ITR &nbsp;&nbsp; ETV Bharat",
+          "author": "ETV Bharat",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "balasore",
+            "chandipur"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [
+            "evacuation"
+          ],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Agni-6 Missile Test Buzz Grows As Over 11,000 Evacuated Near Chandipur ITR In Odisha - SSBCrack",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNekZFcWlVY2hfMUh1dVBLWE52SjZMdUxFUnRud3NTSHlsY2lIalpBWi1RaWhEdEVnUXFDUzBIY2JRaWV4NldyWV9OV2o1eWpRb3M4UExzYXRTelFrbWpoRFpoTFB4eVNzVWZDUWpSd1hoX2xTRXRZbVh3enFmc2FnYk5pLVdvcHZkNTJRTS1QSjJmN1NoSVJwQWFiVUVGTkFJMzFJaDhTbVBUcHBWc01VTnZJNGt1LUtSd3poQ0hn?oc=5",
+          "published_at": "2026-06-11T07:00:00+00:00",
+          "summary": "Agni-6 Missile Test Buzz Grows As Over 11,000 Evacuated Near Chandipur ITR In Odisha &nbsp;&nbsp; SSBCrack",
+          "author": "SSBCrack",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [
+            "evacuated"
+          ],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        },
+        {
+          "title": "Is India gearing up for a test of Agni-VI ballistic missile? Massive evacuation sparks speculations - theweek.in",
+          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQXzA4TGcyNVhkMXgxUzh4YURXY09LQ0xKZ3VSSV9DMHEwSHlqM1RLTjVkMHo5UnhrbjhzNFNPajhJRktTVHllcm9VT1lNS1V6TjJtcEpfRFY3UTY2VUpMN1dUbHVEZDdtd1VnZUJlVVNHNkdybVUyRjRCLXBsb1BTZFVmTFhBeEwyQmVNTXZMNXB3ck5pZHJFRGV5R05TVFdPLWh6UzNzMnFFSXlrU0J2RFQzR21abl8tNWRrVU5qbnBENlFpUHRrMXg4akR4cTczclQyWTRrN3VnSjVzNkNzMUFfNmnSAeoBQVVfeXFMTTBIajI5OElhZ3Qyc213cnpRWkdwSjZOdGsyLWg0N2pfdEZxZ0p4dVdmYks2TGtaemY3bTJZSmFoSzl5MmpqNTFXWUhrcHEwc3Z2Wnhnc0RQYVZFdmJPek1BUlNTNWstU1V1X3JWb0RsY1dmOVpLQy1udzhPSTVmN1hOSnNwU3dSbE9NNmxYcFVkdm9oV1FYNzNfTVd6aWJraU5Sem41NTdqMURwTm1MQmswQW9XSWgxYjNPNWFDeXE4c19aM2dTQWZILXlEQUY5Qk41U3Z3YUZLZVNVUkFvcktEdnc0TUVJNnVB?oc=5",
+          "published_at": "2026-06-11T07:00:00+00:00",
+          "summary": "Is India gearing up for a test of Agni-VI ballistic missile? Massive evacuation sparks speculations &nbsp;&nbsp; theweek.in",
+          "author": "theweek.in",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [
+            "evacuation"
+          ],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        },
+        {
+          "title": "/r/worldnews - https://www.firstpost.com/india/agni-6-missile-test-likely-from-chandipur-itr-over-11000-residents-evacuated-as-precaution-14021034.html",
+          "url": "https://www.reddit.com/r/NoFilterNews/comments/1u2e9fs/rworldnews/",
+          "published_at": "2026-06-10T20:41:13+00:00",
+          "summary": "/r/worldnews https://www.firstpost.com/india/agni-6-missile-test-likely-from-chandipur-itr-over-11000-residents-evacuated-as-precaution-14021034.html",
+          "author": "r/NoFilterNews",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [
+            "evacuated"
+          ],
+          "forward_looking_terms": [
+            "likely"
+          ],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        },
+        {
+          "title": "Agni-6 missile test likely from Chandipur ITR; over 11,000 residents evacuated as precaution - Firstpost",
+          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNdTRMQ1Vjc1N0TWxBMG9SNWdDV1QzdFljY1h5b0F2ek11aXFHeWpGUnl4YW5ubnpBUFB2Zld6amowX0Rhc0FheHRtLXZWbDN1MnpDQ0VFaV90NWFvOFJla2FxTmVyRFZ3aDF0dVN4RUJYV09XSjNfWjlkOUpkNXh3UnBjeW55MHdYMXB5R1BMN2RPamVuTkJ2ZTh6c243X25WNC12a2w0TEtqSmxSRjA5VG9oZ2lCcElGeENVTEN4Qk43WlNvb1hsemM3WFJYWWRBTVHSAdcBQVVfeXFMTUxpMWxIZ3lQM0JpZHJELUYxazJpX0hjOVhDbUFtNnNSWTNVQ1FJQTV2NjI4SVkwbVVEeDlNQXZBQnZXT1JocmpIb1I4WDdVUWtzSzFhRjZTdVdpZk9URnFUZmNzblBUX2VhdHo2TGZYbmlGdVRINTQ1M0ZVZkZDdTBPMmViM0sybmh3NE1GMDVhWWZJR2N5c1V3VWJ4dnV6RlB4ZW8wS1RaRFFuVTdPX1pzNi1HWl8tRVpvWTI1ZWNNa0ExN0hkZWMyc2tDVkd3b1I4X1dyOG8?oc=5",
+          "published_at": "2026-06-10T07:00:00+00:00",
+          "summary": "Agni-6 missile test likely from Chandipur ITR; over 11,000 residents evacuated as precaution &nbsp;&nbsp; Firstpost",
+          "author": "Firstpost",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [
+            "evacuated"
+          ],
+          "forward_looking_terms": [
+            "likely"
+          ],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        }
+      ],
+      "logistics_items": [],
+      "systems_mentioned": [
+        "Agni-I",
+        "Agni-III",
+        "Agni-IV",
+        "Agni-V",
+        "Agni-VI",
+        "Pralay",
+        "SMART",
+        "VSHORADS"
+      ],
+      "items": [
+        {
+          "title": "India issues massive 2,530 \u2018KM NOTAM\u2019 in Indian Ocean: Is next-generation Agni-6 MRBM with 10 thousand km ran - India.Com",
+          "url": "https://news.google.com/rss/articles/CBMiowJBVV95cUxNSFhFM0dIUWp3VzlFZTJZLWY5SVVzVFZ1ZEpwMWlTUTZRSkF6YUVxNGdFZlBiS3h5TWRvbF9ZTHNsYnVZT2JwT3BPZDQ5Tk5wNElZUXNqZ0xrTUZtMWN6WUNuVlRxUk9LNG9scjZ0YVRYUEpEOUJBVG1mOFBuU2RpTGlucm43dFlINVo1aFlvZUZJR1NDZmNja1o4QWwtUW1tZTVGR1h4dkg1cHhyYVNqRjhRM1RXWjVMYm5mdVhaZGFqUnlyb0xvTjhtN2x6N1hUV0dFd3NBS1VRUlpJUHFQdEtMRlM3Yko4Z21ONHNQaC1OUjBORHFjZDhBMnhRM0NiUHpOM2h4YkNNMzFWYzRYVDVMUTJEV0V1S2NQMTVXUlFzbzjSAaMCQVVfeXFMTUhYRTNHSFFqd1c5RWUyWS1mOUlVc1RWdWRKcDFpU1E2UUpBemFFcTRnRWZQYkt4eU1kb2xfWUxzbGJ1WU9icE9wT2Q0OU5OcDRJWVFzamdMa01GbTFjellDblZUcVJPSzRvbHI2dGFUWFBKRDlCQVRtZjhQblNkaUxpbnJuN3RZSDVaNWhZb2VGSUdTQ2ZjY2taOEFsLVFtbWU1RkdYeHZINXB4cmFTakY4UTNUV1o1TGJuZnVYWmRhalJ5cm9Mb044bTdsejdYVFdHRXdzQUtVUVJaSVBxUHRLTEZTN2JKOGdtTjRzUGgtTlIwTkRxY2Q4QTJ4UTNDYlB6TjNoeGJDTTMxVmM0WFQ1TFEyRFdFdUtjUDE1V1JRc284?oc=5",
+          "published_at": "2026-08-01T11:12:20+00:00",
+          "summary": "India issues massive 2,530 \u2018KM NOTAM\u2019 in Indian Ocean: Is next-generation Agni-6 MRBM with 10 thousand km ran &nbsp;&nbsp; India.Com",
+          "author": "India.Com",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        },
+        {
+          "title": "UPSC Current Affairs - 24 July 2026 | Key issues for Prelims and Mains",
+          "url": "https://www.reddit.com/r/UPSCPrepDesk/comments/1v50smj/upsc_current_affairs_24_july_2026_key_issues_for/",
+          "published_at": "2026-07-24T04:21:59+00:00",
+          "summary": "Quick condensation from today's Prep Desk brief. 1. Kusha long-range SAM DRDO's maiden flight-test of Kusha from APJ Abdul Kalam Island used an electronic target simulating a high-speed aerial threat. Trap: it is surface-to-air, not surface-to-surface; an air-defence system includes radars and command links, not only the missile. 2. E20 petrol E20 is petrol with 20% ethanol by volume under the Ethanol Blended Petrol Programme. Ethanol blending is not biodiesel blending. A 20% blend does not mean a 20% cut in crude imports or emissions. 3. CGTMSE credit guarantees CGTMSE (MSME Ministry + SIDBI)",
+          "author": "r/UPSCPrepDesk",
+          "platform": "reddit_search",
+          "matched_query": "\"Abdul Kalam Island\"",
+          "matched_keywords": [
+            "abdul kalam"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "DRDO successfully conducted the maiden flight test of Long-Range Surface-to-Air Missile Kusha (M-2 intercepter) today from the APJ Abdul Kalam Island off the coast of Odisha.",
+          "url": "https://www.reddit.com/r/IndianAirForce/comments/1v4g7sz/drdo_successfully_conducted_the_maiden_flight/",
+          "published_at": "2026-07-23T14:53:42+00:00",
+          "summary": "",
+          "author": "r/IndianAirForce",
+          "platform": "reddit_search",
+          "matched_query": "\"Abdul Kalam Island\"",
+          "matched_keywords": [
+            "abdul kalam"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "DRDO successfully conducted the maiden flight test of Long-Range Surface-to-Air Missile Kusha (M-2 intercepter) today from the APJ Abdul Kalam Island off the coast of Odisha.",
+          "url": "https://www.reddit.com/r/DefenseReview/comments/1v4fvfy/drdo_successfully_conducted_the_maiden_flight/",
+          "published_at": "2026-07-23T14:40:46+00:00",
+          "summary": "",
+          "author": "r/DefenseReview",
+          "platform": "reddit_search",
+          "matched_query": "\"Abdul Kalam Island\"",
+          "matched_keywords": [
+            "abdul kalam"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India successfully test-fires Agni-1 Ballistic Missile off Odisha Coast - ODISHA RAY",
+          "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTFByODctMjFDWUhiZTBVd0Zvd1pwTEVwb2JFZUdjRFNqZUtrdEZ5NFBFSVd3UGc3SFpuX2Itek1tRjMzYXdhRnBETTRCOGI5S1pkekZkajlaUVV1OE44VzJJdGFrWlFJYlZyV01WNQ?oc=5",
+          "published_at": "2026-06-28T00:09:17+00:00",
+          "summary": "India successfully test-fires Agni-1 Ballistic Missile off Odisha Coast &nbsp;&nbsp; ODISHA RAY",
+          "author": "ODISHA RAY",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "DRDO successfully flight-tested the indigenous Long-Range Land Attack Cruise Missile (LRLACM) from Dr APJ Abdul Kalam Island in Odisha. The missile met all mission objectives, validating key technologies and strengthening India's long-range precision strike capability.",
+          "url": "https://www.reddit.com/r/IndiaTodayLIVE/comments/1u72d98/drdo_successfully_flighttested_the_indigenous/",
+          "published_at": "2026-06-16T03:34:52+00:00",
+          "summary": "",
+          "author": "r/IndiaTodayLIVE",
+          "platform": "reddit_search",
+          "matched_query": "\"Abdul Kalam Island\"",
+          "matched_keywords": [
+            "abdul kalam"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India successfully conducted test-fire of the second stage of a special missile from the Integrated Test Range (ITR) at Chandipur, Balasore, Odisha.",
+          "url": "https://www.reddit.com/r/u_Overall-Fennel-2065/comments/1u4q43r/india_successfully_conducted_testfire_of_the/",
+          "published_at": "2026-06-13T12:48:06+00:00",
+          "summary": "",
+          "author": "r/u_Overall-Fennel-2065",
+          "platform": "reddit_search",
+          "matched_query": "\"Integrated Test Range\" India",
+          "matched_keywords": [
+            "balasore",
+            "chandipur",
+            "integrated test range"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "#breaking India carried out a highly secretive missile test from the Chandipur range in Odisha",
+          "url": "https://www.reddit.com/r/AllindiaStudentUnion/comments/1u40lh3/breaking_india_carried_out_a_highly_secretive/",
+          "published_at": "2026-06-12T16:42:26+00:00",
+          "summary": "\\#breaking India carried out a highly secretive missile test from the Chandipur range in Odisha, on 10 June at 1550h. Over 11,000 residents including livestocks were evacuated in a radius of 3.5 km , probably because it was launch of either Agni 6 ICBM or a completely new type of ICBM. No official confirmation or any data has yet been issued. Range of Agni 6 is likely to be 12000 km + \ud83d\ude0c\ud83d\ude4f\ud83c\uddee\ud83c\uddf3\ud83c\uddee\ud83c\uddf3\ud83d\udc47\ud83d\udc47",
+          "author": "r/AllindiaStudentUnion",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [
+            "evacuated"
+          ],
+          "forward_looking_terms": [
+            "likely"
+          ],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        },
+        {
+          "title": "11 villages evacuated ahead of missile test in Odisha: Over 11,000 people moved from areas around Chandipur... - Bhaskar English",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPeWNqcnBrbW1zNGRZSmlwWTZRRnVmMDNXSTc4R0g3Z3dpVkxEckR5RnJadGJpX25Dclg5eVRHYUhoaXRVN0pQSTVBeHJyRlN1WFNpdUtmUjEzN1BUSWRiSGY2VWhycmMtdjRqX19nUXRQUXR3anFMTW1vcFRHQU9QMmRpQUdtaFN2b25BT3dGTS1VbUhrQ2VldTg0UGNnWV95QUVEci0yNkFaZ01mMmdtRlZlZzVfc05lU2JYb3FR0gHDAUFVX3lxTE9LdF8yX09EQ2JESzJxQWRWQjJfWjNaYV9fSDFwcnFaVFgxOS1fQXR4UU9qT1R3VmIyRkNjdURhNVBITGRsVzk1R095dFU5QTNDd2lWYkJaNHI4NmhJT0habjRUYUNHMU95X25rZ0pJdkU2ZzhuVTZiR0ZIcHg1eXpjWFNOYUVYRmJFVFRVSjlId292aXhucjlmcUI4NjhJdlhmTy1mMXNERFVlekgtWEpWZU9LNVhiYVpiVHV3UVlmS2pkQQ?oc=5",
+          "published_at": "2026-06-11T15:57:44+00:00",
+          "summary": "11 villages evacuated ahead of missile test in Odisha: Over 11,000 people moved from areas around Chandipur... &nbsp;&nbsp; Bhaskar English",
+          "author": "Bhaskar English",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "chandipur"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [
+            "evacuated"
+          ],
+          "forward_looking_terms": [
+            "ahead of"
+          ],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Large-Scale Evacuation At Balasore's Chandipur For Missile Test At ITR - ETV Bharat",
+          "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOa3p6Zm4zNFhKM2xXYzB5ZVVGdWlaRlNlLTExa0Jlbi1BOFlDR0ZydG5yVEpuM0xQRExSZWFPYmRKMFBxX3JnbjQzNGVYMUk4bE9UMmdRZHNZeWNWT21haGdyRndtbTRENHFuaVlfZUgyTmNHeXM4TUZoVngtZHlSY0ppN0RZSGRYNHl3bWpxQUk0YXhWUzI5ZG1ZaHdzOC1NS01WY3ZCVm16RmljNG55NFRpRHp3czVES1pz0gHAAUFVX3lxTE5HeUVYZEFyWjR5bHhYel9Va0l1MFFxdDltUV9ldmVvWDAzeEYxYy1GZ2ZEMXl3Y1lLR1hxNS05cWl0dnh6VzZpZ3ZsWUlFX1FyY25qXzB1NGlzTzFaMGVzZkxJbE43OHQ0ZlJHUE1TaU5LbmVETVAzaHlGN3hjUHNnRXIwbFZJZG10QXdvVHdoV0lHaDRERFpONllYRHoycnFkWDRpanBUeGZMUFBrNkJWUWtQYWFuSW16bkN5alJRMQ?oc=5",
+          "published_at": "2026-06-11T07:00:00+00:00",
+          "summary": "Large-Scale Evacuation At Balasore's Chandipur For Missile Test At ITR &nbsp;&nbsp; ETV Bharat",
+          "author": "ETV Bharat",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "balasore",
+            "chandipur"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [
+            "evacuation"
+          ],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Over 11,000 people shifted ahead of major missile test in Odisha at Chandipur - opindia.com",
+          "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQSno3eUJvd2NOdzkyLXNxM2E0Mms1VWFYM0R2QVBlcWJ3SEJmb0pwR3Y1b2FrRzZRM3Y5X2ZnYTY1VmxFYkkyUGpmVVpkSmxSWlZwSHdDVjVmYXZxaHpMWFlYRzlHLWx2WlNob0p0bXlIcklhdXVSdmNveWx3cGVDSlB0bFY5VEdSVDV0bUFYZVpiQzd0TEdnQ3lxUGJ0bGo0UlkxeGdUN3R4OUt3Yl9QN0Rn?oc=5",
+          "published_at": "2026-06-11T07:00:00+00:00",
+          "summary": "Over 11,000 people shifted ahead of major missile test in Odisha at Chandipur &nbsp;&nbsp; opindia.com",
+          "author": "opindia.com",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "chandipur"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [
+            "ahead of"
+          ],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Agni-6 Missile Test Buzz Grows As Over 11,000 Evacuated Near Chandipur ITR In Odisha - SSBCrack",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNekZFcWlVY2hfMUh1dVBLWE52SjZMdUxFUnRud3NTSHlsY2lIalpBWi1RaWhEdEVnUXFDUzBIY2JRaWV4NldyWV9OV2o1eWpRb3M4UExzYXRTelFrbWpoRFpoTFB4eVNzVWZDUWpSd1hoX2xTRXRZbVh3enFmc2FnYk5pLVdvcHZkNTJRTS1QSjJmN1NoSVJwQWFiVUVGTkFJMzFJaDhTbVBUcHBWc01VTnZJNGt1LUtSd3poQ0hn?oc=5",
+          "published_at": "2026-06-11T07:00:00+00:00",
+          "summary": "Agni-6 Missile Test Buzz Grows As Over 11,000 Evacuated Near Chandipur ITR In Odisha &nbsp;&nbsp; SSBCrack",
+          "author": "SSBCrack",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [
+            "evacuated"
+          ],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        },
+        {
+          "title": "Is India gearing up for a test of Agni-VI ballistic missile? Massive evacuation sparks speculations - theweek.in",
+          "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQXzA4TGcyNVhkMXgxUzh4YURXY09LQ0xKZ3VSSV9DMHEwSHlqM1RLTjVkMHo5UnhrbjhzNFNPajhJRktTVHllcm9VT1lNS1V6TjJtcEpfRFY3UTY2VUpMN1dUbHVEZDdtd1VnZUJlVVNHNkdybVUyRjRCLXBsb1BTZFVmTFhBeEwyQmVNTXZMNXB3ck5pZHJFRGV5R05TVFdPLWh6UzNzMnFFSXlrU0J2RFQzR21abl8tNWRrVU5qbnBENlFpUHRrMXg4akR4cTczclQyWTRrN3VnSjVzNkNzMUFfNmnSAeoBQVVfeXFMTTBIajI5OElhZ3Qyc213cnpRWkdwSjZOdGsyLWg0N2pfdEZxZ0p4dVdmYks2TGtaemY3bTJZSmFoSzl5MmpqNTFXWUhrcHEwc3Z2Wnhnc0RQYVZFdmJPek1BUlNTNWstU1V1X3JWb0RsY1dmOVpLQy1udzhPSTVmN1hOSnNwU3dSbE9NNmxYcFVkdm9oV1FYNzNfTVd6aWJraU5Sem41NTdqMURwTm1MQmswQW9XSWgxYjNPNWFDeXE4c19aM2dTQWZILXlEQUY5Qk41U3Z3YUZLZVNVUkFvcktEdnc0TUVJNnVB?oc=5",
+          "published_at": "2026-06-11T07:00:00+00:00",
+          "summary": "Is India gearing up for a test of Agni-VI ballistic missile? Massive evacuation sparks speculations &nbsp;&nbsp; theweek.in",
+          "author": "theweek.in",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [
+            "evacuation"
+          ],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        },
+        {
+          "title": "/r/worldnews - https://www.firstpost.com/india/agni-6-missile-test-likely-from-chandipur-itr-over-11000-residents-evacuated-as-precaution-14021034.html",
+          "url": "https://www.reddit.com/r/NoFilterNews/comments/1u2e9fs/rworldnews/",
+          "published_at": "2026-06-10T20:41:13+00:00",
+          "summary": "/r/worldnews https://www.firstpost.com/india/agni-6-missile-test-likely-from-chandipur-itr-over-11000-residents-evacuated-as-precaution-14021034.html",
+          "author": "r/NoFilterNews",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [
+            "evacuated"
+          ],
+          "forward_looking_terms": [
+            "likely"
+          ],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        },
+        {
+          "title": "Agni-6 missile test likely from Chandipur ITR; over 11,000 residents evacuated as precaution - Firstpost",
+          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNdTRMQ1Vjc1N0TWxBMG9SNWdDV1QzdFljY1h5b0F2ek11aXFHeWpGUnl4YW5ubnpBUFB2Zld6amowX0Rhc0FheHRtLXZWbDN1MnpDQ0VFaV90NWFvOFJla2FxTmVyRFZ3aDF0dVN4RUJYV09XSjNfWjlkOUpkNXh3UnBjeW55MHdYMXB5R1BMN2RPamVuTkJ2ZTh6c243X25WNC12a2w0TEtqSmxSRjA5VG9oZ2lCcElGeENVTEN4Qk43WlNvb1hsemM3WFJYWWRBTVHSAdcBQVVfeXFMTUxpMWxIZ3lQM0JpZHJELUYxazJpX0hjOVhDbUFtNnNSWTNVQ1FJQTV2NjI4SVkwbVVEeDlNQXZBQnZXT1JocmpIb1I4WDdVUWtzSzFhRjZTdVdpZk9URnFUZmNzblBUX2VhdHo2TGZYbmlGdVRINTQ1M0ZVZkZDdTBPMmViM0sybmh3NE1GMDVhWWZJR2N5c1V3VWJ4dnV6RlB4ZW8wS1RaRFFuVTdPX1pzNi1HWl8tRVpvWTI1ZWNNa0ExN0hkZWMyc2tDVkd3b1I4X1dyOG8?oc=5",
+          "published_at": "2026-06-10T07:00:00+00:00",
+          "summary": "Agni-6 missile test likely from Chandipur ITR; over 11,000 residents evacuated as precaution &nbsp;&nbsp; Firstpost",
+          "author": "Firstpost",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [
+            "evacuated"
+          ],
+          "forward_looking_terms": [
+            "likely"
+          ],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        },
+        {
+          "title": "Successful launch of Intermediate Range Ballistic Missile, Agni-4 conducted in Odisha - News On AIR",
+          "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPR1VOVzJfRExRU3diTVlNZ3N6NGxVWm9VOWUtS0RuTFh1WEM1X2RGZ3ZtMDc5X2dmdnJKUnBCZ1VxMGdlWEFHU1A3Nkl0SnJuSDFlamVsaEdONzhqamRKd3BlaGsySXd0Z2dHdExTcWExUl9kMHpkaVRWT3lrejlGbDBDWWF4MjlSejg0eFYtR2EtalRYeFZUc1RQUWxYVnNEblAwRkdCRVhUaGY3aVM5OGJuQQ?oc=5",
+          "published_at": "2026-06-09T02:24:32+00:00",
+          "summary": "Successful launch of Intermediate Range Ballistic Missile, Agni-4 conducted in Odisha &nbsp;&nbsp; News On AIR",
+          "author": "News On AIR",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-4",
+              "name": "Agni-IV",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3500,
+                "max": 4000
+              }
+            }
+          ]
+        },
+        {
+          "title": "SMART system successfully flight-tested from Dr A P J Abdul Kalam Island off coast of Odisha - News On AIR",
+          "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxOaTJYWDZVd29sbWVhajFRdTB2VlVKOTJ4WlFERnZEV2JUVUtKTi1XdlpnVVROQkJLMk40ZERPblFMNW1DX2piOEJZRW9rbXdBVmc5S2pfbzFMRzJ5VjJocDJPN1dTU2dZdmRvTmZZMUJHbVdVWUxrSjZyeWxhUXFMaFB6WnFFUjgzbGswY0VVUmY5MlptcVdTN0NDSTh0XzQ2MVpheFBoR0xBR2IwY0FBTTVWWjFYbHpfM0E?oc=5",
+          "published_at": "2026-06-08T02:19:40+00:00",
+          "summary": "SMART system successfully flight-tested from Dr A P J Abdul Kalam Island off coast of Odisha &nbsp;&nbsp; News On AIR",
+          "author": "News On AIR",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "abdul kalam"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            }
+          ]
+        },
+        {
+          "title": "Pakistani journalist flubs with poser on India's Agni-6; how US war secretary Peter Hegseth reacted - The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxORFZxSWNVTXZXajJxZ25aa19FTE4yRFp5OWwwY3phRmJkOWNXbVpRWHl5eTJsVi1TZmh0c2t0TWpPUk5zZm95VGtseU5PYlkyMEVoSjRtY3VMV2xFX0lkRno1TmZyZEphc01JN3ZfNXlqSWtVLXN1VVJjN3BFcGpELVFnUEprRWQtRXZQMU9LUlM3R3l4LUR6Rzl6QXQtaHpXQjF4NE9zd0MwT01HMzFkejdLYVMxeVJUYXN6cEhmaXI4ZVF5bURSOXRqX0UtdUxiQmlpV3VVdUlIakl0RTFYWEtJUDd4enY3SUxfNVI2VHEzNmswRnM3ctIB_gFBVV95cUxOSk9qbGIxUTdSbmEyVUNNZlNYSDBnVkVJVGM2aTZ3WnZlS184QngwNHI1eWo0aWZFdzRmdFBCVHd0T0d1WjI1UnBiUjVRRGFqTEs2d0xiWENhTlZoV2g0aF9EQ3hKWjhnQ1l4b3VtUDhycjhqNGNOZllfQ0xtZkFxWjF0bl96aUxWVDhCSlhuVkJjU1N3NHNYbVZRY3FvYWRGQTNmX3JueHJNUV9QeXhZMENPV3BJZzZFTzRlemJZU2Jla0c0LUFYaEFuR29DT3EtWGN4ZHFsbjJSWGhYSzltYmlXOVJ5SlVUYmJLOEp2MEd3R0JxUDMzOHBpV1NQUQ?oc=5",
+          "published_at": "2026-05-30T07:00:00+00:00",
+          "summary": "Pakistani journalist flubs with poser on India's Agni-6; how US war secretary Peter Hegseth reacted &nbsp;&nbsp; The Times of India",
+          "author": "The Times of India",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        },
+        {
+          "title": "Final Year CSE Student Confused: DRDO Internship vs Campus Placement Preparation",
+          "url": "https://www.reddit.com/r/Btechtards/comments/1trnoxs/final_year_cse_student_confused_drdo_internship/",
+          "published_at": "2026-05-30T02:50:25+00:00",
+          "summary": "Final year CSE student here. Got a 6-month stipend-based DRDO (ITR Chandipur) AIML internship opportunity (15 days onsite + 15 days WFH). Should I take the internship or focus fully on campus placement preparation? My college placement opportunities are average. Looking for suggestions from seniors and professionals.",
+          "author": "r/Btechtards",
+          "platform": "reddit_search",
+          "matched_query": "\"DRDO\" Chandipur",
+          "matched_keywords": [
+            "chandipur"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "DRDO successfully conducts three successive flight trials of VSHORADS from Integrated Test Range, Odisha - News On AIR",
+          "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdDM4Q1BoU2FmUDdfWnJmekw5UkE4ZUV0ZjNIYnVKbHhER09WQ2F2VmNNYTBmTnRDR0h0T1FQeGNtb2hOaHJvXzVVUTE5U1lBdTJHUnVLVEtJQ0hBTDJvbVJrRzh3TWVWbDg2M1VHNTlnalhhNjQ0Q25KZExJNlNiSm5lMzRRVHVUOEhuZ3NveGNOYVBydlhMajNwalRYV2tpekJ3a1VCV0dRbEktOXZJdHBteF9xd2VUQzJ0aXU1OTBrR0NkRTNFbA?oc=5",
+          "published_at": "2026-05-26T17:45:08+00:00",
+          "summary": "DRDO successfully conducts three successive flight trials of VSHORADS from Integrated Test Range, Odisha &nbsp;&nbsp; News On AIR",
+          "author": "News On AIR",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "integrated test range"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "vshorads",
+              "name": "VSHORADS",
+              "category": "air_defence",
+              "range_km": {
+                "min": 6,
+                "max": 10
+              }
+            }
+          ]
+        },
+        {
+          "title": "India\u2019s Agni-1 Ballistic Missile Launch Sparks New Strategic Calculations: Nuclear Strike Readiness Sends Powerful Signal Across South Asia and Indo-Pacific - Defence Security Asia",
+          "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxPZVpGanVLYTB3TVhFRkg5cGpGamI0b3F3QnZ5TXhWWEJPTEhXUG80UG5VOHNqcTlZXzlEUzgyMUJZWFZ4VGlvakZqemc0cHhNbnIwTnBrZ041YzJTV29wLTItaTZyMmNzcC1JUFljdDR4VXlzeWktRVJGdUFrNVNjRkFQbjNkbjMwd0FjbFBKVC1pVm93Rk1oSWQ4SlpPbC1rQ3FMMGRnN2xfQ1ZfN0pFVWJfcUU2cFppMGlpVWNXTQ?oc=5",
+          "published_at": "2026-05-24T07:00:00+00:00",
+          "summary": "India\u2019s Agni-1 Ballistic Missile Launch Sparks New Strategic Calculations: Nuclear Strike Readiness Sends Powerful Signal Across South Asia and Indo-Pacific &nbsp;&nbsp; Defence Security Asia",
+          "author": "Defence Security Asia",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "India conducts successful test-launch of Agni-1 short range ballistic missile - BusinessLine",
+          "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxQOS1OZWdzaHdDd1hOa056SnR3TkFOU3JaZlVyeVlPSlZKTlViQXpPSThCRmVza3FXQmpyTHk5UFpfcjI0Y2MzWlpUY2JmMHFRUzJkeF9val8xQ3U3RlNFSTNSa1VLYzV0SjBxTEF1TUQ2QUtBMlU5VndzUTNFYXVscW5pYllrbmJlQ3NLRVcxSi13SDhzZXkwQUtJTHpJYjQ5dTdjWGJpTWNRaTFnYWlHUVZoMzM4YlVZSkE0M3JzSE1iYU50c0F0MGQyREhyV0hVczEwX2xTbzBiNlNpUWdocUZ30gHoAUFVX3lxTE1hWFJKT1d1UHJyaW43czJjbEJuc00zNWFZZXp0S0lMQWF4VUhDTGEzb1BtMnZFaFIyNnhWYnYyc04zM0QzOFBtTk0zeExjZWh2QTVxTVlMVFlzOFhHcG5DZTJIYW9mV0pIWTB1VTVLT0QzZXhqbjR5Vzk0SkJOZGR2R0l6bnhOejJIZGxWQUhTRWZTQkVtZnFiWHlUaEdEV3hiZUppRENnN1kwbE5vUVZIVTIxUDhyVGxtcTlyd3NWY0VBS0Jvei1mQWZrdmhoMlRZdVBlU2p3b1BTMl9wb0I4SFlXUURjckk?oc=5",
+          "published_at": "2026-05-23T07:00:00+00:00",
+          "summary": "India conducts successful test-launch of Agni-1 short range ballistic missile &nbsp;&nbsp; BusinessLine",
+          "author": "BusinessLine",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "Explained: What is the Agni-1 missile and why India keeps testing it - India Sentinels",
+          "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQX2tVQjR1NlNseWJZU3dtNEtzNkZCbkhFZTVYM1I5UUNobm1KQnJuWmFRSkp3aUkwUTFoNUlJNkdicEwybWV2Z2dEdElRRDFSMVQtbDNxMnZyR0JoMGNKMmRHYXVGVkgzNVl5TG8xV3FhemhnamxTME5ZZWE5eUZlTzNuRG1seUJmTWY5bWhHdmMyZzFQa3pNWnNrSnlhOFJvNF9LLTlNWnA3LTc0Vjl6THE2NFdHR2ZCUG5sNkh0dlJ5aUh2?oc=5",
+          "published_at": "2026-05-23T07:00:00+00:00",
+          "summary": "Explained: What is the Agni-1 missile and why India keeps testing it &nbsp;&nbsp; India Sentinels",
+          "author": "India Sentinels",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "India Test-Fires Agni-1 Short-Range Ballistic Missile - GK Today",
+          "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZmp6SVNVSmhrYXVoMWZ3WGFVUzU3Qk9oMFdwN1d2bHVrM0JubWNoMi1DR1BXanhPZlM1S20yRE1pdTVScjRBSHZ2LTdJdWxpVy1JQjJDcWpNWUxQend0VmdaNEZNZEVKNzlXMW5JYUJRbHlRVmdEYnFRQVZ0M0pkaVlRZw?oc=5",
+          "published_at": "2026-05-23T07:00:00+00:00",
+          "summary": "India Test-Fires Agni-1 Short-Range Ballistic Missile &nbsp;&nbsp; GK Today",
+          "author": "GK Today",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "India successfully test-fires Agni-1 ballistic missile from Odisha - The Hindu",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQam4wWGNWZGllZHpqNE5Xb0xhZF9aVGRBRjFxVGhjM0kwX3lkUEpxanh1NlRwdlFKOEFpV1lqeTNMTjNGWk12T05wVlRBMTFEVWlYOXVqSXg2VGVGd0R4RHk1NWlndHY3X2dXV1ZfSWNhaV8zN0FzcHliUGpCbVNyVWEzVkYtRDgxZU9iU1kzdTVEMXFLeHV6XzBlV2dTNEZLeVlubE02amFaVW1JT2h5dTNaUFNyUmRITnplbVBQNWppLW_SAcoBQVVfeXFMTXJQMHVrU2NWMzV4b0JaUTl5cS1NU3VPaFYzZkNoUFYyVWtaMEFjUV93QUF1WTdvczhTdUZlb1ZpV1Q5ODlvSkp0YmltVklLZ0dnYm15Ulg2emhrZW5qYVh0akZJV2EwVXdqWDRwWHhlQ25kb3d0NkZpd2dsMzBWa0w4VHpBWUFZQmdQRkx0OFp5NkhWMVhheWtHMFJRb0hESWFubzNoRkNTMG1zR0xsa0J1dG53djZFZUhXc25sT1U0MmtaeTZINl96QQ?oc=5",
+          "published_at": "2026-05-22T07:00:00+00:00",
+          "summary": "India successfully test-fires Agni-1 ballistic missile from Odisha &nbsp;&nbsp; The Hindu",
+          "author": "The Hindu",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "Short Range Ballistic Missile Agni-1 successfully test-launched from Chandipur in Odisha - News On AIR",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQQlJxdzF5UGpqZHBwODlaTzFPeXduMm5XM3FVWXhNX2ZjbzA4QUczU2hZYkZLa1NoblVVMjB5LUpBSk9QMGFXX3ItQy00b1ZGdkp6TndSUFgwMnR6eVBhZFZ0VFVuVXRwazBKYjVlMmdfdnNkVGYxZ2tEQkFqbEc1bFpBMjlvYjdkVVd4SWZEelFPUnNmOFhxUnBHd3NrcE9GeHVBdnlhVGwxYVJld3ZwZnZFSGY?oc=5",
+          "published_at": "2026-05-22T07:00:00+00:00",
+          "summary": "Short Range Ballistic Missile Agni-1 successfully test-launched from Chandipur in Odisha &nbsp;&nbsp; News On AIR",
+          "author": "News On AIR",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "India conducts successful test-launch of Agni-1 ballistic missile - The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQRHVmTDVVbmd5NHAwTHNRNkJGVTNocFZEY0NDT1p3cV94TDBrVEgyNHBObFoxQ1dRVVV5MVlkdUJzTC1pVVVUVkZVV3AwT0puR0hzODRYeU9BdDRsODR2Qm05d09DNTlUT2JDUnZmN20tZUViYWVMQkVIU0NTek5zQTBUcEFiV2hBT3JLRkg5aDdNdW9ySTNLZWtxU2g2VUVNRkNMZEVVSHE0Q25NM0gxSFJZQkIteHc1Xzg5VzY0ODVoYjTSAcgBQVVfeXFMT0IzdUxKcklqbFhGdHBXY3ByV3VCNlF1WXdLNkZFQkczSG9POFNiZlRCdWdDaWQzS1BFNTVmN0R1eGgybER0NFRoaFVRS0Y3Y3ZVLTlrMldaeFYzdHhYcGowRzd0b09lQmFZam15ZS11bVFMeUYzS0lmb2E2TzQwcmxEcVl4V241WWxTSVVsTU5jYlREQ2licnJBSzdITHg1WEhzMTh4anc1dGVzVG1Bdm0xdnVFdWhXU3dzYUp1dXlTaFM2RmNiRUs?oc=5",
+          "published_at": "2026-05-22T07:00:00+00:00",
+          "summary": "India conducts successful test-launch of Agni-1 ballistic missile &nbsp;&nbsp; The Times of India",
+          "author": "The Times of India",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "India successfully test-fires nuclear-capable Agni-I ballistic missile - The New Indian Express",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQclctblJSWXM3YUNIWnBaTnN3eHR1aWlPRmVqazFkUVhhZ1dBNG5rRURPRmo1WmRQRTFoWlB3UmRQcXMyNjVHWVVCWjhBcDB0VUxHT09aWmk5dkl1YmVCaEJCRTJUaFhHbkJEbVdYYi1UWEhmQS1OSUNVUGx2QlhHVUpCcmVTZDRkMW1KQlNHRm5XXzF0TGd2LVZzVmpCcmEwcTI3MkpNbENUbmlTR3dnbzdNN3dWUzdPZzJiXzVR0gHLAUFVX3lxTE0xaloybVJzRllnUlN1Si1oYlh3enJBUmN6M25CR3l3aTFXYUNHRjVHc1NHckRQb01uMWMxbFZLLXV0ZzBXWUM2UzFfZFFXS3J5QXNUUUJrVUpqa1h4eGVhMDF3WmVMaHdlbzNhR1ptbnVEdUFqb2U2RmlDd3dBbWxtVEN3NTZ4OEZzOGRYMFNPMVdHM2hyYnRBV1UzZVd1b09xZ1lCNndJTmUwM1VxM0pNOEZ1MHpHcUlNSEtyMU1rWEpUSTBUU21jNHc0?oc=5",
+          "published_at": "2026-05-22T07:00:00+00:00",
+          "summary": "India successfully test-fires nuclear-capable Agni-I ballistic missile &nbsp;&nbsp; The New Indian Express",
+          "author": "The New Indian Express",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "India successfully test-fires Agni-1 ballistic missile from Odisha - India Today",
+          "url": "https://news.google.com/rss/articles/CBMi0AFBVV95cUxOZGNyZTdVUHhkRkp4TGZCYkxoZ2pRTEd2TUFibnlyQjVxQU5RVGlhMk9xX1JLS2hqMzdhclFETlg4VkZQZUJTSlhrOHlCTHBHc19BV05XR3JwYW56ZjJ6Z0dqRDlJYUlsRmt6WWNWaktwSkk0d0dGc09HYlVvUWpBcXJwSTc0emdOdE9xdWFlMTNWam1rczZSTkprSnUtM0E3b2tRSXo1SjJMZ2p6NkJUODQxeEVRT25WZEpoUzZGd1RCSHpSZnFHRW80M0c1MUNU0gHWAUFVX3lxTE1OSWFjb0VPM1hRN1h6dl9pTE1lVnpoTkxFUmk5RUV4TWg5QnpQdkZXZDlKbl9MT0JublJkVXJ6TVBSNHBaWDB0bktNZkhXVkZaVS1uM1c2Y2dCeHdMYjlwTWR4d045TVl2b1BhbU1iMUxJSjZWQXZsTFJidUI0UjNZaWh0Nko2cmJ0Nl9ta21IRGRBOEQyU241RjBhMkNxeFlIVkhtS2xCQ0wtREdYNVR5Sm8zSFRFM1l0b3NpUWt1NDdiVTAxVm1vTURvRUN4enBMWHdVRmc?oc=5",
+          "published_at": "2026-05-22T07:00:00+00:00",
+          "summary": "India successfully test-fires Agni-1 ballistic missile from Odisha &nbsp;&nbsp; India Today",
+          "author": "India Today",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "India Successfully Test Fires Short Range Ballistic Missile Agni-1 - NDTV",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOSnptcDZSR085d3hOcW54eDhhb2tNano2ZDlnTjZuZzUxZEZVRGRvWnVmUmZmbGtlQmI0Rl8xWmNTalU5ZGd2SmMzVURMTTN2VmJPLWNKSDZEODVFak8wWkxVYjRLTUI2dHJrbFBkQnM3OTc0bkFJMC1qQ0FIVkJiTjBrV1lSd1htVDlBX1RyVTZhQjFGSFZRS2lROXRRMTZZbW5uNHdKeWNlb1HSAbMBQVVfeXFMUEMyMUFwNHZoeDEwNW54RnFqM3hpZFBRN3I3SDBfV2dzcjlXTG5vQ2FXRTlYOXNrUFRUMFZHQkFYQi1SY3dKb2lwd0ZpUjNvYy1pT0tJMFg5TFRGQWVIeElZRDd6ZXVnN0NGZU0wYVVLSDJta0NHRG1QdHFEVjE0aDRLUGg0bEFTQTFVMTZVS0RvUlVsd29zSXpBbVFHbWMxLVVQdUhYaWFlR1UzbGtiYkh3SWc?oc=5",
+          "published_at": "2026-05-22T07:00:00+00:00",
+          "summary": "India Successfully Test Fires Short Range Ballistic Missile Agni-1 &nbsp;&nbsp; NDTV",
+          "author": "NDTV",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "India successfully test-fires Agni-1 ballistic missile from Odisha - DD News",
+          "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPSkx5NlU3Y0lldi0wREMtVWl0SkQxWVVTeVRUM0NLUVRNdDAwcmlfZHVMcXJRRnR4MEFvR2dFRlhXT09vZ3NXeEl3enFJbFJNcnJmcm1QVkRObkFFbkxDRjJNLTFVNEtQLVdlcUhmbkstTUxfMWRoS3JwXzFrVTlYQmRqQldBOV84QXJYbTVCYVVzQ2hmTHBZ?oc=5",
+          "published_at": "2026-05-22T07:00:00+00:00",
+          "summary": "India successfully test-fires Agni-1 ballistic missile from Odisha &nbsp;&nbsp; DD News",
+          "author": "DD News",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "India conducts successful test-launch of Agni-1 short range ballistic missile - ANI News",
+          "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPMUd6RWtDOHFONDR0bW9MNmxITS1ySnlJM1M1WGkyN0NOQVl3UlFZSDFNMlFuaTU0RWZqLTVPWDl6d1Z5Q0FscE9DTmJfZXFBTGxNVFVDMTNlU3IycHI0ZlZyaUZLNHEtMTY2U0xxMThzd2NLVDZVSzNUUHNfWkFkQjF4UjhVZkZrMmw4c2o1Q1JISm56anZyMTVrZWJsUFNnS2FIZW1wcGFkMldVaWxyQVZQYVRZTEZuOUd4akZVc3pFSk1JejZ6NWl3S3NuZ2k1azFRWWk0Ymk?oc=5",
+          "published_at": "2026-05-22T07:00:00+00:00",
+          "summary": "India conducts successful test-launch of Agni-1 short range ballistic missile &nbsp;&nbsp; ANI News",
+          "author": "ANI News",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "India successfully test fires Agni-1 short-range ballistic missile - PGurus",
+          "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxPM083azl0bVAxR3BfLW1TVWVwRERiYnFxSEdjYUYxcEF0V1JtVFgtV2JQWmg1YXJlel9MUkpOX3B0OXVaMnB0T3pmMDR5a0g1dkxOVC1GdEwtd05fNVJwRVdIOUwwWVZwV0p4Z05tajB6MVJreDBwZjVWR056THZVQ0NQcmJXbHVI?oc=5",
+          "published_at": "2026-05-22T07:00:00+00:00",
+          "summary": "India successfully test fires Agni-1 short-range ballistic missile &nbsp;&nbsp; PGurus",
+          "author": "PGurus",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "India Successfully Test-Launches Agni-1 Ballistic Missile - ETV Bharat",
+          "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxPazQtOUlEd2o0VVpWSV9HZmpVTmtCbmNoamlLMUt5UG5lTU5qZEdQMTlfOHRYRndscXhlVnM0WWF5TElsdlA2UHZEbGpLVjIzcE44ZmQ0anFONzlrU1JiUTMxYVlsTHBxTVZTWmhlVnhQcFZhaXp2NHYybUV6aVRsUkF3c1UwY3Y2blhNWXR1azZKRllWTU1xaTJ3YVFWcXV0MXk3UFRVcXFuMWp20gGyAUFVX3lxTE9oTjFjdEJPcUpqSVYteG50SUpXTndOeHJUa0hiRG5GbTFlX0o2VU9fOFJVUjJmMWF4TkU0X3JCZ0ZPUVEzYXFaLTY5cG5RQTFCRjlrVEpOVnJ0aVJXZGZtR3Bpc3Z1VGhBTFgwbnYyWDMxZm1wM3RReExkeFdJa19VX2t1eVFHNWg0QlVyU0h4T2pjZXlNZTlqQXVpVGlyVkU5dWRka3U5QXlfLVFDa2Z0SEE?oc=5",
+          "published_at": "2026-05-22T07:00:00+00:00",
+          "summary": "India Successfully Test-Launches Agni-1 Ballistic Missile &nbsp;&nbsp; ETV Bharat",
+          "author": "ETV Bharat",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            }
+          ]
+        },
+        {
+          "title": "India Tests Agni MIRV Missile for Second Time - quwa.org",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPNTNlenFsOW85ak1oNkJNQ3AzX1FDVDdOSW11eXVESUh5MEt2TGRoaEltbFhtM1VSUTZiZkdyVjhfcGpySEd0a2hiZXBUVlVKWmkxX3J3ZHlrVjNOX3Y0RDAzSUhiYTBJZjV5V1g4QVduZFdwUm83blBaTlRJUmV5WUo5YmJERnM1bC1CSGFQMldpTlltSDJmemZJZUktdDRRd0kwRHVRU1hSWjZVWTFr?oc=5",
+          "published_at": "2026-05-18T07:00:00+00:00",
+          "summary": "India Tests Agni MIRV Missile for Second Time &nbsp;&nbsp; quwa.org",
+          "author": "quwa.org",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India tests second Advanced Agni-5 MIRV nuclear missile with multiple independent warheads",
+          "url": "https://www.reddit.com/r/WorldDefenseNews/comments/1tc290o/india_tests_second_advanced_agni5_mirv_nuclear/",
+          "published_at": "2026-05-13T15:01:57+00:00",
+          "summary": "India has conducted a second publicly acknowledged test of its MIRV-capable Advanced Agni-5 ballistic missile, validating the ability to deploy multiple independently targeted nuclear warheads from a single launch and significantly strengthening the survivability and penetration potential of its strategic deterrent. The May 8, 2026, launch from Dr APJ Abdul Kalam Island in Odisha, confirmed through telemetry tracking and Indian Navy instrumentation coverage, focused on post-boost targeting precision and independent payload release accuracy rather than basic missile propulsion already proven in",
+          "author": "r/WorldDefenseNews",
+          "platform": "reddit_search",
+          "matched_query": "\"Abdul Kalam Island\"",
+          "matched_keywords": [
+            "abdul kalam",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            }
+          ]
+        },
+        {
+          "title": "India Tests Agni-5 With MIRV Capability \u2013 Analysis - Eurasia Review",
+          "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNNnA3ekY3VVphaTFFTnBhbmNnQ3lWTDUzSnU5bGZldkRzOGNrLVBVN0YyNTFsQUNjeDJRMGlBbTE1ZlZkWG9yNllaamNodGZTWTRnMXlSQ3h5bnJGRHJoQk1Ka0RxOVdRanJEa2hybVpLWExQUGpFTV9jT3VJQmF6T1hEUEZFd3h1Mk5FSHVTamI1dw?oc=5",
+          "published_at": "2026-05-12T07:00:00+00:00",
+          "summary": "India Tests Agni-5 With MIRV Capability \u2013 Analysis &nbsp;&nbsp; Eurasia Review",
+          "author": "Eurasia Review",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            }
+          ]
+        },
+        {
+          "title": "India Tests Advanced Agni Missile Designed To Strike Multiple Targets - NDTV",
+          "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxQZU9HaHlsT3ZsOER1MDVJcVhlTFFpcy1GVGNzUEdodzZIOEw1RmRtSmw5MGtQbS00U3dYSlRXaVpFcG05bzJFcDBVQW1XODRRUnduU0x1RXg4d3JBMzAtWkFhSnhBU3FMdEwxOUg4Wm5ScC02U1dfR0taLTNRdjhIbXctYllKOXh4ZW1Wd1N1ZHFFcDI3SEp4dU5hdjhzV1BXYW5DNnBBZFFIcVBXY01NeUU1ZHpnbjBXa2t3MUtQNmhTRVJJRXfSAc4BQVVfeXFMUFRnUE5mMEJTQVBkV1NaQ2pvaUJxTEl6TEU4VWk0bVdpbDZmODROY1BxVUNkQWhOclNqbkh1R0VpNUFwWlFWSHlKWExYUEtlNDNPQ1JaYV9oa3RpNkd0OTAzellUdzBoTG96UmxjYzN5c0NzRTJNUjM5WEpYakI4cVJ1RUx3RkM3ZzFlMHhlOUZZYmIyLWx6dTlPYU9GYmViOGZob2E2SDc1RGNnQkttYUFpcUdaV1E0VlNtZFJEOGMyS0I3MlFXMzlEWG92b0E?oc=5",
+          "published_at": "2026-05-11T07:00:00+00:00",
+          "summary": "India Tests Advanced Agni Missile Designed To Strike Multiple Targets &nbsp;&nbsp; NDTV",
+          "author": "NDTV",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India successfully tests Agni-5 missile with MIRV technology - Telangana Today",
+          "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOZFBqaEFuU2ZZWF8tZzNWZ0VvTDNNankzNUdRX29oT2ZrNXY0Q1lGbFdiUzlnSUxrQ3Zoc0RfM3dpdDJJYjVVbGl0Yy1fd3JrUGh5bDg0LTZPbHVqMm1BNl9ZLVpHTEg4ejZWWlV2eXFGaDNuTHp5WTFwclh6SXRrXzNXWHAxRWNCaGJUWWItTFo?oc=5",
+          "published_at": "2026-05-11T07:00:00+00:00",
+          "summary": "India successfully tests Agni-5 missile with MIRV technology &nbsp;&nbsp; Telangana Today",
+          "author": "Telangana Today",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            }
+          ]
+        },
+        {
+          "title": "Watch: Spectacular video from Bangladesh captures India's Agni MIRV missile launch - India Today",
+          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNYWFnYWplZmhiVEZzcWJzZmFTUkJxX05BQUtZcUJnTmdiYUFFclg2RFNRdUY4RHpfVmNGQTlIRzllSURZQW9WenhBaTJzRXR1TVRPemVZZjkyR2hIQ1MySlJEZW5NaTA2MjRZVHE3eklaSEVMOExCMzFfN3NsYVlaUHN3cHF3YTZrZkgyU3BJcGxoSWp2Y0xPVk9SSDU1cmVhOFRXbTR4cm9WOVNGWTltcDVXNkZQVW5kZDB5T0U1dUY5YkFXckNreDlyR0Z2NTM4REpoUXJ30gHbAUFVX3lxTE9BeUpTNUgtUlY0ckFWNUJXX2F5ekdtcmJzbGx5ajNZcjBMcWdZT1kxajZpaWlBb0RmMk5wclU2T3J3Wl9jWHMyUnZMUDdVUzk5R2xBOW44MktZdVN6WHM1X3ZjZkJ0bHE1VS16dEw3NmdWVWVUcndZSTg1Qnprel9iSV9LbmllWDFaT3lBUWg3VHY3RFBlV3Jybm9tMm42M0hwNG1CRGJVTzQzWS1FLVk2cElWWGUzV1hUc19tcDNpNFcxd08ybkQ4bkFDSlZrX1dQb2dYWF8zRDh1OA?oc=5",
+          "published_at": "2026-05-11T07:00:00+00:00",
+          "summary": "Watch: Spectacular video from Bangladesh captures India's Agni MIRV missile launch &nbsp;&nbsp; India Today",
+          "author": "India Today",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Test of advanced Agni missile with multiple warheads technology a success: Defence ministry - The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxNZFJqSE04QkxiekEwR24yYS1DcFVWcEx4bm54Y1Nvb2lKaDVld2VYaXRkeTNpTlByOXRWMEFabVRsZUZQUFdabWlfcDRuU3VMWHlpXzB0bjdmdExLWTQ2bldzeWY5Q1VnNlR4MHdWX2FmRjNlVmZOajBBN0Y5bHZ3S2tMampaU2t0Z3ItdndsX09WVWkzY0prS18zMDZmS0ZEVkQzSjNMR2YzMHVIamJfaUt3dlJ0OUdKbHBtWFg2eDVPaEdYVDByTWVSZlhyLXlkWnBqLU5oQ0otaW1MTUhoaTA2SUdiN01SeEhEOFNDM25LdmIzcE5kUtIB_gFBVV95cUxPYnFlUzZySFloLXY5MlFKTTNjdjk3ZnE0T0Y1QS1QbkpwMTYyM1ZTWS1DY29yTzg0STRldjVPdWRyektnQnVMQVBLdzg0OUpkODFHZldqRmJnbVVoZkJnQlVQcHhBd3ZDbm5hSUxKWi1hVGZHZm5sVnJjRzRIZnZ1TVdncjZNTjFVbG9ZLURrbnd2MEpCYXRoODZISFNuN0lBTndudWo3VER1eEtRWTAxMmczcHRqR2pRUy1UbmQyNnFYSkNieEh6c1ByVTgtWEJhWnhTUTBNRGlKTm1ZVmJVaTFrcWFOdk8yNUxiS0t0Nkt0aDg4Y19BanFfNnlqdw?oc=5",
+          "published_at": "2026-05-10T07:00:00+00:00",
+          "summary": "Test of advanced Agni missile with multiple warheads technology a success: Defence ministry &nbsp;&nbsp; The Times of India",
+          "author": "The Times of India",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India successfully tests MIRV-capable Agni missile over Indian Ocean region - ET Manufacturing",
+          "url": "https://news.google.com/rss/articles/CBMi8AFBVV95cUxNalNmc2NSU3FGaFdmbHZMUGRuaEg5UzZ0bkp3aWQ0bk9OYzg2NW9jVEI4Vjc3aG50SFF0MEgyUERtbXhkMFlZRERjVE1tTFdHOERDNV9BaC1XWUtOUE5wQ1h0MEpfc2ZTNnZib2tCTHZiS3hXLWpCUmktcUE3NUtFcWhFdllLWUFkRnpvLXB2eUVaZ25LdHZ2Um9TM1RnVWZRSVZjSEIxS3Nnc2FrWUtOSFp2ZlNKQzlsSktrYmROQ294WDF0VWtBZVJJbUR2YXVaV2hfVlRDSFpzS1JNelBtaTF6RVFQUXBtbXlZUGhRZkfSAfYBQVVfeXFMTzB2ZDBqRVVCWUVkOUc1bWdyczlfM2s4Wi1OTlZzUW5Gc3FSTUNqbFptUmZuMmFZdU1VQkFZQ1p2OXFySHN3c25LaUdLNFktbl9vTHdJUWV5ZlBUY09BRjdCOTdDcE9SQWJ3bm9oWlhMVjRYaExKN245RWNPTTl5SEJmOExTZUxZWG9Sd21ZbDdkalJBbFAySVFoREpFcG1JRTdibVE4b0VSUG0wbTFRelR3TnVfalZJTU5oSzA3Ri1kSjAyU1FCeVhYNEhPY2cwWGlsLWRyb2t4MzAzMWc4NGxNVUtyd1lWb2FEdXg0dGpKa0hNdHJR?oc=5",
+          "published_at": "2026-05-10T07:00:00+00:00",
+          "summary": "India successfully tests MIRV-capable Agni missile over Indian Ocean region &nbsp;&nbsp; ET Manufacturing",
+          "author": "ET Manufacturing",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India successfully tests Agni-5 MIRV missile with 5,000 km range, multi-warhead capability; 5 key facts | India News - Hindustan Times",
+          "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQMUVqNHBwNksyTUVudDFJWDV4SVJRTzBlMG93V3dudk9GWTJKVVdHVElmZnlZbFE2YmdPZ3R5ZWRkNXFxNjRFYU9fNE53c0xTZ2NmM3F1V1Z1b3NSQjhWSlduYnB5elh5Y3BXRVNtYmYyaVJZTXE5aTVoUTh0Ty1rWnRLUnJFZUUwMmtocThYNTZBTmxITVVVSWpJekJNM0F0YWpId3NjWDdDMGJUVlBQYWpvb2hwbk1KWGF3dUNXLWEtelp0Mmp3T3ViY2h1NVVSUGNNdENKQWROTjRFTkI0T3dDdWgwYzdMZm9BNmM2Z3NJTnZNTkU40gH8AUFVX3lxTFBfM0dibHpqdktUYVdsSHYzc1c1ZUhQZU0xeG1RdS16UjlkX1V2eXIzMjI2VC1NaXp1cXBsNFpBY3d3cHZ3QkZLeU82SVd6MnJ5Q1JGUnNqQWhGejhEc0hvcnM1MmpBTEdFN3BRRUR2WFpnaTB0cWpjQ0hGMkt1OWNTMFRobjVqMWlrU2pvUXdlSUlTVDZRaXdOX3RRRFd3SFR2N0V3eno1dU1IR1JSeXhwRWdQc0p4MVhGeHZBN2pwUzg1U2swbHVtNkxyZ2tKYTF5cXBoMUhiV0l6bTBuR2xjaFRIX0JFYVhPNHZRVTRCSmQyeW5TM1BraVdwcA?oc=5",
+          "published_at": "2026-05-10T07:00:00+00:00",
+          "summary": "India successfully tests Agni-5 MIRV missile with 5,000 km range, multi-warhead capability; 5 key facts | India News &nbsp;&nbsp; Hindustan Times",
+          "author": "Hindustan Times",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            }
+          ]
+        },
+        {
+          "title": "India\u2019s Advanced Agni MIRV Missile Test Sends Strategic Shockwaves Across Indo-Pacific, Raises Pressure on China and Pakistan - Defence Security Asia",
+          "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNRDBCTVJXRGJOZVdqNW9wX0JCbFZ5LUlncXcxVFNFc3lBUDg3RzR1QkpHUmVQcHFJY2dHdW1zQ3BRQUg5OFMtMFMwUFpVdUFYUFo1NTFCZzVjbkFEWVotZ21BcjdaeXppZzN2Q0U3cnFOM3RqR3Nhdm1OWTgtNWxNNG13dnVNRmlOOHVubFJpVXg3dGVWdEVINXlhakgxNXlmZmJHVU9tdmV1OEl2dEphUzRGN25kTF9xbllwTQ?oc=5",
+          "published_at": "2026-05-10T07:00:00+00:00",
+          "summary": "India\u2019s Advanced Agni MIRV Missile Test Sends Strategic Shockwaves Across Indo-Pacific, Raises Pressure on China and Pakistan &nbsp;&nbsp; Defence Security Asia",
+          "author": "Defence Security Asia",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India tests Agni-5 missile capable of multiple nuclear strikes | India News - Hindustan Times",
+          "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPTGtySGcxbEFWU0gyQ2J5T3h0WE1keXBhX2htM0hKTnFLM3o5Ukk2OWV1ZVQxS3dpYzc1TkgtcE03Y0l3MWNXLUZWR3NRQjJnbFU5ZWtZQVVUaGZnQ1ZHMUk1UXdxZUJFZHUwYXdrcDUzUlNzRHQ1Wkw4Q0kycHBQRnk3U1JLTXM0eGM4RWlhNW16MTFBMjRjeEpMdVFNQXY4THFfVl9CQnQxTmoyR08wLWdJa1lOa0llNC0zMlBjTS1XM0nSAcgBQVVfeXFMT2tzZTBDbjdtMWFISHEzSGZLSEhNNlI4ZjBKaEs5OXVmRk1xSFpqcnZGcnhjQTNkdkxGS2hQSlpRMk9lbG1pbDFqSlJNbkZOSUFXemRqb0Z3ODVYREZ6VXNEeXJrM3hwN2NIRmZuYUk0eEhEZFhJMUl5U294OUtZcGh0bHNUdnVkcTdLMmxaZFB2UTg1anUtYkRad3ZEY0VIZUZYU0VTQ2hRWnlza3dxTXFWazkwV1YzdmVGaDk5d1RteTRfaTU3Yjg?oc=5",
+          "published_at": "2026-05-10T07:00:00+00:00",
+          "summary": "India tests Agni-5 missile capable of multiple nuclear strikes | India News &nbsp;&nbsp; Hindustan Times",
+          "author": "Hindustan Times",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            }
+          ]
+        },
+        {
+          "title": "India conducted the successful flight-trial of an Advanced Agni missile with Multiple Independently Targeted Re-Entry Vehicle (MIRV) system from Dr APJ Abdul Kalam Island, Odisha.",
+          "url": "https://www.reddit.com/r/justincaseyoumissedit/comments/1t871xb/india_conducted_the_successful_flighttrial_of_an/",
+          "published_at": "2026-05-09T14:50:20+00:00",
+          "summary": "Source: https://www.pib.gov.in/PressReleasePage.aspx?PRID=2259380&amp;reg=3&amp;lang=2",
+          "author": "r/justincaseyoumissedit",
+          "platform": "reddit_search",
+          "matched_query": "\"Abdul Kalam Island\"",
+          "matched_keywords": [
+            "abdul kalam",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India conducts successful flight-trial of Advanced Agni missile with Multiple Independently Targeted Re-Entry Vehicle system",
+          "url": "https://www.reddit.com/r/IndiaSpeaks/comments/1t85fjw/india_conducts_successful_flighttrial_of_advanced/",
+          "published_at": "2026-05-09T13:44:47+00:00",
+          "summary": "Source: https://www.pib.gov.in/PressReleasePage.aspx?PRID=2259380&amp;reg=3&amp;lang=2",
+          "author": "r/IndiaSpeaks",
+          "platform": "reddit_search",
+          "matched_query": "\"Wheeler Island\" missile",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India successfully tests advanced Agni missile with MIRV technology: Capable of carrying multiple nuclear w... - Bhaskar English",
+          "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNaGVlanBGNUlnMml4N3lhdGJWSUlxSGtMNW03ZUZDQ3VTcDNFTEtVTTUtSWFuS1ctTVhTV1ZwbERfRkVaYktHMVo2NUFrZm9CVHlramxweERrUk5zb0RUWFd4Q09EZW40eHJRaWxBUjdTZkdfQXRURzl4Y21HQV9FeVh2bWlYV2VBRHVNR3dRVXcya0VqVlRHeGtPWmZMaGQ30gGmAUFVX3lxTE1nZVNMdHRPcDB2MkIzUjZIMHJRUkVEN1FMeHFubW16VWk5VlhEc25UR05fUl9CRXZLOVRpUmlBdzl2VERnX3pTSzY4OEZ5MEpET1JrV1hGRXVWWmlFOVI2WnZjMW9WMldfQ2R1Vk9abzBTTE9laWg0eHlQbENaOHRiSnUzRmNFd1FPR2M4d20tWXhMUy10bFpkQ1F6aV9lZlZuN1doOXc?oc=5",
+          "published_at": "2026-05-09T13:38:03+00:00",
+          "summary": "India successfully tests advanced Agni missile with MIRV technology: Capable of carrying multiple nuclear w... &nbsp;&nbsp; Bhaskar English",
+          "author": "Bhaskar English",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India announced the successful flight test of an Advanced nuclear Agni missile equipped with a Multiple Independently Targeted Re-Entry Vehicle (MIRV) system.",
+          "url": "https://www.reddit.com/r/MapPorn/comments/1t83jfq/india_announced_the_successful_flight_test_of_an/",
+          "published_at": "2026-05-09T12:22:54+00:00",
+          "summary": "",
+          "author": "r/MapPorn",
+          "platform": "reddit_search",
+          "matched_query": "\"Wheeler Island\" missile",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India conducted successful Flight trial of an Advanced Agni missile with MIRV (Multiple Independently Targeted Re-Entry Vehicle) system from Dr. APJ Abdul Kalam Island, Odisha on 08th May 2026. The missile was flight tested with Multiple payloads, targeted to different targets spatially distributed",
+          "url": "https://www.reddit.com/r/IndiaSpeaks/comments/1t82wm8/india_conducted_successful_flight_trial_of_an/",
+          "published_at": "2026-05-09T11:53:24+00:00",
+          "summary": "https://x.com/i/status/2053067796163252478",
+          "author": "r/IndiaSpeaks",
+          "platform": "reddit_search",
+          "matched_query": "\"Abdul Kalam Island\"",
+          "matched_keywords": [
+            "abdul kalam",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India conducted successful Flight trial of an Advanced Agni missile with MIRV (Multiple Independently Targeted Re-Entry Vehicle) system from Dr. APJ Abdul Kalam Island, Odisha on 08th May 2026. The missile was flight tested with Multiple payloads, targeted to different targets spatially distributed",
+          "url": "https://www.reddit.com/r/india/comments/1t82vv3/india_conducted_successful_flight_trial_of_an/",
+          "published_at": "2026-05-09T11:52:22+00:00",
+          "summary": "",
+          "author": "r/india",
+          "platform": "reddit_search",
+          "matched_query": "\"Abdul Kalam Island\"",
+          "matched_keywords": [
+            "abdul kalam",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India conducts successful flight-trial of Advanced Agni missile with Multiple Independently Targeted Re-Entry Vehicle system - PIB",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1jVzg3REdMN00weUZmTEM1MVNBRlVFQ1RpVllKTlVYTFYxUzlpc2dxcmEwREQxYnhYSi1meUs4WFhaVU1HSzh5RUllWlBDQXBDazB6ZGFBbkF2YWFNWDlsQ2FpaUFWVnVqbjNPcURkYnZod190YTF3Z0RB?oc=5",
+          "published_at": "2026-05-09T07:00:00+00:00",
+          "summary": "India conducts successful flight-trial of Advanced Agni missile with Multiple Independently Targeted Re-Entry Vehicle system &nbsp;&nbsp; PIB",
+          "author": "PIB",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Mysterious rocket launch over Odisha: Is it India's new hypersonic missile? - India Today",
+          "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNaXZkNkR5a040bi1aVkNGVUVvME1PeWNlRkVLeTNHMlFYbXVBLW9sUXVlSnlNeG83NkFER1VZSkc4N1V4ODJxem1EMkNCUjltVTI5NTFUcXRKVTZ6cmJpeGJkNV9jN1BTN3pBd0NOUi1wSWc1algtcjB4cXF6WWRpd194OFFuZU1kQUtZVC1uVDNPQ3g0NFNwWFJpWHNrMmdwWmRFRk5oemlvSktKWXNOdmJ0SnRiNUI2c18xS2Vzcng5c3A2a044QV9YWXB6THNaOUtMaEViNNIB3AFBVV95cUxPZC1Xdm9GVnp0UXRldnNGME1oVm9CdmlSbGFVb1lvdk5qODMyOGl5UmtDMUtkb0Uydk9mNWNQdGpqc3JCZUdwZ0xPYXZWbk5MNk16U0xVaUdUVkU1N19EM2ZKYW9OS3FPYXZFcTJPb3Rmd3F4NWhCRkFnd20zTllrTjhLY2hXR2ptaUpCOUhPUXhjMEZoMU4yLWQtSXdQX1R4UTkzVnd3YThfNTJsSFY5NURDYml6SVhyZ2ZKNE44ZEVnV0dGRy1CQTRQc1d1b3NibHdqTU1hWVk2bVYy?oc=5",
+          "published_at": "2026-05-09T07:00:00+00:00",
+          "summary": "Mysterious rocket launch over Odisha: Is it India's new hypersonic missile? &nbsp;&nbsp; India Today",
+          "author": "India Today",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "hypersonic"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "One missile, multiple warheads, many targets: India successfully test-fires Agni 5 with MIRV tech - ThePrint",
+          "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxOWDE2c3ppOC1zbm44YkNGVTdwaWpIUXRqMEhJTGJ0QzVXcE40TDc2OExSbzliZTRSdWd6a196dkREaE85VlZBN2FBMUFMT2JPWE1SbGliUnFVLU0xWk5GNGtzd1Z3bGR5bWt4eWkxc0N1cmppZGE4MmtUY0NvY0hDMEYyaEVpX1ZNNHRhYngtU2F6RUJRcERrYkU5UnBBa2tsSm1UbXY2QlhibEh5WFdPcVF2cTJmRFgxZC1Qbm5XMEx1VUVRSEp4Y2xhMNIB0AFBVV95cUxPZ1VfS3pjTGU2NS1ONVVoYWEycTVhbXNleW1wUmFPNDA5SGtIaGZnNkg3TEUwNXNEdS1Ha2lJSFp4T0JWTVdwT3ZDc1lTclZFOVk2Si1ISzRfX0JidEdRMHpQQXVFX2xGOFY0UjYtRk94bjZESEVmLW9ESlAyc0ZYVEZlZzRpQUpoVVZlQW5Wakh2RE5GZHg1d0x3Ym8zYUI5SWNtdmVmUXY3aE9BTjFqUWtyMDRtUy1MUnBKeHJOcUgzQndHZW5WWkFES0pZZ3p2?oc=5",
+          "published_at": "2026-05-09T07:00:00+00:00",
+          "summary": "One missile, multiple warheads, many targets: India successfully test-fires Agni 5 with MIRV tech &nbsp;&nbsp; ThePrint",
+          "author": "ThePrint",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            }
+          ]
+        },
+        {
+          "title": "Big defence boost: India tests Advanced Agni missile with MIRV capability successfully - The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNWm1uejVRZ3Y3M1FlVHNVY3daLVNGM1NEdUpzS1hhUUNMaXpYMGhEN1c3bmlNbEJ0RURkOUFLODZ1d21yZTVURTdEak0tSTFzcGlqUjJDWmRWekhqZGxxdXlWZ0w0NC1WS2lxa2p3TXZnS1lBcE4xdmZBZV9zQjZVTnFYVU5LcDlwS21zSmMxTUpJMTdWTE16cXUtTlBmMkQzVGREd1B2dl94YWFVZlg0ZENjY04xdm1UZlU1eXlkNVJQWlVTdzBsbFJyMDFIVHlBeGF2MWJSMGduc1hOUUNxMXRsZjI0TmlDcXE1T1ljZWMtUdIB9wFBVV95cUxNWUJpbkFkaDRNRmhOc243cnFTTnZ1RmpEa1czbEdJYXliaDJGQlRtaDQwLWZyQWJyc0Z6Ry1Hdk5lX2UxdW1OZHRlQkFSRTFtZFRoblAzenJNN2VtTmRNejlwWS01VE4zNDRnaExaNVVkMGE4eHJUdWVhb1ZaamdhQlBHNmEyRHl5cGREaGpOa3R0TWZrcnlaWUNxOE5XVmZWR0tOWjZDRTFqOXJVTGRLbnhqMnpORkZsanhlTnYyenBrUy1CODBoTmQyT3QyaVpMZExTXzYxU1B2cC05WkVqV1FCYVBMVEhKbmw1ejJXMXVQUEpMYU5n?oc=5",
+          "published_at": "2026-05-09T07:00:00+00:00",
+          "summary": "Big defence boost: India tests Advanced Agni missile with MIRV capability successfully &nbsp;&nbsp; The Times of India",
+          "author": "The Times of India",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Advanced Agni missile with multi-payloads test-fired - BusinessLine",
+          "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQR0RJMlRiMmt2TFVBRkV4RS0yazRaV09HdVRrOXFZd1c4SndsU1BjYk5ROFFtdVVNTDNUYXJwcG9TZ05YYy1KYk5GN3o0aHdjS3dlTGFCc2U3em1fcFBPekRrY1BuVEJfRVp1NFBIR3ZGWmJ2RnpuemFseFU3MUNnWWNRTG1YOXdSckNVTnlrVGZCVVdoY2xzaEtZWG9KUHNlRnR2c0hWSS1rM1lMS044czdVaGLSAbsBQVVfeXFMUEMyXzdOLXBJOGZ1YkZyejYzLUtray1IV09QYTlwZkVTY3VfdXg4RGY1X3dGVDBFWjgyX3dWdUxGZEpGRTBRS1lsN2ZiZlN1OVM0SGFfeDFvVlI2NHFvV1RQOVdUSWMwN2ZWRDd4dWhtUE1uTjJyN1ZMbl8wVkRudzlfY2NnM01DeEFZd3RqTlpvUnIxZ0s0SUFwSlZDMDJTTU91a3ZOTWFPU053SWpDRHo5LTJjdk5tTWMxcw?oc=5",
+          "published_at": "2026-05-09T07:00:00+00:00",
+          "summary": "Advanced Agni missile with multi-payloads test-fired &nbsp;&nbsp; BusinessLine",
+          "author": "BusinessLine",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India tests advanced nuclear-capable Agni missile with multiple warhead carrying capability - The Indian Express",
+          "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPYlBySHplMFVYYjlCdUJqSzV0RjZ3RTRMUWlJQTBia0FpSm94U2w0WkZDbW5Sdjk2Q0VTY2VYVFlPY0pkVllLNXF6SmFNME01WDY4TENibzdaN01DU0dtOWh5RUZDUEpENzZ1QkQxNXlZUWVwVkJIaE5Rb0ljWmJSOGczakFQajNTUG1FSHhIMjBBUmpTYlHSAZwBQVVfeXFMT1BTVXB4MnU3MlROVkhlNi1DUFRpNGV1Ny01QXNhTWliR1c4MHJRTDZnQWNTQlRENUtNcjZ3WFprZE0zRTBIUFNJU2Zxd0VkNjRpUWljV21zTmZiMmVtTTVQZzlUOUZaUjZEdS1oa3FUTUs3dVBIRWVhbmtIdzgtRlV5SURjWW1Pc1pOajl2bHB6WFgyTW9TVXZzeXlH?oc=5",
+          "published_at": "2026-05-09T07:00:00+00:00",
+          "summary": "India tests advanced nuclear-capable Agni missile with multiple warhead carrying capability &nbsp;&nbsp; The Indian Express",
+          "author": "The Indian Express",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India Successfully Tests Advanced Agni Missile With Multiple Payloads - NDTV",
+          "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxQNnJDNkdPRElXOTRncmdtWlJfcUdzS0VOSVRKRkt4VElhMlNVbmY0MWJCcG1KZ2xqT1JlUEhERVhBLTN2OEJxRHdYMk45Rk93YW5SY2NBd1JZVkxPRlo3WlFsTHNYazNfOF9KVHhaZnhMd2JNMTc1SnplMW9IYlJkN0RUbEsyOW00TmhDcDFoTkhKWVRkWnpJTWRoS1dZUUVLenRmdU5laktVVjFOOHdr0gG3AUFVX3lxTE9kb2Zyc0g1d0FtQ0JzYWZCTHBKZkJKZmd3M19YVl9BTkhOdFdDbDZLdHRVNUZmczRualg5bmpkQWx5bkZPeGo5UTJnTmljMlpYUEo2US00V3ZzVU5maENyU2VWdEw2anY4UHBzT1lqU0pMTk96clJFZ1d1R1RxeHpCZVdZNnBIQXFWMnJ0bjQwZWlGUGo2WmRVS3FITERXbm5GMm1SRWI2cGdKaWdSNVhIWnc4U05kRQ?oc=5",
+          "published_at": "2026-05-09T07:00:00+00:00",
+          "summary": "India Successfully Tests Advanced Agni Missile With Multiple Payloads &nbsp;&nbsp; NDTV",
+          "author": "NDTV",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India successfully tests Agni-5 missile with multiple warheads - Deccan Herald",
+          "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPODZJZm1xc0FRQUppbWtJNFREeVlJcHhkLVNDVmNSUW1QYkZkOTY1QU9iem42Ukx3czQwZHFKM1I4dlVSajBJb09NZEJiNFVYekdybVJlMkdpMHFta1NCRGlEc203UWVldzc1TGZxUjNXWUFqZjYxU3V4bGtFRXVFX3BkLTV3Um8yeWJKemZuRmlWYkJOV2dtRkVqaWc2ZG8?oc=5",
+          "published_at": "2026-05-09T07:00:00+00:00",
+          "summary": "India successfully tests Agni-5 missile with multiple warheads &nbsp;&nbsp; Deccan Herald",
+          "author": "Deccan Herald",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            }
+          ]
+        },
+        {
+          "title": "DRDO ready with Agni-VI: Why this next-gen ICBM matters for India\u2019s deterrence - The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMi5gFBVV95cUxOZzdQY24zeUFZTTdjNm1iLVRXTjdNSVhYMkU0NWhuTGxpRlN3cV9oVUdVdDMzN0ZUV0U3Snl1d0w0UmtZTWVpblhsMFZFS296OHIxTXlEY01oaURNekVqZXpqc3p1QnlCOXIyWXBKMWFTQ2pUX3ZoQWFiNEtfQVpicTFESThDU2QxM1lqemZlVnBiZUlDc3kwaTQ3U0tLUXBXWDRDdTBZLTRsbDM2ZTkyVndic19wRzVlQl9JRFlFNFNZS2hwLV9hcnAwM1ppU3RiYmIyMjc1UVY4ZE5rbkNHdG9QSEowZ9IB6wFBVV95cUxQMnYyYVR0NXlXSGFhbklNUmZTUjJDNTNXLWtBa1QzTldjQ3VxOFZMOUhuZkhsNVdhSnlmTHhTZHl3QVhkZWhYVTFXOFR0c2EzODVPckFWUWFoSjlWUFZaWUdQNmp1cl93NXRreENhek1ibndxZEpEUy13NEVQOUhidVRWS2NnTzlXcE1hUmRuUlh4WmY5NUtlMFhUU2gwcVFub0VfRm01TkFvck9ZQzJzbDlKRU9GR3JZS0NLcjRZZFl3Zk93cWF1cjAzS2J4SXNaR01UdUE0clQyVFltYzNSQ0Z3bXNpRkZGa0tv?oc=5",
+          "published_at": "2026-05-09T07:00:00+00:00",
+          "summary": "DRDO ready with Agni-VI: Why this next-gen ICBM matters for India\u2019s deterrence &nbsp;&nbsp; The Times of India",
+          "author": "The Times of India",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        },
+        {
+          "title": "1 missile, many targets in single launch: India successfully tests Advanced Agni - India Today",
+          "url": "https://news.google.com/rss/articles/CBMiiAJBVV95cUxNOWxFclNGZTBlRjJXYUVVM01CQmMwT2FvTDNXWGZaUUoxelQ3QThCN2RxMzVPejJfMTVJVU15a25LaFpDWnJ2MDR5SFZSWE9EcUREaVFnZmphUzUtRWNuTGtEUkFaOGY1eEFENDd5T0tDbHRHT3dEUURGdUY3SEl2V0poY1ZjQlpLTVJLYkFkX0NseU9IcVdEQ2wtQlF6SE9UemRSVjZqWVc0emthcVZRT3hNTE9kVE9TQnpINjRhRjNNdU5QOEQxNlBjd29QQm95dU94M3MxYmdLUXlwdmJsSjJSVlExWnhCbTZOd1ZQYzRpMGRYUjFqZEU2bU9uTV80YzNCZWN3Z2HSAY4CQVVfeXFMTmlzVElWSWtJVHctRjlpWFNEbjdkcC0zSV9kcWNQaEJXTE9tdFFza2x4U0o5YnZmcGJGam9TUk50U2FhWHJMRm9hWm5SVElDa1FzRlpHVDVhYVNjd0l5dldvS3JKNFpubkhjZ05Rd24zTHVfbGxuWnYtWERnd25rNW41alBlanhYR2dqTUR3SmJlazhfYmhCdHdxM3hHTWJJWmoxUi00bUZqYnQ1ZGswVnNoaEt1YzFHUnJXNW85Y1ZoUHdGRGtvbFQ5OV90akVkN0FnbEdiV2tFc3o2aXR2TDlrOXlLOVBRczJOWlZ6V0NlUk5Lam9zWFRXMllhd081UWdSVURRSDR1dUE3UVdR?oc=5",
+          "published_at": "2026-05-09T07:00:00+00:00",
+          "summary": "1 missile, many targets in single launch: India successfully tests Advanced Agni &nbsp;&nbsp; India Today",
+          "author": "India Today",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Defence ministry confirms \u2018mystery missile\u2019 test as \u2018advanced Agni with MIRV\u2019 - India Sentinels",
+          "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxNS0pqYUlYdW1zNHVLSnNqdlhmU3FTc1BPblpLZVV2UWVTdTk2ZHRiM0F4b080QnJGVUE1RjJvWmthZ1VWVzNsYS1hQVJ2Z010NHRYaGM2cVRXUDctRGhvTE1LWTZqaFRKR0JfSDlHVEhoYU1hYkNfcHdXQ2UwMFQwa2tPV0NBQWU5SFh5X3VZTmx2aUxZUExrTVVCaXlfbW9QWFVKbFhQQVA3dWV1M2I2b0RsdENZYUh5eDBieGhlOXpzQUZhaExoRThKQ2k?oc=5",
+          "published_at": "2026-05-09T07:00:00+00:00",
+          "summary": "Defence ministry confirms \u2018mystery missile\u2019 test as \u2018advanced Agni with MIRV\u2019 &nbsp;&nbsp; India Sentinels",
+          "author": "India Sentinels",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India successfully tests advanced Agni missile capable of hitting multiple targets - Moneycontrol.com",
+          "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNWmwwUC1UM21oQlZFT3pBMTdsbTJTWURwN0lkZW1KNmMxcTF0ZHJaX01mRXk0YTBKZ0lodGNlQklHOUF3dzFwQmVRMEJEanZ0eTBzX3VrYUJEX1ZWbVZyZkE0SUt3M2VwUlNiM3R4SF95Z29kVGx0U19hc29kRW1ZTzU2RmhLWHRRLTlVTzZ6TF9yU3RUOTIyOWR5RlFUWjNWNEMxRTg5V1l1X1VTbGVDQXZ4eVZFNUdHRV9ZbmhBZGlTRU1yc2pSY1RYOTdnV2l0ZVHSAdcBQVVfeXFMUFFSNHFRQ1ZzTkM5TGNqclhzdDN0VTV1QzQ1OTRkanJnRU1oX0l3TEdhMzFTcVh1eUozVWdyS3cwMGxTWHdWNmdyakU3SmJ5WjF2YVFaNU9NczN0VThIY01DSFRBdDVqYlpEbTQ5NWlULXFwZHFNQTIyeHBIVV9aYVVXMDgxMHR0Q3NsLVRzZ2R0aUVyNlhGeWRTaDdJTldyRjFnXzhFOWJNYzNJZVRCLUdoOEdOZ2ZXRGlxMElLTHNkbDRacGk3WjVkaUYxUjhRNm50X1Fqc2s?oc=5",
+          "published_at": "2026-05-09T07:00:00+00:00",
+          "summary": "India successfully tests advanced Agni missile capable of hitting multiple targets &nbsp;&nbsp; Moneycontrol.com",
+          "author": "Moneycontrol.com",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Another pov \ud83d\udc40",
+          "url": "https://www.reddit.com/r/Bhubaneswar/comments/1t78cgq/another_pov/",
+          "published_at": "2026-05-08T13:42:22+00:00",
+          "summary": "I think is is some type of missile testing at chandipur, baleswar \ud83e\udd14",
+          "author": "r/Bhubaneswar",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Missile test?",
+          "url": "https://www.reddit.com/r/kolkata/comments/1t77f6l/missile_test/",
+          "published_at": "2026-05-08T13:06:57+00:00",
+          "summary": "South-West side sky. Supposed to be from APJ Abdul Kalam Island according to my location.",
+          "author": "r/kolkata",
+          "platform": "reddit_search",
+          "matched_query": "\"Abdul Kalam Island\"",
+          "matched_keywords": [
+            "abdul kalam"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Days after DRDO chief said India developing ICBM, BJP says \u2018Agni-6 is ready to make history\u2019 - The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMi9wFBVV95cUxQd0IyN0NVUnZCX2JuZWpJSFB0WVM2a2ZWWHA3dEo3aktKRExGdUdRNS1VX2NaYjQ3eEJ5VzB2bEk0NHhUdkE3bzVJT0FSN3NaQk9UYjNPRUI5R09IVzFTTnFsSmJBWXBXVmtkQkF3dVB6Y0I2enJxeVk1eFp2UXdIR2JsNUVGWmRhaHR4c1ZpSmc4X3NYeFQ5dXM3RTNEMDhUd3dYejJ2X09YZG15NGRQYnJqUnFaNTcxbFREaFN0TmVHbUdlRmQ1OFRLaWFnek1WWE5XOWlIRmRRWWNfbEE5cFlwMEZCWVlPcVF6dmVveG85Y0dyb1Nr0gH8AUFVX3lxTE5Jb2NtLTVtVXRYODZsZVlURHE1RlpCbXpwTDZnQ19OUGI0NVVobjVVR1lqWlNDYkRZam15ZEFIWHotdFI5WFRmRVhxTFBQRmg5SGFvSFEyd0E1dzhyWnpZXzNmVjhHWV9qa3JjdFlLb1daREpkTjNVNmtlQUZZODhwdFA1MTN2T3gzSFZNdGV1UGtMQm1rbTlaUld4YnNRbzBGNWZPclFyMnM2MkVSbDZicE1PcjdBV25KVDllSS0yMVZjbmZLdUJYdmI0NWs4dGthTERNMklWaEFmUVNLQlRfLVpZUjJ6aUt3NEdmcDlXY2dzQmFUZU5EUGNNTg?oc=5",
+          "published_at": "2026-05-06T07:00:00+00:00",
+          "summary": "Days after DRDO chief said India developing ICBM, BJP says \u2018Agni-6 is ready to make history\u2019 &nbsp;&nbsp; The Times of India",
+          "author": "The Times of India",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        },
+        {
+          "title": "India successfully conducts 2nd test of long-range hypersonic anti-ship missile with 1500km range, 10 Mac - The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMiqwJBVV95cUxPMm5tbjZfR0c0clBPMVRLYy03N2JuQXhFbFF5bjVfb1l0SUt6RWpDX3NLOUVuQkxZeFJlZEVmVkVTY1lXakJCUnFzbEIyeV9vNC1qeUhFcjBQbEktVHR6bklScWxDRG00N080ZExUQ25xSEQ5MXFuZG5nSkpXaHgzZ1QxdlhadE1uN1JiUlhlU0lWQ3R5SDNBM1ZfTTRqY2gteFpZdlRTaFlkdWIxZ3VOMlBmdDliU0ZjRHRFangyWmM3aHVoZWlJWGFZN3hQOVdKaTFoMFM4Y0huRVNqUHh6MV92QW5hd3NGbzhJS1BYanJkQVhPYlZjNWtaOEV1aGd5bncyVHFDSXhNQUE2dmpoZHAwdE1GX1NUT1NpdFB6Z2dxM2xaMTVqYjBIa9IBsAJBVV95cUxQaU5WT0Q0bWNGa2N1bmhqZG1TZGtKOFpwRUNLVVp2Q0QySGJaVDBLRGw0VUFWeFJzbjU3WHlqRFBuMGQyd094MjZZZF9PVW1vcDFqTWEtTk9fYkF5LWZ3bGNkcjhoZlBkdlFiSnpaU1dNMXhjczV1TTZGU1Z0LXNMalR3QV9tbTI4Y2NlNk40N2lxQ2Uxcm1sSTl0Zkk3OG9HYWhVLVgyaWFiTzl3WHVtTk9iMS1sMEFONzlHRlF3ZWtoZms0WFU3N2JWYzBqQ3Jkc3Nuc1BkRnNFQ2ZTSDNnZk11RUVHME1uMnlFYXl5Z2VwTGl3d1RIc1RhQWFWTW9OMU9xMHVLaHZYVHVLVHZTNWhmN05JQmRnbHk2Z0pCR2VIYUg0Vk84bEl2V3QyeGRN?oc=5",
+          "published_at": "2026-05-03T07:00:00+00:00",
+          "summary": "India successfully conducts 2nd test of long-range hypersonic anti-ship missile with 1500km range, 10 Mac &nbsp;&nbsp; The Times of India",
+          "author": "The Times of India",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "hypersonic"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "DRDO ready to advance Agni-VI programme, awaits Centre\u2019s nod: Kamat - The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxNVTFvek0xWlFEeTJSc3ZQSHlYQ1VjY0NTNzl0aF9xazB3VjhvenZXeFlucGFia3Zlc0xCdHhFcWNqSFR2TVFJT1FIaGNZTWtpS0MyOFVSREV5SFFoWTJGeWs5QW5vZXlqUWNxTXduZ0xhR3NQaTdzVURIUDZlblJIYWYtM0xnOFQ3VVByWWtBTXJUYm1BTF9nQmZFSW4wS3FmZ0Y5cU50ZzA0X29TckdVRGFKcHFfckZtbjhWa0wyUW92Q0Y3ay05dThyREpiejZlSHVKUE9R0gHbAUFVX3lxTE12LU5EOEFCaExFeHFmUFNrandfOC1xM2RLazEyWVlIdmVmS1c3WlZPNjVGeXZqcDFjSkVnUzExS2FtcG1PODNZN015RjRJaHZLN3NseVJtaWs4aV9iZmRSTDhYUUdZRDZqYkJjbmV5TjFYeUhRUTRoLU5UcVpQUURLN0VUU2xHSmN6T3ZOZFBQQ1NCUUROVEVIdUtLZ2lKYzRjanpvYjY2VzFmTlpYSzJGU0tCOW1ELWhySmdrTWVfOU5TOGlmRE01Q0owNFVMOXN5Vk8wdnAyWGVYYw?oc=5",
+          "published_at": "2026-05-01T07:00:00+00:00",
+          "summary": "DRDO ready to advance Agni-VI programme, awaits Centre\u2019s nod: Kamat &nbsp;&nbsp; The Times of India",
+          "author": "The Times of India",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ]
+        },
+        {
+          "title": "The reason you heard loud sonic boom of Rafale Fighter jet was because of Missile trials",
+          "url": "https://www.reddit.com/r/Jamshedpur/comments/1sncfpr/the_reason_you_heard_loud_sonic_boom_of_rafale/",
+          "published_at": "2026-04-16T18:42:26+00:00",
+          "summary": "Jamshedpur folks. You may have witnessed loud sonic boom but this might become routine in future as there a lot of AIR to AIR missile testing going on ITR Chandipur at odisha. Jets from Kalaikunda,hasimara or north east may do trial and will enter or exit from jharkhand east borders during these missile testing. So enjoy the sightings.",
+          "author": "r/Jamshedpur",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Lanciato con successo il missile balistico indiano Agni-3",
+          "url": "https://www.reddit.com/r/AresDifesa/comments/1r5c3mv/lanciato_con_successo_il_missile_balistico/",
+          "published_at": "2026-02-15T11:11:43+00:00",
+          "summary": "Recentemente, in India il missile balistico a raggio intermedio \u201cAgni-3\u201d \u00e8 stato testato con successo dal poligono di tiro integrato di Chandipur, Odisha. Il suddetto lancio ha convalidato tutti i parametri operativi e tecnici previsti. La prova di lancio \u00e8 stata effettuata sotto l\u2019egida dello Strategic Forces Command. L\u2019Agni-3 \u00e8 un missile balistico a medio raggio accreditato di una portata attorno almeno i 3.500 chilometri. Trattasi di un missile balistico a due stadi a propellente solido in grado di trasportare un carico utile di 1.500 chilogrammi; pur non essendo ammesso ufficialmente dall",
+          "author": "r/AresDifesa",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-3",
+              "name": "Agni-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3000,
+                "max": 5000
+              }
+            }
+          ]
+        },
+        {
+          "title": "Strategic Forces Command successfully test-fires 3,000 km-range Agni-3 missile - The Times of India",
+          "url": "https://news.google.com/rss/articles/CBMi5wFBVV95cUxNeXc0NVNaQ1lqaTVFV1UwTE9od3lLeldXakZtMzdYTFk4Zlk2Q3Y0Q3VRc0ZmY3VSSVVHUjhYYWw4Z2J3Wk5UelBsSzFGUVIxVGpsMjFUbjFnVjJoVTZuMVIyODVnQ1FCNXpENWVvXzBPNFJFQVN6RnhmNUl6M3U0YjFTdHVJQjVUUWpsZFc1NWRuMHNuRUJkMnNfVEpMNU94Q09BYnFqTS0wX0Nya3pENHpNQ3hMNUxpSGpfWC1yVlFkZmVkdThDM2h4dHBZOG5DMVZxSVpWWWpxMEJlaUVaa19VNE5INEHSAewBQVVfeXFMTTBXVmtSdUJVZzFWVDl6X2ppXzlsMWh3VFJ6V1F4dmFEYm1PdjRveXJXdldZbm43QjMtVlJkbGlaZjNreEhmT1BvNUhnWGgyUXh6clNGNHA0OUkxd1pGUEFJc3V1Wm12VFNvWVhCSXdOWUF5cWZwZXZsU2dtTzdPZVBHcFZVNnJMVTlkUzZCVi0xNWNpcFg0eFdBclRqajRjSFNoQXgzZ2RrQnhROV82dXN5MGhxbVEtWU0zUDhldmVmN1ZfUTllMVVNb3k2S0ZCY0VoY0E3azJmczhkbTllZURPMWNseC1veVY1UGg?oc=5",
+          "published_at": "2026-02-08T08:00:00+00:00",
+          "summary": "Strategic Forces Command successfully test-fires 3,000 km-range Agni-3 missile &nbsp;&nbsp; The Times of India",
+          "author": "The Times of India",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-3",
+              "name": "Agni-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3000,
+                "max": 5000
+              }
+            }
+          ]
+        },
+        {
+          "title": "India successfully tests fires nuclear capable Agni-3 missile off Odisha coast - The Hindu",
+          "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNMy1TbkFuaXN3UmphWXBxMlNCTWtWZ0xBVHYyZ1pUODNXdTB5NWlPd0RHS0t2Z3ZWbXgtY182WmxqZjIwZ0xvSDhRS3RmWUx5b0FVdEUzc3Q2R29XbEtfYjNaNDhwOG1GWVh6WnJsMlpmMVM5RkxMZzlyYjJQamp1UEZzRmlKOXI4VUdXTF93eDhkd1JUUUxMb1NmOVFuN1hPaGUzanpJUEh4SjVLZkkzUl82a2FZZW4zSmllV2FMa1RSbTN6WHRZcENpUkRIRzV4V1l30gHaAUFVX3lxTE1TaFl3aERrdmRlalpyem5PS0E1cFhpbzZxSGgxOGFYcHc4NHJ6YnVnQ25EM01lc2VnaUQtM25FWjVuc05IZEJIcFRFZzI1V2VGX1ctU3dPYTIzQnF6YkFjN1VFLWxYdVRDTGpDUV84NVd5Vm5WTlhYM2VYVXhEX2wtOWhfc014cVJGWmRScnRYMnRGTnJpamF3VFNUang2VFE4WjEtWWF3bUJTZk9RUEVwNGhocURFX0dIeFN5LU1VOTVOX3MzeGUwU3hFSjJnUTVkRnJOYkk0Ukt3?oc=5",
+          "published_at": "2026-02-07T08:00:00+00:00",
+          "summary": "India successfully tests fires nuclear capable Agni-3 missile off Odisha coast &nbsp;&nbsp; The Hindu",
+          "author": "The Hindu",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-3",
+              "name": "Agni-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3000,
+                "max": 5000
+              }
+            }
+          ]
+        },
+        {
+          "title": "India successfully test-fires Agni-III intermediate-range ballistic missile from Integrated Test Range in Odisha - News On AIR",
+          "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxOczdxdS1vdk1CZ2s2eWUxOWE0dk5wYWRGQnE1Y252ZDJRLXZYLTFqZFNfZmVLclJYV2Z2dl8yNGVtNktnNkFRT0loeWRTMUFVSjZuX0N4U0tUbFJhaFZLTkk1eXNSNEt5Zm8wMkc1YVc1Z2E3ZWlFYUxFRzJVZXJKZkdLbnRMbTRxWlFvSGNpazhyam9xWkFDZ2tJT0FFaVYwd0htY1IyOGF5aVRfWVdMZ1VXU2dab2dINnhCWWVWcUJldnFDQnc0OGg2WUpQelRIQU1kZQ?oc=5",
+          "published_at": "2026-02-06T08:00:00+00:00",
+          "summary": "India successfully test-fires Agni-III intermediate-range ballistic missile from Integrated Test Range in Odisha &nbsp;&nbsp; News On AIR",
+          "author": "News On AIR",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "integrated test range",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-3",
+              "name": "Agni-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3000,
+                "max": 5000
+              }
+            }
+          ]
+        },
+        {
+          "title": "Agni-3: India test fires missile that can strike up to 3,000 km - India Today",
+          "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxPSnRMWWItRjBnTUc1eTJmTGFmZnlONGd4M05zOFBDUkVOMUI1N2YzZGwzUHh3dmVtWjFldjZqWlpNRW5QRmJoY2c1OUpRc0h2RmtIREsyNk1BZzhGSFBFUjJKbnRkeThWUjZCQnBFSEpGamd3eTc2Rm1TazJfTGw2N1Bjd1g2T3pPRXBqU3BFeDllaXNBc3J0cmNESjZGR1h3SVlMYWxHVjZsV0XSAbABQVVfeXFMTVJ5T3ZnendQX0laQnE5UHNxYmhoMm8wUmtfSUVYZG1XSnZ0NXBGaUIzTkNsSV9Vc2pRS0NEeTMyNGVtNkNOd2xpR1R5WW8xZlYtNFFpYWw5RVBPRFVlS2kxeE9DUHVIazlELUlkcVNPLWIyZVhHNERQS2ZMNUZTLVgzdTVfMW4xMi04Y0VVTWtVLUVwRnlYQjdYY1JjYkNqZkY0TjJtR3dMUW5NeG5vYXE?oc=5",
+          "published_at": "2026-02-06T08:00:00+00:00",
+          "summary": "Agni-3: India test fires missile that can strike up to 3,000 km &nbsp;&nbsp; India Today",
+          "author": "India Today",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-3",
+              "name": "Agni-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3000,
+                "max": 5000
+              }
+            }
+          ]
+        },
+        {
+          "title": "On track: India\u2019s rail-based Agni -Prime - The International Institute for Strategic Studies",
+          "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNTDZmTl9iU0QteV9OWWRIaUI4aFVKbUFIZGxUMktlLTZBOU5FUVRqckRYMEs2c2FwdWdDajVNU1FCT1BRMXBJNkJkdVRrUHdzSms1X0ZmdGN0RkVXLXhvaVBVd3lOUzFqNVVYQmxIbTB3VkFQR3ZkR0JUR1N2RHprUlRIY3FzRXJZTkQwZlZzdThOWjN5SU9UREJReldqSXdmZXRzWVRTcmJ4YTlWakwzVQ?oc=5",
+          "published_at": "2026-02-04T08:00:00+00:00",
+          "summary": "On track: India\u2019s rail-based Agni -Prime &nbsp;&nbsp; The International Institute for Strategic Studies",
+          "author": "The International Institute for Strategic Studies",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "DRDO Successfully Tests Solid Fuel Ducted Ramjet (SFDR) Missile from Chandipur, Boosting India\u2019s Hypersonic Strike Capability",
+          "url": "https://www.reddit.com/r/IndiaNews247/comments/1qurkhc/drdo_successfully_tests_solid_fuel_ducted_ramjet/",
+          "published_at": "2026-02-03T13:12:49+00:00",
+          "summary": "",
+          "author": "r/IndiaNews247",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "hypersonic"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "DRDO Successfully Tests Solid Fuel Ducted Ramjet (SFDR) Missile from Chandipur, Boosting India\u2019s Hypersonic Strike Capability",
+          "url": "https://www.reddit.com/r/DefenceWorlds/comments/1qurigl/drdo_successfully_tests_solid_fuel_ducted_ramjet/",
+          "published_at": "2026-02-03T13:10:17+00:00",
+          "summary": "",
+          "author": "r/DefenceWorlds",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "hypersonic"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India Successfully Tests SFDR Technology, Enters Elite Missile Club",
+          "url": "https://www.reddit.com/r/defenceinsider/comments/1quqsof/india_successfully_tests_sfdr_technology_enters/",
+          "published_at": "2026-02-03T12:36:29+00:00",
+          "summary": "India has taken a major step forward in advanced missile technology. On **February 3, 2026**, the **DRDO** successfully demonstrated **Solid Fuel Ducted Ramjet (SFDR)** technology during a test conducted from the **Integrated Test Range (ITR), Chandipur**, off the Odisha coast. The test was carried out around **10:45 am**, and all key subsystems performed exactly as planned. These included the **nozzle-less booster**, the **solid fuel ducted ramjet motor**, and the **fuel flow controller**. After initial acceleration by a ground booster to the required Mach speed, the SFDR system functioned sm",
+          "author": "r/defenceinsider",
+          "platform": "reddit_search",
+          "matched_query": "\"Integrated Test Range\" India",
+          "matched_keywords": [
+            "chandipur",
+            "integrated test range"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [
+            "planned"
+          ],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Defence Research &amp; Development Organisation (DRDO) has carried out successful demonstration of Solid Fuel Ducted Ramjet (SFDR) technology from the Integrated Test Range (ITR), Chandipur off the coast of Odisha at around 1045 hrs on February 03, 2026.",
+          "url": "https://www.reddit.com/r/GoodNewsIndia/comments/1quql2v/defence_research_development_organisation_drdo/",
+          "published_at": "2026-02-03T12:26:08+00:00",
+          "summary": "",
+          "author": "r/GoodNewsIndia",
+          "platform": "reddit_search",
+          "matched_query": "\"DRDO\" Chandipur",
+          "matched_keywords": [
+            "chandipur",
+            "integrated test range"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Day 32: PRITIBIMB Series - APJ Abdul Kalam, The Missile Man &amp; People's President",
+          "url": "https://www.reddit.com/r/Ziddi_Imposter/comments/1qtye6z/day_32_pritibimb_series_apj_abdul_kalam_the/",
+          "published_at": "2026-02-02T15:40:01+00:00",
+          "summary": "Hey Reddit fam! \ud83d\ude80 Welcome to **Day 32** of my **PRITIBIMB Series**, where we dive deep into iconic figures who shaped history with vision, grit, and inspiration. Today's star: **Dr. A.P.J. Abdul Kalam** (1931-2015), India's beloved aerospace scientist, \"Missile Man,\" and 11th President. From newspaper boy in Rameswaram to Rashtrapati Bhavan, his life screams \"Dreams don't expire\u2014ignite them!\" Born into a humble Tamil Muslim family on October 15, 1931, in Rameswaram, Kalam sold newspapers to support his family after their trading business collapsed. Despite poverty, he excelled in physics at St",
+          "author": "r/Ziddi_Imposter",
+          "platform": "reddit_search",
+          "matched_query": "\"Abdul Kalam Island\"",
+          "matched_keywords": [
+            "abdul kalam"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Salvo lunch of two Pralay Missile in quick succession from same launcher were successfully conducted today from ITR, Chandipur. The flight test was conducted as part of User evaluation trials. Both the missiles followed the intended trajectory meeting all flight objectives.",
+          "url": "https://www.reddit.com/r/IndiaPulse_/comments/1q0cet2/salvo_lunch_of_two_pralay_missile_in_quick/",
+          "published_at": "2025-12-31T12:57:39+00:00",
+          "summary": "",
+          "author": "r/IndiaPulse_",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "pralay"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            }
+          ]
+        },
+        {
+          "title": "DRDO successfully conducts salvo launch of two Pralay missiles in quick succession - PIB",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9zS0ZrX3gwTHBBSVB2WEYwM0RmS010ekVkUFoyR0drdFdGZUJ3bUx4SGhldTVCWFRNNFJtWlE2Nzh1YmgtS29kc21EZlpKbkQwcUpLVXBzVlZkQk9yYkRuZ1JJRTlIeXBoREJFOWxCZGpxazMzWVVtZ3Jn?oc=5",
+          "published_at": "2025-12-31T08:00:00+00:00",
+          "summary": "DRDO successfully conducts salvo launch of two Pralay missiles in quick succession &nbsp;&nbsp; PIB",
+          "author": "PIB",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "pralay"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            }
+          ]
+        },
+        {
+          "title": "DRDO conducts salvo launch of Pralay missiles off Odisha coast - The Hindu",
+          "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxOWDZfWnozdmJ5d21hN2hKSFpZZmVYWWlVenJNSnFETGIwRHBZZ2JsN0pSeWNnRG1LZFlhdV9RT0xmbFFocDh1WnF3cThXblpQeW5ZanB4QlA5RC1iSWZsX3Bjc1NaVHBXU0QyaV9adS15Nm55Vlp3MFNQQ3VCb2V1M0lzZk5Wa0ZibEdOb0hQZFB4VDdGekZvSjB0OGFwcVk3MGx0dTI1SGdBbDZHUHlxclgzSXQyV3p3WHFEdnJn0gHEAUFVX3lxTE9VNkRvQU15YlZRV2lBbWM1M0xOUW8ybU13ZDVUX0JVRDNxdWR6SkJMMHI2Uzc3Z0pjNmdIOU9FSWREZzBWZ3I1M3A0UEpRdUNseXlKcGZBMUNFQ1c5VEVqWUtuWU9JeEt3VUh4ZjVjVlFDOXlWSnMtM0xZeV91R3E0bzY5RkJtTTEwcWdYMmozaThkYWszcV9WVkd4TlpTeU5IVnFFalJ4YUZfYmp6Vmhmc0Q3czdpOUFwUE9sVjZ1VVdxN0g?oc=5",
+          "published_at": "2025-12-31T08:00:00+00:00",
+          "summary": "DRDO conducts salvo launch of Pralay missiles off Odisha coast &nbsp;&nbsp; The Hindu",
+          "author": "The Hindu",
+          "platform": "google_news",
+          "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+          "matched_keywords": [
+            "pralay"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            }
+          ]
+        },
+        {
+          "title": "DRDO successfully conducts salvo launch of two Pralay missiles in quick succession - PIB",
+          "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1lSHhYMjRCUV9lRFJ6bkpjSmxMaHpGUXlrWGFlT2lhV3EyLWtMWmF6OTNOa3p5VkM0dF9iY2J2VXhsLWkwdWpmcEt5S0FFenNRUUZYaWJtNmtCbzJZQTNaZ01vZDhWdXZzRVc2bmgyWEplVXNCQTh4Qzd3?oc=5",
+          "published_at": "2025-12-31T08:00:00+00:00",
+          "summary": "DRDO successfully conducts salvo launch of two Pralay missiles in quick succession &nbsp;&nbsp; PIB",
+          "author": "PIB",
+          "platform": "google_news",
+          "matched_query": "(DRDO flight test) OR (DRDO missile trial) OR (DRDO Chandipur) OR (Agni missile test) OR (BrahMos test) OR (Akash missile test) OR (Barak-8 test) OR (Prithvi missile test) OR (Nirbhay test) OR (K-4 missile) OR (Shaurya missile) OR (Pralay missile)",
+          "matched_keywords": [
+            "pralay"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            }
+          ]
+        },
+        {
+          "title": "In India lanciato con successo un Agni-5",
+          "url": "https://www.reddit.com/r/AresDifesa/comments/1mwzpjr/in_india_lanciato_con_successo_un_agni5/",
+          "published_at": "2025-08-22T07:11:27+00:00",
+          "summary": "In India le Forze Armate di Nuova Delhi hanno lanciato con successo un missile balistico a raggio intermedio \u201cAgni-5\u201d dal poligono di tiro integrato di Chandipur, in Odisha, il 20 agosto 2025. Il predetto lancio ha convalidato tutti i parametri operativi e tecnici previsti in sede di sviluppo. Il lancio del Agni-5 \u00e8 stato eseguito sotto l\u2019egida del Comando delle Forze Strategiche. Il missile Agni-5 \u00e8 stato sviluppato dalla Defence Research and Development Organisation (DRDO) del Ministero della Difesa di Nuova Delhi. Caratteristiche del Agni-5 L\u2019Agni-5 \u00e8 propulso da un motore a combustibile so",
+          "author": "r/AresDifesa",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            }
+          ]
+        },
+        {
+          "title": "\ud83d\ude80 India\u2019s Agni V Missile (DRDO)",
+          "url": "https://www.reddit.com/r/UPSC_Facts/comments/1mwy6od/indias_agni_v_missile_drdo/",
+          "published_at": "2025-08-22T05:38:04+00:00",
+          "summary": "# \ud83d\udcf0 Context * India successfully test-fired **Agni V**, a nuclear-capable long-range ballistic missile, from **Chandipur, Odisha**. * Part of the **Agni series** developed by **DRDO**. # \ud83d\udd11 Key Features * **Type**: Intercontinental Ballistic Missile (ICBM)-class. * **Range**: 5,000 km (covers entire Asia + parts of Europe &amp; Africa). * **Payload**: \\~1,360 kg (nuclear warhead capable). * **Height**: 17 m. * **Stages**: 3-stage solid-fuel missile \u2192 improves mobility &amp; response time. * **Future upgrade**: Possible **submarine-launched variant** (enhances second-strike capability). # \ud83d\udccc Agni",
+          "author": "r/UPSC_Facts",
+          "platform": "reddit_search",
+          "matched_query": "\"Abdul Kalam Island\"",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "India Successfully Launches Agni-5 Missile with Full Range Covering Entire Asia.",
+          "url": "https://www.reddit.com/r/WorldDefenseNews/comments/1mwc6hm/india_successfully_launches_agni5_missile_with/",
+          "published_at": "2025-08-21T14:16:51+00:00",
+          "summary": "According to information published by the Indian Ministry of Defence on August 20, 2025, the successful flight test of the Agni-5 intermediate-range ballistic missile (IRBM) has been confirmed. The launch took place from the Integrated Test Range (ITR) at Chandipur, Odisha, under the Strategic Forces Command, which oversees India's operational nuclear forces. This user-training launch achieved all technical parameters, demonstrating readiness under realistic operational conditions and reinforcing India\u2019s ability to deliver long-range precision strikes as part of its nuclear deterrent posture. ",
+          "author": "r/WorldDefenseNews",
+          "platform": "reddit_search",
+          "matched_query": "\"Integrated Test Range\" India",
+          "matched_keywords": [
+            "chandipur",
+            "integrated test range",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            }
+          ]
+        },
+        {
+          "title": "Intermediate Range Ballistic Missile \u2018Agni 5\u2019 was successfully test-fired from the Integrated Test Range, Chandipur in Odisha on August 20, 2025.",
+          "url": "https://www.reddit.com/r/newsindia/comments/1mwavdf/intermediate_range_ballistic_missile_agni_5_was/",
+          "published_at": "2025-08-21T13:25:06+00:00",
+          "summary": "",
+          "author": "r/newsindia",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "integrated test range",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            }
+          ]
+        },
+        {
+          "title": "Proud moment for the state! Congratulations for Agni-5 \ud83c\udf89",
+          "url": "https://www.reddit.com/r/Odisha/comments/1mwa4ct/proud_moment_for_the_state_congratulations_for/",
+          "published_at": "2025-08-21T12:53:39+00:00",
+          "summary": "",
+          "author": "r/Odisha",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            }
+          ]
+        },
+        {
+          "title": "Indian missile Agni V spotted from Bangladesh. It was tested this evening from Chandipur Odisha.",
+          "url": "https://www.reddit.com/r/Odisha/comments/1mvkz0t/indian_missile_agni_v_spotted_from_bangladesh_it/",
+          "published_at": "2025-08-20T17:15:26+00:00",
+          "summary": "",
+          "author": "r/Odisha",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Indian missile Agni V spotted from Bangladesh. It was tested this evening from Chandipur Odisha.",
+          "url": "https://www.reddit.com/r/Kolkatacity/comments/1mvkssv/indian_missile_agni_v_spotted_from_bangladesh_it/",
+          "published_at": "2025-08-20T17:09:23+00:00",
+          "summary": "",
+          "author": "r/Kolkatacity",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": []
+        },
+        {
+          "title": "Intermediate Range Ballistic Missile \u2018Agni 5\u2019 was successfully test-fired from the Integrated Test Range, Chandipur in Odisha on August 20, 2025. The launch validated all operational and technical parameters. It was carried out under the aegis of the Strategic Forces Command. \ud83c\uddee\ud83c\uddf3",
+          "url": "https://www.reddit.com/r/anti_fake_news_india/comments/1mvghbi/intermediate_range_ballistic_missile_agni_5_was/",
+          "published_at": "2025-08-20T14:33:14+00:00",
+          "summary": "Source --&gt;&gt; Press Release:Press Information Bureau https://share.google/I3iIwihKGwRcyVbEr",
+          "author": "r/anti_fake_news_india",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "integrated test range",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            }
+          ]
+        },
+        {
+          "title": "Intermediate Range Ballistic Missile 'Agni 5' was successfully test-fired from the Integrated Test Range, Chandipur in Odisha on August 20, 2025.",
+          "url": "https://www.reddit.com/r/Vimarsa/comments/1mvg2lv/intermediate_range_ballistic_missile_agni_5_was/",
+          "published_at": "2025-08-20T14:17:30+00:00",
+          "summary": "",
+          "author": "r/Vimarsa",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "integrated test range",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            }
+          ]
+        },
+        {
+          "title": "India Successfully Test-Fires 'Agni 5' Intermediate Range Ballistic Missile In Odisha's Chandipur",
+          "url": "https://www.reddit.com/r/IndiaSpeaks/comments/1mvfvnj/india_successfully_testfires_agni_5_intermediate/",
+          "published_at": "2025-08-20T14:10:16+00:00",
+          "summary": "",
+          "author": "r/IndiaSpeaks",
+          "platform": "reddit_search",
+          "matched_query": "\"Chandipur\" missile",
+          "matched_keywords": [
+            "chandipur",
+            "agni"
+          ],
+          "aoi_relevant": true,
+          "evacuation_terms": [],
+          "forward_looking_terms": [],
+          "logistics_terms": [],
+          "matched_systems": [
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "indicators": {
+      "evacuation_notice": {
+        "key": "evacuation_notice",
+        "label": "Civil precursor (evacuation / road closure / fishing ban) near the range",
+        "weight": 0.15,
+        "score": 0.9,
+        "available": true,
+        "detail": "7 evacuation report(s), 4 referring to an upcoming trial",
+        "evidence": {
+          "evacuation_count": 7,
+          "logistics_count": 0,
+          "items": [
+            {
+              "title": "#breaking India carried out a highly secretive missile test from the Chandipur range in Odisha",
+              "url": "https://www.reddit.com/r/AllindiaStudentUnion/comments/1u40lh3/breaking_india_carried_out_a_highly_secretive/",
+              "platform": "reddit_search",
+              "published_at": "2026-06-12T16:42:26+00:00",
+              "evacuation_terms": [
+                "evacuated"
+              ],
+              "logistics_terms": [],
+              "forward_looking_terms": [
+                "likely"
+              ],
+              "matched_systems": [
+                "Agni-VI"
+              ]
+            },
+            {
+              "title": "11 villages evacuated ahead of missile test in Odisha: Over 11,000 people moved from areas around Chandipur... - Bhaskar English",
+              "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPeWNqcnBrbW1zNGRZSmlwWTZRRnVmMDNXSTc4R0g3Z3dpVkxEckR5RnJadGJpX25Dclg5eVRHYUhoaXRVN0pQSTVBeHJyRlN1WFNpdUtmUjEzN1BUSWRiSGY2VWhycmMtdjRqX19nUXRQUXR3anFMTW1vcFRHQU9QMmRpQUdtaFN2b25BT3dGTS1VbUhrQ2VldTg0UGNnWV95QUVEci0yNkFaZ01mMmdtRlZlZzVfc05lU2JYb3FR0gHDAUFVX3lxTE9LdF8yX09EQ2JESzJxQWRWQjJfWjNaYV9fSDFwcnFaVFgxOS1fQXR4UU9qT1R3VmIyRkNjdURhNVBITGRsVzk1R095dFU5QTNDd2lWYkJaNHI4NmhJT0habjRUYUNHMU95X25rZ0pJdkU2ZzhuVTZiR0ZIcHg1eXpjWFNOYUVYRmJFVFRVSjlId292aXhucjlmcUI4NjhJdlhmTy1mMXNERFVlekgtWEpWZU9LNVhiYVpiVHV3UVlmS2pkQQ?oc=5",
+              "platform": "google_news",
+              "published_at": "2026-06-11T15:57:44+00:00",
+              "evacuation_terms": [
+                "evacuated"
+              ],
+              "logistics_terms": [],
+              "forward_looking_terms": [
+                "ahead of"
+              ],
+              "matched_systems": []
+            },
+            {
+              "title": "Large-Scale Evacuation At Balasore's Chandipur For Missile Test At ITR - ETV Bharat",
+              "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOa3p6Zm4zNFhKM2xXYzB5ZVVGdWlaRlNlLTExa0Jlbi1BOFlDR0ZydG5yVEpuM0xQRExSZWFPYmRKMFBxX3JnbjQzNGVYMUk4bE9UMmdRZHNZeWNWT21haGdyRndtbTRENHFuaVlfZUgyTmNHeXM4TUZoVngtZHlSY0ppN0RZSGRYNHl3bWpxQUk0YXhWUzI5ZG1ZaHdzOC1NS01WY3ZCVm16RmljNG55NFRpRHp3czVES1pz0gHAAUFVX3lxTE5HeUVYZEFyWjR5bHhYel9Va0l1MFFxdDltUV9ldmVvWDAzeEYxYy1GZ2ZEMXl3Y1lLR1hxNS05cWl0dnh6VzZpZ3ZsWUlFX1FyY25qXzB1NGlzTzFaMGVzZkxJbE43OHQ0ZlJHUE1TaU5LbmVETVAzaHlGN3hjUHNnRXIwbFZJZG10QXdvVHdoV0lHaDRERFpONllYRHoycnFkWDRpanBUeGZMUFBrNkJWUWtQYWFuSW16bkN5alJRMQ?oc=5",
+              "platform": "google_news",
+              "published_at": "2026-06-11T07:00:00+00:00",
+              "evacuation_terms": [
+                "evacuation"
+              ],
+              "logistics_terms": [],
+              "forward_looking_terms": [],
+              "matched_systems": []
+            },
+            {
+              "title": "Agni-6 Missile Test Buzz Grows As Over 11,000 Evacuated Near Chandipur ITR In Odisha - SSBCrack",
+              "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNekZFcWlVY2hfMUh1dVBLWE52SjZMdUxFUnRud3NTSHlsY2lIalpBWi1RaWhEdEVnUXFDUzBIY2JRaWV4NldyWV9OV2o1eWpRb3M4UExzYXRTelFrbWpoRFpoTFB4eVNzVWZDUWpSd1hoX2xTRXRZbVh3enFmc2FnYk5pLVdvcHZkNTJRTS1QSjJmN1NoSVJwQWFiVUVGTkFJMzFJaDhTbVBUcHBWc01VTnZJNGt1LUtSd3poQ0hn?oc=5",
+              "platform": "google_news",
+              "published_at": "2026-06-11T07:00:00+00:00",
+              "evacuation_terms": [
+                "evacuated"
+              ],
+              "logistics_terms": [],
+              "forward_looking_terms": [],
+              "matched_systems": [
+                "Agni-VI"
+              ]
+            },
+            {
+              "title": "Is India gearing up for a test of Agni-VI ballistic missile? Massive evacuation sparks speculations - theweek.in",
+              "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQXzA4TGcyNVhkMXgxUzh4YURXY09LQ0xKZ3VSSV9DMHEwSHlqM1RLTjVkMHo5UnhrbjhzNFNPajhJRktTVHllcm9VT1lNS1V6TjJtcEpfRFY3UTY2VUpMN1dUbHVEZDdtd1VnZUJlVVNHNkdybVUyRjRCLXBsb1BTZFVmTFhBeEwyQmVNTXZMNXB3ck5pZHJFRGV5R05TVFdPLWh6UzNzMnFFSXlrU0J2RFQzR21abl8tNWRrVU5qbnBENlFpUHRrMXg4akR4cTczclQyWTRrN3VnSjVzNkNzMUFfNmnSAeoBQVVfeXFMTTBIajI5OElhZ3Qyc213cnpRWkdwSjZOdGsyLWg0N2pfdEZxZ0p4dVdmYks2TGtaemY3bTJZSmFoSzl5MmpqNTFXWUhrcHEwc3Z2Wnhnc0RQYVZFdmJPek1BUlNTNWstU1V1X3JWb0RsY1dmOVpLQy1udzhPSTVmN1hOSnNwU3dSbE9NNmxYcFVkdm9oV1FYNzNfTVd6aWJraU5Sem41NTdqMURwTm1MQmswQW9XSWgxYjNPNWFDeXE4c19aM2dTQWZILXlEQUY5Qk41U3Z3YUZLZVNVUkFvcktEdnc0TUVJNnVB?oc=5",
+              "platform": "google_news",
+              "published_at": "2026-06-11T07:00:00+00:00",
+              "evacuation_terms": [
+                "evacuation"
+              ],
+              "logistics_terms": [],
+              "forward_looking_terms": [],
+              "matched_systems": [
+                "Agni-VI"
+              ]
+            }
+          ],
+          "logistics_items": [],
+          "systems_mentioned": [
+            "Agni-I",
+            "Agni-III",
+            "Agni-IV",
+            "Agni-V",
+            "Agni-VI",
+            "Pralay",
+            "SMART",
+            "VSHORADS"
+          ]
+        }
+      },
+      "media_signal": {
+        "key": "media_signal",
+        "label": "Open-source reporting volume",
+        "weight": 0.1,
+        "score": 0.9,
+        "available": true,
+        "detail": "68 distinct stories from 94 item(s) across gdelt, social, 6 using forward-looking language",
+        "evidence": {
+          "story_count": 68,
+          "article_count": 94,
+          "sources_used": [
+            "gdelt",
+            "social"
+          ],
+          "most_covered": [
+            {
+              "title": "India conducted the successful flight-trial of an Advanced Agni missile with Multiple Independently Targeted Re-Entry Vehicle (MIRV) system from Dr APJ Abdul Kalam Island, Odisha.",
+              "outlet_count": 6
+            },
+            {
+              "title": "India successfully test-fires Agni-1 Ballistic Missile off Odisha Coast - ODISHA RAY",
+              "outlet_count": 5
+            },
+            {
+              "title": "Successful launch of Intermediate Range Ballistic Missile, Agni-4 conducted in Odisha - News On AIR",
+              "outlet_count": 5
+            },
+            {
+              "title": "India Test-Fires Agni-1 Short-Range Ballistic Missile - GK Today",
+              "outlet_count": 4
+            },
+            {
+              "title": "DRDO successfully conducted the maiden flight test of Long-Range Surface-to-Air Missile Kusha (M-2 intercepter) today from the APJ Abdul Kalam Island off the coast of Odisha.",
+              "outlet_count": 2
+            }
+          ],
+          "forward_looking": [
+            "#breaking India carried out a highly secretive missile test from the Chandipur range in Odisha",
+            "11 villages evacuated ahead of missile test in Odisha: Over 11,000 people moved from areas around Chandipur... - Bhaskar English",
+            "Over 11,000 people shifted ahead of major missile test in Odisha at Chandipur - opindia.com",
+            "/r/worldnews - https://www.firstpost.com/india/agni-6-missile-test-likely-from-chandipur-itr-over-11000-residents-evacuated-as-precaution-14021034.html",
+            "Agni-6 missile test likely from Chandipur ITR; over 11,000 residents evacuated as precaution - Firstpost"
+          ]
+        }
+      }
+    },
+    "rsshub": {
+      "enabled": false,
+      "base_url": "https://rsshub.app",
+      "note": "X/Twitter has never returned an item: every public RSSHub instance tried was Cloudflare-gated (403) or down. Set RSSHUB_ENABLED=true with RSSHUB_BASE_URL pointing at a self-hosted instance to enable the routes \u2014 but RSSHub's own Twitter routes generally need X credentials configured there, since free X API access is gone."
+    }
+  }
+}

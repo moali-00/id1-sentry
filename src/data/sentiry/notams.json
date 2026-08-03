@@ -1,0 +1,614 @@
+{
+  "name": "notams",
+  "request": {
+    "method": "GET",
+    "path": "/v1/notams",
+    "params": {}
+  },
+  "status_code": 200,
+  "elapsed_ms": 2878,
+  "captured_at": "2026-08-03T14:10:41.515884+00:00",
+  "error": null,
+  "response": {
+    "fir": "VECF",
+    "indicator": {
+      "key": "notam_restriction",
+      "label": "Airspace restriction NOTAM (Kolkata FIR)",
+      "weight": 0.15,
+      "score": 0.36,
+      "available": true,
+      "detail": "A1632/2026: danger area / range \u2014 activates in 3.0d, 36.1km from the island",
+      "evidence": {
+        "source": "skylink",
+        "matching_count": 2,
+        "top_notam": {
+          "notam_id": "A1632/2026",
+          "notam_id_domestic": "08/1632",
+          "type": "N",
+          "q_code": "QRDCA",
+          "scope": "FIR",
+          "affected_fir": "VECF",
+          "effective": "202608061430",
+          "expiration": "202608071730",
+          "schedule": "1430-1730",
+          "lower_limit": "SFC",
+          "upper_limit": "UNL",
+          "is_restriction": true,
+          "is_danger_area": true,
+          "restriction_terms": [],
+          "matched_places": [],
+          "relevance": "range",
+          "geometry_source": "circle:35nm",
+          "geometry_coarse": false,
+          "positions": [
+            {
+              "lat": 20.801048029704155,
+              "lon": 86.74133470843343
+            },
+            {
+              "lat": 20.801048029704155,
+              "lon": 87.99199862489989
+            },
+            {
+              "lat": 21.96561863696251,
+              "lon": 87.99199862489989
+            },
+            {
+              "lat": 21.96561863696251,
+              "lon": 86.74133470843343
+            }
+          ],
+          "distance_to_island_km": 36.1,
+          "range_relevant": true,
+          "raw": "A1632/26 NOTAMN Q) VECF/QRDCA/IV/BO/W/000/999/2123N08722E035 A) VECF B) 2608061430 C) 2608071730 D) 1430-1730 E) VED-52 ACT. DRG ACT Q11 NOT AVBL BTN CEA AND MAVLA. ALTN RTE: CEA-DCT-LEGOS-DCT-KAKID-DCT-SURUP.SID AVBL FOR RTE Q11 F) SFC G) UNL",
+          "starts_in_hours": 72.3
+        },
+        "other_matches": [
+          {
+            "notam_id": "A1596/2026",
+            "score": 0.36,
+            "note": "activates in 3.6d"
+          }
+        ],
+        "expired_dropped": 156
+      }
+    },
+    "skylink": {
+      "source": "skylink_notam",
+      "status": "ok",
+      "detail": null,
+      "fetched_at": "2026-08-03T14:10:12.557826+00:00",
+      "latency_ms": 1448,
+      "meta": {
+        "total_returned": 209,
+        "note": "the feed serves expired NOTAMs; expired_dropped reports how many were filtered out rather than hiding them"
+      },
+      "data": {
+        "fir": "VECF",
+        "active_count": 35,
+        "upcoming_count": 15,
+        "expired_dropped": 156,
+        "undated": 0,
+        "range_relevant_active": [],
+        "range_relevant_upcoming": [
+          {
+            "notam_id": "A1632/2026",
+            "notam_id_domestic": "08/1632",
+            "type": "N",
+            "q_code": "QRDCA",
+            "scope": "FIR",
+            "affected_fir": "VECF",
+            "effective": "202608061430",
+            "expiration": "202608071730",
+            "schedule": "1430-1730",
+            "lower_limit": "SFC",
+            "upper_limit": "UNL",
+            "is_restriction": true,
+            "is_danger_area": true,
+            "restriction_terms": [],
+            "matched_places": [],
+            "relevance": "range",
+            "geometry_source": "circle:35nm",
+            "geometry_coarse": false,
+            "positions": [
+              {
+                "lat": 20.801048029704155,
+                "lon": 86.74133470843343
+              },
+              {
+                "lat": 20.801048029704155,
+                "lon": 87.99199862489989
+              },
+              {
+                "lat": 21.96561863696251,
+                "lon": 87.99199862489989
+              },
+              {
+                "lat": 21.96561863696251,
+                "lon": 86.74133470843343
+              }
+            ],
+            "distance_to_island_km": 36.1,
+            "range_relevant": true,
+            "raw": "A1632/26 NOTAMN Q) VECF/QRDCA/IV/BO/W/000/999/2123N08722E035 A) VECF B) 2608061430 C) 2608071730 D) 1430-1730 E) VED-52 ACT. DRG ACT Q11 NOT AVBL BTN CEA AND MAVLA. ALTN RTE: CEA-DCT-LEGOS-DCT-KAKID-DCT-SURUP.SID AVBL FOR RTE Q11 F) SFC G) UNL",
+            "starts_in_hours": 72.3
+          },
+          {
+            "notam_id": "A1596/2026",
+            "notam_id_domestic": "08/1596",
+            "type": "N",
+            "q_code": "QRDCA",
+            "scope": "FIR",
+            "affected_fir": "VECF",
+            "effective": "202608070430",
+            "expiration": "202608070730",
+            "schedule": null,
+            "lower_limit": "SFC",
+            "upper_limit": "UNL",
+            "is_restriction": true,
+            "is_danger_area": true,
+            "restriction_terms": [],
+            "matched_places": [],
+            "relevance": "range",
+            "geometry_source": "circle:35nm",
+            "geometry_coarse": false,
+            "positions": [
+              {
+                "lat": 20.801048029704155,
+                "lon": 86.74133470843343
+              },
+              {
+                "lat": 20.801048029704155,
+                "lon": 87.99199862489989
+              },
+              {
+                "lat": 21.96561863696251,
+                "lon": 87.99199862489989
+              },
+              {
+                "lat": 21.96561863696251,
+                "lon": 86.74133470843343
+              }
+            ],
+            "distance_to_island_km": 36.1,
+            "range_relevant": true,
+            "raw": "A1596/26 NOTAMN Q) VECF/QRDCA/IV/BO/W/000/999/2123N08722E035 A) VECF B) 2608070430 C) 2608070730 E) VED-52 ACT EXC COMMON AREA OF VED-53. DRG ACT Q11 NOT AVBL BTN CEA AND MAVLA. ALTN RTE: CEA-DCT-LEGOS-DCT-KAKID-DCT-SURUP. SID AVBL FOR RTE Q11. F) SFC G) UNL",
+            "starts_in_hours": 86.3
+          }
+        ],
+        "restrictions_active": [
+          {
+            "notam_id": "G860/2026",
+            "notam_id_domestic": "07/860",
+            "type": "R",
+            "q_code": "QRACD",
+            "scope": "AERODROME",
+            "affected_fir": "VIXX",
+            "effective": "202607211200",
+            "expiration": "202608232359EST",
+            "schedule": null,
+            "lower_limit": "SFC",
+            "upper_limit": "UNL",
+            "is_restriction": true,
+            "is_danger_area": false,
+            "restriction_terms": [],
+            "matched_places": [],
+            "relevance": "none",
+            "geometry_source": "radius_unspecified",
+            "geometry_coarse": true,
+            "positions": [],
+            "distance_to_island_km": null,
+            "range_relevant": false,
+            "raw": "G860/26 NOTAMR Q) VIXX/QRACD/IV/NBO/W/000/999/2834N07707E999 A) VECF B) 2607211200 C) 2608232359 E) INDIAN AIRSPACE NOT AVBL FOR PAKISTAN REGISTERED ACFT AND ACFT OPERATED/OWNED OR LEASED BY PAKISTAN AIRLINES/OPERATORS INCLUDING MILITARY FLIGHTS. F) SFC G) UNL"
+          },
+          {
+            "notam_id": "A2391/2026",
+            "notam_id_domestic": "08/2391",
+            "type": "N",
+            "q_code": "QRTCA",
+            "scope": "AERODROME",
+            "affected_fir": "VOXX",
+            "effective": "202608030000",
+            "expiration": "202608032359",
+            "schedule": null,
+            "lower_limit": "SFC",
+            "upper_limit": "UNL",
+            "is_restriction": true,
+            "is_danger_area": false,
+            "restriction_terms": [],
+            "matched_places": [],
+            "relevance": "none",
+            "geometry_source": "none",
+            "geometry_coarse": false,
+            "positions": [],
+            "distance_to_island_km": null,
+            "range_relevant": false,
+            "raw": "A2391/26 NOTAMN Q) VOXX/QRTCA/IV/BO/W/000/999/ A) VECF B) 2608030000 C) 2608032359 E) AIRSPACE USE PLAN (AUP) TSA/TRA/AMC-MANAGEABLE AIRSPACE ACT AS FLW: NR AIRSPACE ID TIME FM TIME TO LOWER FL UPPER FL 1 TRA503(A) [PUNE] 0130 1200 FL325 FL460 2 TRA503(A) [PUNE] 1330 1730 FL325 FL460 3 TRA503(B) [PUNE] 0130 1200 FL325 FL460 4 TRA503(B) [PUNE] 1330 1730 FL325 FL460 5 TRA509A 0000 2359 SFC FL270 6 TRA509B 0230 0730 FL270 UNL 7 TRA509B 1000 1100 FL270 UNL 8 TRA509B 1430 1630 FL270 UNL 9 TRA509C 0230 0730 FL270 UNL 10 TRA509C 1000 1100 FL270 UNL 11 TRA509C 1430 1630 FL270 UNL 12 TRA601(A) [PANAGARH] 0111 1051 GND 4000 FT AMSL 13 TRA601(B) [PANAGARH] 0111 1051 GND FL105 14 TRA601(C) [PANAGARH] 0111 1051 GND FL105 15 TRA604 [TEZPUR] 0130 1200 FL130 FL380 16 TRA607(A) [CHABUA] 0130 1700 FL325 FL460 17 TRA607(B) [CHABUA] 0130 1700 FL325 FL460 18 TRA607(C) [CHABUA] 0130 1700 FL325 FL460 19 TRA608"
+          }
+        ],
+        "fir_scope_count": 21
+      }
+    },
+    "aai": {
+      "source": "notam_aai",
+      "status": "degraded",
+      "detail": "AAI monthly Series A/C summary for Kolkata FIR \u2014 does not include en-route danger areas; absence of a hit is not evidence of open airspace",
+      "fetched_at": "2026-08-03T14:10:41.515327+00:00",
+      "latency_ms": 2875,
+      "meta": {
+        "series_parsed": [
+          "A",
+          "C"
+        ]
+      },
+      "data": {
+        "fir": "VECF",
+        "period": "2026-08",
+        "notam_count": 216,
+        "range_relevant_count": 0,
+        "range_relevant": [],
+        "restriction_notams": [
+          {
+            "notam_id": "A1175/26",
+            "valid_from": "2026-06-14T00:00:00+00:00",
+            "valid_till": "2026-09-12T23:59:00+00:00",
+            "permanent": false,
+            "text": "NDB NOT AVBL. ONLY TRIAL CHART AVBL.",
+            "series": "A",
+            "restriction_terms": [
+              "trial"
+            ],
+            "matched_places": [],
+            "positions": [],
+            "range_relevant": false
+          },
+          {
+            "notam_id": "A1466/26",
+            "valid_from": "2026-07-12T00:00:00+00:00",
+            "valid_till": "2026-10-09T23:59:00+00:00",
+            "permanent": false,
+            "text": "OPPORTUNITY BASIS TRIAL OPS OF SMC(S) AND SMC(N) INPR UNIT PROVIDING SER:KOLKATA GND FREQ OF SMC(S): 121.900MHZ AND SMC(N): 121.725MHZ UNLESS OTHERWISE SPECIFIED BY TWR, AFTER VACATING RWY, ARR ACFT LDG ON RWY 19L/19R SHALL CTC GND ON FREQ 121.900MHZ AND ARR ACFT LDG ON RWY 01R/01L SHALL CTC GND ON FREQ 121.725MHZ. WHEN RELEASED Monthly NOTAM Summary Kolkata 1ST AUGUST 2026 Page 6 of 18 BY CLR DELIVERY, DEP ACFT FM APN 2 AND 3 SHALL CTC GND ON FREQ 121.900MHZ AND DEP ACFT FM APN 1 AND 4 SHALL CTC GND ON FREQ 121.725MHZ.",
+            "series": "A",
+            "restriction_terms": [
+              "trial"
+            ],
+            "matched_places": [],
+            "positions": [],
+            "range_relevant": false
+          },
+          {
+            "notam_id": "A1016/26",
+            "valid_from": "2026-06-02T00:00:00+00:00",
+            "valid_till": "2026-08-30T23:59:00+00:00",
+            "permanent": false,
+            "text": "OPPORTUNITY BASIS TRIAL OPS OF SECTOR UPPER VARANASI (UBN) INPR WI Monthly NOTAM Summary Kolkata 1ST AUGUST 2026 Page 7 of 18 AREA BOUNDED BY: P1: 273339.10N 0824136.34E; P2: 270921.85N 0813515.75E; P3: 262359.43N 0801240.56E; ALH VOR; P15: 241326.46N 0840859.31E; GGC VOR; P16: 244425.25N 0851849.17E; P17: 265328.59N 0850151.53E; THEN ALONG THE BORDER OF NEPAL AND INDIA TO P1: 273339.10N 0824136.34E. AIRSPACE CLASSIFIED AS CLASS: D UNIT PROVIDING SER: KOLKATA CTL / KOLKATA RADAR FREQ: 127.525 MHZ ACTUAL TIMINGS WILL BE DECIDED BY WSO KOLKATA AND ACFT SHALL BE ADVISED ACCORDINGLY. 25500FT AMSL/",
+            "series": "A",
+            "restriction_terms": [
+              "trial"
+            ],
+            "matched_places": [],
+            "positions": [
+              {
+                "lat": 27.560861111111112,
+                "lon": 82.69342777777779
+              },
+              {
+                "lat": 27.156069444444444,
+                "lon": 81.58770833333332
+              },
+              {
+                "lat": 26.399841666666667,
+                "lon": 80.21126666666667
+              },
+              {
+                "lat": 24.224016666666664,
+                "lon": 84.14980833333334
+              },
+              {
+                "lat": 24.740347222222223,
+                "lon": 85.31365833333334
+              },
+              {
+                "lat": 26.891275,
+                "lon": 85.03098055555556
+              },
+              {
+                "lat": 27.560861111111112,
+                "lon": 82.69342777777779
+              }
+            ],
+            "range_relevant": false
+          },
+          {
+            "notam_id": "A1017/26",
+            "valid_from": "2026-06-02T00:00:00+00:00",
+            "valid_till": "2026-08-30T23:59:00+00:00",
+            "permanent": false,
+            "text": "OPPORTUNITY BASIS TRIAL OPS OF SECTOR UPPER KHAJURAHO (UKJ) INPR WI AREA BOUNDED BY: P3: 262359.43N 0801240.56E; P4: 251831.86N 0800851.21E; P5: 253601.78N 0793534.75E; P6: 250839.00N 0790132.87E; ASOPO; P7: 223342.78N 0801441.50E; P14: 224646.10N 0842032.87E; LAPAN; P15: 241326.46N 0840859.31E; ALH VOR; AND P3: 262359.43N 0801240.56E. AIRSPACE CLASSIFIED AS CLASS: D UNIT PROVIDING SER: KOLKATA CTL / KOLKATA RADAR FREQ: 124.650 MHZ ACTUAL TIMINGS WILL BE DECIDED BY WSO KOLKATA AND ACFT SHALL BE ADVISED ACCORDINGLY. 25500FT AMSL/46000FT AMSL",
+            "series": "A",
+            "restriction_terms": [
+              "trial"
+            ],
+            "matched_places": [],
+            "positions": [
+              {
+                "lat": 26.399841666666667,
+                "lon": 80.21126666666667
+              },
+              {
+                "lat": 25.30885,
+                "lon": 80.14755833333334
+              },
+              {
+                "lat": 25.600494444444447,
+                "lon": 79.5929861111111
+              },
+              {
+                "lat": 25.144166666666667,
+                "lon": 79.02579722222222
+              },
+              {
+                "lat": 22.561883333333334,
+                "lon": 80.2448611111111
+              },
+              {
+                "lat": 22.77947222222222,
+                "lon": 84.34246388888889
+              },
+              {
+                "lat": 24.224016666666664,
+                "lon": 84.14980833333334
+              },
+              {
+                "lat": 26.399841666666667,
+                "lon": 80.21126666666667
+              }
+            ],
+            "range_relevant": false
+          },
+          {
+            "notam_id": "A1018/26",
+            "valid_from": "2026-06-02T00:00:00+00:00",
+            "valid_till": "2026-08-30T23:59:00+00:00",
+            "permanent": false,
+            "text": "OPPORTUNITY BASIS TRIAL OPS OF SECTOR UPPER RAIPUR (URP) INPR WI AREA BOUNDED BY: P7: 223342.78N 0801441.50E; TEGIG; P8: 203427.40N 0810337.65E; P9: 195331.08N 0804815.53E; P18: 195350.22N 0842614.93E; BBS VOR; P13: 205140.37N 0862158.87E; P14: 224646.10N 0842032.87E; AND P7: 223342.78N 0801441.50E. AIRSPACE CLASSIFIED AS CLASS: D Monthly NOTAM Summary Kolkata 1ST AUGUST 2026 Page 8 of 18 UNIT PROVIDING SER: KOLKATA CTL/KOLKATA RADAR FREQ: 125.900 MHZ ACTUAL TIMINGS WILL BE DECIDED BY WSO KOLKATA AND ACFT SHALL BE ADVISED ACCORDINGLY. 25500FT AMSL/46000FT AMSL",
+            "series": "A",
+            "restriction_terms": [
+              "trial"
+            ],
+            "matched_places": [],
+            "positions": [
+              {
+                "lat": 22.561883333333334,
+                "lon": 80.2448611111111
+              },
+              {
+                "lat": 20.574277777777777,
+                "lon": 81.06045833333333
+              },
+              {
+                "lat": 19.891966666666665,
+                "lon": 80.80431388888888
+              },
+              {
+                "lat": 19.897283333333334,
+                "lon": 84.43748055555555
+              },
+              {
+                "lat": 20.86121388888889,
+                "lon": 86.36635277777778
+              },
+              {
+                "lat": 22.77947222222222,
+                "lon": 84.34246388888889
+              },
+              {
+                "lat": 22.561883333333334,
+                "lon": 80.2448611111111
+              }
+            ],
+            "range_relevant": false
+          },
+          {
+            "notam_id": "A1019/26",
+            "valid_from": "2026-06-02T00:00:00+00:00",
+            "valid_till": "2026-08-30T23:59:00+00:00",
+            "permanent": false,
+            "text": "OPPORTUNITY BASIS TRIAL OPS OF SECTOR UPPER BHUBANESWAR (UBS) INPR WI AREA BOUNDED BY: P9: 195331.08N 0804815.53E; P10: 182447.34N 0800549.06E; SAPNU; XOPOX; P11: 160620.64N 0843429.68E; P12: 201517.19N 0872703.15E; P13: 205140.37N 0862158.87E; BBS VOR; P18: 195350.22N 0842614.93E; AND P9: 195331.08N 0804815.53E. AIRSPACE CLASSIFIED AS CLASS: D UNIT PROVIDING SER: KOLKATA CTL / KOLKATA RADAR FREQ: 132.350 MHZ ACTUAL TIMINGS WILL BE DECIDED BY WSO KOLKATA AND ACFT SHALL BE ADVISED ACCORDINGLY. 25500FT AMSL/46000FT AMSL",
+            "series": "A",
+            "restriction_terms": [
+              "trial"
+            ],
+            "matched_places": [],
+            "positions": [
+              {
+                "lat": 19.891966666666665,
+                "lon": 80.80431388888888
+              },
+              {
+                "lat": 18.413149999999998,
+                "lon": 80.0969611111111
+              },
+              {
+                "lat": 16.105733333333333,
+                "lon": 84.5749111111111
+              },
+              {
+                "lat": 20.254775,
+                "lon": 87.450875
+              },
+              {
+                "lat": 20.86121388888889,
+                "lon": 86.36635277777778
+              },
+              {
+                "lat": 19.897283333333334,
+                "lon": 84.43748055555555
+              },
+              {
+                "lat": 19.891966666666665,
+                "lon": 80.80431388888888
+              }
+            ],
+            "range_relevant": false
+          },
+          {
+            "notam_id": "A1153/26",
+            "valid_from": "2026-06-12T00:00:00+00:00",
+            "valid_till": "2026-09-09T23:59:00+00:00",
+            "permanent": false,
+            "text": "TRIAL OPS OF SECT KOLKATA OCEANIC SOUTH AVBL ON OPPORTUNITY BASIS WI AREA BOUNDED BY COORD: 182558N 0861115E, 161035N 0920000E THEN ALONG INDIA-MYANMAR FIR BDRY TO 140000N 0920000E THEN ALONG KOLKATA-CHENNAI FIR BDRY TO 154200N 0855400E,163721N 0845647E AND 182558N 0861115E. Monthly NOTAM Summary Kolkata 1ST AUGUST 2026 Page 9 of 18 AIRSPACE CLASSIFIED AS CLASS : E WI ATS RTE AND CLASS: G OUTSIDE ATS RTE UNIT PROVIDING SER:KOLKATA OCAENIC SOUTH FREQ 128.300 MHZ ACTUAL TIMINGS WILL BE DECIDED BY KOLKATA ATC. SFC/UNL",
+            "series": "A",
+            "restriction_terms": [
+              "trial"
+            ],
+            "matched_places": [],
+            "positions": [
+              {
+                "lat": 18.43277777777778,
+                "lon": 86.1875
+              },
+              {
+                "lat": 16.17638888888889,
+                "lon": 92.0
+              },
+              {
+                "lat": 14.0,
+                "lon": 92.0
+              },
+              {
+                "lat": 15.7,
+                "lon": 85.9
+              },
+              {
+                "lat": 16.6225,
+                "lon": 84.94638888888889
+              },
+              {
+                "lat": 18.43277777777778,
+                "lon": 86.1875
+              }
+            ],
+            "range_relevant": false
+          },
+          {
+            "notam_id": "A1154/26",
+            "valid_from": "2026-06-12T00:00:00+00:00",
+            "valid_till": "2026-09-09T23:59:00+00:00",
+            "permanent": false,
+            "text": "TRIAL OPS OF SECT KOLKATA OCEANIC NORTH AVBL ON OPPORTUNITY BASIS WI AREA BOUNDED BY COORD: 182558N 0861115E, 201507N 0872651E,182318N 0920000E THEN ALONG INDIA- MYANMAR FIR BDRY TO 161035N 0920000E AND 182558N 0861115E. AIRSPACE CLASSIFIED AS CLASS : E WI ATS RTE AND CLASS: G OUTSIDE ATS RTE UNIT PROVIDING SER:KOLKATA OCAENIC NORTH FREQ 123.775 MHZ ACTUAL TIMINGS WILL BE DECIDED BY KOLKATA ATC AND ACFT SHALL BE ADVISED ACCORDINGLY. SFC/UNL",
+            "series": "A",
+            "restriction_terms": [
+              "trial"
+            ],
+            "matched_places": [],
+            "positions": [
+              {
+                "lat": 18.43277777777778,
+                "lon": 86.1875
+              },
+              {
+                "lat": 20.251944444444444,
+                "lon": 87.4475
+              },
+              {
+                "lat": 18.388333333333332,
+                "lon": 92.0
+              },
+              {
+                "lat": 16.17638888888889,
+                "lon": 92.0
+              },
+              {
+                "lat": 18.43277777777778,
+                "lon": 86.1875
+              }
+            ],
+            "range_relevant": false
+          },
+          {
+            "notam_id": "A1291/26",
+            "valid_from": "2026-06-29T04:30:00+00:00",
+            "valid_till": "2026-09-26T10:30:00+00:00",
+            "permanent": false,
+            "text": "0430-0530 0930-1030 TRIAL OPS OF INDEPENDENT AD CTL SER AVBL ON OPPORTUNITY BASIS WI AREA BOUNDED BY AN AREA OF A CIRCLE OF 05NM RADIUS CENTRED ON 245449N0925840E AND HGT UPTO 6000FT AMSL. AIRSPACE CLASSIFIED AS CLASS:D UNIT PROVIDING SER:VEIM APP ACFT SHALL CTC VEIM APP ON 124.350 AND IF UNA CTC VEIM TWR 118.550. GND/6000FT AMSL",
+            "series": "A",
+            "restriction_terms": [
+              "trial"
+            ],
+            "matched_places": [],
+            "positions": [
+              {
+                "lat": 24.91361111111111,
+                "lon": 92.97777777777777
+              }
+            ],
+            "range_relevant": false
+          },
+          {
+            "notam_id": "A1293/26",
+            "valid_from": "2026-06-29T04:30:00+00:00",
+            "valid_till": "2026-09-26T10:30:00+00:00",
+            "permanent": false,
+            "text": "0430-0530 0930-1030 TRIAL OPS OF INDEPENDENT APP CTL SER AVBL ON OPPORTUNITY BASIS WI VEIM CTR EXC AN AREA BOUNDED VEIM BY AN AREA OF A CIRCLE OF 05NM RADIUS CENTRED ON 245449N0925840E AND HGT UPTO 6000FT AMSL. AIRSPACE CLASSIFIED AS CLASS:D. UNIT PROVIDING SER:VEIM APP. ACFT SHALL CTC VEIM APP ON 124.350 AND IF UNA, CTC VEIM TWR 118.550. GND/FL200",
+            "series": "A",
+            "restriction_terms": [
+              "trial"
+            ],
+            "matched_places": [],
+            "positions": [
+              {
+                "lat": 24.91361111111111,
+                "lon": 92.97777777777777
+              }
+            ],
+            "range_relevant": false
+          },
+          {
+            "notam_id": "C0888/26",
+            "valid_from": "2026-07-01T04:25:00+00:00",
+            "valid_till": "2026-09-28T08:05:00+00:00",
+            "permanent": false,
+            "text": "MON 0505-0805 WED 0425-0730 THU 0650-0950 SAT 0815-1015 HR OF TRIAL OPS OF TWR COMBINED WITH APP,FREQ 118.2 MHZ. 24 HR PN FOR WATCH EXTENSION AND NON SKED FLT . ANGUL VEAL AZAMGARH VEAH",
+            "series": "C",
+            "restriction_terms": [
+              "trial"
+            ],
+            "matched_places": [],
+            "positions": [],
+            "range_relevant": false
+          },
+          {
+            "notam_id": "C0746/26",
+            "valid_from": "2026-05-27T02:20:00+00:00",
+            "valid_till": "2026-08-24T09:40:00+00:00",
+            "permanent": false,
+            "text": "0220-0340 0430-0550 0820-0940 HR OF OPS AND TRIAL OPS FOR APP COMBINED WITH TWR. 24 HR PN FOR NON SKED FLT. JHARSUGUDA VEJH",
+            "series": "C",
+            "restriction_terms": [
+              "trial"
+            ],
+            "matched_places": [],
+            "positions": [],
+            "range_relevant": false
+          },
+          {
+            "notam_id": "C1035/26",
+            "valid_from": "2026-07-31T11:28:00+00:00",
+            "valid_till": "2026-10-28T23:59:00+00:00",
+            "permanent": false,
+            "text": "FURSATGANJ DVOR CODE \"FSG\" FREQ 114.3 MHZ AND DME(HP) FREQ TX/RX 1114/1177MHZ INSTL AND OPR ON TRIAL BASIS RAIGARH VERH RAIPUR VERP",
+            "series": "C",
+            "restriction_terms": [
+              "trial"
+            ],
+            "matched_places": [],
+            "positions": [],
+            "range_relevant": false
+          }
+        ]
+      }
+    },
+    "aai_scope_caveat": "AAI publishes only Series A and C for Kolkata; both are aerodrome-oriented and exclude en-route danger areas. An empty AAI result is not evidence that ITR airspace is open \u2014 SkyLink is the source that can actually see that."
+  }
+}

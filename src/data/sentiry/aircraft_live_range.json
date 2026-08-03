@@ -1,0 +1,36 @@
+{
+  "name": "aircraft_live_range",
+  "request": {
+    "method": "GET",
+    "path": "/v1/aircraft/live",
+    "params": {
+      "box": "range"
+    }
+  },
+  "status_code": 200,
+  "elapsed_ms": 256,
+  "captured_at": "2026-08-03T14:10:13.119383+00:00",
+  "error": null,
+  "response": {
+    "source": "opensky",
+    "status": "empty",
+    "detail": null,
+    "fetched_at": "2026-08-03T14:10:13.118829+00:00",
+    "latency_ms": 254,
+    "meta": {
+      "credits_charged": 1
+    },
+    "data": {
+      "snapshot_time": 1785766212,
+      "bbox": {
+        "west": 86.85,
+        "south": 20.55,
+        "east": 87.3,
+        "north": 21.2
+      },
+      "aircraft_count": 0,
+      "airborne_count": 0,
+      "aircraft": []
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "stream_preamble",
+  "request": {
+    "method": "GET",
+    "path": "/v1/stream",
+    "params": {
+      "max_events": 0
+    }
+  },
+  "status_code": 200,
+  "elapsed_ms": 3,
+  "captured_at": "2026-08-03T14:10:47.646816+00:00",
+  "error": null,
+  "response": {
+    "_raw_text": ": connected\n\n"
+  }
+}

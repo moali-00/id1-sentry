@@ -1,0 +1,35 @@
+{
+  "name": "missiles_agni_5",
+  "request": {
+    "method": "GET",
+    "path": "/v1/missiles/agni-5",
+    "params": {}
+  },
+  "status_code": 200,
+  "elapsed_ms": 0,
+  "captured_at": "2026-08-03T14:10:11.132314+00:00",
+  "error": null,
+  "response": {
+    "key": "agni-5",
+    "name": "Agni-V",
+    "family": "Agni",
+    "category": "ballistic",
+    "range_km": {
+      "min": 5000,
+      "max": 8000
+    },
+    "nuclear_capable": true,
+    "integration_sites": [
+      "ASL Hyderabad",
+      "BDL Hyderabad (Kanchanbagh)"
+    ],
+    "typical_launch_site": "abdul_kalam_island",
+    "aliases": [
+      "agni-v",
+      "agni 5",
+      "agni-5"
+    ],
+    "note": "",
+    "disclaimer": "Public reference data (DRDO/PIB releases, NTI, Wikipedia). `integration_sites` is context only \u2014 no site is monitored and no scoring uses it. Sentiry holds nothing about the location or movement of deployed systems; it reads published test announcements. Corridor classes narrow a candidate field and never identify a system."
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "name": "aircraft_vacancy",
+  "request": {
+    "method": "GET",
+    "path": "/v1/aircraft/vacancy",
+    "params": {}
+  },
+  "status_code": 200,
+  "elapsed_ms": 2,
+  "captured_at": "2026-08-03T14:10:13.379077+00:00",
+  "error": null,
+  "response": {
+    "evaluated_at": "2026-08-03T14:10:13.378263+00:00",
+    "bbox": {
+      "west": 85.59,
+      "south": 19.26,
+      "east": 88.59,
+      "north": 22.26
+    },
+    "feed": {
+      "source": "opensky",
+      "status": "ok",
+      "detail": null,
+      "fetched_at": "2026-08-03T14:10:13.373458+00:00",
+      "latency_ms": 252,
+      "meta": {
+        "credits_charged": 1
+      }
+    },
+    "observed_airborne": 2,
+    "baseline": {
+      "hour_utc": 14,
+      "samples": 2,
+      "mean": 2.0,
+      "stdev": 0.0,
+      "minimum": 2,
+      "maximum": 2
+    },
+    "indicator": {
+      "key": "airspace_vacancy",
+      "label": "Airspace vacancy vs hourly baseline",
+      "weight": 0.2,
+      "score": null,
+      "available": false,
+      "detail": "baseline still building: 2/8 samples for hour 14Z \u2014 poll POST /v1/aircraft/observe on a schedule",
+      "evidence": {
+        "observed_airborne": 2,
+        "baseline": {
+          "hour_utc": 14,
+          "samples": 2,
+          "mean": 2.0,
+          "stdev": 0.0,
+          "minimum": 2,
+          "maximum": 2
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6103 @@
+{
+  "name": "maritime_warnings_all",
+  "request": {
+    "method": "GET",
+    "path": "/v1/maritime/warnings",
+    "params": {
+      "only_relevant": false
+    }
+  },
+  "status_code": 200,
+  "elapsed_ms": 22,
+  "captured_at": "2026-08-03T14:10:18.647491+00:00",
+  "error": null,
+  "response": {
+    "navarea": "NAVAREA VIII",
+    "evaluated_at": "2026-08-03T14:10:18.623320+00:00",
+    "feed": {
+      "source": "sealagom",
+      "status": "degraded",
+      "detail": "free tier: no pre-parsed coordinates, positions derived from message text",
+      "fetched_at": "2026-08-03T14:10:12.686679+00:00",
+      "latency_ms": 1649,
+      "meta": {
+        "message_count": 34,
+        "tokens_used": 1,
+        "free_tokens_remaining": 78
+      }
+    },
+    "total_active_messages": 34,
+    "returned": 34,
+    "warnings": [
+      {
+        "message_id": 22997,
+        "number": "818/26",
+        "issued_at": "2026-08-03T10:02:00+00:00",
+        "kind": "launch_trial",
+        "relevance": "range",
+        "is_launch_indicator": true,
+        "matched_phrases": [
+          "experimental flight trial",
+          "flight trial"
+        ],
+        "matched_places": [
+          "baleshwar"
+        ],
+        "positions": [
+          {
+            "lat": 20.95,
+            "lon": 86.9
+          },
+          {
+            "lat": 21.216666666666665,
+            "lon": 87.38333333333334
+          },
+          {
+            "lat": 21.516666666666666,
+            "lon": 87.7
+          },
+          {
+            "lat": 21.683333333333334,
+            "lon": 87.75
+          }
+        ],
+        "bounds": {
+          "west": 86.9,
+          "south": 20.95,
+          "east": 87.75,
+          "north": 21.683333333333334
+        },
+        "centroid": {
+          "lat": 21.341666666666665,
+          "lon": 87.43333333333334
+        },
+        "distance_to_island_km": 14.6,
+        "windows": [
+          {
+            "start": "2026-08-06T04:30:00+00:00",
+            "end": "2026-08-06T07:30:00+00:00"
+          },
+          {
+            "start": "2026-08-06T14:30:00+00:00",
+            "end": "2026-08-06T17:30:00+00:00"
+          },
+          {
+            "start": "2026-08-07T04:30:00+00:00",
+            "end": "2026-08-07T07:30:00+00:00"
+          },
+          {
+            "start": "2026-08-07T14:30:00+00:00",
+            "end": "2026-08-07T17:30:00+00:00"
+          }
+        ],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 28.8,
+          "far_km": 123.8,
+          "bearing_deg": 33.7,
+          "bearing_span_deg": 79.0,
+          "vertex_count": 4
+        },
+        "likely_systems": {
+          "class": "tactical",
+          "label": "Tactical corridor",
+          "confidence": "medium",
+          "basis": "directional corridor of 100\u2013300 km",
+          "implied_range_km": {
+            "min": 100,
+            "max": 600
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "barak-8",
+              "name": "Barak-8 (MR-SAM/LR-SAM)",
+              "category": "air_defence",
+              "range_km": {
+                "min": 70,
+                "max": 100
+              }
+            },
+            {
+              "key": "astra",
+              "name": "Astra",
+              "category": "air_defence",
+              "range_km": {
+                "min": 80,
+                "max": 160
+              }
+            },
+            {
+              "key": "prithvi-1",
+              "name": "Prithvi-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 150
+              }
+            },
+            {
+              "key": "prahaar",
+              "name": "Prahaar",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 200
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "aad",
+              "name": "AAD (Ashwin)",
+              "category": "interceptor",
+              "range_km": {
+                "min": 150,
+                "max": 200
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA EAST COAST - OFF BALESHWAR (.) CHARTS IN 31 351 7706 INT 7419 (.) EXPERIMENTAL FLIGHT TRIALS SCHEDULED (A) 06 AUG 26 FROM 1430 TO 1730 UTC (B) 07 AUG 26 FROM 0430 TO 0730 UTC AND 1430 TO 1730 UTC AUG 26 IN DANGER AREA BOUNDED BY (A) 20-57N 086-54E (B) 21-13N 087-23E (C) 21-31N 087-42E (D) 21-41N 087-45E AND THEN ALONG COASTLINE TO POINT A (.) WIDE BERTH FROM AREA ADVISED 2. CANCEL THIS MSG 071830 UTC AUG 26",
+        "indicator_score": 0.55,
+        "timing": "window opens in 2.6d"
+      },
+      {
+        "message_id": 22995,
+        "number": "819/26",
+        "issued_at": "2026-08-03T10:03:00+00:00",
+        "kind": "launch_trial",
+        "relevance": "range",
+        "is_launch_indicator": true,
+        "matched_phrases": [
+          "experimental flight trial",
+          "flight trial"
+        ],
+        "matched_places": [
+          "baleshwar"
+        ],
+        "positions": [
+          {
+            "lat": 20.806,
+            "lon": 87.043
+          },
+          {
+            "lat": 18.206,
+            "lon": 86.1185
+          },
+          {
+            "lat": -13.556666666666667,
+            "lon": 85.358
+          },
+          {
+            "lat": -12.802666666666667,
+            "lon": 94.52216666666666
+          },
+          {
+            "lat": 18.402666666666665,
+            "lon": 88.5075
+          },
+          {
+            "lat": 20.812666666666665,
+            "lon": 87.12333333333333
+          }
+        ],
+        "bounds": {
+          "west": 85.358,
+          "south": -13.556666666666667,
+          "east": 94.52216666666666,
+          "north": 20.812666666666665
+        },
+        "centroid": {
+          "lat": 8.644666666666666,
+          "lon": 88.11208333333333
+        },
+        "distance_to_island_km": 6.9,
+        "windows": [
+          {
+            "start": "2026-08-06T12:30:00+00:00",
+            "end": "2026-08-06T15:30:00+00:00"
+          },
+          {
+            "start": "2026-08-07T12:30:00+00:00",
+            "end": "2026-08-07T15:30:00+00:00"
+          }
+        ],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 6.9,
+          "far_km": 3820.3,
+          "bearing_deg": 183.0,
+          "bearing_span_deg": 239.5,
+          "vertex_count": 6
+        },
+        "likely_systems": {
+          "class": "strategic_self",
+          "label": "Strategic range \u2014 self-contained corridor",
+          "confidence": "medium",
+          "basis": "this warning's own danger area extends beyond 3,500 km down-range \u2014 the launch corridor and the impact fan are declared in a single polygon",
+          "implied_range_km": {
+            "min": 3500,
+            "max": 12000
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "agni-2",
+              "name": "Agni-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 2000,
+                "max": 3500
+              }
+            },
+            {
+              "key": "agni-3",
+              "name": "Agni-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3000,
+                "max": 5000
+              }
+            },
+            {
+              "key": "agni-4",
+              "name": "Agni-IV",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3500,
+                "max": 4000
+              }
+            },
+            {
+              "key": "k-4",
+              "name": "K-4",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3500,
+                "max": 4000
+              }
+            },
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            },
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ],
+          "consistent_system_count": 6,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "BAY OF BENGAL - OFF BALESHWAR (.) CHARTS IN 7071 7073 INT 71 (.) EXPERIMENTAL FLIGHT TRIALS SCHEDULED 06 AND 07 AUG 26 FROM 1230 TO 1530 UTC DAILY IN DANGER AREA BOUNDED BY 20-48.36N 087-02.58E, 18-12.36N 086-07.11E, 13-33.4S 085-21.48E, 12-48.16S 094-31.33E, 18-24.16N 088-30.45E, 20-48.76N 087-07.4E (.) WIDE BERTH FROM AREA ADVISED 2. CANCEL THIS MSG 071630 UTC AUG 26",
+        "indicator_score": 0.55,
+        "timing": "window opens in 2.9d"
+      },
+      {
+        "message_id": 22934,
+        "number": "809/26",
+        "issued_at": "2026-07-31T10:02:00+00:00",
+        "kind": "firing_exercise",
+        "relevance": "downrange",
+        "is_launch_indicator": true,
+        "matched_phrases": [
+          "firing",
+          "air defence",
+          "danger area"
+        ],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 19.243333333333332,
+            "lon": 84.895
+          },
+          {
+            "lat": 19.123166666666666,
+            "lon": 85.599
+          },
+          {
+            "lat": 18.560166666666667,
+            "lon": 84.89566666666667
+          }
+        ],
+        "bounds": {
+          "west": 84.895,
+          "south": 18.560166666666667,
+          "east": 85.599,
+          "north": 19.243333333333332
+        },
+        "centroid": {
+          "lat": 18.975555555555555,
+          "lon": 85.12988888888889
+        },
+        "distance_to_island_km": 239.1,
+        "windows": [
+          {
+            "start": "2026-08-03T01:30:00+00:00",
+            "end": "2026-08-03T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-03T19:30:00+00:00",
+            "end": "2026-08-04T18:29:00+00:00"
+          },
+          {
+            "start": "2026-08-04T01:30:00+00:00",
+            "end": "2026-08-04T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-04T19:30:00+00:00",
+            "end": "2026-08-05T18:29:00+00:00"
+          },
+          {
+            "start": "2026-08-05T01:30:00+00:00",
+            "end": "2026-08-05T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-05T19:30:00+00:00",
+            "end": "2026-08-06T18:29:00+00:00"
+          },
+          {
+            "start": "2026-08-06T01:30:00+00:00",
+            "end": "2026-08-06T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-06T19:30:00+00:00",
+            "end": "2026-08-07T18:29:00+00:00"
+          },
+          {
+            "start": "2026-08-07T01:30:00+00:00",
+            "end": "2026-08-07T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-07T19:30:00+00:00",
+            "end": "2026-08-08T18:29:00+00:00"
+          },
+          {
+            "start": "2026-08-08T01:30:00+00:00",
+            "end": "2026-08-08T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-08T19:30:00+00:00",
+            "end": "2026-08-09T18:29:00+00:00"
+          },
+          {
+            "start": "2026-08-10T01:30:00+00:00",
+            "end": "2026-08-10T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-10T19:30:00+00:00",
+            "end": "2026-08-11T18:29:00+00:00"
+          },
+          {
+            "start": "2026-08-11T01:30:00+00:00",
+            "end": "2026-08-11T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-11T19:30:00+00:00",
+            "end": "2026-08-12T18:29:00+00:00"
+          },
+          {
+            "start": "2026-08-12T01:30:00+00:00",
+            "end": "2026-08-12T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-12T19:30:00+00:00",
+            "end": "2026-08-13T18:29:00+00:00"
+          }
+        ],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 239.1,
+          "far_km": 335.1,
+          "bearing_deg": 223.5,
+          "bearing_span_deg": 13.3,
+          "vertex_count": 3
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA EAST COAST - OFF GOPALPUR (.) CHARTS IN 31 305 353 INT 7413 (.) ARMY AIR DEFENCE FIRING SCHEDULED (A) 03 TO 08 AUG 26 FROM 1930 TO 1829 UTC (B) 10 TO 12 AUG 26 FROM 0130 TO 1430 UTC DAILY IN DANGER AREA BOUNDED BY (A) 19-14.6N 084- 53.7E (B) 19-07.39N 085-35.94E (C) 18-33.61N 084-53.74E AND ARC OF 41 NM RADIUS JOINING POINT B AND C 2. CANCEL THIS MSG 121530 UTC AUG 26",
+        "indicator_score": 0.48,
+        "timing": "window active now"
+      },
+      {
+        "message_id": 22998,
+        "number": "814/26",
+        "issued_at": "2026-07-31T11:01:00+00:00",
+        "kind": "firing_exercise",
+        "relevance": "downrange",
+        "is_launch_indicator": true,
+        "matched_phrases": [
+          "firing",
+          "danger area"
+        ],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 21.347166666666666,
+            "lon": 90.56666666666666
+          },
+          {
+            "lat": 21.683333333333334,
+            "lon": 91.23333333333333
+          },
+          {
+            "lat": 21.347166666666666,
+            "lon": 91.46666666666667
+          },
+          {
+            "lat": 21.0,
+            "lon": 90.79716666666667
+          },
+          {
+            "lat": 20.116666666666667,
+            "lon": 90.86666666666666
+          },
+          {
+            "lat": 20.793333333333333,
+            "lon": 91.49666666666667
+          },
+          {
+            "lat": 20.4,
+            "lon": 91.98333333333333
+          },
+          {
+            "lat": 19.733333333333334,
+            "lon": 91.35
+          },
+          {
+            "lat": 21.3,
+            "lon": 89.51666666666667
+          },
+          {
+            "lat": 21.3,
+            "lon": 89.83333333333333
+          },
+          {
+            "lat": 21.066666666666666,
+            "lon": 89.9
+          },
+          {
+            "lat": 21.066666666666666,
+            "lon": 89.56666666666666
+          },
+          {
+            "lat": 20.966666666666665,
+            "lon": 89.56666666666666
+          },
+          {
+            "lat": 20.966666666666665,
+            "lon": 89.9
+          },
+          {
+            "lat": 20.566666666666666,
+            "lon": 89.9
+          },
+          {
+            "lat": 20.566666666666666,
+            "lon": 89.56666666666666
+          }
+        ],
+        "bounds": {
+          "west": 89.51666666666667,
+          "south": 19.733333333333334,
+          "east": 91.98333333333333,
+          "north": 21.683333333333334
+        },
+        "centroid": {
+          "lat": 20.8888125,
+          "lon": 90.46940625
+        },
+        "distance_to_island_km": 258.8,
+        "windows": [
+          {
+            "start": "2026-08-01T00:01:00+00:00",
+            "end": "2026-08-01T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-02T00:01:00+00:00",
+            "end": "2026-08-02T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-03T00:01:00+00:00",
+            "end": "2026-08-03T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-04T00:01:00+00:00",
+            "end": "2026-08-04T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-05T00:01:00+00:00",
+            "end": "2026-08-05T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-06T00:01:00+00:00",
+            "end": "2026-08-06T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-07T00:01:00+00:00",
+            "end": "2026-08-07T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-08T00:01:00+00:00",
+            "end": "2026-08-08T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-09T00:01:00+00:00",
+            "end": "2026-08-09T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-10T00:01:00+00:00",
+            "end": "2026-08-10T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-11T00:01:00+00:00",
+            "end": "2026-08-11T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-12T00:01:00+00:00",
+            "end": "2026-08-12T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-13T00:01:00+00:00",
+            "end": "2026-08-13T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-14T00:01:00+00:00",
+            "end": "2026-08-14T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-15T00:01:00+00:00",
+            "end": "2026-08-15T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-16T00:01:00+00:00",
+            "end": "2026-08-16T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-17T00:01:00+00:00",
+            "end": "2026-08-17T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-18T00:01:00+00:00",
+            "end": "2026-08-18T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-19T00:01:00+00:00",
+            "end": "2026-08-19T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-20T00:01:00+00:00",
+            "end": "2026-08-20T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-21T00:01:00+00:00",
+            "end": "2026-08-21T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-22T00:01:00+00:00",
+            "end": "2026-08-22T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-23T00:01:00+00:00",
+            "end": "2026-08-23T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-24T00:01:00+00:00",
+            "end": "2026-08-24T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-25T00:01:00+00:00",
+            "end": "2026-08-25T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-26T00:01:00+00:00",
+            "end": "2026-08-26T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-27T00:01:00+00:00",
+            "end": "2026-08-27T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-28T00:01:00+00:00",
+            "end": "2026-08-28T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-29T00:01:00+00:00",
+            "end": "2026-08-29T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-30T00:01:00+00:00",
+            "end": "2026-08-30T16:00:00+00:00"
+          },
+          {
+            "start": "2026-08-31T00:01:00+00:00",
+            "end": "2026-08-31T16:00:00+00:00"
+          }
+        ],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 258.8,
+          "far_km": 511.4,
+          "bearing_deg": 93.6,
+          "bearing_span_deg": 27.8,
+          "vertex_count": 16
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "BAY OF BENGAL - OFF BANGLADESH (.) CHARTS IN 31 7706 INT 756 (.) FIRING PRACTICE BY BANGLADESH NAVY SCHEDULED 01 TO 31 AUG 26 (EXCLUDING FRIDAYS AND SATURDAYS) FROM 0001 TO 1600 UTC IN DANGER AREAS BOUNDED BY (A) 21-20.83N 090-34E, 21-41N 091-14E, 21-20.83N 091-28E, 21-00N 090-47.83E (B) 20-07N 090-52E, 20-47.6N 091- 29.8E, 20-24N 091-59E, 19-44N 091-21E (C) 21-18N 089-31E, 21-18N 089-50E, 21-04N 089-54E, 21-04N 089-34E (D) 20-58N 089-34E, 20-58N 089-54E, 20-34N 089-54E, 20-34N 089-34E 2. CANCEL THIS MSG 311700 UTC AUG 26",
+        "indicator_score": 0.48,
+        "timing": "window active now"
+      },
+      {
+        "message_id": 22931,
+        "number": "811/26",
+        "issued_at": "2026-07-31T10:04:00+00:00",
+        "kind": "firing_exercise",
+        "relevance": "range",
+        "is_launch_indicator": true,
+        "matched_phrases": [
+          "firing",
+          "danger area"
+        ],
+        "matched_places": [
+          "baleshwar"
+        ],
+        "positions": [
+          {
+            "lat": 21.628666666666668,
+            "lon": 87.47633333333333
+          },
+          {
+            "lat": 21.147,
+            "lon": 88.17483333333334
+          },
+          {
+            "lat": 20.674166666666668,
+            "lon": 87.7125
+          },
+          {
+            "lat": 21.285166666666665,
+            "lon": 86.82266666666666
+          }
+        ],
+        "bounds": {
+          "west": 86.82266666666666,
+          "south": 20.674166666666668,
+          "east": 88.17483333333334,
+          "north": 21.628666666666668
+        },
+        "centroid": {
+          "lat": 21.18375,
+          "lon": 87.54658333333333
+        },
+        "distance_to_island_km": 31.7,
+        "windows": [
+          {
+            "start": "2026-08-03T03:30:00+00:00",
+            "end": "2026-08-03T06:30:00+00:00"
+          },
+          {
+            "start": "2026-08-03T08:30:00+00:00",
+            "end": "2026-08-03T10:30:00+00:00"
+          },
+          {
+            "start": "2026-08-04T03:30:00+00:00",
+            "end": "2026-08-04T06:30:00+00:00"
+          },
+          {
+            "start": "2026-08-04T08:30:00+00:00",
+            "end": "2026-08-04T10:30:00+00:00"
+          },
+          {
+            "start": "2026-08-05T03:30:00+00:00",
+            "end": "2026-08-05T06:30:00+00:00"
+          },
+          {
+            "start": "2026-08-05T08:30:00+00:00",
+            "end": "2026-08-05T10:30:00+00:00"
+          },
+          {
+            "start": "2026-08-06T03:30:00+00:00",
+            "end": "2026-08-06T06:30:00+00:00"
+          },
+          {
+            "start": "2026-08-06T08:30:00+00:00",
+            "end": "2026-08-06T10:30:00+00:00"
+          },
+          {
+            "start": "2026-08-07T03:30:00+00:00",
+            "end": "2026-08-07T06:30:00+00:00"
+          },
+          {
+            "start": "2026-08-07T08:30:00+00:00",
+            "end": "2026-08-07T10:30:00+00:00"
+          },
+          {
+            "start": "2026-08-08T03:30:00+00:00",
+            "end": "2026-08-08T06:30:00+00:00"
+          },
+          {
+            "start": "2026-08-08T08:30:00+00:00",
+            "end": "2026-08-08T10:30:00+00:00"
+          }
+        ],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 64.7,
+          "far_km": 121.1,
+          "bearing_deg": 68.9,
+          "bearing_span_deg": 122.9,
+          "vertex_count": 4
+        },
+        "likely_systems": {
+          "class": "local_area",
+          "label": "Local area enclosing the launch site",
+          "confidence": "low",
+          "basis": "polygon surrounds the site rather than extending on one azimuth; consistent with an air-defence engagement zone or an initial-stage drop area, and cannot discriminate between them",
+          "implied_range_km": {
+            "min": 0,
+            "max": 200
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "vshorads",
+              "name": "VSHORADS",
+              "category": "air_defence",
+              "range_km": {
+                "min": 6,
+                "max": 10
+              }
+            },
+            {
+              "key": "akash",
+              "name": "Akash",
+              "category": "air_defence",
+              "range_km": {
+                "min": 25,
+                "max": 45
+              }
+            },
+            {
+              "key": "qrsam",
+              "name": "QRSAM",
+              "category": "air_defence",
+              "range_km": {
+                "min": 25,
+                "max": 30
+              }
+            },
+            {
+              "key": "akash-ng",
+              "name": "Akash-NG",
+              "category": "air_defence",
+              "range_km": {
+                "min": 70,
+                "max": 80
+              }
+            },
+            {
+              "key": "barak-8",
+              "name": "Barak-8 (MR-SAM/LR-SAM)",
+              "category": "air_defence",
+              "range_km": {
+                "min": 70,
+                "max": 100
+              }
+            },
+            {
+              "key": "astra",
+              "name": "Astra",
+              "category": "air_defence",
+              "range_km": {
+                "min": 80,
+                "max": 160
+              }
+            },
+            {
+              "key": "prithvi-1",
+              "name": "Prithvi-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 150
+              }
+            },
+            {
+              "key": "prahaar",
+              "name": "Prahaar",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 200
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "aad",
+              "name": "AAD (Ashwin)",
+              "category": "interceptor",
+              "range_km": {
+                "min": 150,
+                "max": 200
+              }
+            }
+          ],
+          "consistent_system_count": 11,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA EAST COAST - OFF BALESHWAR (.) CHARTS IN 31 351 7706 INT 7419 (.) FIRING BY IAF SCHEDULED 03 TO 08 AUG 26 FROM 0330 TO 0630 AND 0830 TO 1030 UTC DAILY IN DANGER AREA BOUNDED BY 21-37.72N 087-28.58E, 21-08.82N 088-10.49E, 20-40.45N 087-42.75E, 21-17.11N 086-49.36E (.) WIDE BERTH FROM AREA ADVISED 2. CANCEL THIS MSG 081130 UTC AUG 26",
+        "indicator_score": 0.45,
+        "timing": "window opens in 13h"
+      },
+      {
+        "message_id": 22996,
+        "number": "822/26",
+        "issued_at": "2026-08-03T11:02:00+00:00",
+        "kind": "firing_exercise",
+        "relevance": "downrange",
+        "is_launch_indicator": true,
+        "matched_phrases": [
+          "firing",
+          "danger area"
+        ],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 13.0,
+            "lon": 93.66666666666667
+          }
+        ],
+        "bounds": {
+          "west": 93.66666666666667,
+          "south": 13.0,
+          "east": 93.66666666666667,
+          "north": 13.0
+        },
+        "centroid": {
+          "lat": 13.0,
+          "lon": 93.66666666666667
+        },
+        "distance_to_island_km": 1110.6,
+        "windows": [
+          {
+            "start": "2026-08-05T08:30:00+00:00",
+            "end": "2026-08-05T10:30:00+00:00"
+          },
+          {
+            "start": "2026-08-07T08:30:00+00:00",
+            "end": "2026-08-07T10:30:00+00:00"
+          }
+        ],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1110.6,
+          "far_km": 1110.6,
+          "bearing_deg": 139.9,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "ANDAMAN SEA - OFF MIDDLE ANDAMAN I (.) CHARTS IN 41 473 INT 7031 (.) FIRING PRACTICE BY AIRCRAFT SCHEDULED 05 AND 07 AUG 26 FROM 0830 TO 1030 UTC IN DANGER AREA BOUNDED WITHIN 12-50N TO 13-00N AND 093-40E TO 094-10E 2. CANCEL THIS MSG 071130 UTC AUG 26 NAVAREA VIII - WARNINGS IN FORCE AS ON 03 AUG 2026 2026 SERIES - 053 484 499 645 653 664 676 683 711 713 729 731 732 736 742 767 788 789 794 806 808 809 810 811 812 813 814 816 817 818 819 820 821 822",
+        "indicator_score": 0.264,
+        "timing": "window opens in 1.8d"
+      },
+      {
+        "message_id": 22573,
+        "number": "053/26",
+        "issued_at": "2026-01-13T16:30:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 8.116666666666667,
+            "lon": 77.31666666666666
+          }
+        ],
+        "bounds": {
+          "west": 77.31666666666666,
+          "south": 8.116666666666667,
+          "east": 77.31666666666666,
+          "north": 8.116666666666667
+        },
+        "centroid": {
+          "lat": 8.116666666666667,
+          "lon": 77.31666666666666
+        },
+        "distance_to_island_km": 1754.1,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1754.1,
+          "far_km": 1754.1,
+          "bearing_deg": 218.2,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST (.) CHARTS IN 223 261 262 INT 7365 (.) MUTTAM POINT LT RACON M AND NAVTEX STATION (08-07N 077-19E) NOT FUNCTIONAL",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22596,
+        "number": "484/26",
+        "issued_at": "2026-04-22T10:02:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 21.6595,
+            "lon": 72.54816666666666
+          }
+        ],
+        "bounds": {
+          "west": 72.54816666666666,
+          "south": 21.6595,
+          "east": 72.54816666666666,
+          "north": 21.6595
+        },
+        "centroid": {
+          "lat": 21.6595,
+          "lon": 72.54816666666666
+        },
+        "distance_to_island_km": 1496.9,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1509.8,
+          "far_km": 1509.8,
+          "bearing_deg": 276.4,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST (.) CHARTS IN 208 254 2110 INT 7331 (.) LUHARA POINT LT RACON \u2018D\u2019 (21-39.57N 072-32.89E) NOT FUNCTIONAL",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22594,
+        "number": "499/26",
+        "issued_at": "2026-04-24T16:31:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 14.086833333333333,
+            "lon": 80.475
+          }
+        ],
+        "bounds": {
+          "west": 80.475,
+          "south": 14.086833333333333,
+          "east": 80.475,
+          "north": 14.086833333333333
+        },
+        "centroid": {
+          "lat": 14.086833333333333,
+          "lon": 80.475
+        },
+        "distance_to_island_km": 1020.5,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1020.5,
+          "far_km": 1020.5,
+          "bearing_deg": 224.4,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA EAST COAST - OFF KRISHNAPATNAM (.) CHARTS IN 31 356 391 INT 756 (.) SURFACE BUOY MOORED AT 14-05.21N 080-28.50E (.) WIDE BERTH REQUESTED",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22581,
+        "number": "645/26",
+        "issued_at": "2026-05-29T10:05:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 22.619166666666665,
+            "lon": 69.125
+          },
+          {
+            "lat": 22.59,
+            "lon": 68.96333333333334
+          }
+        ],
+        "bounds": {
+          "west": 68.96333333333334,
+          "south": 22.59,
+          "east": 69.125,
+          "north": 22.619166666666665
+        },
+        "centroid": {
+          "lat": 22.60458333333333,
+          "lon": 69.04416666666667
+        },
+        "distance_to_island_km": 1851.4,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1866.1,
+          "far_km": 1882.5,
+          "bearing_deg": 279.5,
+          "bearing_span_deg": 0.1,
+          "vertex_count": 2
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST - GULF OF KACHCHH (.) CHARTS IN 203 271 2068 INT 7319 (.) CHANNEL MARKING BUOY CHANDRI (22-37.15N 069-07.50E) AND GURUR (22-35.40N 068- 57.80E) OFF AIR",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22587,
+        "number": "653/26",
+        "issued_at": "2026-06-01T11:01:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 22.59,
+            "lon": 69.24333333333334
+          }
+        ],
+        "bounds": {
+          "west": 69.24333333333334,
+          "south": 22.59,
+          "east": 69.24333333333334,
+          "north": 22.59
+        },
+        "centroid": {
+          "lat": 22.59,
+          "lon": 69.24333333333334
+        },
+        "distance_to_island_km": 1839.1,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1853.8,
+          "far_km": 1853.8,
+          "bearing_deg": 279.6,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST - GULF OF KACHCHH (.) CHARTS IN 21 203 2068 INT 7319 (.) CHANNEL MARKING BUOY PAGA (22-35.40N 069-14.60E) RETRIEVED FOR MAINTENANCE",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22578,
+        "number": "664/26",
+        "issued_at": "2026-06-03T10:06:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 9.968666666666667,
+            "lon": 76.205
+          }
+        ],
+        "bounds": {
+          "west": 76.205,
+          "south": 9.968666666666667,
+          "east": 76.205,
+          "north": 9.968666666666667
+        },
+        "centroid": {
+          "lat": 9.968666666666667,
+          "lon": 76.205
+        },
+        "distance_to_island_km": 1671.9,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1671.9,
+          "far_km": 1671.9,
+          "bearing_deg": 225.8,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST - KOCHI HARBOUR (.) CHARTS IN 2004 2029 INT 7358 (.) CHANNEL MARKING BUOY NO 12 SHIFTED TO NEW POSITION 09-58.12N 076-12.30E",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22583,
+        "number": "676/26",
+        "issued_at": "2026-06-10T10:01:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 18.293333333333333,
+            "lon": 72.84666666666666
+          },
+          {
+            "lat": 18.29,
+            "lon": 72.84666666666666
+          },
+          {
+            "lat": 18.293333333333333,
+            "lon": 72.86333333333333
+          },
+          {
+            "lat": 18.291666666666668,
+            "lon": 72.86333333333333
+          },
+          {
+            "lat": 18.295,
+            "lon": 72.87833333333333
+          },
+          {
+            "lat": 18.291666666666668,
+            "lon": 72.87833333333333
+          },
+          {
+            "lat": 18.295,
+            "lon": 72.89333333333333
+          },
+          {
+            "lat": 18.293333333333333,
+            "lon": 72.895
+          },
+          {
+            "lat": 18.296666666666667,
+            "lon": 72.92333333333333
+          },
+          {
+            "lat": 18.293333333333333,
+            "lon": 72.92333333333333
+          },
+          {
+            "lat": 18.29,
+            "lon": 72.82
+          }
+        ],
+        "bounds": {
+          "west": 72.82,
+          "south": 18.29,
+          "east": 72.92333333333333,
+          "north": 18.296666666666667
+        },
+        "centroid": {
+          "lat": 18.293030303030303,
+          "lon": 72.87560606060606
+        },
+        "distance_to_island_km": 1504.0,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1508.6,
+          "far_km": 1519.4,
+          "bearing_deg": 262.0,
+          "bearing_span_deg": 0.1,
+          "vertex_count": 11
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST - DIGHI HARBOUR (.) CHARTS IN 2036 2103 INT 7352 (.) CHANNEL MARKING BUOYS 18-17.6N 072-50.8E, 18-17.4N 072-50.8E, 18-17.6N 072-51.8E, 18- 17.5N 072-51.8E, 18-17.7N 072-52.7E, 18-17.5N 072-52.7E, 18-17.7N 072-53.6E, 18-17.6N 072-53.7E, 18-17.8N 072-55.4E, 18-17.6N 072-55.4E AND FAIRWAY BUOY 18-17.4N 072-49.2E MISSING",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22576,
+        "number": "683/26",
+        "issued_at": "2026-06-12T10:03:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 12.223833333333333,
+            "lon": 93.01983333333334
+          }
+        ],
+        "bounds": {
+          "west": 93.01983333333334,
+          "south": 12.223833333333333,
+          "east": 93.01983333333334,
+          "north": 12.223833333333333
+        },
+        "centroid": {
+          "lat": 12.223833333333333,
+          "lon": 93.01983333333334
+        },
+        "distance_to_island_km": 1140.1,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1140.1,
+          "far_km": 1140.1,
+          "bearing_deg": 145.4,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "ANDAMAN SEA (.) CHARTS IN 41 404 473 INT 7031 (.) SOUTH BUTTON LT (12- 13.43N 093-01.19E) UNLIT",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22590,
+        "number": "711/26",
+        "issued_at": "2026-06-22T10:01:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 22.613333333333333,
+            "lon": 69.45833333333333
+          }
+        ],
+        "bounds": {
+          "west": 69.45833333333333,
+          "south": 22.613333333333333,
+          "east": 69.45833333333333,
+          "north": 22.613333333333333
+        },
+        "centroid": {
+          "lat": 22.613333333333333,
+          "lon": 69.45833333333333
+        },
+        "distance_to_island_km": 1817.2,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1831.9,
+          "far_km": 1831.9,
+          "bearing_deg": 279.7,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST - GULF OF KACHCHH (.) CHARTS IN 21 203 2068 INT 7319 (.) DHANI BUOY (22-36.8N 069-27.5E) MISSING",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22597,
+        "number": "713/26",
+        "issued_at": "2026-06-22T10:03:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 11.158,
+            "lon": 75.80583333333334
+          }
+        ],
+        "bounds": {
+          "west": 75.80583333333334,
+          "south": 11.158,
+          "east": 75.80583333333334,
+          "north": 11.158
+        },
+        "centroid": {
+          "lat": 11.158,
+          "lon": 75.80583333333334
+        },
+        "distance_to_island_km": 1609.1,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1609.1,
+          "far_km": 1609.1,
+          "bearing_deg": 230.2,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST (.) CHARTS IN 22 219 259 2119 INT 7356 (.) NEW RACON CODE \u2018G\u2019 BEYPORE LT (11-09.48N 075-48.35E) INSTALLED ON TRIAL BASIS IN X-BAND",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22572,
+        "number": "729/26",
+        "issued_at": "2026-07-01T10:02:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 18.295333333333332,
+            "lon": 72.91966666666667
+          },
+          {
+            "lat": 18.296166666666668,
+            "lon": 72.932
+          }
+        ],
+        "bounds": {
+          "west": 72.91966666666667,
+          "south": 18.295333333333332,
+          "east": 72.932,
+          "north": 18.296166666666668
+        },
+        "centroid": {
+          "lat": 18.295749999999998,
+          "lon": 72.92583333333334
+        },
+        "distance_to_island_km": 1503.1,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1507.8,
+          "far_km": 1509.1,
+          "bearing_deg": 262.0,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 2
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST - DIGHI HARBOUR (.) CHARTS IN 2036 2103 INT 7352 (.) LESSER DEPTHS OF ABOUT 6.2 M REPORTED IN CHANNEL IN VICINITY OF 18-17.72N 072- 55.18E, 18-17.77N 072-55.92E (.) MARINERS TO EXERCISE CAUTION",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22569,
+        "number": "731/26",
+        "issued_at": "2026-07-02T10:01:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 20.755,
+            "lon": 72.04833333333333
+          },
+          {
+            "lat": 20.88,
+            "lon": 72.09833333333333
+          }
+        ],
+        "bounds": {
+          "west": 72.04833333333333,
+          "south": 20.755,
+          "east": 72.09833333333333,
+          "north": 20.88
+        },
+        "centroid": {
+          "lat": 20.8175,
+          "lon": 72.07333333333332
+        },
+        "distance_to_island_km": 1546.1,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1557.2,
+          "far_km": 1563.0,
+          "bearing_deg": 272.7,
+          "bearing_span_deg": 0.5,
+          "vertex_count": 2
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST - GULF OF KHAMBHAT (.) CHARTS IN 207 254 INT 7331 (.) NARMADA CHANNEL MARKING BUOY NO 4 (20-45.3N 072-02.9E) AND BUOY NO 6 (20-52.8N 072-05.9E) UNLIT",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22574,
+        "number": "732/26",
+        "issued_at": "2026-07-02T10:02:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 22.653333333333332,
+            "lon": 69.33
+          }
+        ],
+        "bounds": {
+          "west": 69.33,
+          "south": 22.653333333333332,
+          "east": 69.33,
+          "north": 22.653333333333332
+        },
+        "centroid": {
+          "lat": 22.653333333333332,
+          "lon": 69.33
+        },
+        "distance_to_island_km": 1830.5,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1845.3,
+          "far_km": 1845.3,
+          "bearing_deg": 279.8,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST - GULF OF KACHCHH (.) CHARTS IN 203 2068 INT 7319 (.) SALAYA CHANNEL MARKING BUOY RANWARA (22-39.2N 069-19.8E) UNLIT",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22585,
+        "number": "736/26",
+        "issued_at": "2026-07-03T10:03:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 19.020666666666667,
+            "lon": 72.69283333333334
+          },
+          {
+            "lat": 18.977833333333333,
+            "lon": 72.6795
+          },
+          {
+            "lat": 18.9355,
+            "lon": 72.56583333333333
+          },
+          {
+            "lat": 18.9515,
+            "lon": 72.55633333333333
+          },
+          {
+            "lat": 18.987833333333334,
+            "lon": 72.66483333333333
+          },
+          {
+            "lat": 19.03,
+            "lon": 72.6865
+          },
+          {
+            "lat": 18.897333333333332,
+            "lon": 72.51466666666667
+          },
+          {
+            "lat": 18.870166666666666,
+            "lon": 72.46433333333333
+          },
+          {
+            "lat": 18.872833333333332,
+            "lon": 72.44566666666667
+          },
+          {
+            "lat": 18.909833333333335,
+            "lon": 72.508
+          },
+          {
+            "lat": 14.124333333333333,
+            "lon": 72.74233333333333
+          },
+          {
+            "lat": 15.454166666666667,
+            "lon": 71.98783333333333
+          },
+          {
+            "lat": 16.3915,
+            "lon": 71.37233333333333
+          },
+          {
+            "lat": 17.773833333333332,
+            "lon": 72.065
+          },
+          {
+            "lat": 18.7555,
+            "lon": 72.171
+          },
+          {
+            "lat": 18.820833333333333,
+            "lon": 72.32116666666667
+          },
+          {
+            "lat": 18.826833333333333,
+            "lon": 72.296
+          },
+          {
+            "lat": 18.7815,
+            "lon": 72.14033333333333
+          },
+          {
+            "lat": 17.8025,
+            "lon": 71.953
+          },
+          {
+            "lat": 16.415666666666667,
+            "lon": 71.2155
+          },
+          {
+            "lat": 14.039666666666667,
+            "lon": 72.58566666666667
+          },
+          {
+            "lat": 9.2615,
+            "lon": 74.45483333333334
+          },
+          {
+            "lat": 9.724666666666666,
+            "lon": 74.5125
+          },
+          {
+            "lat": 10.917,
+            "lon": 74.44216666666667
+          },
+          {
+            "lat": 14.124333333333333,
+            "lon": 72.74233333333333
+          },
+          {
+            "lat": 14.039666666666667,
+            "lon": 72.58566666666667
+          },
+          {
+            "lat": 10.896666666666667,
+            "lon": 74.34183333333333
+          },
+          {
+            "lat": 9.284333333333333,
+            "lon": 74.1975
+          },
+          {
+            "lat": 9.2615,
+            "lon": 74.45483333333334
+          },
+          {
+            "lat": 8.251833333333334,
+            "lon": 74.85783333333333
+          },
+          {
+            "lat": 8.104666666666667,
+            "lon": 75.368
+          },
+          {
+            "lat": 5.438833333333333,
+            "lon": 77.47833333333334
+          },
+          {
+            "lat": 4.8155,
+            "lon": 77.01483333333333
+          },
+          {
+            "lat": 5.105666666666667,
+            "lon": 76.72766666666666
+          },
+          {
+            "lat": 6.261833333333334,
+            "lon": 75.86883333333333
+          },
+          {
+            "lat": 6.825833333333334,
+            "lon": 75.47183333333334
+          },
+          {
+            "lat": 7.3735,
+            "lon": 75.274
+          },
+          {
+            "lat": 7.9191666666666665,
+            "lon": 74.95816666666667
+          },
+          {
+            "lat": 7.836666666666667,
+            "lon": 74.06866666666667
+          },
+          {
+            "lat": 9.284333333333333,
+            "lon": 74.1975
+          }
+        ],
+        "bounds": {
+          "west": 71.2155,
+          "south": 4.8155,
+          "east": 77.47833333333334,
+          "north": 19.03
+        },
+        "centroid": {
+          "lat": 13.534183333333335,
+          "lon": 73.54115
+        },
+        "distance_to_island_km": 1510.2,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1516.7,
+          "far_km": 2079.9,
+          "bearing_deg": 212.9,
+          "bearing_span_deg": 52.6,
+          "vertex_count": 40
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "ARABIAN SEA (.) CHARTS IN 22 32 INT 752 (.) ALBATROSS 37 PROGRESSING ROUTE SURVEY IN AREAS BOUNDED BY (A) 19-01.24N 072-41.57E, 18-58.67N 072-40.77E, 18- 56.13N 072-33.95E, 18-57.09N 072-33.38E, 18-59.27N 072-39.89E, 19-01.8N 072-41.19E (B) 18-53.84N 072-30.88E, 18-52.21N 072-27.86E, 18-52.37N 072-26.74E, 18-54.59N 072-30.48E (C) 14-07.46N 072- 44.54E, 15-27.25N 071-59.27E, 16-23.49N 071-22.34E, 17-46.43N 072-03.9E, 18-45.33N 072-10.26E, 18- 49.25N 072-19.27E, 18-49.61N 072-17.76E, 18-46.89N 072-08.42E, 17-48.15N 071-57.18E, 16-24.94N 071-12.93E, 14-02.38N 072-35.14E (D) 09-15.69N 074-27.29E, 09-43.48N 074-30.75E, 10-55.02N 074- 26.53E, 14-07.46N 072-44.54E, 14-02.38N 072-35.14E, 10-53.8N 074-20.51E, 09-17.06N 074-11.85E (E) 09-15.69N 074-27.29E, 08-15.11N 074-51.47E, 08-06.28N 075-22.08E, 05-26.33N 077-28.7E, 04-48.93N 077-00.89E, 05-06.34N 076-43.66E, 06-15.71N 075-52.13E, 06-49.55N 075-28.31E, 07-22.41N 075- 16.44E, 07-55.15N 074-57.49E, 07-50.2N 074-04.12E, 09-17.06N 074-11.85E (.) WIDE BERTH REQUESTED 2. CANCEL NAVAREA VIII MSG 706/26 AND THIS MSG 041830 UTC AUG 26",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22582,
+        "number": "742/26",
+        "issued_at": "2026-07-06T10:02:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 17.675,
+            "lon": 83.295
+          }
+        ],
+        "bounds": {
+          "west": 83.295,
+          "south": 17.675,
+          "east": 83.295,
+          "north": 17.675
+        },
+        "centroid": {
+          "lat": 17.675,
+          "lon": 83.295
+        },
+        "distance_to_island_km": 525.2,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 525.2,
+          "far_km": 525.2,
+          "bearing_deg": 229.9,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA EAST COAST (.) CHARTS IN 308 3012 INT 7411 (.) DOLPHIN NOSE LT 17- 40.5N 083-17.7E RACON INOPERATIVE",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22599,
+        "number": "767/26",
+        "issued_at": "2026-07-14T10:01:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 19.118,
+            "lon": 72.80333333333333
+          },
+          {
+            "lat": 19.094666666666665,
+            "lon": 72.77766666666666
+          },
+          {
+            "lat": 19.062666666666665,
+            "lon": 72.7055
+          },
+          {
+            "lat": 19.017833333333332,
+            "lon": 72.6955
+          },
+          {
+            "lat": 19.03,
+            "lon": 72.6865
+          },
+          {
+            "lat": 19.070666666666668,
+            "lon": 72.68983333333334
+          },
+          {
+            "lat": 19.125,
+            "lon": 72.79533333333333
+          }
+        ],
+        "bounds": {
+          "west": 72.6865,
+          "south": 19.017833333333332,
+          "east": 72.80333333333333,
+          "north": 19.125
+        },
+        "centroid": {
+          "lat": 19.074119047619046,
+          "lon": 72.7362380952381
+        },
+        "distance_to_island_km": 1496.8,
+        "windows": [
+          {
+            "start": "2026-07-15T00:00:00+00:00",
+            "end": "2026-07-16T00:00:00+00:00"
+          },
+          {
+            "start": "2026-08-14T00:00:00+00:00",
+            "end": "2026-08-15T00:00:00+00:00"
+          }
+        ],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1503.5,
+          "far_km": 1517.2,
+          "bearing_deg": 265.2,
+          "bearing_span_deg": 0.4,
+          "vertex_count": 7
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST - OFF MUMBAI (.) CHARTS IN 211 255 292 INT 7021 (.) TRIMURTI WILL CARRY OUT ROUTE SURVEY ACTIVITIES FROM 15 JUL TO 14 AUG 26 IN AREA BOUNDED BY 19-07.08N 072-48.2E, 19-05.68N 072-46.66E, 19-03.76N 072-42.33E, 19-01.07N 072-41.73E, 19-01.8N 072-41.19E, 19-04.24N 072-41.39E, 19-07.5N 072-47.72E 2. CANCEL THIS MSG 141830 UTC AUG 26",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22692,
+        "number": "788/26",
+        "issued_at": "2026-07-21T10:02:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "downrange",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 19.595,
+            "lon": 86.35616666666667
+          }
+        ],
+        "bounds": {
+          "west": 86.35616666666667,
+          "south": 19.595,
+          "east": 86.35616666666667,
+          "north": 19.595
+        },
+        "centroid": {
+          "lat": 19.595,
+          "lon": 86.35616666666667
+        },
+        "distance_to_island_km": 150.1,
+        "windows": [
+          {
+            "start": "2026-07-22T00:00:00+00:00",
+            "end": "2026-07-23T00:00:00+00:00"
+          },
+          {
+            "start": "2026-08-20T00:00:00+00:00",
+            "end": "2026-08-21T00:00:00+00:00"
+          }
+        ],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 150.1,
+          "far_km": 150.1,
+          "bearing_deg": 210.6,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "tactical",
+          "label": "Tactical corridor",
+          "confidence": "medium",
+          "basis": "directional corridor of 100\u2013300 km",
+          "implied_range_km": {
+            "min": 100,
+            "max": 600
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "barak-8",
+              "name": "Barak-8 (MR-SAM/LR-SAM)",
+              "category": "air_defence",
+              "range_km": {
+                "min": 70,
+                "max": 100
+              }
+            },
+            {
+              "key": "astra",
+              "name": "Astra",
+              "category": "air_defence",
+              "range_km": {
+                "min": 80,
+                "max": 160
+              }
+            },
+            {
+              "key": "prithvi-1",
+              "name": "Prithvi-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 150
+              }
+            },
+            {
+              "key": "prahaar",
+              "name": "Prahaar",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 200
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "aad",
+              "name": "AAD (Ashwin)",
+              "category": "interceptor",
+              "range_km": {
+                "min": 150,
+                "max": 200
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA EAST COAST - OFF GOPALPUR (.) CHARTS IN 31 304 352 INT 7416 (.) PLATINUM EXPLORER WILL CARRY OUT DRILLING OPERATION FROM 22 JUL TO 20 AUG 26 IN 19-35.7N 086-21.37E (.) 02 NM BERTH REQUESTED 2. CANCEL THIS MSG 201830 UTC AUG 26",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22691,
+        "number": "789/26",
+        "issued_at": "2026-07-21T10:03:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 19.191666666666666,
+            "lon": 72.77333333333333
+          }
+        ],
+        "bounds": {
+          "west": 72.77333333333333,
+          "south": 19.191666666666666,
+          "east": 72.77333333333333,
+          "north": 19.191666666666666
+        },
+        "centroid": {
+          "lat": 19.191666666666666,
+          "lon": 72.77333333333333
+        },
+        "distance_to_island_km": 1498.4,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1505.3,
+          "far_km": 1505.3,
+          "bearing_deg": 265.8,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST - OFF MUMBAI (.) CHARTS IN 211 255 292 INT 7021 (.) AL JAFZIA UNMANNED AND REPORTED AGROUND IN 19-11.5N 072-46.4E (.) MARINERS TO EXERCISE CAUTION 2. CANCEL NAVAREA VIII MSG 665/26",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22744,
+        "number": "794/26",
+        "issued_at": "2026-07-23T10:01:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "downrange",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 21.6675,
+            "lon": 89.47716666666666
+          },
+          {
+            "lat": 21.7015,
+            "lon": 89.469
+          }
+        ],
+        "bounds": {
+          "west": 89.469,
+          "south": 21.6675,
+          "east": 89.47716666666666,
+          "north": 21.7015
+        },
+        "centroid": {
+          "lat": 21.6845,
+          "lon": 89.47308333333334
+        },
+        "distance_to_island_km": 266.3,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 267.7,
+          "far_km": 268.4,
+          "bearing_deg": 66.6,
+          "bearing_span_deg": 0.8,
+          "vertex_count": 2
+        },
+        "likely_systems": {
+          "class": "tactical",
+          "label": "Tactical corridor",
+          "confidence": "medium",
+          "basis": "directional corridor of 100\u2013300 km",
+          "implied_range_km": {
+            "min": 100,
+            "max": 600
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "barak-8",
+              "name": "Barak-8 (MR-SAM/LR-SAM)",
+              "category": "air_defence",
+              "range_km": {
+                "min": 70,
+                "max": 100
+              }
+            },
+            {
+              "key": "astra",
+              "name": "Astra",
+              "category": "air_defence",
+              "range_km": {
+                "min": 80,
+                "max": 160
+              }
+            },
+            {
+              "key": "prithvi-1",
+              "name": "Prithvi-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 150
+              }
+            },
+            {
+              "key": "prahaar",
+              "name": "Prahaar",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 200
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "aad",
+              "name": "AAD (Ashwin)",
+              "category": "interceptor",
+              "range_km": {
+                "min": 150,
+                "max": 200
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "BAY OF BENGAL - OFF BANGLADESH (.) CHARTS IN 31 351 INT 7419 (.) BUOY B13 (21-40.05N 089-28.63E) AND B16 (21-42.09N 089-28.14E) MISSING",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22867,
+        "number": "806/26",
+        "issued_at": "2026-07-28T10:02:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 15.352666666666666,
+            "lon": 73.76283333333333
+          }
+        ],
+        "bounds": {
+          "west": 73.76283333333333,
+          "south": 15.352666666666666,
+          "east": 73.76283333333333,
+          "north": 15.352666666666666
+        },
+        "centroid": {
+          "lat": 15.352666666666666,
+          "lon": 73.76283333333333
+        },
+        "distance_to_island_km": 1530.4,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1530.4,
+          "far_km": 1530.4,
+          "bearing_deg": 249.1,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST - GRANDI I (.) CHARTS IN 214 2020 2022 INT 7345 (.) ST GEORGE'S ISLAND LT (15-21.16N 073-45.77E) UNLIT",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22932,
+        "number": "808/26",
+        "issued_at": "2026-07-31T10:01:00+00:00",
+        "kind": "firing_exercise",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [
+          "firing",
+          "danger area"
+        ],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 9.96,
+            "lon": 76.24166666666666
+          },
+          {
+            "lat": 9.79,
+            "lon": 76.27666666666667
+          },
+          {
+            "lat": 9.78,
+            "lon": 76.19333333333333
+          },
+          {
+            "lat": 9.833333333333334,
+            "lon": 76.12666666666667
+          }
+        ],
+        "bounds": {
+          "west": 76.12666666666667,
+          "south": 9.78,
+          "east": 76.27666666666667,
+          "north": 9.96
+        },
+        "centroid": {
+          "lat": 9.840833333333332,
+          "lon": 76.20958333333333
+        },
+        "distance_to_island_km": 1669.8,
+        "windows": [
+          {
+            "start": "2026-08-03T09:00:00+00:00",
+            "end": "2026-08-03T12:00:00+00:00"
+          },
+          {
+            "start": "2026-08-03T12:30:00+00:00",
+            "end": "2026-08-03T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-07T09:00:00+00:00",
+            "end": "2026-08-07T12:00:00+00:00"
+          },
+          {
+            "start": "2026-08-07T12:30:00+00:00",
+            "end": "2026-08-07T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-10T09:00:00+00:00",
+            "end": "2026-08-10T12:00:00+00:00"
+          },
+          {
+            "start": "2026-08-10T12:30:00+00:00",
+            "end": "2026-08-10T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-14T09:00:00+00:00",
+            "end": "2026-08-14T12:00:00+00:00"
+          },
+          {
+            "start": "2026-08-14T12:30:00+00:00",
+            "end": "2026-08-14T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-17T09:00:00+00:00",
+            "end": "2026-08-17T12:00:00+00:00"
+          },
+          {
+            "start": "2026-08-17T12:30:00+00:00",
+            "end": "2026-08-17T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-21T09:00:00+00:00",
+            "end": "2026-08-21T12:00:00+00:00"
+          },
+          {
+            "start": "2026-08-21T12:30:00+00:00",
+            "end": "2026-08-21T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-24T09:00:00+00:00",
+            "end": "2026-08-24T12:00:00+00:00"
+          },
+          {
+            "start": "2026-08-24T12:30:00+00:00",
+            "end": "2026-08-24T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-28T09:00:00+00:00",
+            "end": "2026-08-28T12:00:00+00:00"
+          },
+          {
+            "start": "2026-08-28T12:30:00+00:00",
+            "end": "2026-08-28T14:30:00+00:00"
+          },
+          {
+            "start": "2026-08-31T09:00:00+00:00",
+            "end": "2026-08-31T12:00:00+00:00"
+          },
+          {
+            "start": "2026-08-31T12:30:00+00:00",
+            "end": "2026-08-31T14:30:00+00:00"
+          }
+        ],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1669.8,
+          "far_km": 1688.7,
+          "bearing_deg": 225.6,
+          "bearing_span_deg": 0.5,
+          "vertex_count": 4
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST - KOCHI (.) CHARTS IN 22 220 259 INT 7356 (.) FIRING SCHEDULED (A) 07, 14, 21 AND 28 AUG 26 FROM 0900 TO 1200 UTC AND 1230 TO 1430 UTC (B) 03, 10, 17, 24 AND 31 AUG 26 FROM 0900 TO 1200 UTC IN DANGER AREA BOUNDED BY 09- 57.6N 076-14.5E, 09-47.4N 076-16.6E, 09-46.8N 076-11.6E, 09-50N 076-07.6E 2. CANCEL THIS MSG 311300 UTC AUG 26",
+        "indicator_score": 0.0,
+        "timing": "no geographic tie to the range"
+      },
+      {
+        "message_id": 22933,
+        "number": "810/26",
+        "issued_at": "2026-07-31T10:03:00+00:00",
+        "kind": "firing_exercise",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [
+          "firing",
+          "danger area"
+        ],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 11.25,
+            "lon": 92.5
+          },
+          {
+            "lat": 11.333333333333334,
+            "lon": 92.91666666666667
+          },
+          {
+            "lat": 11.083333333333334,
+            "lon": 92.91666666666667
+          },
+          {
+            "lat": 11.0,
+            "lon": 92.5
+          }
+        ],
+        "bounds": {
+          "west": 92.5,
+          "south": 11.0,
+          "east": 92.91666666666667,
+          "north": 11.333333333333334
+        },
+        "centroid": {
+          "lat": 11.166666666666668,
+          "lon": 92.70833333333334
+        },
+        "distance_to_island_km": 1204.9,
+        "windows": [
+          {
+            "start": "2026-08-04T01:30:00+00:00",
+            "end": "2026-08-04T03:30:00+00:00"
+          },
+          {
+            "start": "2026-08-04T08:00:00+00:00",
+            "end": "2026-08-04T10:30:00+00:00"
+          },
+          {
+            "start": "2026-08-05T01:30:00+00:00",
+            "end": "2026-08-05T03:30:00+00:00"
+          },
+          {
+            "start": "2026-08-05T08:00:00+00:00",
+            "end": "2026-08-05T10:30:00+00:00"
+          },
+          {
+            "start": "2026-08-06T01:30:00+00:00",
+            "end": "2026-08-06T03:30:00+00:00"
+          },
+          {
+            "start": "2026-08-06T08:00:00+00:00",
+            "end": "2026-08-06T10:30:00+00:00"
+          }
+        ],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1204.9,
+          "far_km": 1242.9,
+          "bearing_deg": 149.0,
+          "bearing_span_deg": 2.7,
+          "vertex_count": 4
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "ANDAMAN SEA - OFF RUTLAND I (.) CHARTS IN 405 473 4030 INT 7440 (.) FIRING PRACTICE BY AIRCRAFT SCHEDULED 04 TO 06 AUG 26 FROM 0130 TO 0330 UTC AND 0800 TO 1030 UTC IN DANGER AREA BOUNDED BY 11-15N 092-30E, 11-20N 092-55E, 11-05N 092-55E, 11- 00N 092-30E 2. CANCEL THIS MSG 061130 UTC AUG 26",
+        "indicator_score": 0.0,
+        "timing": "no geographic tie to the range"
+      },
+      {
+        "message_id": 22993,
+        "number": "812/26",
+        "issued_at": "2026-07-31T10:05:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 14.820333333333334,
+            "lon": 74.0605
+          }
+        ],
+        "bounds": {
+          "west": 74.0605,
+          "south": 14.820333333333334,
+          "east": 74.0605,
+          "north": 14.820333333333334
+        },
+        "centroid": {
+          "lat": 14.820333333333334,
+          "lon": 74.0605
+        },
+        "distance_to_island_km": 1528.0,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1528.0,
+          "far_km": 1528.0,
+          "bearing_deg": 246.5,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST - KARWAR (.) CHARTS IN 215 257 2120 INT 7343 (.) OYSTER ROCKS LT 14-49.22N 074-03.63E RACON INOPERATIVE",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22935,
+        "number": "813/26",
+        "issued_at": "2026-07-31T10:06:00+00:00",
+        "kind": "bulletin",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [],
+        "bounds": null,
+        "centroid": null,
+        "distance_to_island_km": null,
+        "windows": [
+          {
+            "start": "2026-07-31T00:00:00+00:00",
+            "end": "2026-08-01T00:00:00+00:00"
+          }
+        ],
+        "indefinite": true,
+        "corridor": null,
+        "likely_systems": {
+          "class": "indeterminate",
+          "label": "Indeterminate \u2014 no usable geometry",
+          "confidence": "low",
+          "basis": "the warning carries no parseable polygon or circle",
+          "implied_range_km": {
+            "min": 0,
+            "max": 0
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [],
+          "consistent_system_count": 0,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "NAVAREA VIII - WARNINGS IN FORCE AS ON 31 JUL 2026 2026 SERIES - 053 475 484 499 622 626 645 653 664 676 683 711 713 729 731 732 736 742 766 767 769 788 789 794 806 808 809 810 811 812 (A) NAVAREA VIII WARNINGS LESS THAN 42 DAYS OLD (711/26 ONWARD) PROMULGATED VIA SAFETYNET AND RELEVANT NAVTEX TRANSMITTERS (B) TEXT OF ALL IN-FORCE NAVAREA VIII WARNINGS INCLUDING THOSE WHICH ARE NO LONGER BROADCAST AVAILABLE IN WWW.HYDROBHARAT.GOV.IN 2. CANCEL THIS MSG 071000 UTC AUG 26",
+        "indicator_score": 0.0,
+        "timing": "periodic warnings-in-force bulletin, not an announcement"
+      },
+      {
+        "message_id": 22982,
+        "number": "816/26",
+        "issued_at": "2026-08-01T14:01:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 6.906333333333333,
+            "lon": 79.54183333333333
+          }
+        ],
+        "bounds": {
+          "west": 79.54183333333333,
+          "south": 6.906333333333333,
+          "east": 79.54183333333333,
+          "north": 6.906333333333333
+        },
+        "centroid": {
+          "lat": 6.906333333333333,
+          "lon": 79.54183333333333
+        },
+        "distance_to_island_km": 1741.2,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1741.2,
+          "far_km": 1741.2,
+          "bearing_deg": 208.9,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "SRILANKA WEST COAST - OFF COLOMBO (.) CHARTS IN 32 263 7706 INT 706 (.) SEVENTEEN EMPTY CONTAINERS FROM MV MSS GRAPHENE REPORTED ADRIFT IN VICINITY OF 06-54.38N 079-32.51E AT 010005 UTC AUG 26 2. CANCEL THIS MSG 040005 UTC AUG 26",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22994,
+        "number": "817/26",
+        "issued_at": "2026-08-03T10:01:00+00:00",
+        "kind": "firing_exercise",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [
+          "firing",
+          "danger area"
+        ],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 17.0,
+            "lon": 84.83333333333333
+          }
+        ],
+        "bounds": {
+          "west": 84.83333333333333,
+          "south": 17.0,
+          "east": 84.83333333333333,
+          "north": 17.0
+        },
+        "centroid": {
+          "lat": 17.0,
+          "lon": 84.83333333333333
+        },
+        "distance_to_island_km": 480.4,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 480.4,
+          "far_km": 480.4,
+          "bearing_deg": 209.9,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA EAST COAST - OFF VISAKHAPATNAM (.) CHARTS IN 31 7706 INT 756 (.) FIRING SCHEDULED 050300 TO 060800 UTC AUG 26 IN DANGER AREA BOUNDED WITHIN 16- 20N TO 17-00N AND 084-15ETO 084-50E 2. CANCEL THIS MSG 060900 UTC AUG 26",
+        "indicator_score": 0.0,
+        "timing": "no geographic tie to the range"
+      },
+      {
+        "message_id": 22999,
+        "number": "820/26",
+        "issued_at": "2026-08-03T10:04:00+00:00",
+        "kind": "navigation_hazard",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [],
+        "bounds": null,
+        "centroid": null,
+        "distance_to_island_km": null,
+        "windows": [],
+        "indefinite": false,
+        "corridor": null,
+        "likely_systems": {
+          "class": "indeterminate",
+          "label": "Indeterminate \u2014 no usable geometry",
+          "confidence": "low",
+          "basis": "the warning carries no parseable polygon or circle",
+          "implied_range_km": {
+            "min": 0,
+            "max": 0
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [],
+          "consistent_system_count": 0,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "CANCEL NAVAREA VIII MSG 475/26, 622/26, 626/26, 766/26, 769/26 AND THIS MSG (.) INTM 116, 117, 120 (T) AND 121 (T) OF 15/26 REFERS",
+        "indicator_score": 0.0,
+        "timing": "not a launch or firing announcement"
+      },
+      {
+        "message_id": 22992,
+        "number": "821/26",
+        "issued_at": "2026-08-03T11:01:00+00:00",
+        "kind": "firing_exercise",
+        "relevance": "none",
+        "is_launch_indicator": false,
+        "matched_phrases": [
+          "firing",
+          "danger area"
+        ],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 15.35,
+            "lon": 72.13333333333334
+          }
+        ],
+        "bounds": {
+          "west": 72.13333333333334,
+          "south": 15.35,
+          "east": 72.13333333333334,
+          "north": 15.35
+        },
+        "centroid": {
+          "lat": 15.35,
+          "lon": 72.13333333333334
+        },
+        "distance_to_island_km": 1690.1,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 1690.1,
+          "far_km": 1690.1,
+          "bearing_deg": 251.6,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "extended",
+          "label": "Extended corridor, no coupled impact zone",
+          "confidence": "low",
+          "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+          "implied_range_km": {
+            "min": 300,
+            "max": 1500
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "k-15",
+              "name": "K-15 Sagarika",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 750
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "INDIA WEST COAST - OFF MORMUGAO (.) CHARTS IN 22 293 INT 7022 (.) UNDERWATER FIRING SCHEDULED 051430 TO 051830 UTC AUG 26 IN DANGER AREA BOUNDED WITHIN 15-06N TO 15-21N AND 072-08E TO 072-24E 2. CANCEL THIS MSG 051930 UTC AUG 26",
+        "indicator_score": 0.0,
+        "timing": "no geographic tie to the range"
+      }
+    ]
+  }
+}

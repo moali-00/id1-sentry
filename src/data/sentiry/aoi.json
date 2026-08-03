@@ -1,0 +1,218 @@
+{
+  "name": "aoi",
+  "request": {
+    "method": "GET",
+    "path": "/v1/aoi",
+    "params": {}
+  },
+  "status_code": 200,
+  "elapsed_ms": 0,
+  "captured_at": "2026-08-03T14:10:11.115975+00:00",
+  "error": null,
+  "response": {
+    "target": {
+      "name": "Abdul Kalam Island",
+      "aliases": [
+        "Wheeler Island",
+        "Outer Wheeler"
+      ],
+      "facility": "Integrated Test Range (ITR), DRDO",
+      "country": "India",
+      "state": "Odisha",
+      "centre": {
+        "lat": 20.75804,
+        "lon": 87.085533
+      }
+    },
+    "secondary_site": {
+      "name": "ITR Chandipur (Balasore)",
+      "centre": {
+        "lat": 21.0483,
+        "lon": 86.9926
+      }
+    },
+    "boxes": {
+      "pad": {
+        "purpose": "launch complexes; thermal detections here are significant",
+        "west": 87.055,
+        "south": 20.728,
+        "east": 87.116,
+        "north": 20.788,
+        "geojson": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                87.055,
+                20.728
+              ],
+              [
+                87.116,
+                20.728
+              ],
+              [
+                87.116,
+                20.788
+              ],
+              [
+                87.055,
+                20.788
+              ],
+              [
+                87.055,
+                20.728
+              ]
+            ]
+          ]
+        }
+      },
+      "range": {
+        "purpose": "both ITR complexes and adjacent coast",
+        "west": 86.85,
+        "south": 20.55,
+        "east": 87.3,
+        "north": 21.2,
+        "geojson": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                86.85,
+                20.55
+              ],
+              [
+                87.3,
+                20.55
+              ],
+              [
+                87.3,
+                21.2
+              ],
+              [
+                86.85,
+                21.2
+              ],
+              [
+                86.85,
+                20.55
+              ]
+            ]
+          ]
+        }
+      },
+      "airspace": {
+        "purpose": "ADS-B vacancy watch box (Kolkata FIR approaches)",
+        "west": 85.59,
+        "south": 19.26,
+        "east": 88.59,
+        "north": 22.26,
+        "area_sq_deg": 9.0,
+        "geojson": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                85.59,
+                19.26
+              ],
+              [
+                88.59,
+                19.26
+              ],
+              [
+                88.59,
+                22.26
+              ],
+              [
+                85.59,
+                22.26
+              ],
+              [
+                85.59,
+                19.26
+              ]
+            ]
+          ]
+        }
+      },
+      "downrange": {
+        "purpose": "Bay of Bengal impact fan where danger areas are declared",
+        "west": 85.5,
+        "south": 13.0,
+        "east": 94.0,
+        "north": 22.5,
+        "geojson": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                85.5,
+                13.0
+              ],
+              [
+                94.0,
+                13.0
+              ],
+              [
+                94.0,
+                22.5
+              ],
+              [
+                85.5,
+                22.5
+              ],
+              [
+                85.5,
+                13.0
+              ]
+            ]
+          ]
+        }
+      }
+    },
+    "warning_area": "NAVAREA VIII",
+    "detection_vocabulary": {
+      "launch_patterns": [
+        "experimental flight trial",
+        "flight trial",
+        "rocket launch(?:ing)?",
+        "missile (?:firing|launch(?:ing)?|test|trial)",
+        "satellite launch(?:ing)?",
+        "launch(?:ing)? operations?"
+      ],
+      "firing_patterns": [
+        "\\bfiring\\b",
+        "\\bgunnery\\b",
+        "live fire",
+        "\\bbombing\\b",
+        "air defen[cs]e",
+        "weapon (?:firing|trial|practice)",
+        "danger area",
+        "danger zone",
+        "naval exercise"
+      ],
+      "bulletin_patterns": [
+        "warnings? in force",
+        "in force as (?:on|of)",
+        "\\briglist\\b",
+        "series\\s*[-\u2013]\\s*\\d{3}",
+        "following warnings"
+      ],
+      "place_names": [
+        "balasore",
+        "baleshwar",
+        "chandipur",
+        "wheeler",
+        "abdul kalam",
+        "dhamra",
+        "bhadrak",
+        "paradip"
+      ],
+      "notes": [
+        "India announces trials as 'EXPERIMENTAL FLIGHT TRIAL' or 'ROCKET LAUNCHING'; the word 'missile' is usually absent from the warning.",
+        "Live traffic says 'FIRING BY IAF SCHEDULED' with no fixed phrase, so firing detection is a bare word-boundary match on 'firing'.",
+        "bulletin_patterns exclude the periodic warnings-in-force checklist, which quotes the warnings it lists and would otherwise score."
+      ]
+    }
+  }
+}

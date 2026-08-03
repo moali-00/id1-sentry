@@ -1,0 +1,23 @@
+{
+  "name": "imagery_sar",
+  "request": {
+    "method": "GET",
+    "path": "/v1/imagery/sar",
+    "params": {
+      "box": "pad",
+      "days": 30
+    }
+  },
+  "status_code": 200,
+  "elapsed_ms": 2870,
+  "captured_at": "2026-08-03T14:10:47.642509+00:00",
+  "error": null,
+  "response": {
+    "source": "sentinel1",
+    "status": "error",
+    "detail": "HTTP 406: {\"code\":406,\"description\":\"HTTP 406 Not Acceptable\"}",
+    "fetched_at": "2026-08-03T14:10:47.641745+00:00",
+    "latency_ms": 2868,
+    "data": null
+  }
+}

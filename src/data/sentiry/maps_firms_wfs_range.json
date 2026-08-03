@@ -1,0 +1,40 @@
+{
+  "name": "maps_firms_wfs_range",
+  "request": {
+    "method": "GET",
+    "path": "/v1/maps/firms/wfs",
+    "params": {
+      "box": "range"
+    }
+  },
+  "status_code": 200,
+  "elapsed_ms": 1527,
+  "captured_at": "2026-08-03T14:10:17.224072+00:00",
+  "error": null,
+  "response": {
+    "source": "firms_wfs",
+    "status": "empty",
+    "detail": null,
+    "fetched_at": "2026-08-03T14:10:17.223313+00:00",
+    "latency_ms": 1524,
+    "meta": {
+      "layers_queried": [
+        "ms:fires_snpp_24hrs",
+        "ms:fires_noaa20_24hrs",
+        "ms:fires_modis_24hrs"
+      ],
+      "refresh_interval": "15 minutes"
+    },
+    "data": {
+      "region": "south_asia",
+      "bbox": {
+        "west": 86.85,
+        "south": 20.55,
+        "east": 87.3,
+        "north": 21.2
+      },
+      "detection_count": 0,
+      "detections": []
+    }
+  }
+}

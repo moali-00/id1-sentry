@@ -1,0 +1,41 @@
+{
+  "name": "missiles_match",
+  "request": {
+    "method": "GET",
+    "path": "/v1/missiles/match",
+    "params": {
+      "text": "Agni-6 missile test likely from Chandipur ITR; 11,000 evacuated"
+    }
+  },
+  "status_code": 200,
+  "elapsed_ms": 1,
+  "captured_at": "2026-08-03T14:10:11.134253+00:00",
+  "error": null,
+  "response": {
+    "text": "Agni-6 missile test likely from Chandipur ITR; 11,000 evacuated",
+    "matches": [
+      {
+        "key": "agni-6",
+        "name": "Agni-VI",
+        "family": "Agni",
+        "category": "ballistic",
+        "range_km": {
+          "min": 8000,
+          "max": 12000
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "ASL Hyderabad"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "agni-vi",
+          "agni 6",
+          "agni-6"
+        ],
+        "note": "Reported in development; not officially confirmed as tested."
+      }
+    ],
+    "disclaimer": "Public reference data (DRDO/PIB releases, NTI, Wikipedia). `integration_sites` is context only \u2014 no site is monitored and no scoring uses it. Sentiry holds nothing about the location or movement of deployed systems; it reads published test announcements. Corridor classes narrow a candidate field and never identify a system."
+  }
+}

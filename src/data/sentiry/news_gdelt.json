@@ -1,0 +1,17 @@
+{
+  "name": "news_gdelt",
+  "request": {
+    "method": "GET",
+    "path": "/v1/news",
+    "params": {
+      "timespan": "7d"
+    }
+  },
+  "status_code": 502,
+  "elapsed_ms": 13051,
+  "captured_at": "2026-08-03T14:10:38.637492+00:00",
+  "error": null,
+  "response": {
+    "detail": "gdelt unavailable: HTTP 429: Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the"
+  }
+}

@@ -1,0 +1,324 @@
+{
+  "name": "social_evacuations",
+  "request": {
+    "method": "GET",
+    "path": "/v1/social/evacuations",
+    "params": {}
+  },
+  "status_code": 200,
+  "elapsed_ms": 0,
+  "captured_at": "2026-08-03T14:10:25.591297+00:00",
+  "error": null,
+  "response": {
+    "feed": {
+      "source": "social",
+      "status": "ok",
+      "detail": null,
+      "fetched_at": "2026-08-03T14:10:25.585361+00:00",
+      "latency_ms": 5990,
+      "meta": {
+        "feeds_ok": [
+          "google_news",
+          "reddit_search"
+        ],
+        "reddit_mode": "authenticated_search",
+        "rsshub_enabled": false,
+        "rsshub_base_url": null
+      }
+    },
+    "evacuation_count": 7,
+    "items": [
+      {
+        "title": "#breaking India carried out a highly secretive missile test from the Chandipur range in Odisha",
+        "url": "https://www.reddit.com/r/AllindiaStudentUnion/comments/1u40lh3/breaking_india_carried_out_a_highly_secretive/",
+        "published_at": "2026-06-12T16:42:26+00:00",
+        "summary": "\\#breaking India carried out a highly secretive missile test from the Chandipur range in Odisha, on 10 June at 1550h. Over 11,000 residents including livestocks were evacuated in a radius of 3.5 km , probably because it was launch of either Agni 6 ICBM or a completely new type of ICBM. No official confirmation or any data has yet been issued. Range of Agni 6 is likely to be 12000 km + \ud83d\ude0c\ud83d\ude4f\ud83c\uddee\ud83c\uddf3\ud83c\uddee\ud83c\uddf3\ud83d\udc47\ud83d\udc47",
+        "author": "r/AllindiaStudentUnion",
+        "platform": "reddit_search",
+        "matched_query": "\"Chandipur\" missile",
+        "matched_keywords": [
+          "chandipur",
+          "agni"
+        ],
+        "aoi_relevant": true,
+        "evacuation_terms": [
+          "evacuated"
+        ],
+        "forward_looking_terms": [
+          "likely"
+        ],
+        "logistics_terms": [],
+        "matched_systems": [
+          {
+            "key": "agni-6",
+            "name": "Agni-VI",
+            "category": "ballistic",
+            "range_km": {
+              "min": 8000,
+              "max": 12000
+            }
+          }
+        ]
+      },
+      {
+        "title": "11 villages evacuated ahead of missile test in Odisha: Over 11,000 people moved from areas around Chandipur... - Bhaskar English",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPeWNqcnBrbW1zNGRZSmlwWTZRRnVmMDNXSTc4R0g3Z3dpVkxEckR5RnJadGJpX25Dclg5eVRHYUhoaXRVN0pQSTVBeHJyRlN1WFNpdUtmUjEzN1BUSWRiSGY2VWhycmMtdjRqX19nUXRQUXR3anFMTW1vcFRHQU9QMmRpQUdtaFN2b25BT3dGTS1VbUhrQ2VldTg0UGNnWV95QUVEci0yNkFaZ01mMmdtRlZlZzVfc05lU2JYb3FR0gHDAUFVX3lxTE9LdF8yX09EQ2JESzJxQWRWQjJfWjNaYV9fSDFwcnFaVFgxOS1fQXR4UU9qT1R3VmIyRkNjdURhNVBITGRsVzk1R095dFU5QTNDd2lWYkJaNHI4NmhJT0habjRUYUNHMU95X25rZ0pJdkU2ZzhuVTZiR0ZIcHg1eXpjWFNOYUVYRmJFVFRVSjlId292aXhucjlmcUI4NjhJdlhmTy1mMXNERFVlekgtWEpWZU9LNVhiYVpiVHV3UVlmS2pkQQ?oc=5",
+        "published_at": "2026-06-11T15:57:44+00:00",
+        "summary": "11 villages evacuated ahead of missile test in Odisha: Over 11,000 people moved from areas around Chandipur... &nbsp;&nbsp; Bhaskar English",
+        "author": "Bhaskar English",
+        "platform": "google_news",
+        "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+        "matched_keywords": [
+          "chandipur"
+        ],
+        "aoi_relevant": true,
+        "evacuation_terms": [
+          "evacuated"
+        ],
+        "forward_looking_terms": [
+          "ahead of"
+        ],
+        "logistics_terms": [],
+        "matched_systems": []
+      },
+      {
+        "title": "Large-Scale Evacuation At Balasore's Chandipur For Missile Test At ITR - ETV Bharat",
+        "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOa3p6Zm4zNFhKM2xXYzB5ZVVGdWlaRlNlLTExa0Jlbi1BOFlDR0ZydG5yVEpuM0xQRExSZWFPYmRKMFBxX3JnbjQzNGVYMUk4bE9UMmdRZHNZeWNWT21haGdyRndtbTRENHFuaVlfZUgyTmNHeXM4TUZoVngtZHlSY0ppN0RZSGRYNHl3bWpxQUk0YXhWUzI5ZG1ZaHdzOC1NS01WY3ZCVm16RmljNG55NFRpRHp3czVES1pz0gHAAUFVX3lxTE5HeUVYZEFyWjR5bHhYel9Va0l1MFFxdDltUV9ldmVvWDAzeEYxYy1GZ2ZEMXl3Y1lLR1hxNS05cWl0dnh6VzZpZ3ZsWUlFX1FyY25qXzB1NGlzTzFaMGVzZkxJbE43OHQ0ZlJHUE1TaU5LbmVETVAzaHlGN3hjUHNnRXIwbFZJZG10QXdvVHdoV0lHaDRERFpONllYRHoycnFkWDRpanBUeGZMUFBrNkJWUWtQYWFuSW16bkN5alJRMQ?oc=5",
+        "published_at": "2026-06-11T07:00:00+00:00",
+        "summary": "Large-Scale Evacuation At Balasore's Chandipur For Missile Test At ITR &nbsp;&nbsp; ETV Bharat",
+        "author": "ETV Bharat",
+        "platform": "google_news",
+        "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+        "matched_keywords": [
+          "balasore",
+          "chandipur"
+        ],
+        "aoi_relevant": true,
+        "evacuation_terms": [
+          "evacuation"
+        ],
+        "forward_looking_terms": [],
+        "logistics_terms": [],
+        "matched_systems": []
+      },
+      {
+        "title": "Agni-6 Missile Test Buzz Grows As Over 11,000 Evacuated Near Chandipur ITR In Odisha - SSBCrack",
+        "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNekZFcWlVY2hfMUh1dVBLWE52SjZMdUxFUnRud3NTSHlsY2lIalpBWi1RaWhEdEVnUXFDUzBIY2JRaWV4NldyWV9OV2o1eWpRb3M4UExzYXRTelFrbWpoRFpoTFB4eVNzVWZDUWpSd1hoX2xTRXRZbVh3enFmc2FnYk5pLVdvcHZkNTJRTS1QSjJmN1NoSVJwQWFiVUVGTkFJMzFJaDhTbVBUcHBWc01VTnZJNGt1LUtSd3poQ0hn?oc=5",
+        "published_at": "2026-06-11T07:00:00+00:00",
+        "summary": "Agni-6 Missile Test Buzz Grows As Over 11,000 Evacuated Near Chandipur ITR In Odisha &nbsp;&nbsp; SSBCrack",
+        "author": "SSBCrack",
+        "platform": "google_news",
+        "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+        "matched_keywords": [
+          "chandipur",
+          "agni"
+        ],
+        "aoi_relevant": true,
+        "evacuation_terms": [
+          "evacuated"
+        ],
+        "forward_looking_terms": [],
+        "logistics_terms": [],
+        "matched_systems": [
+          {
+            "key": "agni-6",
+            "name": "Agni-VI",
+            "category": "ballistic",
+            "range_km": {
+              "min": 8000,
+              "max": 12000
+            }
+          }
+        ]
+      },
+      {
+        "title": "Is India gearing up for a test of Agni-VI ballistic missile? Massive evacuation sparks speculations - theweek.in",
+        "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQXzA4TGcyNVhkMXgxUzh4YURXY09LQ0xKZ3VSSV9DMHEwSHlqM1RLTjVkMHo5UnhrbjhzNFNPajhJRktTVHllcm9VT1lNS1V6TjJtcEpfRFY3UTY2VUpMN1dUbHVEZDdtd1VnZUJlVVNHNkdybVUyRjRCLXBsb1BTZFVmTFhBeEwyQmVNTXZMNXB3ck5pZHJFRGV5R05TVFdPLWh6UzNzMnFFSXlrU0J2RFQzR21abl8tNWRrVU5qbnBENlFpUHRrMXg4akR4cTczclQyWTRrN3VnSjVzNkNzMUFfNmnSAeoBQVVfeXFMTTBIajI5OElhZ3Qyc213cnpRWkdwSjZOdGsyLWg0N2pfdEZxZ0p4dVdmYks2TGtaemY3bTJZSmFoSzl5MmpqNTFXWUhrcHEwc3Z2Wnhnc0RQYVZFdmJPek1BUlNTNWstU1V1X3JWb0RsY1dmOVpLQy1udzhPSTVmN1hOSnNwU3dSbE9NNmxYcFVkdm9oV1FYNzNfTVd6aWJraU5Sem41NTdqMURwTm1MQmswQW9XSWgxYjNPNWFDeXE4c19aM2dTQWZILXlEQUY5Qk41U3Z3YUZLZVNVUkFvcktEdnc0TUVJNnVB?oc=5",
+        "published_at": "2026-06-11T07:00:00+00:00",
+        "summary": "Is India gearing up for a test of Agni-VI ballistic missile? Massive evacuation sparks speculations &nbsp;&nbsp; theweek.in",
+        "author": "theweek.in",
+        "platform": "google_news",
+        "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+        "matched_keywords": [
+          "agni"
+        ],
+        "aoi_relevant": true,
+        "evacuation_terms": [
+          "evacuation"
+        ],
+        "forward_looking_terms": [],
+        "logistics_terms": [],
+        "matched_systems": [
+          {
+            "key": "agni-6",
+            "name": "Agni-VI",
+            "category": "ballistic",
+            "range_km": {
+              "min": 8000,
+              "max": 12000
+            }
+          }
+        ]
+      },
+      {
+        "title": "/r/worldnews - https://www.firstpost.com/india/agni-6-missile-test-likely-from-chandipur-itr-over-11000-residents-evacuated-as-precaution-14021034.html",
+        "url": "https://www.reddit.com/r/NoFilterNews/comments/1u2e9fs/rworldnews/",
+        "published_at": "2026-06-10T20:41:13+00:00",
+        "summary": "/r/worldnews https://www.firstpost.com/india/agni-6-missile-test-likely-from-chandipur-itr-over-11000-residents-evacuated-as-precaution-14021034.html",
+        "author": "r/NoFilterNews",
+        "platform": "reddit_search",
+        "matched_query": "\"Chandipur\" missile",
+        "matched_keywords": [
+          "chandipur",
+          "agni"
+        ],
+        "aoi_relevant": true,
+        "evacuation_terms": [
+          "evacuated"
+        ],
+        "forward_looking_terms": [
+          "likely"
+        ],
+        "logistics_terms": [],
+        "matched_systems": [
+          {
+            "key": "agni-6",
+            "name": "Agni-VI",
+            "category": "ballistic",
+            "range_km": {
+              "min": 8000,
+              "max": 12000
+            }
+          }
+        ]
+      },
+      {
+        "title": "Agni-6 missile test likely from Chandipur ITR; over 11,000 residents evacuated as precaution - Firstpost",
+        "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxNdTRMQ1Vjc1N0TWxBMG9SNWdDV1QzdFljY1h5b0F2ek11aXFHeWpGUnl4YW5ubnpBUFB2Zld6amowX0Rhc0FheHRtLXZWbDN1MnpDQ0VFaV90NWFvOFJla2FxTmVyRFZ3aDF0dVN4RUJYV09XSjNfWjlkOUpkNXh3UnBjeW55MHdYMXB5R1BMN2RPamVuTkJ2ZTh6c243X25WNC12a2w0TEtqSmxSRjA5VG9oZ2lCcElGeENVTEN4Qk43WlNvb1hsemM3WFJYWWRBTVHSAdcBQVVfeXFMTUxpMWxIZ3lQM0JpZHJELUYxazJpX0hjOVhDbUFtNnNSWTNVQ1FJQTV2NjI4SVkwbVVEeDlNQXZBQnZXT1JocmpIb1I4WDdVUWtzSzFhRjZTdVdpZk9URnFUZmNzblBUX2VhdHo2TGZYbmlGdVRINTQ1M0ZVZkZDdTBPMmViM0sybmh3NE1GMDVhWWZJR2N5c1V3VWJ4dnV6RlB4ZW8wS1RaRFFuVTdPX1pzNi1HWl8tRVpvWTI1ZWNNa0ExN0hkZWMyc2tDVkd3b1I4X1dyOG8?oc=5",
+        "published_at": "2026-06-10T07:00:00+00:00",
+        "summary": "Agni-6 missile test likely from Chandipur ITR; over 11,000 residents evacuated as precaution &nbsp;&nbsp; Firstpost",
+        "author": "Firstpost",
+        "platform": "google_news",
+        "matched_query": "\"Abdul Kalam Island\" OR \"Wheeler Island\" OR \"Integrated Test Range\" OR (Chandipur missile) OR (Balasore missile) OR (Odisha missile test)",
+        "matched_keywords": [
+          "chandipur",
+          "agni"
+        ],
+        "aoi_relevant": true,
+        "evacuation_terms": [
+          "evacuated"
+        ],
+        "forward_looking_terms": [
+          "likely"
+        ],
+        "logistics_terms": [],
+        "matched_systems": [
+          {
+            "key": "agni-6",
+            "name": "Agni-VI",
+            "category": "ballistic",
+            "range_km": {
+              "min": 8000,
+              "max": 12000
+            }
+          }
+        ]
+      }
+    ],
+    "indicator": {
+      "key": "evacuation_notice",
+      "label": "Civil precursor (evacuation / road closure / fishing ban) near the range",
+      "weight": 0.15,
+      "score": 0.9,
+      "available": true,
+      "detail": "7 evacuation report(s), 4 referring to an upcoming trial",
+      "evidence": {
+        "evacuation_count": 7,
+        "logistics_count": 0,
+        "items": [
+          {
+            "title": "#breaking India carried out a highly secretive missile test from the Chandipur range in Odisha",
+            "url": "https://www.reddit.com/r/AllindiaStudentUnion/comments/1u40lh3/breaking_india_carried_out_a_highly_secretive/",
+            "platform": "reddit_search",
+            "published_at": "2026-06-12T16:42:26+00:00",
+            "evacuation_terms": [
+              "evacuated"
+            ],
+            "logistics_terms": [],
+            "forward_looking_terms": [
+              "likely"
+            ],
+            "matched_systems": [
+              "Agni-VI"
+            ]
+          },
+          {
+            "title": "11 villages evacuated ahead of missile test in Odisha: Over 11,000 people moved from areas around Chandipur... - Bhaskar English",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPeWNqcnBrbW1zNGRZSmlwWTZRRnVmMDNXSTc4R0g3Z3dpVkxEckR5RnJadGJpX25Dclg5eVRHYUhoaXRVN0pQSTVBeHJyRlN1WFNpdUtmUjEzN1BUSWRiSGY2VWhycmMtdjRqX19nUXRQUXR3anFMTW1vcFRHQU9QMmRpQUdtaFN2b25BT3dGTS1VbUhrQ2VldTg0UGNnWV95QUVEci0yNkFaZ01mMmdtRlZlZzVfc05lU2JYb3FR0gHDAUFVX3lxTE9LdF8yX09EQ2JESzJxQWRWQjJfWjNaYV9fSDFwcnFaVFgxOS1fQXR4UU9qT1R3VmIyRkNjdURhNVBITGRsVzk1R095dFU5QTNDd2lWYkJaNHI4NmhJT0habjRUYUNHMU95X25rZ0pJdkU2ZzhuVTZiR0ZIcHg1eXpjWFNOYUVYRmJFVFRVSjlId292aXhucjlmcUI4NjhJdlhmTy1mMXNERFVlekgtWEpWZU9LNVhiYVpiVHV3UVlmS2pkQQ?oc=5",
+            "platform": "google_news",
+            "published_at": "2026-06-11T15:57:44+00:00",
+            "evacuation_terms": [
+              "evacuated"
+            ],
+            "logistics_terms": [],
+            "forward_looking_terms": [
+              "ahead of"
+            ],
+            "matched_systems": []
+          },
+          {
+            "title": "Large-Scale Evacuation At Balasore's Chandipur For Missile Test At ITR - ETV Bharat",
+            "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxOa3p6Zm4zNFhKM2xXYzB5ZVVGdWlaRlNlLTExa0Jlbi1BOFlDR0ZydG5yVEpuM0xQRExSZWFPYmRKMFBxX3JnbjQzNGVYMUk4bE9UMmdRZHNZeWNWT21haGdyRndtbTRENHFuaVlfZUgyTmNHeXM4TUZoVngtZHlSY0ppN0RZSGRYNHl3bWpxQUk0YXhWUzI5ZG1ZaHdzOC1NS01WY3ZCVm16RmljNG55NFRpRHp3czVES1pz0gHAAUFVX3lxTE5HeUVYZEFyWjR5bHhYel9Va0l1MFFxdDltUV9ldmVvWDAzeEYxYy1GZ2ZEMXl3Y1lLR1hxNS05cWl0dnh6VzZpZ3ZsWUlFX1FyY25qXzB1NGlzTzFaMGVzZkxJbE43OHQ0ZlJHUE1TaU5LbmVETVAzaHlGN3hjUHNnRXIwbFZJZG10QXdvVHdoV0lHaDRERFpONllYRHoycnFkWDRpanBUeGZMUFBrNkJWUWtQYWFuSW16bkN5alJRMQ?oc=5",
+            "platform": "google_news",
+            "published_at": "2026-06-11T07:00:00+00:00",
+            "evacuation_terms": [
+              "evacuation"
+            ],
+            "logistics_terms": [],
+            "forward_looking_terms": [],
+            "matched_systems": []
+          },
+          {
+            "title": "Agni-6 Missile Test Buzz Grows As Over 11,000 Evacuated Near Chandipur ITR In Odisha - SSBCrack",
+            "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxNekZFcWlVY2hfMUh1dVBLWE52SjZMdUxFUnRud3NTSHlsY2lIalpBWi1RaWhEdEVnUXFDUzBIY2JRaWV4NldyWV9OV2o1eWpRb3M4UExzYXRTelFrbWpoRFpoTFB4eVNzVWZDUWpSd1hoX2xTRXRZbVh3enFmc2FnYk5pLVdvcHZkNTJRTS1QSjJmN1NoSVJwQWFiVUVGTkFJMzFJaDhTbVBUcHBWc01VTnZJNGt1LUtSd3poQ0hn?oc=5",
+            "platform": "google_news",
+            "published_at": "2026-06-11T07:00:00+00:00",
+            "evacuation_terms": [
+              "evacuated"
+            ],
+            "logistics_terms": [],
+            "forward_looking_terms": [],
+            "matched_systems": [
+              "Agni-VI"
+            ]
+          },
+          {
+            "title": "Is India gearing up for a test of Agni-VI ballistic missile? Massive evacuation sparks speculations - theweek.in",
+            "url": "https://news.google.com/rss/articles/CBMi5AFBVV95cUxQXzA4TGcyNVhkMXgxUzh4YURXY09LQ0xKZ3VSSV9DMHEwSHlqM1RLTjVkMHo5UnhrbjhzNFNPajhJRktTVHllcm9VT1lNS1V6TjJtcEpfRFY3UTY2VUpMN1dUbHVEZDdtd1VnZUJlVVNHNkdybVUyRjRCLXBsb1BTZFVmTFhBeEwyQmVNTXZMNXB3ck5pZHJFRGV5R05TVFdPLWh6UzNzMnFFSXlrU0J2RFQzR21abl8tNWRrVU5qbnBENlFpUHRrMXg4akR4cTczclQyWTRrN3VnSjVzNkNzMUFfNmnSAeoBQVVfeXFMTTBIajI5OElhZ3Qyc213cnpRWkdwSjZOdGsyLWg0N2pfdEZxZ0p4dVdmYks2TGtaemY3bTJZSmFoSzl5MmpqNTFXWUhrcHEwc3Z2Wnhnc0RQYVZFdmJPek1BUlNTNWstU1V1X3JWb0RsY1dmOVpLQy1udzhPSTVmN1hOSnNwU3dSbE9NNmxYcFVkdm9oV1FYNzNfTVd6aWJraU5Sem41NTdqMURwTm1MQmswQW9XSWgxYjNPNWFDeXE4c19aM2dTQWZILXlEQUY5Qk41U3Z3YUZLZVNVUkFvcktEdnc0TUVJNnVB?oc=5",
+            "platform": "google_news",
+            "published_at": "2026-06-11T07:00:00+00:00",
+            "evacuation_terms": [
+              "evacuation"
+            ],
+            "logistics_terms": [],
+            "forward_looking_terms": [],
+            "matched_systems": [
+              "Agni-VI"
+            ]
+          }
+        ],
+        "logistics_items": [],
+        "systems_mentioned": [
+          "Agni-I",
+          "Agni-III",
+          "Agni-IV",
+          "Agni-V",
+          "Agni-VI",
+          "Pralay",
+          "SMART",
+          "VSHORADS"
+        ]
+      }
+    }
+  }
+}

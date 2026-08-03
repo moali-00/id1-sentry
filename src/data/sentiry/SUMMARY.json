@@ -1,0 +1,420 @@
+{
+  "captured_at": "2026-08-03T14:10:11.008932+00:00",
+  "calls": 37,
+  "ok": 36,
+  "failed": 1,
+  "total_ms": 38882,
+  "results": [
+    {
+      "name": "health",
+      "method": "GET",
+      "path": "/health",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 4,
+      "gist": "status=ok",
+      "error": null
+    },
+    {
+      "name": "health_ready",
+      "method": "GET",
+      "path": "/health/ready",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 0,
+      "gist": "status=ready",
+      "error": null
+    },
+    {
+      "name": "aoi",
+      "method": "GET",
+      "path": "/v1/aoi",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 0,
+      "gist": "",
+      "error": null
+    },
+    {
+      "name": "maps_firms_layers",
+      "method": "GET",
+      "path": "/v1/maps/firms/layers",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 7,
+      "gist": "",
+      "error": null
+    },
+    {
+      "name": "missiles",
+      "method": "GET",
+      "path": "/v1/missiles",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 6,
+      "gist": "27 systems",
+      "error": null
+    },
+    {
+      "name": "missiles_classes",
+      "method": "GET",
+      "path": "/v1/missiles/classes",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 0,
+      "gist": "",
+      "error": null
+    },
+    {
+      "name": "missiles_agni_5",
+      "method": "GET",
+      "path": "/v1/missiles/agni-5",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 0,
+      "gist": "",
+      "error": null
+    },
+    {
+      "name": "missiles_match",
+      "method": "GET",
+      "path": "/v1/missiles/match",
+      "params": {
+        "text": "Agni-6 missile test likely from Chandipur ITR; 11,000 evacuated"
+      },
+      "status_code": 200,
+      "elapsed_ms": 1,
+      "gist": "",
+      "error": null
+    },
+    {
+      "name": "maps_cesium",
+      "method": "GET",
+      "path": "/v1/maps/cesium",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 0,
+      "gist": "",
+      "error": null
+    },
+    {
+      "name": "maps_firms_wms",
+      "method": "GET",
+      "path": "/v1/maps/firms/wms",
+      "params": {
+        "box": "range"
+      },
+      "status_code": 200,
+      "elapsed_ms": 0,
+      "gist": "status=ok",
+      "error": null
+    },
+    {
+      "name": "maps_firms_wms_verified",
+      "method": "GET",
+      "path": "/v1/maps/firms/wms",
+      "params": {
+        "box": "pad",
+        "verify": true
+      },
+      "status_code": 200,
+      "elapsed_ms": 1642,
+      "gist": "status=ok",
+      "error": null
+    },
+    {
+      "name": "aircraft_live_airspace",
+      "method": "GET",
+      "path": "/v1/aircraft/live",
+      "params": {
+        "box": "airspace"
+      },
+      "status_code": 200,
+      "elapsed_ms": 83,
+      "gist": "status=ok; aircraft_count=2",
+      "error": null
+    },
+    {
+      "name": "aircraft_live_range",
+      "method": "GET",
+      "path": "/v1/aircraft/live",
+      "params": {
+        "box": "range"
+      },
+      "status_code": 200,
+      "elapsed_ms": 256,
+      "gist": "status=empty; aircraft_count=0",
+      "error": null
+    },
+    {
+      "name": "aircraft_observe",
+      "method": "POST",
+      "path": "/v1/aircraft/observe",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 256,
+      "gist": "",
+      "error": null
+    },
+    {
+      "name": "aircraft_vacancy",
+      "method": "GET",
+      "path": "/v1/aircraft/vacancy",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 2,
+      "gist": "",
+      "error": null
+    },
+    {
+      "name": "aircraft_baseline",
+      "method": "GET",
+      "path": "/v1/aircraft/baseline",
+      "params": {
+        "limit": 20
+      },
+      "status_code": 200,
+      "elapsed_ms": 1,
+      "gist": "",
+      "error": null
+    },
+    {
+      "name": "thermal_hotspots_pad",
+      "method": "GET",
+      "path": "/v1/thermal/hotspots",
+      "params": {
+        "box": "pad",
+        "day_range": 3
+      },
+      "status_code": 200,
+      "elapsed_ms": 1339,
+      "gist": "status=empty; detection_count=0",
+      "error": null
+    },
+    {
+      "name": "thermal_hotspots_range",
+      "method": "GET",
+      "path": "/v1/thermal/hotspots",
+      "params": {
+        "box": "range",
+        "day_range": 1
+      },
+      "status_code": 200,
+      "elapsed_ms": 973,
+      "gist": "status=empty; detection_count=0",
+      "error": null
+    },
+    {
+      "name": "maps_firms_wfs_range",
+      "method": "GET",
+      "path": "/v1/maps/firms/wfs",
+      "params": {
+        "box": "range"
+      },
+      "status_code": 200,
+      "elapsed_ms": 1527,
+      "gist": "status=empty; detection_count=0",
+      "error": null
+    },
+    {
+      "name": "maps_firms_wfs_downrange",
+      "method": "GET",
+      "path": "/v1/maps/firms/wfs",
+      "params": {
+        "box": "downrange"
+      },
+      "status_code": 200,
+      "elapsed_ms": 1371,
+      "gist": "status=ok; detection_count=28",
+      "error": null
+    },
+    {
+      "name": "maritime_warnings",
+      "method": "GET",
+      "path": "/v1/maritime/warnings",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 21,
+      "gist": "8 returned",
+      "error": null
+    },
+    {
+      "name": "maritime_warnings_all",
+      "method": "GET",
+      "path": "/v1/maritime/warnings",
+      "params": {
+        "only_relevant": false
+      },
+      "status_code": 200,
+      "elapsed_ms": 22,
+      "gist": "34 returned",
+      "error": null
+    },
+    {
+      "name": "maritime_launch_windows",
+      "method": "GET",
+      "path": "/v1/maritime/launch-windows",
+      "params": {
+        "horizon_hours": 720
+      },
+      "status_code": 200,
+      "elapsed_ms": 63,
+      "gist": "",
+      "error": null
+    },
+    {
+      "name": "maritime_coupled_trials",
+      "method": "GET",
+      "path": "/v1/maritime/coupled-trials",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 4,
+      "gist": "2 coupled pairs",
+      "error": null
+    },
+    {
+      "name": "maritime_nga_warnings",
+      "method": "GET",
+      "path": "/v1/maritime/nga-warnings",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 874,
+      "gist": "1 warnings",
+      "error": null
+    },
+    {
+      "name": "social",
+      "method": "GET",
+      "path": "/v1/social",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 5995,
+      "gist": "status=ok; item_count=94",
+      "error": null
+    },
+    {
+      "name": "social_evacuations",
+      "method": "GET",
+      "path": "/v1/social/evacuations",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 0,
+      "gist": "7 evacuation reports",
+      "error": null
+    },
+    {
+      "name": "news_gdelt",
+      "method": "GET",
+      "path": "/v1/news",
+      "params": {
+        "timespan": "7d"
+      },
+      "status_code": 502,
+      "elapsed_ms": 13051,
+      "gist": "",
+      "error": null
+    },
+    {
+      "name": "notams",
+      "method": "GET",
+      "path": "/v1/notams",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 2878,
+      "gist": "FIR VECF",
+      "error": null
+    },
+    {
+      "name": "notams_danger_areas",
+      "method": "GET",
+      "path": "/v1/notams/danger-areas",
+      "params": {
+        "horizon_hours": 720
+      },
+      "status_code": 200,
+      "elapsed_ms": 0,
+      "gist": "FIR VECF",
+      "error": null
+    },
+    {
+      "name": "imagery_optical",
+      "method": "GET",
+      "path": "/v1/imagery/optical",
+      "params": {
+        "box": "pad",
+        "limit": 5
+      },
+      "status_code": 200,
+      "elapsed_ms": 3254,
+      "gist": "status=ok; scene_count=5",
+      "error": null
+    },
+    {
+      "name": "imagery_sar",
+      "method": "GET",
+      "path": "/v1/imagery/sar",
+      "params": {
+        "box": "pad",
+        "days": 30
+      },
+      "status_code": 200,
+      "elapsed_ms": 2870,
+      "gist": "status=error",
+      "error": null
+    },
+    {
+      "name": "stream_preamble",
+      "method": "GET",
+      "path": "/v1/stream",
+      "params": {
+        "max_events": 0
+      },
+      "status_code": 200,
+      "elapsed_ms": 3,
+      "gist": "",
+      "error": null
+    },
+    {
+      "name": "poller",
+      "method": "GET",
+      "path": "/v1/poller",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 1,
+      "gist": "",
+      "error": null
+    },
+    {
+      "name": "sources",
+      "method": "GET",
+      "path": "/v1/sources",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 2352,
+      "gist": "ok=6 degraded=2 error=2",
+      "error": null
+    },
+    {
+      "name": "assessment",
+      "method": "GET",
+      "path": "/v1/assessment",
+      "params": {
+        "include_feeds": true
+      },
+      "status_code": 200,
+      "elapsed_ms": 26,
+      "gist": "level=elevated; score=0.549 confidence=0.8",
+      "error": null
+    },
+    {
+      "name": "health_deep",
+      "method": "GET",
+      "path": "/health/deep",
+      "params": {},
+      "status_code": 200,
+      "elapsed_ms": 0,
+      "gist": "status=degraded",
+      "error": null
+    }
+  ]
+}

@@ -1,0 +1,270 @@
+{
+  "name": "imagery_optical",
+  "request": {
+    "method": "GET",
+    "path": "/v1/imagery/optical",
+    "params": {
+      "box": "pad",
+      "limit": 5
+    }
+  },
+  "status_code": 200,
+  "elapsed_ms": 3254,
+  "captured_at": "2026-08-03T14:10:44.771143+00:00",
+  "error": null,
+  "response": {
+    "source": "up42",
+    "status": "ok",
+    "detail": null,
+    "fetched_at": "2026-08-03T14:10:44.770345+00:00",
+    "latency_ms": 3253,
+    "meta": {
+      "hosts_queried": [
+        "oneatlas"
+      ]
+    },
+    "data": {
+      "bbox": {
+        "west": 87.055,
+        "south": 20.728,
+        "east": 87.116,
+        "north": 20.788
+      },
+      "scene_count": 5,
+      "most_recent": {
+        "scene_id": "61875f39-f023-4c01-8a3d-6260e3c94dca",
+        "collection": "pneo",
+        "constellation": "pneo",
+        "host": "oneatlas",
+        "acquired_at": "2026-08-03T05:13:44+00:00",
+        "resolution_m": 0.3,
+        "cloud_cover": 86.0,
+        "geometry": {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                86.96616136,
+                20.84101701
+              ],
+              [
+                86.96551803,
+                20.69135297
+              ],
+              [
+                87.20815322,
+                20.67245286
+              ],
+              [
+                87.2075276,
+                20.82583771
+              ],
+              [
+                86.96616136,
+                20.84101701
+              ]
+            ]
+          ]
+        }
+      },
+      "scenes": [
+        {
+          "scene_id": "61875f39-f023-4c01-8a3d-6260e3c94dca",
+          "collection": "pneo",
+          "constellation": "pneo",
+          "host": "oneatlas",
+          "acquired_at": "2026-08-03T05:13:44+00:00",
+          "resolution_m": 0.3,
+          "cloud_cover": 86.0,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  86.96616136,
+                  20.84101701
+                ],
+                [
+                  86.96551803,
+                  20.69135297
+                ],
+                [
+                  87.20815322,
+                  20.67245286
+                ],
+                [
+                  87.2075276,
+                  20.82583771
+                ],
+                [
+                  86.96616136,
+                  20.84101701
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "scene_id": "d1d33e7e-9aaf-46df-aba2-09cc6449f971",
+          "collection": "pneo",
+          "constellation": "pneo",
+          "host": "oneatlas",
+          "acquired_at": "2026-08-02T04:55:13+00:00",
+          "resolution_m": 0.3,
+          "cloud_cover": 100.0,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  87.15277521,
+                  20.8269386
+                ],
+                [
+                  87.01784225,
+                  20.8266167
+                ],
+                [
+                  87.01790598,
+                  20.70181972
+                ],
+                [
+                  87.01790431,
+                  20.70104815
+                ],
+                [
+                  87.01788016,
+                  20.68938564
+                ],
+                [
+                  87.15279519,
+                  20.68907406
+                ],
+                [
+                  87.15282109,
+                  20.70079127
+                ],
+                [
+                  87.15282242,
+                  20.70156643
+                ],
+                [
+                  87.15277521,
+                  20.8269386
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "scene_id": "aa98c844-7021-47c1-891f-50f52ad1dd27",
+          "collection": "pneo",
+          "constellation": "pneo",
+          "host": "oneatlas",
+          "acquired_at": "2026-08-01T04:36:41+00:00",
+          "resolution_m": 0.3,
+          "cloud_cover": 29.0734731625778,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  86.9784246,
+                  20.83737362
+                ],
+                [
+                  86.97907363,
+                  20.68946192
+                ],
+                [
+                  87.18931901,
+                  20.67976059
+                ],
+                [
+                  87.18987513,
+                  20.82549395
+                ],
+                [
+                  86.9784246,
+                  20.83737362
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "scene_id": "26875d4c-9b05-47e8-9b35-c0108c944697",
+          "collection": "pneo",
+          "constellation": "pneo",
+          "host": "oneatlas",
+          "acquired_at": "2026-02-06T04:52:12+00:00",
+          "resolution_m": 0.3,
+          "cloud_cover": 0.0,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  87.10035306,
+                  20.76643292
+                ],
+                [
+                  86.95143306,
+                  20.76633596
+                ],
+                [
+                  86.95159708,
+                  20.6318862
+                ],
+                [
+                  87.10010081,
+                  20.6316011
+                ],
+                [
+                  87.10035306,
+                  20.76643292
+                ]
+              ]
+            ]
+          }
+        },
+        {
+          "scene_id": "503cb427-20fc-4058-95f8-6b55257d88ae",
+          "collection": "pneo",
+          "constellation": "pneo",
+          "host": "oneatlas",
+          "acquired_at": "2025-12-03T04:52:10+00:00",
+          "resolution_m": 0.3,
+          "cloud_cover": 100.0,
+          "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+              [
+                [
+                  86.95167389,
+                  20.76660011
+                ],
+                [
+                  86.95188528,
+                  20.63305646
+                ],
+                [
+                  87.09978319,
+                  20.63270194
+                ],
+                [
+                  87.099974,
+                  20.76635899
+                ],
+                [
+                  86.95167389,
+                  20.76660011
+                ]
+              ]
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

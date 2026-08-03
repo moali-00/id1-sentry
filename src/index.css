@@ -1,0 +1,376 @@
+@import 'tailwindcss';
+
+/*
+ * ID1 Sentry Dashboard — design tokens.
+ *
+ * The dashboard ships light and dark palettes. Rather than branching on a
+ * runtime `isLightMode` flag (which is what the original frontend port did, via
+ * a JS object of hex strings threaded through every component), every colour is
+ * declared once here as a pair of CSS custom properties. `:root` holds the light
+ * values, `.dark` overrides them, and `@theme inline` maps each one onto a
+ * Tailwind token.
+ *
+ * `inline` matters: it makes utilities emit `var(--c-panel)` rather than baking
+ * the resolved value, so a single class like `bg-panel` follows the theme class
+ * on <html> with no JS and no re-render.
+ *
+ * Components should therefore reference `bg-panel` / `text-fg-muted` /
+ * `border-line` and never a raw hex literal. The only legitimate exceptions are
+ * the per-category threat hues, which are data-driven (see CATEGORIES in
+ * `src/features/monitoring/constants.ts`) and are consumed as values in JS for
+ * Leaflet's `divIcon` HTML.
+ */
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  /* ── Surfaces ── */
+  --c-sea: #e8ecec; /* map background / page canvas */
+  --c-panel: rgba(255, 255, 255, 0.94); /* floating chrome rails */
+  --c-surface: #ffffff; /* detail panel, modal */
+  --c-inset: #f9fafb; /* cards, form fields */
+  --c-control: #f3f4f6; /* icon buttons, secondary buttons */
+  --c-hover: rgba(0, 0, 0, 0.05); /* row hover */
+  --c-active: #eff6ff; /* selected feed row */
+  --c-off: #cbd5e1; /* OFF pill */
+
+  /* ── Lines ── */
+  --c-line: #e5e7eb; /* primary 1px borders */
+  --c-line-soft: rgba(0, 0, 0, 0.08); /* row dividers */
+
+  /* ── Foreground ── */
+  --c-title: #374151; /* rail headings */
+  --c-fg: #111827; /* primary text */
+  --c-fg-muted: #6b7280; /* secondary text */
+  --c-fg-subtle: #9ca3af; /* tertiary text, labels */
+
+  /* ── Accent ── */
+  --c-accent: #2563eb;
+  --c-accent-soft: rgba(37, 99, 235, 0.05); /* AI insight card fill */
+  --c-accent-line: rgba(37, 99, 235, 0.18); /* AI insight card border */
+  --c-ring: #ffffff; /* halo behind a selected map marker */
+
+  /* ── Overlays ── */
+  --c-scrim: rgba(20, 26, 38, 0.28);
+  --c-scrim-strong: rgba(20, 26, 38, 0.32);
+
+  /* ── Badges & meters ── */
+  --c-badge: #334155;
+  --c-badge-fg: #ffffff;
+  --c-meter: #64748b; /* filled confidence bar */
+  --c-meter-off: #d1d5db; /* empty confidence bar */
+
+  /* ── Scrollbars & attribution ── */
+  --c-thumb: rgba(0, 0, 0, 0.18);
+  --c-attribution: rgba(255, 255, 255, 0.7);
+}
+
+.dark {
+  --c-sea: #0e1216;
+  --c-panel: rgba(28, 28, 28, 0.94);
+  --c-surface: #1c1c1c;
+  --c-inset: #141414;
+  --c-control: rgba(255, 255, 255, 0.06);
+  --c-hover: rgba(255, 255, 255, 0.05);
+  --c-active: rgba(96, 165, 250, 0.08);
+  --c-off: #4b5563;
+
+  --c-line: #374151;
+  --c-line-soft: rgba(255, 255, 255, 0.06);
+
+  --c-title: #d1d5db;
+  --c-fg: #f3f4f6;
+  --c-fg-muted: #9ca3af;
+  --c-fg-subtle: #6b7280;
+
+  --c-accent: #60a5fa;
+  --c-accent-soft: rgba(96, 165, 250, 0.07);
+  --c-accent-line: rgba(96, 165, 250, 0.22);
+  --c-ring: #0b1016;
+
+  --c-scrim: rgba(0, 0, 0, 0.55);
+  --c-scrim-strong: rgba(0, 0, 0, 0.6);
+
+  --c-badge: rgba(255, 255, 255, 0.1);
+  --c-badge-fg: #f3f4f6;
+  --c-meter: #9fb0bd;
+  --c-meter-off: rgba(255, 255, 255, 0.13);
+
+  --c-thumb: rgba(255, 255, 255, 0.14);
+  --c-attribution: rgba(0, 0, 0, 0.5);
+}
+
+@theme inline {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Code', monospace;
+
+  /* Theme-reactive tokens (see the pairs above). */
+  --color-sea: var(--c-sea);
+  --color-panel: var(--c-panel);
+  --color-surface: var(--c-surface);
+  --color-inset: var(--c-inset);
+  --color-control: var(--c-control);
+  --color-hover: var(--c-hover);
+  --color-active: var(--c-active);
+  --color-off: var(--c-off);
+
+  --color-line: var(--c-line);
+  --color-line-soft: var(--c-line-soft);
+
+  --color-title: var(--c-title);
+  --color-fg: var(--c-fg);
+  --color-fg-muted: var(--c-fg-muted);
+  --color-fg-subtle: var(--c-fg-subtle);
+
+  --color-accent: var(--c-accent);
+  --color-accent-soft: var(--c-accent-soft);
+  --color-accent-line: var(--c-accent-line);
+  --color-ring-halo: var(--c-ring);
+
+  --color-scrim: var(--c-scrim);
+  --color-scrim-strong: var(--c-scrim-strong);
+
+  --color-badge: var(--c-badge);
+  --color-badge-fg: var(--c-badge-fg);
+  --color-meter: var(--c-meter);
+  --color-meter-off: var(--c-meter-off);
+
+  /* ── Fixed hues ──
+     Threat categories and status colours are semantic data, not theming: a
+     "conflict" cluster must read the same red in both palettes so an analyst
+     switching themes never re-learns the legend. */
+  --color-cat-political: #fbbf24;
+  --color-cat-military: #60a5fa;
+  --color-cat-conflict: #ff6467;
+  --color-cat-unrest: #c27aff;
+  --color-cat-infra: #2dd4bf;
+
+  --color-status-live: #05df72;
+  --color-status-observed: #05df72;
+  --color-status-inferred: #fbbf24;
+  --color-status-missing: #ff6467;
+}
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--c-sea);
+  color: var(--c-fg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  height: 100vh;
+  height: 100dvh;
+}
+
+/* ── Shared utilities ─────────────────────────────────────────────────────── */
+
+/* Thin themed scrollbar for the rails, detail panel and modal. */
+@utility scroll-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-thumb) transparent;
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--c-thumb);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* ── Surfaces ─────────────────────────────────────────────────────────────── */
+
+/*
+ * The floating chrome's shadow and edge treatment.
+ *
+ * A single soft shadow plus a hairline top highlight reads as glass sitting
+ * above the map, where Tailwind's `shadow-xl` alone reads as a flat card. The
+ * highlight is white in light mode and a faint lift in dark, so it works either
+ * way without a second class.
+ */
+@utility panel-surface {
+  box-shadow:
+    0 1px 2px rgba(15, 23, 42, 0.04),
+    0 8px 24px -6px rgba(15, 23, 42, 0.12),
+    0 16px 48px -12px rgba(15, 23, 42, 0.1);
+}
+
+.dark .panel-surface {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.4),
+    0 10px 30px -8px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+/* ── Animations ───────────────────────────────────────────────────────────── */
+
+/* Panels settle in from below on first paint. The overshoot-free easing keeps
+   it feeling quick rather than bouncy — this runs on every load, so it has to
+   stay out of the way. */
+@keyframes sentry-rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.995);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@utility animate-rise {
+  animation: sentry-rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* A wide, slow halo marking the primary target. Larger and calmer than
+   `sentry-bloom`, which marks a merely-fresh cluster. */
+@keyframes sentry-ping {
+  0% {
+    box-shadow: 0 0 0 0 var(--ping);
+  }
+  70% {
+    box-shadow: 0 0 0 26px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+.sentry-ping {
+  animation: sentry-ping 3.4s ease-out infinite;
+}
+
+/* Expanding halo on a fresh cluster marker. The colour is supplied per-marker
+   as the `--bloom` custom property, since it follows the threat category. */
+@keyframes sentry-bloom {
+  0% {
+    box-shadow: 0 0 0 0 var(--bloom);
+  }
+  70% {
+    box-shadow: 0 0 0 16px rgba(0, 0, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+  }
+}
+
+/* Applied inside Leaflet's `divIcon` HTML, which Tailwind cannot scan — so this
+   stays a plain class rather than a utility composition. */
+.sentry-bloom {
+  animation: sentry-bloom 2.8s ease-out infinite;
+}
+
+@keyframes sentry-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(5, 223, 114, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 7px rgba(5, 223, 114, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(5, 223, 114, 0);
+  }
+}
+
+@utility animate-pulse-live {
+  animation: sentry-pulse 2.4s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sentry-bloom,
+  .sentry-ping,
+  .animate-pulse-live,
+  .animate-rise {
+    animation: none;
+  }
+}
+
+/* ── Leaflet overrides ────────────────────────────────────────────────────── */
+
+.leaflet-container {
+  background: var(--c-sea) !important;
+  font-family: inherit;
+}
+
+.leaflet-control-attribution {
+  background: var(--c-attribution) !important;
+  color: var(--c-fg-subtle) !important;
+  font-size: 9px;
+}
+
+.leaflet-control-attribution a {
+  color: var(--c-fg-muted) !important;
+}
+
+/* Point-layer tooltips. Leaflet renders these outside React, so they are styled
+   here rather than with utility classes. */
+.leaflet-tooltip {
+  padding: 7px 9px;
+  border: 1px solid var(--c-line) !important;
+  border-radius: 9px;
+  background: var(--c-surface) !important;
+  color: var(--c-fg) !important;
+  font-size: 11px;
+  line-height: 1.35;
+  box-shadow:
+    0 2px 6px rgba(15, 23, 42, 0.08),
+    0 10px 28px -8px rgba(15, 23, 42, 0.22);
+  /*
+   * Every tooltip carries an explanatory sentence, so it has to wrap — but
+   * wrapping alone collapses it to a one-word-wide column.
+   *
+   * Leaflet tooltips are `position: absolute` inside `.leaflet-pane`, which has
+   * no width of its own. That makes the containing block 0px, so an auto width
+   * shrink-to-fits to the *minimum* content width — the longest single word.
+   * Leaflet never hits this because its default is `white-space: nowrap`.
+   *
+   * `width: max-content` sets the preferred width explicitly and sidesteps the
+   * shrink-to-fit entirely; `max-width` then caps it. Both are needed.
+   */
+  white-space: normal;
+  width: max-content;
+  max-width: 280px;
+}
+
+.leaflet-tooltip-top::before {
+  border-top-color: var(--c-line) !important;
+}
+
+/* Scale bar. Leaflet docks it bottom-left, which is where the legend floats, so
+   it is pushed clear of the legend's width rather than moved to another corner —
+   a scale reads best next to the map's edge. */
+.leaflet-bottom.leaflet-left {
+  margin-bottom: 0.5rem;
+  margin-left: 13.5rem;
+}
+
+.leaflet-control-scale-line {
+  border: 1px solid var(--c-line) !important;
+  border-top: none !important;
+  border-radius: 0 0 4px 4px;
+  background: var(--c-attribution) !important;
+  color: var(--c-fg-muted) !important;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  line-height: 1.3;
+  padding: 1px 5px;
+  text-shadow: none !important;
+}

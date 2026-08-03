@@ -1,0 +1,3 @@
+# Client-side routes (/target, /watch/:id) must reach index.html rather than
+# 404ing. Netlify and Cloudflare Pages both read this file.
+/*  /index.html  200

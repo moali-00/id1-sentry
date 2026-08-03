@@ -1,0 +1,8 @@
+# Normalise to LF in the repository. The dashboard is developed on Windows but
+# built on Linux CI, and mixed endings were already causing spurious Prettier
+# diffs on files nobody had touched.
+* text=auto eol=lf
+
+# Lockfiles and JSON fixtures are diffed constantly; keep them byte-stable.
+pnpm-lock.yaml -diff
+*.json text eol=lf

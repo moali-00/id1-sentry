@@ -1,0 +1,621 @@
+{
+  "name": "missiles",
+  "request": {
+    "method": "GET",
+    "path": "/v1/missiles",
+    "params": {}
+  },
+  "status_code": 200,
+  "elapsed_ms": 6,
+  "captured_at": "2026-08-03T14:10:11.130953+00:00",
+  "error": null,
+  "response": {
+    "count": 27,
+    "systems": [
+      {
+        "key": "agni-1",
+        "name": "Agni-I",
+        "family": "Agni",
+        "category": "ballistic",
+        "range_km": {
+          "min": 700,
+          "max": 1200
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "ASL Hyderabad",
+          "BDL Hyderabad (Kanchanbagh)"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "agni-i",
+          "agni 1",
+          "agni-1"
+        ],
+        "note": ""
+      },
+      {
+        "key": "agni-2",
+        "name": "Agni-II",
+        "family": "Agni",
+        "category": "ballistic",
+        "range_km": {
+          "min": 2000,
+          "max": 3500
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "ASL Hyderabad",
+          "BDL Hyderabad (Kanchanbagh)"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "agni-ii",
+          "agni 2",
+          "agni-2"
+        ],
+        "note": ""
+      },
+      {
+        "key": "agni-3",
+        "name": "Agni-III",
+        "family": "Agni",
+        "category": "ballistic",
+        "range_km": {
+          "min": 3000,
+          "max": 5000
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "ASL Hyderabad",
+          "BDL Hyderabad (Kanchanbagh)"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "agni-iii",
+          "agni 3",
+          "agni-3"
+        ],
+        "note": ""
+      },
+      {
+        "key": "agni-4",
+        "name": "Agni-IV",
+        "family": "Agni",
+        "category": "ballistic",
+        "range_km": {
+          "min": 3500,
+          "max": 4000
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "ASL Hyderabad",
+          "BDL Hyderabad (Kanchanbagh)"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "agni-iv",
+          "agni 4",
+          "agni-4"
+        ],
+        "note": ""
+      },
+      {
+        "key": "agni-5",
+        "name": "Agni-V",
+        "family": "Agni",
+        "category": "ballistic",
+        "range_km": {
+          "min": 5000,
+          "max": 8000
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "ASL Hyderabad",
+          "BDL Hyderabad (Kanchanbagh)"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "agni-v",
+          "agni 5",
+          "agni-5"
+        ],
+        "note": ""
+      },
+      {
+        "key": "agni-6",
+        "name": "Agni-VI",
+        "family": "Agni",
+        "category": "ballistic",
+        "range_km": {
+          "min": 8000,
+          "max": 12000
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "ASL Hyderabad"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "agni-vi",
+          "agni 6",
+          "agni-6"
+        ],
+        "note": "Reported in development; not officially confirmed as tested."
+      },
+      {
+        "key": "agni-prime",
+        "name": "Agni-Prime",
+        "family": "Agni",
+        "category": "ballistic",
+        "range_km": {
+          "min": 1000,
+          "max": 2000
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "ASL Hyderabad",
+          "BDL Hyderabad (Kanchanbagh)"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "agni-prime",
+          "agni p",
+          "agni-p"
+        ],
+        "note": ""
+      },
+      {
+        "key": "prithvi-1",
+        "name": "Prithvi-I",
+        "family": "Prithvi",
+        "category": "ballistic",
+        "range_km": {
+          "min": 150,
+          "max": 150
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "DRDL Hyderabad",
+          "BDL Hyderabad (Kanchanbagh)"
+        ],
+        "typical_launch_site": "chandipur",
+        "aliases": [
+          "prithvi-i",
+          "prithvi 1",
+          "prithvi-1"
+        ],
+        "note": "Army variant, 1,000 kg warhead. Largely withdrawn in favour of Prahaar."
+      },
+      {
+        "key": "prithvi-2",
+        "name": "Prithvi-II",
+        "family": "Prithvi",
+        "category": "ballistic",
+        "range_km": {
+          "min": 250,
+          "max": 350
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "DRDL Hyderabad",
+          "BDL Hyderabad (Kanchanbagh)"
+        ],
+        "typical_launch_site": "chandipur",
+        "aliases": [
+          "prithvi-ii",
+          "prithvi 2",
+          "prithvi-2",
+          "prithvi"
+        ],
+        "note": ""
+      },
+      {
+        "key": "prithvi-3",
+        "name": "Prithvi-III",
+        "family": "Prithvi",
+        "category": "ballistic",
+        "range_km": {
+          "min": 350,
+          "max": 600
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "DRDL Hyderabad",
+          "BDL Hyderabad (Kanchanbagh)"
+        ],
+        "typical_launch_site": "chandipur",
+        "aliases": [
+          "prithvi-iii",
+          "prithvi 3",
+          "prithvi-3",
+          "dhanush"
+        ],
+        "note": ""
+      },
+      {
+        "key": "prahaar",
+        "name": "Prahaar",
+        "family": "Prahaar",
+        "category": "ballistic",
+        "range_km": {
+          "min": 150,
+          "max": 200
+        },
+        "nuclear_capable": false,
+        "integration_sites": [
+          "DRDL Hyderabad"
+        ],
+        "typical_launch_site": "chandipur",
+        "aliases": [
+          "prahaar",
+          "prahar"
+        ],
+        "note": ""
+      },
+      {
+        "key": "pralay",
+        "name": "Pralay",
+        "family": "Pralay",
+        "category": "ballistic",
+        "range_km": {
+          "min": 150,
+          "max": 500
+        },
+        "nuclear_capable": false,
+        "integration_sites": [
+          "DRDL Hyderabad",
+          "BDL Hyderabad (Kanchanbagh)"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "pralay"
+        ],
+        "note": ""
+      },
+      {
+        "key": "shaurya",
+        "name": "Shaurya",
+        "family": "Shaurya",
+        "category": "ballistic",
+        "range_km": {
+          "min": 700,
+          "max": 1900
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "ASL Hyderabad"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "shaurya",
+          "shourya"
+        ],
+        "note": ""
+      },
+      {
+        "key": "k-15",
+        "name": "K-15 Sagarika",
+        "family": "K-series",
+        "category": "ballistic",
+        "range_km": {
+          "min": 700,
+          "max": 750
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "ASL Hyderabad"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "k-15",
+          "sagarika",
+          "b-05"
+        ],
+        "note": "SLBM for the Arihant class; ITR trials use a submerged pontoon."
+      },
+      {
+        "key": "k-4",
+        "name": "K-4",
+        "family": "K-series",
+        "category": "ballistic",
+        "range_km": {
+          "min": 3500,
+          "max": 4000
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "ASL Hyderabad"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "k-4",
+          "k4 missile"
+        ],
+        "note": "Submarine-launched; ITR trials use a submerged pontoon."
+      },
+      {
+        "key": "brahmos",
+        "name": "BrahMos",
+        "family": "BrahMos",
+        "category": "cruise",
+        "range_km": {
+          "min": 290,
+          "max": 500
+        },
+        "nuclear_capable": false,
+        "integration_sites": [
+          "BrahMos Aerospace (Hyderabad / Nagpur / Lucknow)"
+        ],
+        "typical_launch_site": "both",
+        "aliases": [
+          "brahmos",
+          "brahmos-a",
+          "brahmos-er"
+        ],
+        "note": ""
+      },
+      {
+        "key": "nirbhay",
+        "name": "Nirbhay",
+        "family": "Nirbhay",
+        "category": "cruise",
+        "range_km": {
+          "min": 800,
+          "max": 1500
+        },
+        "nuclear_capable": true,
+        "integration_sites": [
+          "ADE Bengaluru"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "nirbhay",
+          "itcm",
+          "long range land attack cruise missile"
+        ],
+        "note": ""
+      },
+      {
+        "key": "akash",
+        "name": "Akash",
+        "family": "Akash",
+        "category": "air_defence",
+        "range_km": {
+          "min": 25,
+          "max": 45
+        },
+        "nuclear_capable": false,
+        "integration_sites": [
+          "BDL Hyderabad (Kanchanbagh)",
+          "BEL Bengaluru"
+        ],
+        "typical_launch_site": "chandipur",
+        "aliases": [
+          "akash missile",
+          "akash-1s",
+          "akash prime",
+          "akash"
+        ],
+        "note": ""
+      },
+      {
+        "key": "akash-ng",
+        "name": "Akash-NG",
+        "family": "Akash",
+        "category": "air_defence",
+        "range_km": {
+          "min": 70,
+          "max": 80
+        },
+        "nuclear_capable": false,
+        "integration_sites": [
+          "BDL Hyderabad (Kanchanbagh)",
+          "BEL Bengaluru"
+        ],
+        "typical_launch_site": "chandipur",
+        "aliases": [
+          "akash-ng",
+          "akash ng"
+        ],
+        "note": ""
+      },
+      {
+        "key": "qrsam",
+        "name": "QRSAM",
+        "family": "QRSAM",
+        "category": "air_defence",
+        "range_km": {
+          "min": 25,
+          "max": 30
+        },
+        "nuclear_capable": false,
+        "integration_sites": [
+          "BDL Hyderabad (Kanchanbagh)",
+          "BEL Bengaluru"
+        ],
+        "typical_launch_site": "chandipur",
+        "aliases": [
+          "qrsam",
+          "quick reaction surface to air"
+        ],
+        "note": ""
+      },
+      {
+        "key": "vshorads",
+        "name": "VSHORADS",
+        "family": "VSHORADS",
+        "category": "air_defence",
+        "range_km": {
+          "min": 6,
+          "max": 10
+        },
+        "nuclear_capable": false,
+        "integration_sites": [
+          "RCI Hyderabad",
+          "BDL Hyderabad (Kanchanbagh)"
+        ],
+        "typical_launch_site": "chandipur",
+        "aliases": [
+          "vshorads"
+        ],
+        "note": ""
+      },
+      {
+        "key": "barak-8",
+        "name": "Barak-8 (MR-SAM/LR-SAM)",
+        "family": "Barak",
+        "category": "air_defence",
+        "range_km": {
+          "min": 70,
+          "max": 100
+        },
+        "nuclear_capable": false,
+        "integration_sites": [
+          "BDL Hyderabad (Kanchanbagh)",
+          "IAI (Israel), joint programme"
+        ],
+        "typical_launch_site": "chandipur",
+        "aliases": [
+          "barak-8",
+          "barak 8",
+          "mr-sam",
+          "lr-sam",
+          "mrsam"
+        ],
+        "note": "India-Israel joint programme; naval and land variants."
+      },
+      {
+        "key": "aad",
+        "name": "AAD (Ashwin)",
+        "family": "BMD",
+        "category": "interceptor",
+        "range_km": {
+          "min": 150,
+          "max": 200
+        },
+        "nuclear_capable": false,
+        "integration_sites": [
+          "DRDL Hyderabad"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "aad",
+          "advanced air defence",
+          "ashwin"
+        ],
+        "note": ""
+      },
+      {
+        "key": "pdv",
+        "name": "PDV / PAD",
+        "family": "BMD",
+        "category": "interceptor",
+        "range_km": {
+          "min": 300,
+          "max": 2000
+        },
+        "nuclear_capable": false,
+        "integration_sites": [
+          "DRDL Hyderabad"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "pdv",
+          "prithvi air defence",
+          "prithvi defence vehicle",
+          "pad"
+        ],
+        "note": ""
+      },
+      {
+        "key": "astra",
+        "name": "Astra",
+        "family": "Astra",
+        "category": "air_defence",
+        "range_km": {
+          "min": 80,
+          "max": 160
+        },
+        "nuclear_capable": false,
+        "integration_sites": [
+          "DRDL Hyderabad",
+          "BDL Hyderabad (Kanchanbagh)"
+        ],
+        "typical_launch_site": "chandipur",
+        "aliases": [
+          "astra missile",
+          "astra mk"
+        ],
+        "note": "Air-launched BVR; ITR involvement is usually telemetry support."
+      },
+      {
+        "key": "smart",
+        "name": "SMART",
+        "family": "SMART",
+        "category": "torpedo",
+        "range_km": {
+          "min": 350,
+          "max": 650
+        },
+        "nuclear_capable": false,
+        "integration_sites": [
+          "DRDL Hyderabad"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "smart system",
+          "supersonic missile assisted"
+        ],
+        "note": ""
+      },
+      {
+        "key": "hstdv",
+        "name": "HSTDV",
+        "family": "Hypersonic",
+        "category": "hypersonic",
+        "range_km": {
+          "min": 0,
+          "max": 500
+        },
+        "nuclear_capable": false,
+        "integration_sites": [
+          "DRDL Hyderabad"
+        ],
+        "typical_launch_site": "abdul_kalam_island",
+        "aliases": [
+          "hstdv",
+          "hypersonic technology demonstrator"
+        ],
+        "note": ""
+      }
+    ],
+    "families": [
+      "Agni",
+      "Akash",
+      "Astra",
+      "BMD",
+      "Barak",
+      "BrahMos",
+      "Hypersonic",
+      "K-series",
+      "Nirbhay",
+      "Prahaar",
+      "Pralay",
+      "Prithvi",
+      "QRSAM",
+      "SMART",
+      "Shaurya",
+      "VSHORADS"
+    ],
+    "categories": [
+      "air_defence",
+      "ballistic",
+      "cruise",
+      "hypersonic",
+      "interceptor",
+      "torpedo"
+    ],
+    "disclaimer": "Public reference data (DRDO/PIB releases, NTI, Wikipedia). `integration_sites` is context only \u2014 no site is monitored and no scoring uses it. Sentiry holds nothing about the location or movement of deployed systems; it reads published test announcements. Corridor classes narrow a candidate field and never identify a system."
+  }
+}

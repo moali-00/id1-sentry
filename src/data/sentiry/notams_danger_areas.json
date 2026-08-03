@@ -1,0 +1,141 @@
+{
+  "name": "notams_danger_areas",
+  "request": {
+    "method": "GET",
+    "path": "/v1/notams/danger-areas",
+    "params": {
+      "horizon_hours": 720
+    }
+  },
+  "status_code": 200,
+  "elapsed_ms": 0,
+  "captured_at": "2026-08-03T14:10:41.517042+00:00",
+  "error": null,
+  "response": {
+    "fir": "VECF",
+    "horizon_hours": 720,
+    "feed": {
+      "source": "skylink_notam",
+      "status": "ok",
+      "detail": null,
+      "fetched_at": "2026-08-03T14:10:12.557826+00:00",
+      "latency_ms": 1448,
+      "meta": {
+        "total_returned": 209,
+        "note": "the feed serves expired NOTAMs; expired_dropped reports how many were filtered out rather than hiding them"
+      }
+    },
+    "active": [],
+    "upcoming": [
+      {
+        "notam_id": "A1632/2026",
+        "notam_id_domestic": "08/1632",
+        "type": "N",
+        "q_code": "QRDCA",
+        "scope": "FIR",
+        "affected_fir": "VECF",
+        "effective": "202608061430",
+        "expiration": "202608071730",
+        "schedule": "1430-1730",
+        "lower_limit": "SFC",
+        "upper_limit": "UNL",
+        "is_restriction": true,
+        "is_danger_area": true,
+        "restriction_terms": [],
+        "matched_places": [],
+        "relevance": "range",
+        "geometry_source": "circle:35nm",
+        "geometry_coarse": false,
+        "positions": [
+          {
+            "lat": 20.801048029704155,
+            "lon": 86.74133470843343
+          },
+          {
+            "lat": 20.801048029704155,
+            "lon": 87.99199862489989
+          },
+          {
+            "lat": 21.96561863696251,
+            "lon": 87.99199862489989
+          },
+          {
+            "lat": 21.96561863696251,
+            "lon": 86.74133470843343
+          }
+        ],
+        "distance_to_island_km": 36.1,
+        "range_relevant": true,
+        "raw": "A1632/26 NOTAMN Q) VECF/QRDCA/IV/BO/W/000/999/2123N08722E035 A) VECF B) 2608061430 C) 2608071730 D) 1430-1730 E) VED-52 ACT. DRG ACT Q11 NOT AVBL BTN CEA AND MAVLA. ALTN RTE: CEA-DCT-LEGOS-DCT-KAKID-DCT-SURUP.SID AVBL FOR RTE Q11 F) SFC G) UNL",
+        "starts_in_hours": 72.3,
+        "indicator_score": 0.36,
+        "timing": "activates in 3.0d"
+      },
+      {
+        "notam_id": "A1596/2026",
+        "notam_id_domestic": "08/1596",
+        "type": "N",
+        "q_code": "QRDCA",
+        "scope": "FIR",
+        "affected_fir": "VECF",
+        "effective": "202608070430",
+        "expiration": "202608070730",
+        "schedule": null,
+        "lower_limit": "SFC",
+        "upper_limit": "UNL",
+        "is_restriction": true,
+        "is_danger_area": true,
+        "restriction_terms": [],
+        "matched_places": [],
+        "relevance": "range",
+        "geometry_source": "circle:35nm",
+        "geometry_coarse": false,
+        "positions": [
+          {
+            "lat": 20.801048029704155,
+            "lon": 86.74133470843343
+          },
+          {
+            "lat": 20.801048029704155,
+            "lon": 87.99199862489989
+          },
+          {
+            "lat": 21.96561863696251,
+            "lon": 87.99199862489989
+          },
+          {
+            "lat": 21.96561863696251,
+            "lon": 86.74133470843343
+          }
+        ],
+        "distance_to_island_km": 36.1,
+        "range_relevant": true,
+        "raw": "A1596/26 NOTAMN Q) VECF/QRDCA/IV/BO/W/000/999/2123N08722E035 A) VECF B) 2608070430 C) 2608070730 E) VED-52 ACT EXC COMMON AREA OF VED-53. DRG ACT Q11 NOT AVBL BTN CEA AND MAVLA. ALTN RTE: CEA-DCT-LEGOS-DCT-KAKID-DCT-SURUP. SID AVBL FOR RTE Q11. F) SFC G) UNL",
+        "starts_in_hours": 86.3,
+        "indicator_score": 0.36,
+        "timing": "activates in 3.6d"
+      }
+    ],
+    "counts": {
+      "active_total": 35,
+      "upcoming_total": 15,
+      "fir_scope": 21,
+      "expired_dropped": 156
+    },
+    "q_codes": {
+      "restriction": [
+        "QRDCA",
+        "QRTCA",
+        "QRRCA",
+        "QRPCA",
+        "QRACD"
+      ],
+      "danger_area": [
+        "QRDCA",
+        "QRRCA",
+        "QRPCA"
+      ],
+      "note": "QRDCA means a danger area has been activated \u2014 the Q-code an ITR missile trial files. The feed also serves expired NOTAMs, so expired_dropped reports how many were filtered rather than hiding them."
+    }
+  }
+}

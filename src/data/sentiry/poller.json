@@ -1,0 +1,42 @@
+{
+  "name": "poller",
+  "request": {
+    "method": "GET",
+    "path": "/v1/poller",
+    "params": {}
+  },
+  "status_code": 200,
+  "elapsed_ms": 1,
+  "captured_at": "2026-08-03T14:10:47.648458+00:00",
+  "error": null,
+  "response": {
+    "running": true,
+    "started_at": "2026-08-03T14:10:11.016087+00:00",
+    "last_level": "elevated",
+    "loops": [
+      {
+        "name": "aircraft",
+        "interval_seconds": 180,
+        "runs": 1,
+        "failures": 0,
+        "last_run_at": "2026-08-03T14:10:12.862301+00:00",
+        "last_duration_ms": 1846,
+        "last_error": null
+      },
+      {
+        "name": "assessment",
+        "interval_seconds": 900,
+        "runs": 1,
+        "failures": 0,
+        "last_run_at": "2026-08-03T14:10:25.377641+00:00",
+        "last_duration_ms": 14340,
+        "last_error": null
+      }
+    ],
+    "stream": {
+      "subscribers": 0,
+      "events_published": 2,
+      "events_dropped": 0
+    }
+  }
+}

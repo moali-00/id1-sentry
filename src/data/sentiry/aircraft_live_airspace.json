@@ -1,0 +1,77 @@
+{
+  "name": "aircraft_live_airspace",
+  "request": {
+    "method": "GET",
+    "path": "/v1/aircraft/live",
+    "params": {
+      "box": "airspace"
+    }
+  },
+  "status_code": 200,
+  "elapsed_ms": 83,
+  "captured_at": "2026-08-03T14:10:12.862869+00:00",
+  "error": null,
+  "response": {
+    "source": "opensky",
+    "status": "ok",
+    "detail": null,
+    "fetched_at": "2026-08-03T14:10:12.859905+00:00",
+    "latency_ms": 1843,
+    "meta": {
+      "credits_charged": 1
+    },
+    "data": {
+      "snapshot_time": 1785766211,
+      "bbox": {
+        "west": 85.59,
+        "south": 19.26,
+        "east": 88.59,
+        "north": 22.26
+      },
+      "aircraft_count": 2,
+      "airborne_count": 2,
+      "aircraft": [
+        {
+          "icao24": "885112",
+          "callsign": "THA315",
+          "origin_country": "Thailand",
+          "time_position": 1785766035,
+          "last_contact": 1785766036,
+          "longitude": 86.9101,
+          "latitude": 22.2221,
+          "baro_altitude": 12192,
+          "on_ground": false,
+          "velocity": 264.02,
+          "true_track": 294.77,
+          "vertical_rate": 0,
+          "sensors": null,
+          "geo_altitude": 13045.44,
+          "squawk": null,
+          "spi": false,
+          "position_source": 0,
+          "category": null
+        },
+        {
+          "icao24": "750420",
+          "callsign": null,
+          "origin_country": "Malaysia",
+          "time_position": 1785766208,
+          "last_contact": 1785766208,
+          "longitude": 88.1637,
+          "latitude": 21.4561,
+          "baro_altitude": 11277.6,
+          "on_ground": false,
+          "velocity": 239.02,
+          "true_track": 168.33,
+          "vertical_rate": 0,
+          "sensors": null,
+          "geo_altitude": 12077.7,
+          "squawk": null,
+          "spi": false,
+          "position_source": 0,
+          "category": null
+        }
+      ]
+    }
+  }
+}

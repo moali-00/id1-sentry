@@ -1,0 +1,397 @@
+{
+  "name": "maritime_coupled_trials",
+  "request": {
+    "method": "GET",
+    "path": "/v1/maritime/coupled-trials",
+    "params": {}
+  },
+  "status_code": 200,
+  "elapsed_ms": 4,
+  "captured_at": "2026-08-03T14:10:18.717217+00:00",
+  "error": null,
+  "response": {
+    "evaluated_at": "2026-08-03T14:10:18.712835+00:00",
+    "feed": {
+      "source": "sealagom",
+      "status": "degraded",
+      "detail": "free tier: no pre-parsed coordinates, positions derived from message text",
+      "fetched_at": "2026-08-03T14:10:12.686679+00:00",
+      "latency_ms": 1649,
+      "meta": {
+        "message_count": 34,
+        "tokens_used": 1,
+        "free_tokens_remaining": 78
+      }
+    },
+    "pair_count": 2,
+    "pairs": [
+      {
+        "near_warning": {
+          "number": "811/26",
+          "kind": "firing_exercise",
+          "relevance": "range",
+          "corridor": {
+            "near_km": 64.7,
+            "far_km": 121.1,
+            "bearing_deg": 68.9,
+            "bearing_span_deg": 122.9,
+            "vertex_count": 4
+          }
+        },
+        "far_warning": {
+          "number": "810/26",
+          "kind": "firing_exercise",
+          "centroid": {
+            "lat": 11.166666666666668,
+            "lon": 92.70833333333334
+          }
+        },
+        "impact_distance_km": 1242.9,
+        "bearing_deg": 149.8,
+        "shared_window": {
+          "start": "2026-08-04T08:30:00+00:00",
+          "end": "2026-08-04T10:30:00+00:00"
+        },
+        "overlap_hours": 2.0,
+        "confidence": "weak",
+        "classification": {
+          "class": "medium_range",
+          "label": "Medium-range \u2014 coupled impact zone",
+          "confidence": "medium",
+          "basis": "a far-field impact zone 1,000\u20133,500 km down-range shares this warning's window",
+          "implied_range_km": {
+            "min": 1000,
+            "max": 4500
+          },
+          "coupled_impact_km": 1242.9,
+          "consistent_systems": [
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            },
+            {
+              "key": "agni-2",
+              "name": "Agni-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 2000,
+                "max": 3500
+              }
+            },
+            {
+              "key": "agni-3",
+              "name": "Agni-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3000,
+                "max": 5000
+              }
+            },
+            {
+              "key": "agni-4",
+              "name": "Agni-IV",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3500,
+                "max": 4000
+              }
+            },
+            {
+              "key": "k-4",
+              "name": "K-4",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3500,
+                "max": 4000
+              }
+            }
+          ],
+          "consistent_system_count": 9,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "caveat": "Both halves are ordinary firing exercises, so this pairing is more likely two unrelated events than one trial. Not used to classify range."
+      },
+      {
+        "near_warning": {
+          "number": "811/26",
+          "kind": "firing_exercise",
+          "relevance": "range",
+          "corridor": {
+            "near_km": 64.7,
+            "far_km": 121.1,
+            "bearing_deg": 68.9,
+            "bearing_span_deg": 122.9,
+            "vertex_count": 4
+          }
+        },
+        "far_warning": {
+          "number": "822/26",
+          "kind": "firing_exercise",
+          "centroid": {
+            "lat": 13.0,
+            "lon": 93.66666666666667
+          }
+        },
+        "impact_distance_km": 1110.6,
+        "bearing_deg": 139.9,
+        "shared_window": {
+          "start": "2026-08-05T08:30:00+00:00",
+          "end": "2026-08-05T10:30:00+00:00"
+        },
+        "overlap_hours": 2.0,
+        "confidence": "weak",
+        "classification": {
+          "class": "medium_range",
+          "label": "Medium-range \u2014 coupled impact zone",
+          "confidence": "medium",
+          "basis": "a far-field impact zone 1,000\u20133,500 km down-range shares this warning's window",
+          "implied_range_km": {
+            "min": 1000,
+            "max": 4500
+          },
+          "coupled_impact_km": 1110.6,
+          "consistent_systems": [
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "agni-1",
+              "name": "Agni-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1200
+              }
+            },
+            {
+              "key": "shaurya",
+              "name": "Shaurya",
+              "category": "ballistic",
+              "range_km": {
+                "min": 700,
+                "max": 1900
+              }
+            },
+            {
+              "key": "nirbhay",
+              "name": "Nirbhay",
+              "category": "cruise",
+              "range_km": {
+                "min": 800,
+                "max": 1500
+              }
+            },
+            {
+              "key": "agni-prime",
+              "name": "Agni-Prime",
+              "category": "ballistic",
+              "range_km": {
+                "min": 1000,
+                "max": 2000
+              }
+            },
+            {
+              "key": "agni-2",
+              "name": "Agni-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 2000,
+                "max": 3500
+              }
+            },
+            {
+              "key": "agni-3",
+              "name": "Agni-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3000,
+                "max": 5000
+              }
+            },
+            {
+              "key": "agni-4",
+              "name": "Agni-IV",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3500,
+                "max": 4000
+              }
+            },
+            {
+              "key": "k-4",
+              "name": "K-4",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3500,
+                "max": 4000
+              }
+            }
+          ],
+          "consistent_system_count": 9,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "caveat": "Both halves are ordinary firing exercises, so this pairing is more likely two unrelated events than one trial. Not used to classify range."
+      }
+    ],
+    "self_contained_count": 1,
+    "self_contained": [
+      {
+        "number": "819/26",
+        "kind": "launch_trial",
+        "relevance": "range",
+        "corridor": {
+          "near_km": 6.9,
+          "far_km": 3820.3,
+          "bearing_deg": 183.0,
+          "bearing_span_deg": 239.5,
+          "vertex_count": 6
+        },
+        "windows": [
+          {
+            "start": "2026-08-06T12:30:00+00:00",
+            "end": "2026-08-06T15:30:00+00:00"
+          },
+          {
+            "start": "2026-08-07T12:30:00+00:00",
+            "end": "2026-08-07T15:30:00+00:00"
+          }
+        ],
+        "classification": {
+          "class": "strategic_self",
+          "label": "Strategic range \u2014 self-contained corridor",
+          "confidence": "medium",
+          "basis": "this warning's own danger area extends beyond 3,500 km down-range \u2014 the launch corridor and the impact fan are declared in a single polygon",
+          "implied_range_km": {
+            "min": 3500,
+            "max": 12000
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "agni-2",
+              "name": "Agni-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 2000,
+                "max": 3500
+              }
+            },
+            {
+              "key": "agni-3",
+              "name": "Agni-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3000,
+                "max": 5000
+              }
+            },
+            {
+              "key": "agni-4",
+              "name": "Agni-IV",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3500,
+                "max": 4000
+              }
+            },
+            {
+              "key": "k-4",
+              "name": "K-4",
+              "category": "ballistic",
+              "range_km": {
+                "min": 3500,
+                "max": 4000
+              }
+            },
+            {
+              "key": "agni-5",
+              "name": "Agni-V",
+              "category": "ballistic",
+              "range_km": {
+                "min": 5000,
+                "max": 8000
+              }
+            },
+            {
+              "key": "agni-6",
+              "name": "Agni-VI",
+              "category": "ballistic",
+              "range_km": {
+                "min": 8000,
+                "max": 12000
+              }
+            }
+          ],
+          "consistent_system_count": 6,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "text": "BAY OF BENGAL - OFF BALESHWAR (.) CHARTS IN 7071 7073 INT 71 (.) EXPERIMENTAL FLIGHT TRIALS SCHEDULED 06 AND 07 AUG 26 FROM 1230 TO 1530 UTC DAILY IN DANGER AREA BOUNDED BY 20-48.36N 087-02.58E, 18-12.36N 086-07.11E, 13-33.4S 085-21.48E, 12-48.16S 094-31.33E, 18-24.16N 088-30.45E, 20-48.76N 087-07.4"
+      }
+    ],
+    "checked": {
+      "warnings_examined": 34,
+      "near_field_candidates": 3,
+      "far_field_candidates": 2,
+      "far_field_rejected_off_bearing": 1,
+      "probable_pairs": 0,
+      "weak_pairs": 2,
+      "self_contained_corridors": 1,
+      "self_contained_min_km": 1000.0,
+      "min_impact_distance_km": 500.0,
+      "min_overlap_minutes": 15.0,
+      "downrange_bearing_deg": {
+        "min": 90.0,
+        "max": 200.0
+      },
+      "evaluated_at": "2026-08-03T14:10:18.712835+00:00"
+    },
+    "method": "A far-field warning qualifies as an impact zone only if it lies beyond 500 km on a bearing of 90\u2013200\u00b0 (into the Bay of Bengal) with a time window overlapping the near-field corridor. Live NAVAREA VIII traffic beyond 1,500 km sits on 209\u2013280\u00b0 \u2014 Arabian Sea and west coast \u2014 and is correctly excluded by the bearing test. `self_contained` covers the other filing convention: one warning carrying both the launch corridor and the impact fan, which needs no pair at all."
+  }
+}

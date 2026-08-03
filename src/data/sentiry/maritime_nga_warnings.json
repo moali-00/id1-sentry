@@ -1,0 +1,192 @@
+{
+  "name": "maritime_nga_warnings",
+  "request": {
+    "method": "GET",
+    "path": "/v1/maritime/nga-warnings",
+    "params": {}
+  },
+  "status_code": 200,
+  "elapsed_ms": 874,
+  "captured_at": "2026-08-03T14:10:19.591819+00:00",
+  "error": null,
+  "response": {
+    "evaluated_at": "2026-08-03T14:10:18.717908+00:00",
+    "feed": {
+      "source": "nga_msi",
+      "status": "ok",
+      "detail": "supplementary only \u2014 NGA does not carry NAVAREA VIII, so an empty result says nothing about Indian ITR warnings",
+      "fetched_at": "2026-08-03T14:10:19.590222+00:00",
+      "latency_ms": 872,
+      "meta": {
+        "active_upstream": 146,
+        "in_aoi": 1
+      }
+    },
+    "warning_count": 1,
+    "warnings": [
+      {
+        "message_id": "P-2023-2442",
+        "number": "2442/23",
+        "issued_at": null,
+        "kind": "navigation_hazard",
+        "relevance": "downrange",
+        "is_launch_indicator": false,
+        "matched_phrases": [],
+        "matched_places": [],
+        "positions": [
+          {
+            "lat": 21.0,
+            "lon": 88.58333333333333
+          }
+        ],
+        "bounds": {
+          "west": 88.58333333333333,
+          "south": 21.0,
+          "east": 88.58333333333333,
+          "north": 21.0
+        },
+        "centroid": {
+          "lat": 21.0,
+          "lon": 88.58333333333333
+        },
+        "distance_to_island_km": 157.9,
+        "windows": [],
+        "indefinite": false,
+        "corridor": {
+          "near_km": 157.9,
+          "far_km": 157.9,
+          "bearing_deg": 79.9,
+          "bearing_span_deg": 0.0,
+          "vertex_count": 1
+        },
+        "likely_systems": {
+          "class": "tactical",
+          "label": "Tactical corridor",
+          "confidence": "medium",
+          "basis": "directional corridor of 100\u2013300 km",
+          "implied_range_km": {
+            "min": 100,
+            "max": 600
+          },
+          "coupled_impact_km": null,
+          "consistent_systems": [
+            {
+              "key": "hstdv",
+              "name": "HSTDV",
+              "category": "hypersonic",
+              "range_km": {
+                "min": 0,
+                "max": 500
+              }
+            },
+            {
+              "key": "barak-8",
+              "name": "Barak-8 (MR-SAM/LR-SAM)",
+              "category": "air_defence",
+              "range_km": {
+                "min": 70,
+                "max": 100
+              }
+            },
+            {
+              "key": "astra",
+              "name": "Astra",
+              "category": "air_defence",
+              "range_km": {
+                "min": 80,
+                "max": 160
+              }
+            },
+            {
+              "key": "prithvi-1",
+              "name": "Prithvi-I",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 150
+              }
+            },
+            {
+              "key": "prahaar",
+              "name": "Prahaar",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 200
+              }
+            },
+            {
+              "key": "pralay",
+              "name": "Pralay",
+              "category": "ballistic",
+              "range_km": {
+                "min": 150,
+                "max": 500
+              }
+            },
+            {
+              "key": "aad",
+              "name": "AAD (Ashwin)",
+              "category": "interceptor",
+              "range_km": {
+                "min": 150,
+                "max": 200
+              }
+            },
+            {
+              "key": "prithvi-2",
+              "name": "Prithvi-II",
+              "category": "ballistic",
+              "range_km": {
+                "min": 250,
+                "max": 350
+              }
+            },
+            {
+              "key": "brahmos",
+              "name": "BrahMos",
+              "category": "cruise",
+              "range_km": {
+                "min": 290,
+                "max": 500
+              }
+            },
+            {
+              "key": "pdv",
+              "name": "PDV / PAD",
+              "category": "interceptor",
+              "range_km": {
+                "min": 300,
+                "max": 2000
+              }
+            },
+            {
+              "key": "prithvi-3",
+              "name": "Prithvi-III",
+              "category": "ballistic",
+              "range_km": {
+                "min": 350,
+                "max": 600
+              }
+            },
+            {
+              "key": "smart",
+              "name": "SMART",
+              "category": "torpedo",
+              "range_km": {
+                "min": 350,
+                "max": 650
+              }
+            }
+          ],
+          "consistent_system_count": 12,
+          "disclaimer": "A corridor class narrows the candidate field; it does not identify a system. The declared danger area is a launch corridor, not an impact footprint, so its extent is not the missile's range."
+        },
+        "named_systems": [],
+        "name_geometry_mismatch": false,
+        "text": "BAY OF BENGAL. INDIA. DNC 03. F/V ANIK-1 SANK IN VICINITY 21-00.00N 088-35.00E."
+      }
+    ],
+    "caveat": "NGA does not republish NAVAREA VIII (India). Use /v1/maritime/warnings for ITR announcements; this endpoint only adds US-issued warnings in the fan."
+  }
+}

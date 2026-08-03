@@ -1,0 +1,89 @@
+{
+  "name": "maps_firms_wms",
+  "request": {
+    "method": "GET",
+    "path": "/v1/maps/firms/wms",
+    "params": {
+      "box": "range"
+    }
+  },
+  "status_code": 200,
+  "elapsed_ms": 0,
+  "captured_at": "2026-08-03T14:10:11.135516+00:00",
+  "error": null,
+  "response": {
+    "source": "firms_wms",
+    "status": "ok",
+    "detail": null,
+    "fetched_at": "2026-08-03T14:10:11.135380+00:00",
+    "latency_ms": 0,
+    "meta": {
+      "note": "getmap_url and capabilities_url embed the MAP_KEY \u2014 treat as a credential. Fetch tiles from the browser, not through this API."
+    },
+    "data": {
+      "capabilities_url": "https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/<MAP_KEY>/?service=WMS&request=GetCapabilities",
+      "layers": [
+        "default",
+        "fires_modis",
+        "fires_modis_24",
+        "fires_modis_48",
+        "fires_modis_72",
+        "fires_modis_7",
+        "fires_terra",
+        "fires_terra_24",
+        "fires_terra_48",
+        "fires_terra_72",
+        "fires_terra_7",
+        "fires_aqua",
+        "fires_aqua_24",
+        "fires_aqua_48",
+        "fires_aqua_72",
+        "fires_aqua_7",
+        "fires_viirs",
+        "fires_viirs_24",
+        "fires_viirs_48",
+        "fires_viirs_72",
+        "fires_viirs_7",
+        "fires_viirs_snpp",
+        "fires_viirs_snpp_24",
+        "fires_viirs_snpp_48",
+        "fires_viirs_snpp_72",
+        "fires_viirs_snpp_7",
+        "fires_viirs_noaa20",
+        "fires_viirs_noaa20_24",
+        "fires_viirs_noaa20_48",
+        "fires_viirs_noaa20_72",
+        "fires_viirs_noaa20_7",
+        "fires_viirs_noaa21",
+        "fires_viirs_noaa21_24",
+        "fires_viirs_noaa21_48",
+        "fires_viirs_noaa21_72",
+        "fires_viirs_noaa21_7",
+        "fires_landsat",
+        "fires_landsat_24",
+        "fires_landsat_48",
+        "fires_landsat_72",
+        "fires_landsat_7"
+      ],
+      "layers_verified": false,
+      "crs_supported": [
+        "EPSG:4326",
+        "EPSG:3857",
+        "EPSG:900913"
+      ],
+      "formats_supported": [
+        "image/png",
+        "image/jpeg",
+        "image/tiff"
+      ],
+      "getmap_url": "https://firms.modaps.eosdis.nasa.gov/mapserver/wms/fires/<MAP_KEY>/?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&LAYERS=fires_viirs_24&SRS=EPSG:4326&BBOX=86.85,20.55,87.3,21.2&WIDTH=1024&HEIGHT=1024&FORMAT=image/png&TRANSPARENT=TRUE",
+      "bbox": {
+        "west": 86.85,
+        "south": 20.55,
+        "east": 87.3,
+        "north": 21.2
+      },
+      "layer": "fires_viirs_24"
+    }
+  }
+}

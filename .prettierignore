@@ -1,0 +1,5 @@
+dist
+node_modules
+pnpm-lock.yaml
+# Generated from a vendor export — reformatting it would churn the whole file.
+src/data/karachiWatch.ts

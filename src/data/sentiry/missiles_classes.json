@@ -1,0 +1,124 @@
+{
+  "name": "missiles_classes",
+  "request": {
+    "method": "GET",
+    "path": "/v1/missiles/classes",
+    "params": {}
+  },
+  "status_code": 200,
+  "elapsed_ms": 0,
+  "captured_at": "2026-08-03T14:10:11.131710+00:00",
+  "error": null,
+  "response": {
+    "classes": [
+      {
+        "key": "indeterminate",
+        "label": "Indeterminate \u2014 no usable geometry",
+        "confidence": "low",
+        "basis": "the warning carries no parseable polygon or circle",
+        "implied_range_km": {
+          "min": 0,
+          "max": 0
+        }
+      },
+      {
+        "key": "local_area",
+        "label": "Local area enclosing the launch site",
+        "confidence": "low",
+        "basis": "polygon surrounds the site rather than extending on one azimuth; consistent with an air-defence engagement zone or an initial-stage drop area, and cannot discriminate between them",
+        "implied_range_km": {
+          "min": 0,
+          "max": 200
+        }
+      },
+      {
+        "key": "short_range",
+        "label": "Short-range corridor",
+        "confidence": "medium",
+        "basis": "directional corridor under 100 km",
+        "implied_range_km": {
+          "min": 0,
+          "max": 200
+        }
+      },
+      {
+        "key": "tactical",
+        "label": "Tactical corridor",
+        "confidence": "medium",
+        "basis": "directional corridor of 100\u2013300 km",
+        "implied_range_km": {
+          "min": 100,
+          "max": 600
+        }
+      },
+      {
+        "key": "extended",
+        "label": "Extended corridor, no coupled impact zone",
+        "confidence": "low",
+        "basis": "corridor beyond 300 km but no far-field impact zone found, so the full flight distance is unknown",
+        "implied_range_km": {
+          "min": 300,
+          "max": 1500
+        }
+      },
+      {
+        "key": "medium_range",
+        "label": "Medium-range \u2014 coupled impact zone",
+        "confidence": "medium",
+        "basis": "a far-field impact zone 1,000\u20133,500 km down-range shares this warning's window",
+        "implied_range_km": {
+          "min": 1000,
+          "max": 4500
+        }
+      },
+      {
+        "key": "strategic",
+        "label": "Strategic range \u2014 distant coupled impact zone",
+        "confidence": "medium",
+        "basis": "a far-field impact zone beyond 3,500 km down-range shares this warning's window",
+        "implied_range_km": {
+          "min": 3500,
+          "max": 12000
+        }
+      },
+      {
+        "key": "medium_range_self",
+        "label": "Medium-range \u2014 self-contained corridor",
+        "confidence": "medium",
+        "basis": "this warning's own danger area extends 1,000\u20133,500 km down-range, so no second impact-zone warning is needed to establish the range class",
+        "implied_range_km": {
+          "min": 1000,
+          "max": 4500
+        }
+      },
+      {
+        "key": "strategic_self",
+        "label": "Strategic range \u2014 self-contained corridor",
+        "confidence": "medium",
+        "basis": "this warning's own danger area extends beyond 3,500 km down-range \u2014 the launch corridor and the impact fan are declared in a single polygon",
+        "implied_range_km": {
+          "min": 3500,
+          "max": 12000
+        }
+      }
+    ],
+    "thresholds": {
+      "enclosing_span_deg": 120.0,
+      "downrange_bearing_deg": {
+        "min": 90.0,
+        "max": 200.0
+      },
+      "short_range_max_km": 100,
+      "tactical_max_km": 300,
+      "medium_range_impact_km": 1000,
+      "strategic_impact_km": 3500
+    },
+    "measured_corridor_extents": {
+      "note": "Why extent-based range inference was rejected. Real ITR danger areas, measured from the island:",
+      "811/26 IAF firing": "80 km",
+      "701/26 experimental flight trial": "143 km",
+      "809/26 Army AD firing off Gopalpur": "185 km"
+    },
+    "disclaimer": "Public reference data (DRDO/PIB releases, NTI, Wikipedia). `integration_sites` is context only \u2014 no site is monitored and no scoring uses it. Sentiry holds nothing about the location or movement of deployed systems; it reads published test announcements. Corridor classes narrow a candidate field and never identify a system."
+  }
+}
