@@ -512,12 +512,21 @@ export function socialPostFeedItems(
   })
 }
 
-/** Which category a post belongs to, by how it was matched. */
+/**
+ * Which category a post belongs to.
+ *
+ * The subject is a missile test range, so reporting about it is military
+ * activity — a post naming the island and nothing else is still about a weapons
+ * trial, not about politics. An earlier version fell through to `political`
+ * whenever no system was named, which put 120 of 242 posts under a heading that
+ * described none of them.
+ *
+ * The one genuine exception is evacuation, road-closure and fishing-ban
+ * reporting: that is civil, and it is the highest-scoring indicator in the
+ * assessment, so it keeps its own category rather than being absorbed.
+ */
 function postCategory(post: SocialPost): CategoryKey {
-  if (post.evacuation_terms.length > 0) return 'unrest'
-  if (post.matched_systems.length > 0) return 'conflict'
-  if (post.forward_looking_terms.length > 0) return 'military'
-  return 'political'
+  return post.evacuation_terms.length > 0 ? 'unrest' : 'military'
 }
 
 /** Every post that named a given site, newest first. */
@@ -553,14 +562,12 @@ const CLUSTER_MAX_SIZE = 30
 /**
  * One cluster per site, counting the reporting that names it.
  *
- * The same numbered circle the dashboard already uses for watch clusters, for
- * the same reason: a count at a place reads instantly, and 183 individual pins
- * at two coordinates would not. Drawn small and offset from the site marker by
- * the caller, because it describes a point that is already on the map.
+ * A count at a place reads instantly; 183 individual pins at two coordinates
+ * would not. The caller draws it small and offset from the site marker, since
+ * it annotates a point that is already on the map.
  *
- * Always `inferred`, which draws the circle dashed. That is not decoration —
- * the position is the site's, taken from the place name in the text. No post
- * here carried a location of its own, and a solid marker would claim otherwise.
+ * `inferred` is not set: it would draw the circle dashed, and these render
+ * through `createReportingIcon` instead, which is a solid pill.
  */
 export function socialClusters(posts: SocialPost[], sites: SocialSite[]): Cluster[] {
   const grouped = socialPostsBySite(posts, sites)
@@ -577,7 +584,7 @@ export function socialClusters(posts: SocialPost[], sites: SocialSite[]): Cluste
       const category = postCategory(post)
       tally.set(category, (tally.get(category) ?? 0) + 1)
     }
-    const dominant = [...tally.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? 'political'
+    const dominant = [...tally.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? 'military'
 
     // Area, not radius, tracks the count — a circle twice as wide reads as four
     // times as much, which would overstate the smaller site.
@@ -592,7 +599,6 @@ export function socialClusters(posts: SocialPost[], sites: SocialSite[]): Cluste
         lat: site.lat,
         lng: site.lng,
         size: Math.round(CLUSTER_MIN_SIZE + (CLUSTER_MAX_SIZE - CLUSTER_MIN_SIZE) * share),
-        inferred: true,
       },
     ]
   })

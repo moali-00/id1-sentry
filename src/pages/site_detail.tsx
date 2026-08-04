@@ -18,9 +18,9 @@ import { IconButton } from '@/components/ui/IconButton'
  * than at a watch: the posts themselves, read in full, with their pictures and a
  * link to each original.
  *
- * The location block says INFERRED and means it. No post here carried a position
- * — every one of them was placed by the name it mentioned — so the panel states
- * that plainly rather than letting a coordinate imply an observation.
+ * The coordinates shown are the site's own. The heading is "posts naming this
+ * site", so the panel never has to claim anything about where a post was
+ * written — it groups by what the reporting is about.
  */
 export default function SiteDetailPage() {
   const { siteId } = useParams<{ siteId: string }>()
@@ -78,14 +78,14 @@ export default function SiteDetailPage() {
 
           <section className="grid grid-cols-2 gap-3">
             <div>
-              <FieldLabel>LOCATION</FieldLabel>
-              <span className="inline-flex items-center gap-1.5 rounded-md border border-status-inferred/30 bg-status-inferred/10 px-2 py-1 text-[10px] font-bold text-status-inferred">
-                <MapPin className="size-3" aria-hidden /> INFERRED · named in text
-              </span>
+              <FieldLabel>SITE</FieldLabel>
+              <p className="inline-flex items-center gap-1.5 text-xs font-semibold text-fg">
+                <MapPin className="size-3 text-fg-subtle" aria-hidden />
+                {site.name}
+              </p>
               <p className="mt-1.5 font-mono text-[11px] text-fg-muted">
                 {site.lat.toFixed(4)}, {site.lng.toFixed(4)}
               </p>
-              <p className="mt-0.5 text-[11px] text-fg-subtle">{site.name}</p>
             </div>
 
             <div>
@@ -99,11 +99,6 @@ export default function SiteDetailPage() {
               </div>
             </div>
           </section>
-
-          <p className="flex items-start gap-2 rounded-lg border border-status-inferred/30 bg-status-inferred/10 p-2.5 text-[11px] leading-snug font-semibold text-status-inferred">
-            <MapPin className="mt-px size-3.5 flex-none" aria-hidden />
-            These posts named {site.name}; none of them carried a location of its own.
-          </p>
 
           <section>
             <FieldLabel>POSTS NAMING THIS SITE · {site.posts.length}</FieldLabel>

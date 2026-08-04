@@ -197,7 +197,7 @@ export const DATA_LAYERS: DataLayer[] = [
     color: '#e879f9',
     hint: 'How much open reporting names each site — off by default',
     explain:
-      'How many posts name this site, placed at the site rather than at the poster. Click it to read them. Posts carry no location of their own, so this counts what is being talked about, not where anyone was — and a post that names only a missile is not counted here at all.',
+      'How many posts name this site. Click it to read them. This counts what is being talked about, so a post that names only a missile and no place is not counted here.',
     // Off by default. It is commentary rather than observation, and it sits on
     // top of the sites, warnings and evacuation markers that are the subject.
     defaultOn: false,
