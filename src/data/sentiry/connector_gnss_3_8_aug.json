@@ -1,0 +1,664 @@
+{
+  "name": "connector_gnss_3_8_aug",
+  "captured_at": "2026-08-03T16:06:00.202896+00:00",
+  "period": "2026-08-03..2026-08-08",
+  "aoi": "Abdul Kalam Island (ITR), 20.75804N 87.085533E",
+  "sealagom_tokens_spent": 0,
+  "data": {
+    "boxes": {
+      "range": {
+        "status": "ok",
+        "detail": null,
+        "date": "2026-08-02",
+        "latest_available": "2026-08-02",
+        "cells_in_aoi": 2,
+        "cells_reported": 2,
+        "cells_with_ratio": 2,
+        "worst_cell": {
+          "cell": "843c885ffffffff",
+          "count_good_aircraft": 58,
+          "count_bad_aircraft": 0,
+          "total_aircraft": 58,
+          "centre": {
+            "lat": 20.6493,
+            "lon": 86.9891
+          },
+          "bad_ratio": 0.0
+        },
+        "cells": [
+          {
+            "cell": "843c885ffffffff",
+            "count_good_aircraft": 58,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 58,
+            "centre": {
+              "lat": 20.6493,
+              "lon": 86.9891
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c881ffffffff",
+            "count_good_aircraft": 44,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 44,
+            "centre": {
+              "lat": 21.0142,
+              "lon": 87.2368
+            },
+            "bad_ratio": 0.0
+          }
+        ]
+      },
+      "airspace": {
+        "status": "ok",
+        "detail": null,
+        "date": "2026-08-02",
+        "latest_available": "2026-08-02",
+        "cells_in_aoi": 53,
+        "cells_reported": 53,
+        "cells_with_ratio": 51,
+        "worst_cell": {
+          "cell": "843c8e5ffffffff",
+          "count_good_aircraft": 95,
+          "count_bad_aircraft": 0,
+          "total_aircraft": 95,
+          "centre": {
+            "lat": 20.296,
+            "lon": 85.8328
+          },
+          "bad_ratio": 0.0
+        },
+        "cells": [
+          {
+            "cell": "843c8e5ffffffff",
+            "count_good_aircraft": 95,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 95,
+            "centre": {
+              "lat": 20.296,
+              "lon": 85.8328
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c899ffffffff",
+            "count_good_aircraft": 89,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 89,
+            "centre": {
+              "lat": 21.7328,
+              "lon": 88.1958
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c9dbffffffff",
+            "count_good_aircraft": 84,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 84,
+            "centre": {
+              "lat": 19.9238,
+              "lon": 86.0423
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c891ffffffff",
+            "count_good_aircraft": 77,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 77,
+            "centre": {
+              "lat": 21.3598,
+              "lon": 88.406
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8d7ffffffff",
+            "count_good_aircraft": 76,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 76,
+            "centre": {
+              "lat": 21.7417,
+              "lon": 87.7349
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c9d3ffffffff",
+            "count_good_aircraft": 67,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 67,
+            "centre": {
+              "lat": 19.5501,
+              "lon": 86.2516
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8d3ffffffff",
+            "count_good_aircraft": 65,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 65,
+            "centre": {
+              "lat": 22.1041,
+              "lon": 87.9853
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843caa7ffffffff",
+            "count_good_aircraft": 65,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 65,
+            "centre": {
+              "lat": 22.1306,
+              "lon": 85.6909
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8c9ffffffff",
+            "count_good_aircraft": 61,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 61,
+            "centre": {
+              "lat": 22.1279,
+              "lon": 86.1475
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843cf25ffffffff",
+            "count_good_aircraft": 61,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 61,
+            "centre": {
+              "lat": 22.0949,
+              "lon": 88.4473
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8d1ffffffff",
+            "count_good_aircraft": 60,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 60,
+            "centre": {
+              "lat": 22.112,
+              "lon": 87.5242
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8cbffffffff",
+            "count_good_aircraft": 59,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 59,
+            "centre": {
+              "lat": 22.1239,
+              "lon": 86.6053
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c885ffffffff",
+            "count_good_aircraft": 58,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 58,
+            "centre": {
+              "lat": 20.6493,
+              "lon": 86.9891
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8ddffffffff",
+            "count_good_aircraft": 56,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 56,
+            "centre": {
+              "lat": 22.1186,
+              "lon": 87.0642
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c89dffffffff",
+            "count_good_aircraft": 52,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 52,
+            "centre": {
+              "lat": 21.3697,
+              "lon": 87.9452
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c88bffffffff",
+            "count_good_aircraft": 49,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 49,
+            "centre": {
+              "lat": 21.3784,
+              "lon": 87.4854
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8a5ffffffff",
+            "count_good_aircraft": 48,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 48,
+            "centre": {
+              "lat": 19.5425,
+              "lon": 86.7058
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8adffffffff",
+            "count_good_aircraft": 47,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 47,
+            "centre": {
+              "lat": 19.9172,
+              "lon": 86.4965
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c881ffffffff",
+            "count_good_aircraft": 44,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 44,
+            "centre": {
+              "lat": 21.0142,
+              "lon": 87.2368
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8edffffffff",
+            "count_good_aircraft": 41,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 41,
+            "centre": {
+              "lat": 20.6665,
+              "lon": 85.623
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8e7ffffffff",
+            "count_good_aircraft": 40,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 40,
+            "centre": {
+              "lat": 20.2904,
+              "lon": 86.287
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c9d1ffffffff",
+            "count_good_aircraft": 36,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 36,
+            "centre": {
+              "lat": 19.5566,
+              "lon": 85.7986
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c883ffffffff",
+            "count_good_aircraft": 32,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 32,
+            "centre": {
+              "lat": 21.0058,
+              "lon": 87.6955
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8a9ffffffff",
+            "count_good_aircraft": 31,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 31,
+            "centre": {
+              "lat": 20.2836,
+              "lon": 86.7423
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8c1ffffffff",
+            "count_good_aircraft": 31,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 31,
+            "centre": {
+              "lat": 21.7607,
+              "lon": 86.3583
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8c5ffffffff",
+            "count_good_aircraft": 31,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 31,
+            "centre": {
+              "lat": 21.3967,
+              "lon": 86.1122
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "8464da3ffffffff",
+            "count_good_aircraft": 31,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 31,
+            "centre": {
+              "lat": 19.5002,
+              "lon": 88.5329
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "8464db5ffffffff",
+            "count_good_aircraft": 31,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 31,
+            "centre": {
+              "lat": 19.5125,
+              "lon": 88.0746
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c813ffffffff",
+            "count_good_aircraft": 29,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 29,
+            "centre": {
+              "lat": 21.4004,
+              "lon": 85.6569
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c88dffffffff",
+            "count_good_aircraft": 28,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 28,
+            "centre": {
+              "lat": 21.0214,
+              "lon": 86.7791
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8cdffffffff",
+            "count_good_aircraft": 27,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 27,
+            "centre": {
+              "lat": 21.7645,
+              "lon": 85.9017
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8e3ffffffff",
+            "count_good_aircraft": 27,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 27,
+            "centre": {
+              "lat": 20.6562,
+              "lon": 86.5326
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8abffffffff",
+            "count_good_aircraft": 25,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 25,
+            "centre": {
+              "lat": 20.2756,
+              "lon": 87.1988
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8d5ffffffff",
+            "count_good_aircraft": 25,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 25,
+            "centre": {
+              "lat": 21.7493,
+              "lon": 87.2749
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8c3ffffffff",
+            "count_good_aircraft": 24,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 24,
+            "centre": {
+              "lat": 21.7557,
+              "lon": 86.8161
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c887ffffffff",
+            "count_good_aircraft": 23,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 23,
+            "centre": {
+              "lat": 20.6411,
+              "lon": 87.4467
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8b5ffffffff",
+            "count_good_aircraft": 22,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 22,
+            "centre": {
+              "lat": 19.8902,
+              "lon": 87.8656
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8bdffffffff",
+            "count_good_aircraft": 20,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 20,
+            "centre": {
+              "lat": 20.2664,
+              "lon": 87.6563
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8c7ffffffff",
+            "count_good_aircraft": 18,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 18,
+            "centre": {
+              "lat": 21.3919,
+              "lon": 86.5688
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8ebffffffff",
+            "count_good_aircraft": 17,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 17,
+            "centre": {
+              "lat": 21.0273,
+              "lon": 86.3225
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c895ffffffff",
+            "count_good_aircraft": 15,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 15,
+            "centre": {
+              "lat": 20.9962,
+              "lon": 88.1552
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8e9ffffffff",
+            "count_good_aircraft": 15,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 15,
+            "centre": {
+              "lat": 21.032,
+              "lon": 85.8672
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c889ffffffff",
+            "count_good_aircraft": 13,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 13,
+            "centre": {
+              "lat": 21.3858,
+              "lon": 87.0266
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8bbffffffff",
+            "count_good_aircraft": 13,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 13,
+            "centre": {
+              "lat": 20.6211,
+              "lon": 88.3649
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8a1ffffffff",
+            "count_good_aircraft": 12,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 12,
+            "centre": {
+              "lat": 19.9094,
+              "lon": 86.9518
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8b3ffffffff",
+            "count_good_aircraft": 12,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 12,
+            "centre": {
+              "lat": 20.2444,
+              "lon": 88.5743
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8b7ffffffff",
+            "count_good_aircraft": 12,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 12,
+            "centre": {
+              "lat": 19.8788,
+              "lon": 88.324
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8a3ffffffff",
+            "count_good_aircraft": 11,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 11,
+            "centre": {
+              "lat": 19.9004,
+              "lon": 87.4082
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8a7ffffffff",
+            "count_good_aircraft": 10,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 10,
+            "centre": {
+              "lat": 19.5336,
+              "lon": 87.161
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "8464db7ffffffff",
+            "count_good_aircraft": 9,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 9,
+            "centre": {
+              "lat": 19.5236,
+              "lon": 87.6173
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8e1ffffffff",
+            "count_good_aircraft": 6,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 6,
+            "centre": {
+              "lat": 20.662,
+              "lon": 86.0772
+            },
+            "bad_ratio": 0.0
+          },
+          {
+            "cell": "843c8b1ffffffff",
+            "count_good_aircraft": 4,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 4,
+            "centre": {
+              "lat": 20.256,
+              "lon": 88.1148
+            },
+            "bad_ratio": null,
+            "note": "only 4 aircraft observed \u2014 too thin for a ratio (needs 5)"
+          },
+          {
+            "cell": "843c8b9ffffffff",
+            "count_good_aircraft": 4,
+            "count_bad_aircraft": 0,
+            "total_aircraft": 4,
+            "centre": {
+              "lat": 20.6317,
+              "lon": 87.9053
+            },
+            "bad_ratio": null,
+            "note": "only 4 aircraft observed \u2014 too thin for a ratio (needs 5)"
+          }
+        ]
+      }
+    },
+    "coverage_gap": "GPSJam publishes one file per day, latest 2026-08-02. Dates inside 2026-08-03..2026-08-08 after that are not yet published, so this is the run-up to the window rather than the window itself.",
+    "interpretation": "Degraded GNSS accuracy over a test range is a recognised pre-test signature. Cells carrying fewer than 5 aircraft are reported without a ratio: one bad aircraft out of one is 100% by arithmetic and noise in reality."
+  }
+}

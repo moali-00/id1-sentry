@@ -1,0 +1,2558 @@
+{
+  "name": "connector_probe_sweep",
+  "captured_at": "2026-08-03T15:51:57.738574+00:00",
+  "source_pack": "new-connectors-research-pack.json",
+  "pack_generated": "2026-08-03",
+  "sealagom_tokens_spent": 0,
+  "note": "Reachability sweep of the research-pack connector catalog. Records response shape, not payloads. SeaLagom is not part of this set, so no metered token was consumed.",
+  "concurrency": 8,
+  "summary": {
+    "total": 97,
+    "reachable": 32,
+    "errored": 6,
+    "not_callable": 59,
+    "by_probe_status": {
+      "ok": 32,
+      "unconfigured": 59,
+      "error": 6
+    },
+    "not_callable_reasons": {
+      "not REST (websocket)": 1,
+      "credential absent (GFW_API_TOKEN)": 1,
+      "credential absent (AVWX_API_KEY)": 1,
+      "not REST (self_host)": 3,
+      "credential absent (WINGBITS_API_KEY)": 1,
+      "no published endpoint": 43,
+      "not REST (none)": 7,
+      "credential absent (FLIGHTAWARE_API_KEY)": 1,
+      "credential absent (UCDP_ACCESS_TOKEN)": 1
+    },
+    "by_category": {
+      "Aviation": 3,
+      "GNSS": 1,
+      "Hazards": 3,
+      "Weather": 3,
+      "Geospatial": 3,
+      "Satellite": 1,
+      "Cyber": 3,
+      "Humanitarian": 1,
+      "Space": 1,
+      "Tech": 2,
+      "Conflict": 2,
+      "Economy": 1,
+      "GeoIP": 2,
+      "Markets": 3,
+      "Network": 3
+    },
+    "reachable_by_aoi_relevance": {
+      "3": 7,
+      "2": 5,
+      "1": 6,
+      "0": 14
+    },
+    "errored_detail": [
+      {
+        "id": "wayback_cdx_api",
+        "detail": "ReadTimeout: "
+      },
+      {
+        "id": "reliefweb",
+        "detail": "HTTP 403: {\"status\":403,\"time\":33,\"error\":{\"type\":\"AccessDeniedHttpException\",\"message\":\"You are not using an approved appname. Kindly request an appname from R"
+      },
+      {
+        "id": "nasa_gibs",
+        "detail": "HTTP 400: <?xml version=\"1.0\" encoding=\"UTF-8\"?> <ExceptionReport xmlns=\"http://www.opengis.net/ows/1.1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" x"
+      },
+      {
+        "id": "celestrak",
+        "detail": "HTTP 403: GP data has not updated since your last successful\r download of GROUP=active at 2026-08-03 15:50:37 UTC.\r Data is updated once every 2 hours."
+      },
+      {
+        "id": "crt_sh",
+        "detail": "HTTP 502: <html>\r <head><title>502 Bad Gateway</title></head>\r <body>\r <center><h1>502 Bad Gateway</h1></center>\r <hr><center>nginx</center>\r </body>\r </html>\r "
+      },
+      {
+        "id": "nws_api_weather_gov",
+        "detail": "HTTP 400: {     \"correlationId\": \"76c473d\",     \"parameterErrors\": [         {             \"parameter\": \"query.limit\",             \"message\": \"Query parameter \\"
+      }
+    ]
+  },
+  "connectors": [
+    {
+      "id": "adsb_fi",
+      "name": "adsb.fi",
+      "category": "Aviation",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 3,
+      "serves": "airspace_vacancy cross-check (third independent network)",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://opendata.adsb.fi/api/v2/lat/20.75804/lon/87.085533/dist/150",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 661,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 13767,
+          "truncated_preview": "{\"now\": 1785772288.002\n,\"aircraft\":[\n{\"hex\":\"8881da\",\"type\":\"adsb_icao\",\"flight\":\"VJC907  \",\"r\":\"VN-A529\",\"t\":\"A21N\",\"desc\":\"AIRBUS A-321neo\",\"alt_baro\":36025,\"alt_geom\":38675,\"gs\":470.1,\"ias\":251,\"ta",
+          "shape": "object",
+          "top_level_keys": [
+            "aircraft",
+            "now",
+            "ptime",
+            "resultCount"
+          ]
+        }
+      }
+    },
+    {
+      "id": "adsb_lol",
+      "name": "adsb.lol",
+      "category": "Aviation",
+      "bucket": "free",
+      "catalog_status": "adapter",
+      "transport": "http",
+      "aoi_relevance": 3,
+      "serves": "airspace_vacancy \u2014 free, unmetered ADS-B; independent of OpenSky credits",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://api.adsb.lol/v2/point/20.75804/87.085533/150",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 1503,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 12657,
+          "truncated_preview": "{\"ac\":[\n{\"hex\":\"8881da\",\"type\":\"adsb_icao\",\"flight\":\"VJC907  \",\"r\":\"VN-A529\",\"t\":\"A21N\",\"alt_baro\":36025,\"alt_geom\":38675,\"gs\":470.2,\"ias\":251,\"tas\":452,\"mach\":0.760,\"wd\":95,\"ws\":18,\"oat\":-40,\"tat\":-1",
+          "shape": "object",
+          "top_level_keys": [
+            "ac",
+            "ctime",
+            "msg",
+            "now",
+            "ptime",
+            "total"
+          ]
+        }
+      }
+    },
+    {
+      "id": "airplanes_live",
+      "name": "airplanes.live",
+      "category": "Aviation",
+      "bucket": "freemium",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 3,
+      "serves": "airspace_vacancy cross-check",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://api.airplanes.live/v2/point/20.75804/87.085533/150",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 571,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 12636,
+          "truncated_preview": "{\"ac\":[\n{\"hex\":\"8881da\",\"type\":\"adsb_icao\",\"flight\":\"VJC907  \",\"r\":\"VN-A529\",\"t\":\"A21N\",\"desc\":\"AIRBUS A-321neo\",\"alt_baro\":36025,\"alt_geom\":38675,\"gs\":470.1,\"ias\":251,\"tas\":452,\"mach\":0.760,\"wd\":88,\"",
+          "shape": "object",
+          "top_level_keys": [
+            "ac",
+            "ctime",
+            "msg",
+            "now",
+            "ptime",
+            "total"
+          ]
+        }
+      }
+    },
+    {
+      "id": "gpsjam",
+      "name": "GPSJam",
+      "category": "GNSS",
+      "bucket": "free",
+      "catalog_status": "adapter",
+      "transport": "http",
+      "aoi_relevance": 3,
+      "serves": "GNSS interference over the range \u2014 a recognised pre-test signature",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://gpsjam.org/data/manifest.csv",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 485,
+        "http_status": 200,
+        "shape": {
+          "content_type": "text/csv",
+          "bytes": 35863,
+          "truncated_preview": "date,suspect,num_bad_aircraft_hexes\r\n2022-02-14,true,89\r\n2022-02-15,false,190\r\n2022-02-16,false,206\r\n2022-02-17,false,195\r\n2022-02-18,false,204\r\n2022-02-19,false,208\r\n2022-02-20,false,224\r\n2022-02-21,",
+          "shape": "text-or-csv",
+          "lines_sniffed": 1631,
+          "header_line": "date,suspect,num_bad_aircraft_hexes"
+        }
+      }
+    },
+    {
+      "id": "nasa_eonet",
+      "name": "NASA EONET",
+      "category": "Hazards",
+      "bucket": "free",
+      "catalog_status": "adapter",
+      "transport": "http",
+      "aoi_relevance": 3,
+      "serves": "negative control \u2014 a FIRMS hotspot coinciding with a wildfire is not a launch",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://eonet.gsfc.nasa.gov/api/v3/events?status=open&limit=50",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 1738,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/rss+xml",
+          "bytes": 45831,
+          "truncated_preview": "{\n\t\"title\": \"EONET Events\",\n\t\"description\": \"Natural events from EONET.\",\n\t\"link\": \"https://eonet.gsfc.nasa.gov/api/v3/events\",\n\t\"events\": [\n\t\t{\n\t\t\t\"id\": \"EONET_21965\",\n\t\t\t\"title\": \"Wildfire Camden Mc",
+          "shape": "object",
+          "top_level_keys": [
+            "description",
+            "events",
+            "link",
+            "title"
+          ]
+        }
+      }
+    },
+    {
+      "id": "usgs_earthquakes",
+      "name": "USGS Earthquakes",
+      "category": "Hazards",
+      "bucket": "free",
+      "catalog_status": "adapter",
+      "transport": "http",
+      "aoi_relevance": 3,
+      "serves": "negative control \u2014 separates a seismic event from a launch or impact",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 1386,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 11451,
+          "truncated_preview": "{\"type\":\"FeatureCollection\",\"metadata\":{\"generated\":1785772232000,\"url\":\"https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_day.geojson\",\"title\":\"USGS Magnitude 4.5+ Earthquakes, Past Day\",",
+          "shape": "object",
+          "top_level_keys": [
+            "bbox",
+            "features",
+            "metadata",
+            "type"
+          ]
+        }
+      }
+    },
+    {
+      "id": "aisstream_io",
+      "name": "AISStream.io",
+      "category": "Maritime",
+      "bucket": "free",
+      "catalog_status": "unsupported_transport",
+      "transport": "websocket",
+      "aoi_relevance": 3,
+      "serves": "live AIS \u2014 range-clearance and telemetry vessels moving off the pads",
+      "note": "WebSocket only; needs a streaming consumer, not a GET probe",
+      "env_key": "AISSTREAM_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "AISStream.io speaks websocket, not REST \u2014 WebSocket only; needs a streaming consumer, not a GET probe",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "global_fishing_watch",
+      "name": "Global Fishing Watch",
+      "category": "Maritime",
+      "bucket": "free",
+      "catalog_status": "probe_keyed",
+      "transport": "http",
+      "aoi_relevance": 3,
+      "serves": "Sentinel-1 SAR vessel detections down-range \u2014 dark vessels an AIS feed misses",
+      "note": null,
+      "env_key": "GFW_API_TOKEN",
+      "credential_present": false,
+      "probe_url": "https://gateway.api.globalfishingwatch.org/v3/datasets",
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set GFW_API_TOKEN to probe Global Fishing Watch",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "open_meteo",
+      "name": "Open-Meteo",
+      "category": "Weather",
+      "bucket": "freemium",
+      "catalog_status": "adapter",
+      "transport": "http",
+      "aoi_relevance": 3,
+      "serves": "window feasibility \u2014 launch windows are weather-gated; also explains scrubs",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://api.open-meteo.com/v1/forecast?latitude=20.75804&longitude=87.085533&hourly=cloud_cover,wind_speed_10m&forecast_days=1",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 610,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 952,
+          "truncated_preview": "{\"latitude\":20.773285,\"longitude\":87.08797,\"generationtime_ms\":0.04100799560546875,\"utc_offset_seconds\":0,\"timezone\":\"GMT\",\"timezone_abbreviation\":\"GMT\",\"elevation\":6.0,\"hourly_units\":{\"time\":\"iso8601",
+          "shape": "object",
+          "top_level_keys": [
+            "elevation",
+            "generationtime_ms",
+            "hourly",
+            "hourly_units",
+            "latitude",
+            "longitude",
+            "timezone",
+            "timezone_abbreviation",
+            "utc_offset_seconds"
+          ]
+        }
+      }
+    },
+    {
+      "id": "wayback_cdx_api",
+      "name": "Wayback CDX API",
+      "category": "Archives",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": "archive the source pages behind each finding \u2014 evidentiary proof",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "http://web.archive.org/cdx/search/cdx?url=sealagom.com&limit=5&output=json",
+      "probe": {
+        "status": "error",
+        "detail": "ReadTimeout: ",
+        "latency_ms": 30312,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "avwx_metar_taf",
+      "name": "AVWX METAR/TAF",
+      "category": "Aviation",
+      "bucket": "free",
+      "catalog_status": "probe_keyed",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": "METAR/TAF at Bhubaneswar \u2014 window feasibility near the range",
+      "note": null,
+      "env_key": "AVWX_API_KEY",
+      "credential_present": false,
+      "probe_url": "https://avwx.rest/api/metar/VEBS",
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set AVWX_API_KEY to probe AVWX METAR/TAF",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "tar1090_readsb_local_ads_b",
+      "name": "tar1090 / readsb (local ADS-B)",
+      "category": "Aviation",
+      "bucket": "self_host",
+      "catalog_status": "unsupported_transport",
+      "transport": "self_host",
+      "aoi_relevance": 2,
+      "serves": null,
+      "note": "needs an SDR receiver within ~250 nm of the island \u2014 no such receiver exists here",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "tar1090 / readsb (local ADS-B) speaks self_host, not REST \u2014 needs an SDR receiver within ~250 nm of the island \u2014 no such receiver exists here",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "wingbits",
+      "name": "Wingbits",
+      "category": "Aviation",
+      "bucket": "freemium",
+      "catalog_status": "probe_keyed",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": "ICAO24 -> owner/operator/type enrichment on any contact near the range",
+      "note": null,
+      "env_key": "WINGBITS_API_KEY",
+      "credential_present": false,
+      "probe_url": "https://customer-api.wingbits.com/v1/flights",
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set WINGBITS_API_KEY to probe Wingbits",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "ads_b_exchange",
+      "name": "ADS-B Exchange",
+      "category": "Aviation / ADS-B",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": "unfiltered ADS-B including military; paid/feeder access",
+      "note": "duplicated in the pack under both 'Aviation' and 'Aviation / ADS-B'",
+      "env_key": "ADSBEXCHANGE_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set ADSBEXCHANGE_API_KEY to probe ADS-B Exchange",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "reliefweb",
+      "name": "ReliefWeb",
+      "category": "Conflict",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": "corroborates the evacuation indicator from an independent authority",
+      "note": "pack cites API v1, which now returns HTTP 410 Gone; v2 verified working",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://api.reliefweb.int/v2/reports?appname=sentiry&limit=5",
+      "probe": {
+        "status": "error",
+        "detail": "HTTP 403: {\"status\":403,\"time\":33,\"error\":{\"type\":\"AccessDeniedHttpException\",\"message\":\"You are not using an approved appname. Kindly request an appname from ReliefWeb here: https:\\/\\/apidoc.reliefweb.int\\/par",
+        "latency_ms": 704,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "geonames",
+      "name": "GeoNames",
+      "category": "Geospatial",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": null,
+      "note": null,
+      "env_key": "GEONAMES_USERNAME",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set GEONAMES_USERNAME to probe GeoNames",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "nominatim_osm",
+      "name": "Nominatim (OSM)",
+      "category": "Geospatial",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": "geocode the 11 evacuated villages named in press reporting",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://nominatim.openstreetmap.org/search?q=Abdul+Kalam+Island&format=json&limit=3",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 491,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 452,
+          "truncated_preview": "[{\"place_id\":250169603,\"licence\":\"Data \u00a9 OpenStreetMap contributors, ODbL 1.0. http://osm.org/copyright\",\"osm_type\":\"way\",\"osm_id\":22062135,\"lat\":\"20.7558656\",\"lon\":\"87.0831934\",\"class\":\"place\",\"type\"",
+          "shape": "array",
+          "length": 1,
+          "first_row_keys": [
+            "addresstype",
+            "boundingbox",
+            "class",
+            "display_name",
+            "importance",
+            "lat",
+            "licence",
+            "lon",
+            "name",
+            "osm_id",
+            "osm_type",
+            "place_id",
+            "place_rank",
+            "type"
+          ]
+        }
+      }
+    },
+    {
+      "id": "overpass_api",
+      "name": "Overpass API",
+      "category": "Geospatial",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": "ground-truth the pad complexes and settlements inside the AOI boxes",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://overpass-api.de/api/interpreter?data=%5Bout%3Ajson%5D%3Bnode%2820.74%2C87.05%2C20.78%2C87.12%29%3Bout%201%3B",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 1218,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 368,
+          "truncated_preview": "{\n  \"version\": 0.6,\n  \"generator\": \"Overpass API 0.7.62.11 87bfad18\",\n  \"osm3s\": {\n    \"timestamp_osm_base\": \"2026-08-03T15:50:06Z\",\n    \"copyright\": \"The data included in this document is from www.op",
+          "shape": "object",
+          "top_level_keys": [
+            "elements",
+            "generator",
+            "osm3s",
+            "version"
+          ]
+        }
+      }
+    },
+    {
+      "id": "gdacs",
+      "name": "GDACS",
+      "category": "Hazards",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": "cyclone/flood alerts that would scrub a window or explain an evacuation",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://www.gdacs.org/gdacsapi/api/events/geteventlist/MAP",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 1501,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 1058336,
+          "truncated_preview": "{\"type\":\"FeatureCollection\",\"features\":[{\"type\":\"Feature\",\"bbox\":[76.8615496,9.6520521,76.8615496,9.6520521],\"geometry\":{\"type\":\"Point\",\"coordinates\":[76.8615496,9.6520521]},\"properties\":{\"eventtype\":",
+          "shape": "object",
+          "top_level_keys": [
+            "bbox",
+            "features",
+            "type"
+          ]
+        }
+      }
+    },
+    {
+      "id": "aishub",
+      "name": "AISHub",
+      "category": "Maritime",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": null,
+      "note": "free only with a reciprocal AIS feed",
+      "env_key": "AISHUB_USERNAME",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set AISHUB_USERNAME to probe AISHub",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "marinetraffic",
+      "name": "MarineTraffic",
+      "category": "Maritime",
+      "bucket": "paid",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": null,
+      "note": null,
+      "env_key": "MARINETRAFFIC_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set MARINETRAFFIC_API_KEY to probe MarineTraffic",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "nasa_gibs",
+      "name": "NASA GIBS",
+      "category": "Satellite",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": "basemap/overlay tiles for the AOI",
+      "note": "full WMTSCapabilities.xml is megabytes and times out; probing one tile instead",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/1.0.0/MODIS_Terra_CorrectedReflectance_TrueColor/default/2026-08-01/250m/1/1/1.jpg",
+      "probe": {
+        "status": "error",
+        "detail": "HTTP 400: <?xml version=\"1.0\" encoding=\"UTF-8\"?> <ExceptionReport xmlns=\"http://www.opengis.net/ows/1.1\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://schemas.opengis.net/ows/",
+        "latency_ms": 576,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "stac_catalogs",
+      "name": "STAC catalogs",
+      "category": "Satellite",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": "find scenes over the island without spending Sentinel Hub credits",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://earth-search.aws.element84.com/v1/collections",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 772,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 82397,
+          "truncated_preview": "{\"collections\":[{\"type\":\"Collection\",\"id\":\"sentinel-2-pre-c1-l2a\",\"title\":\"Sentinel-2 Pre-Collection 1 Level-2A \",\"description\":\"Sentinel-2 Pre-Collection 1 Level-2A (baseline < 05.00), with data and ",
+          "shape": "object",
+          "top_level_keys": [
+            "collections",
+            "context",
+            "links"
+          ]
+        }
+      }
+    },
+    {
+      "id": "telegram_bot_api",
+      "name": "Telegram Bot API",
+      "category": "Social",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": "local channel chatter around Balasore/Chandipur",
+      "note": null,
+      "env_key": "TELEGRAM_BOT_TOKEN",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set TELEGRAM_BOT_TOKEN to probe Telegram Bot API",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "telegram_mtproto",
+      "name": "Telegram MTProto",
+      "category": "Social",
+      "bucket": "free",
+      "catalog_status": "unsupported_transport",
+      "transport": "none",
+      "aoi_relevance": 2,
+      "serves": null,
+      "note": "user-client library, not a REST API; ToS-sensitive",
+      "env_key": "TELEGRAM_API_ID",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "Telegram MTProto speaks none, not REST \u2014 user-client library, not a REST API; ToS-sensitive",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "youtube_data_api_v3",
+      "name": "YouTube Data API v3",
+      "category": "Social",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": "eyewitness video of a launch plume",
+      "note": null,
+      "env_key": "YOUTUBE_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set YOUTUBE_API_KEY to probe YouTube Data API v3",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "celestrak",
+      "name": "CelesTrak",
+      "category": "Space",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": "which imaging satellites overfly the island during a declared window",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://celestrak.org/NORAD/elements/gp.php?GROUP=active&FORMAT=json",
+      "probe": {
+        "status": "error",
+        "detail": "HTTP 403: GP data has not updated since your last successful\r download of GROUP=active at 2026-08-03 15:50:37 UTC.\r Data is updated once every 2 hours.",
+        "latency_ms": 1490,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "space_track",
+      "name": "Space-Track",
+      "category": "Space",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": null,
+      "note": "registration + throttled; authoritative SSA catalogue",
+      "env_key": "SPACETRACK_USERNAME",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set SPACETRACK_USERNAME to probe Space-Track",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "open_meteo_archive",
+      "name": "Open-Meteo Archive",
+      "category": "Weather",
+      "bucket": "freemium",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 2,
+      "serves": "were past scrubbed windows weather-driven?",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://archive-api.open-meteo.com/v1/archive?latitude=20.75804&longitude=87.085533&start_date=2026-07-01&end_date=2026-07-02&hourly=cloud_cover",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 612,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 1325,
+          "truncated_preview": "{\"latitude\":20.773285,\"longitude\":87.08797,\"generationtime_ms\":1.1190176010131836,\"utc_offset_seconds\":0,\"timezone\":\"GMT\",\"timezone_abbreviation\":\"GMT\",\"elevation\":6.0,\"hourly_units\":{\"time\":\"iso8601\"",
+          "shape": "object",
+          "top_level_keys": [
+            "elevation",
+            "generationtime_ms",
+            "hourly",
+            "hourly_units",
+            "latitude",
+            "longitude",
+            "timezone",
+            "timezone_abbreviation",
+            "utc_offset_seconds"
+          ]
+        }
+      }
+    },
+    {
+      "id": "flightaware_aeroapi",
+      "name": "FlightAware AeroAPI",
+      "category": "Aviation",
+      "bucket": "freemium",
+      "catalog_status": "probe_keyed",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": null,
+      "env_key": "FLIGHTAWARE_API_KEY",
+      "credential_present": false,
+      "probe_url": "https://aeroapi.flightaware.com/aeroapi/airports/VEBS/flights",
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set FLIGHTAWARE_API_KEY to probe FlightAware AeroAPI",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "flightradar24",
+      "name": "Flightradar24",
+      "category": "Aviation",
+      "bucket": "paid",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": null,
+      "env_key": "FR24_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set FR24_API_KEY to probe Flightradar24",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "liveatc",
+      "name": "LiveATC",
+      "category": "Aviation",
+      "bucket": "free",
+      "catalog_status": "unsupported_transport",
+      "transport": "none",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": "audio streams, not a data API",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "LiveATC speaks none, not REST \u2014 audio streams, not a data API",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "acled",
+      "name": "ACLED",
+      "category": "Conflict",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": null,
+      "env_key": "ACLED_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set ACLED_API_KEY to probe ACLED",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "hdx_hapi",
+      "name": "HDX HAPI",
+      "category": "Conflict",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": null,
+      "env_key": "HDX_APP_IDENTIFIER",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set HDX_APP_IDENTIFIER to probe HDX HAPI",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "ucdp",
+      "name": "UCDP",
+      "category": "Conflict",
+      "bucket": "free",
+      "catalog_status": "probe_keyed",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": "pack lists this as open; live call returns 401 requiring x-ucdp-access-token",
+      "env_key": "UCDP_ACCESS_TOKEN",
+      "credential_present": false,
+      "probe_url": "https://ucdpapi.pcr.uu.se/api/ucdpprioconflict/24.1?pagesize=5",
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set UCDP_ACCESS_TOKEN to probe UCDP",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "cloudflare_radar",
+      "name": "Cloudflare Radar",
+      "category": "Cyber",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": "internet-outage signal could corroborate a comms blackout",
+      "env_key": "CLOUDFLARE_API_TOKEN",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set CLOUDFLARE_API_TOKEN to probe Cloudflare Radar",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "ioda",
+      "name": "IODA",
+      "category": "Cyber",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": "regional connectivity outage \u2014 weak comms-blackout corroboration",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://api.ioda.inetintel.cc.gatech.edu/v2/entities/query?entityType=country",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 1039,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 26903,
+          "truncated_preview": "{\"type\":\"entities.lookup\",\"metadata\":{\"requestTime\":\"2026-08-03T15:51:30+00:00\",\"responseTime\":\"2026-08-03T15:51:30+00:00\"},\"requestParameters\":{\"relatedTo\":null,\"search\":null,\"limit\":null,\"page\":null",
+          "shape": "object",
+          "top_level_keys": [
+            "copyright",
+            "data",
+            "error",
+            "metadata",
+            "perf",
+            "requestParameters",
+            "type"
+          ]
+        }
+      }
+    },
+    {
+      "id": "mapbox",
+      "name": "Mapbox",
+      "category": "Geospatial",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": null,
+      "env_key": "MAPBOX_TOKEN",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set MAPBOX_TOKEN to probe Mapbox",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "maptiler",
+      "name": "MapTiler",
+      "category": "Geospatial",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": null,
+      "env_key": "MAPTILER_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set MAPTILER_KEY to probe MapTiler",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "opentopodata",
+      "name": "OpenTopoData",
+      "category": "Geospatial",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": "elevation along the declared corridor",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://api.opentopodata.org/v1/etopo1?locations=20.75804,87.085533",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 910,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 182,
+          "truncated_preview": "{\n  \"results\": [\n    {\n      \"dataset\": \"etopo1\",\n      \"elevation\": 0.0,\n      \"location\": {\n        \"lat\": 20.75804,\n        \"lng\": 87.085533\n      }\n    }\n  ],\n  \"status\": \"OK\"\n}\n",
+          "shape": "object",
+          "top_level_keys": [
+            "results",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "id": "unhcr_population",
+      "name": "UNHCR Population",
+      "category": "Humanitarian",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://api.unhcr.org/population/v1/population/?limit=5",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 1152,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 1361,
+          "truncated_preview": "{\"page\":1,\"short-url\":\"TE8UCu\",\"maxPages\":15,\"total\":[],\"items\":[{\"year\":1951,\"coo_id\":\"-\",\"coo_name\":\"-\",\"coo\":\"-\",\"coo_iso\":\"-\",\"coa_id\":\"-\",\"coa_name\":\"-\",\"coa\":\"-\",\"coa_iso\":\"-\",\"refugees\":2116011",
+          "shape": "object",
+          "top_level_keys": [
+            "items",
+            "maxPages",
+            "page",
+            "short-url",
+            "total"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ais_catcher_local_sdr",
+      "name": "AIS-catcher (local SDR)",
+      "category": "Maritime",
+      "bucket": "self_host",
+      "catalog_status": "unsupported_transport",
+      "transport": "self_host",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": "antenna coverage only; nothing near Odisha",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "AIS-catcher (local SDR) speaks self_host, not REST \u2014 antenna coverage only; nothing near Odisha",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "wikidata_sparql",
+      "name": "Wikidata SPARQL",
+      "category": "Open data",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": "needs a SPARQL query string per call",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "no callable probe endpoint published for Wikidata SPARQL \u2014 needs a SPARQL query string per call",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "nasa_modis",
+      "name": "NASA MODIS",
+      "category": "Satellite",
+      "bucket": "free",
+      "catalog_status": "unsupported_transport",
+      "transport": "none",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": "product portal; FIRMS already covers thermal",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "NASA MODIS speaks none, not REST \u2014 product portal; FIRMS already covers thermal",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "opencellid",
+      "name": "OpenCelliD",
+      "category": "Sensors",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": null,
+      "env_key": "OPENCELLID_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set OPENCELLID_KEY to probe OpenCelliD",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "n2yo",
+      "name": "N2YO",
+      "category": "Space",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": null,
+      "env_key": "N2YO_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set N2YO_API_KEY to probe N2YO",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "satnogs",
+      "name": "SatNOGS",
+      "category": "Space",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://network.satnogs.org/api/observations/?format=json",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 1719,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 36632,
+          "truncated_preview": "[{\"id\":14690906,\"start\":\"2026-08-05T15:45:51Z\",\"end\":\"2026-08-05T15:50:21Z\",\"ground_station\":3020,\"transmitter\":\"4WnHaC56evx3NKFiYDwb9q\",\"norad_cat_id\":66681,\"payload\":null,\"waterfall\":null,\"demoddata",
+          "shape": "array",
+          "length": 25,
+          "first_row_keys": [
+            "archive_url",
+            "archived",
+            "center_frequency",
+            "client_metadata",
+            "client_version",
+            "demoddata",
+            "end",
+            "ground_station",
+            "id",
+            "max_altitude",
+            "norad_cat_id",
+            "observation_frequency",
+            "observer",
+            "payload",
+            "rise_azimuth",
+            "sat_id",
+            "set_azimuth",
+            "start",
+            "station_alt",
+            "station_lat"
+          ]
+        }
+      }
+    },
+    {
+      "id": "arxiv_api",
+      "name": "arXiv API",
+      "category": "Tech",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://export.arxiv.org/api/query?search_query=all:missile&max_results=3",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 459,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/atom+xml",
+          "bytes": 6055,
+          "truncated_preview": "<?xml version='1.0' encoding='UTF-8'?>\n<feed xmlns:opensearch=\"http://a9.com/-/spec/opensearch/1.1/\" xmlns:arxiv=\"http://arxiv.org/schemas/atom\" xmlns=\"http://www.w3.org/2005/Atom\">\n  <id>https://arxi",
+          "shape": "xml-or-html"
+        }
+      }
+    },
+    {
+      "id": "aqicn",
+      "name": "AQICN",
+      "category": "Weather",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": null,
+      "env_key": "AQICN_TOKEN",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set AQICN_TOKEN to probe AQICN",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "noaa_climate_data_online",
+      "name": "NOAA Climate Data Online",
+      "category": "Weather",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": null,
+      "env_key": "NOAA_CDO_TOKEN",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set NOAA_CDO_TOKEN to probe NOAA Climate Data Online",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "noaa_swpc",
+      "name": "NOAA SWPC",
+      "category": "Weather",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": "geomagnetic conditions \u2014 a confound for GNSS interference readings",
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://services.swpc.noaa.gov/products/alerts.json",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 389,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 57745,
+          "truncated_preview": "[{\"product_id\":\"K05W\",\"issue_datetime\":\"2026-08-03 02:53:49.763\",\"message\":\"Space Weather Message Code: WARK05\\r\\nSerial Number: 2255\\r\\nIssue Time: 2026 Aug 03 0253 UTC\\r\\n\\r\\nEXTENDED WARNING: Geoma",
+          "shape": "array",
+          "length": 99,
+          "first_row_keys": [
+            "issue_datetime",
+            "message",
+            "product_id"
+          ]
+        }
+      }
+    },
+    {
+      "id": "openaq",
+      "name": "OpenAQ",
+      "category": "Weather",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 1,
+      "serves": null,
+      "note": null,
+      "env_key": "OPENAQ_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set OPENAQ_API_KEY to probe OpenAQ",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "groq",
+      "name": "Groq",
+      "category": "AI",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "GROQ_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set GROQ_API_KEY to probe Groq",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "ollama_local_llm",
+      "name": "Ollama (local LLM)",
+      "category": "AI",
+      "bucket": "self_host",
+      "catalog_status": "unsupported_transport",
+      "transport": "self_host",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "Ollama (local LLM) speaks self_host, not REST \u2014 no HTTP probe possible",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "openrouter",
+      "name": "OpenRouter",
+      "category": "AI",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "OPENROUTER_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set OPENROUTER_API_KEY to probe OpenRouter",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "faa_nas_status",
+      "name": "FAA NAS Status",
+      "category": "Aviation",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": "US airspace only, and the endpoint 406s without a bespoke Accept header",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "no callable probe endpoint published for FAA NAS Status \u2014 US airspace only, and the endpoint 406s without a bespoke Accept header",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "faa_notam_tfr",
+      "name": "FAA NOTAM / TFR",
+      "category": "Aviation",
+      "bucket": "free",
+      "catalog_status": "unsupported_transport",
+      "transport": "none",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": "US NOTAMs; no JSON API in the pack",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "FAA NOTAM / TFR speaks none, not REST \u2014 US NOTAMs; no JSON API in the pack",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "deepstate_map",
+      "name": "DeepState Map",
+      "category": "Conflict",
+      "bucket": "free",
+      "catalog_status": "unsupported_transport",
+      "transport": "none",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": "Ukraine theatre; no official API",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "DeepState Map speaks none, not REST \u2014 Ukraine theatre; no official API",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "gulfwatch",
+      "name": "GulfWatch",
+      "category": "Conflict",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": "GCC theatre only",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://gulfwatch-api.onrender.com/api/alerts?country=uae",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 426,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 1535,
+          "truncated_preview": "{\"emirateStatuses\":[{\"emirateId\":\"abu-dhabi\",\"activeAlerts\":[],\"status\":\"clear\"},{\"emirateId\":\"ajman\",\"activeAlerts\":[],\"status\":\"clear\"},{\"emirateId\":\"dubai\",\"activeAlerts\":[{\"id\":\"06c442ab-5a71-4b5d",
+          "shape": "object",
+          "top_level_keys": [
+            "emirateStatuses",
+            "lastUpdated"
+          ]
+        }
+      }
+    },
+    {
+      "id": "pikud_haoref_israel_rocket_alerts",
+      "name": "Pikud HaOref / Israel rocket alerts",
+      "category": "Conflict",
+      "bucket": "free",
+      "catalog_status": "unsupported_transport",
+      "transport": "none",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": "Israel theatre only",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "Pikud HaOref / Israel rocket alerts speaks none, not REST \u2014 Israel theatre only",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "rocketalert_live",
+      "name": "RocketAlert Live",
+      "category": "Conflict",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": "Israel theatre only",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://agg.rocketalert.live/api/v2/alerts/real-time/cached",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 1274,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 42,
+          "truncated_preview": "{\"success\":true,\"error\":null,\"payload\":[]}",
+          "shape": "object",
+          "top_level_keys": [
+            "error",
+            "payload",
+            "success"
+          ]
+        }
+      }
+    },
+    {
+      "id": "abuse_ch_feodo_tracker",
+      "name": "abuse.ch Feodo Tracker",
+      "category": "Cyber",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://feodotracker.abuse.ch/downloads/ipblocklist.json",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 483,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 1763,
+          "truncated_preview": "[\n    {\n        \"ip_address\": \"162.243.103.246\",\n        \"port\": 8080,\n        \"status\": \"offline\",\n        \"hostname\": null,\n        \"as_number\": 14061,\n        \"as_name\": \"DIGITALOCEAN-ASN\",\n       ",
+          "shape": "array",
+          "length": 5,
+          "first_row_keys": [
+            "as_name",
+            "as_number",
+            "country",
+            "first_seen",
+            "hostname",
+            "ip_address",
+            "last_online",
+            "malware",
+            "port",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "id": "abuse_ch_malwarebazaar",
+      "name": "abuse.ch MalwareBazaar",
+      "category": "Cyber",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "ABUSECH_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set ABUSECH_API_KEY to probe abuse.ch MalwareBazaar",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "abuse_ch_threatfox",
+      "name": "abuse.ch ThreatFox",
+      "category": "Cyber",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "ABUSECH_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set ABUSECH_API_KEY to probe abuse.ch ThreatFox",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "abuse_ch_urlhaus",
+      "name": "abuse.ch URLhaus",
+      "category": "Cyber",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": "recent-URLs endpoint is POST-only",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "no callable probe endpoint published for abuse.ch URLhaus \u2014 recent-URLs endpoint is POST-only",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "abuseipdb",
+      "name": "AbuseIPDB",
+      "category": "Cyber",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "ABUSEIPDB_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set ABUSEIPDB_KEY to probe AbuseIPDB",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "alienvault_otx",
+      "name": "AlienVault OTX",
+      "category": "Cyber",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "OTX_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set OTX_API_KEY to probe AlienVault OTX",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "c2intelfeeds",
+      "name": "C2IntelFeeds",
+      "category": "Cyber",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://raw.githubusercontent.com/drb-ra/C2IntelFeeds/master/feeds/IPC2s-30day.csv",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 375,
+        "http_status": 200,
+        "shape": {
+          "content_type": "text/plain",
+          "bytes": 11106,
+          "truncated_preview": "#ip,ioc\n1.14.217.176,Possible Cobaltstrike C2 IP\n1.14.227.23,Possible Cobaltstrike C2 IP\n101.126.10.34,Possible Cobaltstrike C2 IP\n101.133.225.51,Possible Cobaltstrike C2 IP\n101.33.225.32,Possible Cob",
+          "shape": "text-or-csv",
+          "lines_sniffed": 263,
+          "header_line": "#ip,ioc"
+        }
+      }
+    },
+    {
+      "id": "censys_search",
+      "name": "Censys Search",
+      "category": "Cyber",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "CENSYS_API_ID",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set CENSYS_API_ID to probe Censys Search",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "fofa",
+      "name": "FOFA",
+      "category": "Cyber",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "FOFA_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set FOFA_KEY to probe FOFA",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "greynoise",
+      "name": "GreyNoise",
+      "category": "Cyber",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "GREYNOISE_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set GREYNOISE_API_KEY to probe GreyNoise",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "shodan",
+      "name": "Shodan",
+      "category": "Cyber",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "SHODAN_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set SHODAN_API_KEY to probe Shodan",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "urlscan_io",
+      "name": "urlscan.io",
+      "category": "Cyber",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "URLSCAN_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set URLSCAN_API_KEY to probe urlscan.io",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "virustotal",
+      "name": "VirusTotal",
+      "category": "Cyber",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "VIRUSTOTAL_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set VIRUSTOTAL_API_KEY to probe VirusTotal",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "fred",
+      "name": "FRED",
+      "category": "Economy",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "FRED_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set FRED_API_KEY to probe FRED",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "u_s_eia_open_data",
+      "name": "U.S. EIA Open Data",
+      "category": "Economy",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "EIA_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set EIA_API_KEY to probe U.S. EIA Open Data",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "world_bank_open_data",
+      "name": "World Bank Open Data",
+      "category": "Economy",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://api.worldbank.org/v2/country/IND?format=json",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 137,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 416,
+          "truncated_preview": "[{\"page\":1,\"pages\":1,\"per_page\":\"50\",\"total\":1},[{\"id\":\"IND\",\"iso2Code\":\"IN\",\"name\":\"India\",\"region\":{\"id\":\"SAS\",\"iso2code\":\"8S\",\"value\":\"South Asia\"},\"adminregion\":{\"id\":\"SAS\",\"iso2code\":\"8S\",\"value\"",
+          "shape": "array",
+          "length": 2,
+          "first_row_keys": [
+            "page",
+            "pages",
+            "per_page",
+            "total"
+          ]
+        }
+      }
+    },
+    {
+      "id": "freeipapi",
+      "name": "freeipapi",
+      "category": "GeoIP",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://freeipapi.com/api/json/8.8.8.8",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 1230,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 1129,
+          "truncated_preview": "{\"ipVersion\":4,\"ipAddress\":\"8.8.8.8\",\"latitude\":37.422,\"longitude\":-122.085,\"countryName\":\"United States\",\"countryCode\":\"US\",\"capital\":\"Washington D.C.\",\"phoneCodes\":[1],\"timeZones\":[\"America\\/Adak\",\"",
+          "shape": "object",
+          "top_level_keys": [
+            "asn",
+            "asnOrganization",
+            "capital",
+            "cityName",
+            "continent",
+            "continentCode",
+            "countryCode",
+            "countryName",
+            "currencies",
+            "ipAddress",
+            "ipVersion",
+            "isProxy",
+            "languages",
+            "latitude",
+            "longitude",
+            "phoneCodes",
+            "regionCode",
+            "regionName",
+            "timeZones",
+            "zipCode"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ip_api_com",
+      "name": "ip-api.com",
+      "category": "GeoIP",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "http://ip-api.com/json/8.8.8.8",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 538,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 277,
+          "truncated_preview": "{\"status\":\"success\",\"country\":\"United States\",\"countryCode\":\"US\",\"region\":\"VA\",\"regionName\":\"Virginia\",\"city\":\"Ashburn\",\"zip\":\"20149\",\"lat\":39.03,\"lon\":-77.5,\"timezone\":\"America/New_York\",\"isp\":\"Googl",
+          "shape": "object",
+          "top_level_keys": [
+            "as",
+            "city",
+            "country",
+            "countryCode",
+            "isp",
+            "lat",
+            "lon",
+            "org",
+            "query",
+            "region",
+            "regionName",
+            "status",
+            "timezone",
+            "zip"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ipinfo",
+      "name": "IPinfo",
+      "category": "GeoIP",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "IPINFO_TOKEN",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set IPINFO_TOKEN to probe IPinfo",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "coingecko",
+      "name": "CoinGecko",
+      "category": "Markets",
+      "bucket": "freemium",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=usd",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 598,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 25,
+          "truncated_preview": "{\"bitcoin\":{\"usd\":63704}}",
+          "shape": "object",
+          "top_level_keys": [
+            "bitcoin"
+          ]
+        }
+      }
+    },
+    {
+      "id": "finnhub",
+      "name": "Finnhub",
+      "category": "Markets",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "FINNHUB_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set FINNHUB_KEY to probe Finnhub",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "polymarket",
+      "name": "Polymarket",
+      "category": "Markets",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://gamma-api.polymarket.com/markets?limit=5",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 108,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 33026,
+          "truncated_preview": "[{\"id\":\"559651\",\"question\":\"Xi Jinping out before 2027?\",\"conditionId\":\"0xa467b14d51f01b957109d9cbb1d6c124fab2a089d52ed8f471d23c2812e743b7\",\"slug\":\"xi-jinping-out-before-2027\",\"resolutionSource\":\"\",\"e",
+          "shape": "array",
+          "length": 5,
+          "first_row_keys": [
+            "acceptingOrders",
+            "acceptingOrdersTimestamp",
+            "active",
+            "approved",
+            "archived",
+            "automaticallyActive",
+            "bestAsk",
+            "bestBid",
+            "clearBookOnStart",
+            "clobRewards",
+            "clobTokenIds",
+            "closed",
+            "comboStatus",
+            "competitive",
+            "conditionId",
+            "createdAt",
+            "customLiveness",
+            "cyom",
+            "deploying",
+            "deployingTimestamp"
+          ]
+        }
+      }
+    },
+    {
+      "id": "yahoo_finance_unofficial",
+      "name": "Yahoo Finance (unofficial)",
+      "category": "Markets",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://query1.finance.yahoo.com/v8/finance/chart/AAPL",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 842,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 13738,
+          "truncated_preview": "{\"chart\":{\"result\":[{\"meta\":{\"currency\":\"USD\",\"symbol\":\"AAPL\",\"exchangeName\":\"NMS\",\"fullExchangeName\":\"NasdaqGS\",\"instrumentType\":\"EQUITY\",\"firstTradeDate\":345479400,\"regularMarketTime\":1785772291,\"ha",
+          "shape": "object",
+          "top_level_keys": [
+            "chart"
+          ]
+        }
+      }
+    },
+    {
+      "id": "hls_iptv_live_video_lists",
+      "name": "HLS / IPTV live video lists",
+      "category": "Media",
+      "bucket": "free",
+      "catalog_status": "unsupported_transport",
+      "transport": "none",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "HLS / IPTV live video lists speaks none, not REST \u2014 no HTTP probe possible",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "bgpview",
+      "name": "BGPView",
+      "category": "Network",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": "api.bgpview.io no longer resolves (DNS failure)",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "no callable probe endpoint published for BGPView \u2014 api.bgpview.io no longer resolves (DNS failure)",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "crt_sh",
+      "name": "crt.sh",
+      "category": "Network",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://crt.sh/?q=example.com&output=json&limit=5",
+      "probe": {
+        "status": "error",
+        "detail": "HTTP 502: <html>\r <head><title>502 Bad Gateway</title></head>\r <body>\r <center><h1>502 Bad Gateway</h1></center>\r <hr><center>nginx</center>\r </body>\r </html>\r <!-- a padding to disable MSIE and Chrome friendly",
+        "latency_ms": 1172,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "google_dns_over_https",
+      "name": "Google DNS-over-HTTPS",
+      "category": "Network",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": "requires the query string; verified working once params were preserved",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://dns.google/resolve?name=example.com&type=A",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 515,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 254,
+          "truncated_preview": "{\"Status\":0,\"TC\":false,\"RD\":true,\"RA\":true,\"AD\":true,\"CD\":false,\"Question\":[{\"name\":\"example.com.\",\"type\":1}],\"Answer\":[{\"name\":\"example.com.\",\"type\":1,\"TTL\":236,\"data\":\"172.66.147.243\"},{\"name\":\"exam",
+          "shape": "object",
+          "top_level_keys": [
+            "AD",
+            "Answer",
+            "CD",
+            "Question",
+            "RA",
+            "RD",
+            "Status",
+            "TC"
+          ]
+        }
+      }
+    },
+    {
+      "id": "rdap_whois",
+      "name": "RDAP / WHOIS",
+      "category": "Network",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://rdap.org/domain/example.com",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 1302,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/rdap+json",
+          "bytes": 2355,
+          "truncated_preview": "{\"objectClassName\":\"domain\",\"handle\":\"2336799_DOMAIN_COM-VRSN\",\"ldhName\":\"EXAMPLE.COM\",\"links\":[{\"value\":\"https:\\/\\/rdap.verisign.com\\/com\\/v1\\/domain\\/EXAMPLE.COM\",\"rel\":\"self\",\"href\":\"https:\\/\\/rdap",
+          "shape": "object",
+          "top_level_keys": [
+            "entities",
+            "events",
+            "handle",
+            "ldhName",
+            "links",
+            "nameservers",
+            "notices",
+            "objectClassName",
+            "rdapConformance",
+            "secureDNS",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "id": "ripestat",
+      "name": "RIPEstat",
+      "category": "Network",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://stat.ripe.net/data/announced-prefixes/data.json?resource=AS15169",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 705,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 156823,
+          "truncated_preview": "{\"messages\":[[\"info\",\"Results exclude routes with very low visibility (less than 10 RIS full-feed peers seeing).\"]],\"see_also\":[],\"version\":\"1.2\",\"data_call_name\":\"announced-prefixes\",\"data_call_statu",
+          "shape": "object",
+          "top_level_keys": [
+            "build_version",
+            "cached",
+            "data",
+            "data_call_name",
+            "data_call_status",
+            "messages",
+            "pipeline",
+            "process_time",
+            "query_id",
+            "see_also",
+            "server_id",
+            "status",
+            "status_code",
+            "time",
+            "version"
+          ]
+        }
+      }
+    },
+    {
+      "id": "data_gov_ckan",
+      "name": "Data.gov / CKAN",
+      "category": "Open data",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": "CKAN action API returns 404 at the documented path",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "no callable probe endpoint published for Data.gov / CKAN \u2014 CKAN action API returns 404 at the documented path",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "ofac_sdn",
+      "name": "OFAC SDN",
+      "category": "Sanctions",
+      "bucket": "free",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": "bulk XML/CSV download, not a query API",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "no callable probe endpoint published for OFAC SDN \u2014 bulk XML/CSV download, not a query API",
+        "latency_ms": 0,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "opensanctions",
+      "name": "OpenSanctions",
+      "category": "Sanctions",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "OPENSANCTIONS_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set OPENSANCTIONS_API_KEY to probe OpenSanctions",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "broadcastify",
+      "name": "Broadcastify",
+      "category": "Sensors",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": "US public-safety radio",
+      "env_key": "BROADCASTIFY_USERNAME",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set BROADCASTIFY_USERNAME to probe Broadcastify",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "wigle",
+      "name": "WiGLE",
+      "category": "Sensors",
+      "bucket": "freemium",
+      "catalog_status": "catalog",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": "WIGLE_API_KEY",
+      "credential_present": false,
+      "probe_url": null,
+      "probe": {
+        "status": "unconfigured",
+        "detail": "set WIGLE_API_KEY to probe WiGLE",
+        "latency_ms": null,
+        "http_status": null,
+        "shape": null
+      }
+    },
+    {
+      "id": "hacker_news_api",
+      "name": "Hacker News API",
+      "category": "Tech",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": null,
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://hacker-news.firebaseio.com/v0/topstories.json",
+      "probe": {
+        "status": "ok",
+        "detail": null,
+        "latency_ms": 859,
+        "http_status": 200,
+        "shape": {
+          "content_type": "application/json",
+          "bytes": 4501,
+          "truncated_preview": "[49154332,49156111,49157128,49155629,49151933,49156011,49082937,49150470,49154228,49152842,49155626,49125168,49156650,49153374,49147907,49152023,49145193,49154127,49153361,49156071,49115935,49078856,4",
+          "shape": "array",
+          "length": 500
+        }
+      }
+    },
+    {
+      "id": "nws_api_weather_gov",
+      "name": "NWS api.weather.gov",
+      "category": "Weather",
+      "bucket": "free",
+      "catalog_status": "probe",
+      "transport": "http",
+      "aoi_relevance": 0,
+      "serves": null,
+      "note": "US only; no Indian coverage",
+      "env_key": null,
+      "credential_present": true,
+      "probe_url": "https://api.weather.gov/alerts/active?limit=5",
+      "probe": {
+        "status": "error",
+        "detail": "HTTP 400: {     \"correlationId\": \"76c473d\",     \"parameterErrors\": [         {             \"parameter\": \"query.limit\",             \"message\": \"Query parameter \\\"limit\\\" is not recognized\"         }     ],     \"",
+        "latency_ms": 915,
+        "http_status": null,
+        "shape": null
+      }
+    }
+  ]
+}

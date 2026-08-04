@@ -1,0 +1,2340 @@
+{
+  "name": "social_media_image_urls",
+  "captured_at": "2026-08-04T07:51:41.118368+00:00",
+  "aoi": "Abdul Kalam Island (ITR), 20.75804N 87.085533E",
+  "provider": "Social Links (osint.rest) \u2014 twitter_v2/search/tweets",
+  "sealagom_tokens_spent": 0,
+  "how_collected": "The main sweep in social_posts.json recorded only a has_media boolean and discarded the URLs. These were recovered by re-running the same 7 AOI phrases against Twitter/X (sort=Latest) plus 2 earlier sort=Top calls, then deduped on post URL.",
+  "summary": {
+    "posts_with_media": 110,
+    "aoi_relevant": 84,
+    "image_urls_total": 94,
+    "image_urls_aoi_relevant": 71,
+    "video_urls_total": 28,
+    "reproduced_in_report": 3
+  },
+  "caveats": [
+    "Twitter/X only. YouTube items in the sweep carry thumbnails, but those URLs were not collected.",
+    "Image URLs are hotlinks to pbs.twimg.com and may expire or be deleted by the poster; they are not archived copies.",
+    "These are third-party photographs. The three reproduced in Report.pdf are illustrative file images of EARLIER tests \u2014 none depicts the 6-7 August 2026 trial, which had not occurred at capture."
+  ],
+  "posts": [
+    {
+      "post_url": "https://twitter.com/MumbaichaDon/status/2070561086198403361",
+      "platform": "Twitter/X",
+      "author": "MumbaichaDon",
+      "published": "2026-06-26T17:33:26+00:00",
+      "query": "Agni missile test",
+      "view_count": 143512,
+      "like_count": 2538,
+      "text": "Darr ka Mahaul hai\ud83d\ude02\n\nPakistani analyst asks US about Bharat's Agni-6 missile-\n\n\"Recently Pakistan's potential ICBM program was called threat to US. What's ur take on India's Agni-6 ICBM test with range of 12000 km which could potentially place parts of US & Europe in its reach\"\n\n",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-VI"
+      ],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2070560984285245440/img/pZ7Ti3gxHiAI2wMK.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/Ltcolonelvikas/status/2065384130477797646",
+      "platform": "Twitter/X",
+      "author": "Ltcolonelvikas",
+      "published": "2026-06-12T10:42:04+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 53542,
+      "like_count": 1095,
+      "text": "\ud83d\udd25 11000 evacuated from near by area's &amp; a massive launch from Chandipur in the morning. Was it the highly anticipated Agni-VI missile test? \n\ud83d\ude80\ud83c\uddee\ud83c\uddf3 If true, this isn\u2019t just a trial; it's a major strategic shift for India's deterrence capabilities.\nJai Hind",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-VI"
+      ],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/ext_tw_video_thumb/2065384099834146816/pu/img/gzZpYROIRdyHBzl0.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/OSINTWarfare/status/2080804404983112189",
+      "platform": "Twitter/X",
+      "author": "OSINTWarfare",
+      "published": "2026-07-24T23:56:44+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 51821,
+      "like_count": 90,
+      "text": "India's Ministry of Defence has announced the first-ever flight test of the indigenous Kusha long-range surface-to-air missile (LR-SAM), conducted at the Abdul Kalam Island test range.\n\nThe Kusha M1 variant will have a range of up to 150 km, while the M2 and M3 variants are expec",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [
+        "Barak-8 (MR-SAM/LR-SAM)"
+      ],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2080804311773130752/img/lJcKzFUQjSQLphCf.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/iamvickygoyal/status/1958276422419755237",
+      "platform": "Twitter/X",
+      "author": "iamvickygoyal",
+      "published": "2025-08-20T21:14:16+00:00",
+      "query": "Wheeler Island missile",
+      "view_count": 49155,
+      "like_count": 29,
+      "text": "Agni-IV was first tested on 15 November 2011 and 19 September 2012 from Wheeler Island off the coast of the eastern state of Orissa for its full range of 4,000\u00a0km\n\nAgni-V was first test fired on 19 April 2012 at 08:07\u00a0am\u00a0IST\u00a0from\u00a0Abdul Kalam Island\u00a0off the coast of Orissa, the te",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "wheeler",
+        "abdul kalam",
+        "wheeler island",
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-IV",
+        "Agni-V"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/card_img/2081877552973619200/UbG1MT5u?format=jpg&name=orig"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/Sputnik_India/status/2065404687478624313",
+      "platform": "Twitter/X",
+      "author": "Sputnik_India",
+      "published": "2026-06-12T12:03:45+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 38527,
+      "like_count": 2059,
+      "text": "\ud83c\uddee\ud83c\uddf3\ud83e\udd1d\ud83c\uddf7\ud83c\uddfa 25 years of BrahMos: Missile programme that changed India\u2019s defence story\n\nOn June 12, 2001, India and Russia successfully test-fired BrahMos for the first time from Chandipur, Odisha.\n\nWhat began as a joint venture became one of the world\u2019s fastest cruise missiles\ud83d\udc47",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "brahmos"
+      ],
+      "matched_systems": [
+        "BrahMos"
+      ],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2065404593970827264/img/WgtnAvyA04FODTAO.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/srijanpalsingh/status/2065810820890775598",
+      "platform": "Twitter/X",
+      "author": "srijanpalsingh",
+      "published": "2026-06-13T14:57:35+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 18790,
+      "like_count": 757,
+      "text": "After the evacuation of nearly 11,000 people around Odisha's Chandipur Test Range, DRDO has now revealed the reason behind the heightened security.\n\nIndia successfully conducted three major flight tests, validating its Ballistic Missile Defence (BMD) system and the new Naval Anti",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur"
+      ],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2065808869872590848/img/40tV2VAfZq7QK99h.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/manishindiatv/status/2066505036088357081",
+      "platform": "Twitter/X",
+      "author": "manishindiatv",
+      "published": "2026-06-15T12:56:09+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 13516,
+      "like_count": 231,
+      "text": "DRDO conducts successful flight-test of Long Range Land Attack Cruise missile from Dr APJ Abdul Kalam Island off the coast of Odisha, Today. All the test objectives were fully met, as per the data captured by various tracking instruments deployed by Integrated Test Range, Chandip",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam",
+        "integrated test range"
+      ],
+      "matched_systems": [
+        "Nirbhay"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HK2zX-0aEAAVxdw.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": "Figure: Long Range Land Attack Cruise Missile"
+    },
+    {
+      "post_url": "https://twitter.com/PTI_News/status/2074858299741364547",
+      "platform": "Twitter/X",
+      "author": "PTI_News",
+      "published": "2026-07-08T14:09:02+00:00",
+      "query": "Integrated Test Range Odisha",
+      "view_count": 9815,
+      "like_count": 9,
+      "text": "DRDO conducts successful flight-test of Pinaka Long Range Guided Rocket (LRGR) at Integrated Test Range (ITR) in Odisha: MoD",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "integrated test range"
+      ],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2074858262940499968/img/q6-8gL-sjMenN-FM.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/manas_muduli/status/2081705336478584852",
+      "platform": "Twitter/X",
+      "author": "manas_muduli",
+      "published": "2026-07-27T11:36:43+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 7849,
+      "like_count": 110,
+      "text": "Remembering Dr. A.P.J. Abdul Kalam on his death anniversary.\n\nOdisha shared a special bond with the missile man of India. \n\nIn his book Ignited Minds, he wrote about the beauty of Chandipur, Odisha, calling it a place that \u201copened up my mind to the cosmic reality.\u201d He also recall",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOOz9ovaIAAuVC5.jpg",
+        "https://pbs.twimg.com/media/HOOz9okbgAAKEes.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/EconomicTimes/status/2080578138782744705",
+      "platform": "Twitter/X",
+      "author": "EconomicTimes",
+      "published": "2026-07-24T08:57:38+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 6040,
+      "like_count": 1,
+      "text": "India tests its air defence muscle with Kusha | DRDO successfully conducts the maiden flight test of the indigenous long-range surface-to-air missile from APJ Abdul Kalam Island, boosting defence capabilities\ud83d\udc47\n\ud83d\udcd1 FULL STORY \u27a0 https://t.co/DFFFsznh6B\n#India #Defence #DRDO #Missile ",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HN-yyqHWwAAefP-.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/idrwalerts/status/2064913074482720906",
+      "platform": "Twitter/X",
+      "author": "idrwalerts",
+      "published": "2026-06-11T03:30:15+00:00",
+      "query": "Balasore missile test",
+      "view_count": 5879,
+      "like_count": 188,
+      "text": "Secretive DRDO Missile Test at Balasore Raises Questions: Which Missile Was Fired? \n\nhttps://t.co/2v8CHsDXsH",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HKgLfmKawAAZ1le.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/FrustIndian/status/2065647783789666328",
+      "platform": "Twitter/X",
+      "author": "FrustIndian",
+      "published": "2026-06-13T04:09:44+00:00",
+      "query": "Balasore missile test",
+      "view_count": 5790,
+      "like_count": 16,
+      "text": "The Evacuation Mystery: If Not Agni-6, Then What?\n\nReports have now emerged that nearly 11,000 people in Odisha's Balasore district have been evacuated ahead of a test expected in the coming days.\n\nSuch large-scale evacuations generally happen when a completely new missile system",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-VI"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HKqnsbPaMAASKDw.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/TheMilObserverr/status/2065138755485434312",
+      "platform": "Twitter/X",
+      "author": "TheMilObserverr",
+      "published": "2026-06-11T18:27:02+00:00",
+      "query": "Balasore missile test",
+      "view_count": 5585,
+      "like_count": 113,
+      "text": "Over 11,000 residents evacuated near Chandipur. India is likely hours away from testing the Agni-6 ICBM. \ud83c\uddee\ud83c\uddf3\n\nStandard safety protocols are in place at the Integrated Test Range in Balasore, Odisha. \n\nNo official DRDO confirmation yet but the scale of evacuation leaves little room",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "chandipur",
+        "integrated test range",
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-VI"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HKjYv6OaoAAyPKS.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/defencealerts/status/2064904026890920046",
+      "platform": "Twitter/X",
+      "author": "defencealerts",
+      "published": "2026-06-11T02:54:18+00:00",
+      "query": "Balasore missile test",
+      "view_count": 5420,
+      "like_count": 199,
+      "text": "\ud83d\uded1Authorities in #Odisha\u2019s Balasore district have evacuated more than 11,000 residents ahead of AGNI-6 ICBM test to be conducted from the Integrated Test Range (ITR) at Chandipur. The missile trial is expected to take place from Launch Complex-3 (LC-3) at the Chandipur facility.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "chandipur",
+        "integrated test range",
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-VI"
+      ],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2064903951204716544/img/_cgZzWi0W_Cw4uRq.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/InsightGL/status/2083844459922690534",
+      "platform": "Twitter/X",
+      "author": "InsightGL",
+      "published": "2026-08-02T09:16:49+00:00",
+      "query": "Agni missile test",
+      "view_count": 5008,
+      "like_count": 139,
+      "text": "-#India\u2019s NOTAM over the Bay of Bengal signals a major missile test corridor\n-Length >2,500 km, map suggests a strategic ballistic flight profile, likely designed to validate range, guidance, & re-entry while keeping air & sea traffic clear\n-K-4 or Agni Series? Time will tell\n\nMa",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "agni"
+      ],
+      "matched_systems": [
+        "K-4"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOtNfYka4AAcij3.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/manas_muduli/status/1978308120527954373",
+      "platform": "Twitter/X",
+      "author": "manas_muduli",
+      "published": "2025-10-15T03:53:05+00:00",
+      "query": "Wheeler Island missile",
+      "view_count": 4972,
+      "like_count": 171,
+      "text": "Humble tributes to Dr. #APJAbdulKalam on his birth anniversary \ud83d\ude4f\n\nHe shared a special bond with #Odisha and instrumental in setting up the Integrated Test Range (ITR) where India\u2019s missiles are tested.\n\nIn 2017, Wheeler Island in Odisha was renamed \u2018Abdul Kalam Island\u2019 in his hon",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "wheeler",
+        "abdul kalam",
+        "integrated test range",
+        "wheeler island"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/G3RcvniWYAAtJrV.jpg",
+        "https://pbs.twimg.com/media/G3RcvnYW0AE2Fx4.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/Theunk55/status/2071774673403289880",
+      "platform": "Twitter/X",
+      "author": "Theunk55",
+      "published": "2026-06-30T01:55:48+00:00",
+      "query": "Agni missile test",
+      "view_count": 4777,
+      "like_count": 267,
+      "text": "Agni 5 missile Test \ud83c\uddee\ud83c\uddf3\ud83c\uddee\ud83c\uddf3\ud83c\uddee\ud83c\uddf3",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-V"
+      ],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/ext_tw_video_thumb/2071774622836826112/pu/img/yAebQyC6vyNmxxC7.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/srijanpalsingh/status/2075264387712233742",
+      "platform": "Twitter/X",
+      "author": "srijanpalsingh",
+      "published": "2026-07-09T17:02:41+00:00",
+      "query": "Integrated Test Range Odisha",
+      "view_count": 4160,
+      "like_count": 248,
+      "text": "DRDO has successfully conducted another flight test of the Pinaka Long-Range Guided Rocket at the Integrated Test Range in Chandipur, Odisha. This trial focused on a user-defined minimum range of 60 km, demonstrating that the rocket can deliver precision strikes even at shorter d",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "integrated test range"
+      ],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2075260457640968195/img/dqNIkcGCmoMqeWln.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/NewsZonex24/status/2065442352211296699",
+      "platform": "Twitter/X",
+      "author": "NewsZonex24",
+      "published": "2026-06-12T14:33:25+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 4123,
+      "like_count": 131,
+      "text": "Visuals  of the second-stage test launch of India's special unspecified missile from ITR Chandipur, Odisha.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur"
+      ],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2065279968515608576/img/pUvU9z2d2rCo6BqU.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/MohanMOdisha/status/2080612432448286939",
+      "platform": "Twitter/X",
+      "author": "MohanMOdisha",
+      "published": "2026-07-24T11:13:54+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 4048,
+      "like_count": 51,
+      "text": "Congratulations to @DRDO_India and all stakeholders on the successful maiden flight test of the Long-Range Surface-to-Air Missile \u2018Kusha\u2019 from APJ Abdul Kalam Island off the coast of Odisha.\n\nThe successful test marks another significant milestone in strengthening India\u2019s air def",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HN_R8C4aMAAi-fg.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/OpIndia_com/status/2064950759003758633",
+      "platform": "Twitter/X",
+      "author": "OpIndia_com",
+      "published": "2026-06-11T06:00:00+00:00",
+      "query": "Balasore missile test",
+      "view_count": 4003,
+      "like_count": 156,
+      "text": "Over 11,000 residents have been evacuated from Odisha\u2019s Balasore ahead of the expected Agni-6 missile test at Chandipur.\n\nPeople living near Launch Complex-3, along with domestic animals, have been moved to temporary shelters.\n\nOfficials say residents will return only after the l",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "chandipur",
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-VI"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HKgorgaa0AAt2oF.png"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/india_plus_/status/2065320696989839482",
+      "platform": "Twitter/X",
+      "author": "india_plus_",
+      "published": "2026-06-12T06:30:00+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 3734,
+      "like_count": 377,
+      "text": "\ud83d\udea8 India may be preparing for a major Agni-6 missile test from Chandipur, with over 11,000 residents evacuated and extensive launch preparations underway.\n\nfollow @india_plus_",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-VI"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HKhPJY9bkAA7bis.jpg",
+        "https://pbs.twimg.com/media/HKhPJU4aUAAcFdN.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": "Figure: Agni-class launch"
+    },
+    {
+      "post_url": "https://twitter.com/_the_Saviour/status/2078411959943205103",
+      "platform": "Twitter/X",
+      "author": "_the_Saviour",
+      "published": "2026-07-18T09:30:00+00:00",
+      "query": "Integrated Test Range Odisha",
+      "view_count": 3622,
+      "like_count": 436,
+      "text": "DRDO successfully flight-tested the Pinaka LRGR at the Integrated Test Range in Chandipur, Odisha on July 8th. And struck its target with high precision.\n\n99% of Indian don't acknowledge all this but go after a payed leftist anti-national anti-Hindu dck head's hunger strike\ud83e\udd37\ud83d\udc4f.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "integrated test range"
+      ],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2078411903244619776/img/DUf3MpGEH99J1r3M.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/NewsAgnika/status/2064922687852642495",
+      "platform": "Twitter/X",
+      "author": "NewsAgnika",
+      "published": "2026-06-11T04:08:27+00:00",
+      "query": "Balasore missile test",
+      "view_count": 3485,
+      "like_count": 9,
+      "text": "Agni-6 missile test likely from Chandipur ITR; over 11,000 residents evacuated as precaution\nResidents and livestock within a 1 km to 3.5 km radius of the launch site have been shifted to temporary shelters as authorities prepare for a crucial missile trial from Odisha\u2019s Balasore",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "chandipur",
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-VI"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HKgT1EOagAAO4RK.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/manas_muduli/status/1949402019585741305",
+      "platform": "Twitter/X",
+      "author": "manas_muduli",
+      "published": "2025-07-27T09:30:34+00:00",
+      "query": "Wheeler Island missile",
+      "view_count": 3139,
+      "like_count": 127,
+      "text": "Humble tributes to #APJAbdulKalam on his death anniversary.\n\nHe shared a special bond with Odisha, instrumental in setting up the Integrated Test Range (ITR) in Odisha, where India\u2019s missiles are tested.\n\nIn 2017, Odisha renamed Wheeler Island to Abdul Kalam Island in his honour,",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "wheeler",
+        "abdul kalam",
+        "integrated test range",
+        "wheeler island"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/Gw2qwmbawAAGYVP.jpg",
+        "https://pbs.twimg.com/media/Gw2qwmob0AAMJV6.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/DDNewslive/status/2068334306116710670",
+      "platform": "Twitter/X",
+      "author": "DDNewslive",
+      "published": "2026-06-20T14:05:01+00:00",
+      "query": "Agni missile test",
+      "view_count": 2974,
+      "like_count": 68,
+      "text": "#DefenceDynamics | Before dawn, while most Indians were asleep, a missile streaked across the skies over the Bay of Bengal. There were no grand announcements, only confirmation of a successful Agni-series ballistic missile test. Yet within hours, defence analysts from Islamabad t",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "agni"
+      ],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2068316803647021056/img/zZuT94Lcn8eHGMDv.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/pranabpdas/status/1846028954060108182",
+      "platform": "Twitter/X",
+      "author": "pranabpdas",
+      "published": "2024-10-15T03:22:54+00:00",
+      "query": "Wheeler Island missile",
+      "view_count": 2561,
+      "like_count": 163,
+      "text": "Humble tribute to former President Dr. #APJAbdulKalam on his birth anniversary. Dr. Kalam had a long association with #Odisha and Shri @Naveen_Odisha had named Wheeler Island after him as a tribute to the missile man. His inspiring words for youths, his vision for the country and",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "wheeler",
+        "wheeler island"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/GZ5nn7rWoAAAph2.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/bjd_odisha/status/1978319823286284578",
+      "platform": "Twitter/X",
+      "author": "bjd_odisha",
+      "published": "2025-10-15T04:39:35+00:00",
+      "query": "Wheeler Island missile",
+      "view_count": 2129,
+      "like_count": 116,
+      "text": "Humble tributes to former President Dr. A.P.J. #AbdulKalam on his birth anniversary. His pioneering work in space and missile technology made immense contribution towards building a stronger and self-reliant nation. Renaming Wheeler Island as APJ Abdul Kalam Island is a tribute t",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "wheeler",
+        "abdul kalam",
+        "wheeler island"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/G3RnXvrW4AAvGdd.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/TheRocketMediaX/status/2080631586236878959",
+      "platform": "Twitter/X",
+      "author": "TheRocketMediaX",
+      "published": "2026-07-24T12:30:01+00:00",
+      "query": "Agni missile test",
+      "view_count": 1965,
+      "like_count": 36,
+      "text": "In May 2025, BrahMos cruise missiles struck targets inside Pakistan during Operation Sindoor. They travelled at nearly three times the speed of sound. No existing missile defence system could reliably intercept them. Most Indians who celebrated the news had never heard the name o",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "brahmos"
+      ],
+      "matched_systems": [
+        "BrahMos"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HN9-H8fbIAAi_Vk.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/ShadowIND_IN/status/2065321496629878975",
+      "platform": "Twitter/X",
+      "author": "ShadowIND_IN",
+      "published": "2026-06-12T06:33:11+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 1955,
+      "like_count": 20,
+      "text": "India successfully conducted the test-fire of the second stage of a special missile from the Integrated Test Range (ITR) at Chandipur, Balasore district, Odisha, at around 5 PM today.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "chandipur",
+        "integrated test range"
+      ],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2065321421191131136/img/s856g6Sq5cIPXybI.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/bjd_odisha/status/1846024252807377207",
+      "platform": "Twitter/X",
+      "author": "bjd_odisha",
+      "published": "2024-10-15T03:04:13+00:00",
+      "query": "Wheeler Island missile",
+      "view_count": 1904,
+      "like_count": 128,
+      "text": "Warm tributes to former President Dr #APJAbdulKalam on his birth anniversary. His contribution to nation building, especially his contribution to space and missile programme is immense. #Odisha named Wheeler Island after him as a tribute to his contribution of missile man. His fo",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "wheeler",
+        "wheeler island"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/GZ5lQ5SWEAIvFhy.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/PlusPointIndia/status/2080267182093599066",
+      "platform": "Twitter/X",
+      "author": "PlusPointIndia",
+      "published": "2026-07-23T12:22:00+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 1768,
+      "like_count": 60,
+      "text": "\ud83d\udea8India's Major Missile Testing Facilities \ud83c\uddee\ud83c\uddf3\n\n\ud83d\udce2Chandipur (Integrated Test Range \u2013 LC-III)\n \ud83d\udccdOdisha\n Key missile tests: Akash, Astra, QRSAM, MRSAM, Pinaka, Prithvi-II, LRLACM\n\n\ud83d\udce2Dr APJ Abdul Kalam Island (LC-IV)\n \ud83d\udccdOdisha\n Key missile tests: Agni series, BrahMos, K-4, K-15 (Sagarika",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "abdul kalam",
+        "integrated test range",
+        "agni",
+        "prithvi",
+        "brahmos"
+      ],
+      "matched_systems": [
+        "Akash",
+        "QRSAM",
+        "Barak-8 (MR-SAM/LR-SAM)",
+        "Prithvi-II",
+        "BrahMos",
+        "K-4",
+        "K-15 Sagarika"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HN6D15pbUAAem7Q.jpg",
+        "https://pbs.twimg.com/media/HN6D150bcAAgpx_.jpg",
+        "https://pbs.twimg.com/media/HN6D100agAA13yi.png",
+        "https://pbs.twimg.com/media/HN6D15qasAAmlcR.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": "Figure: Prithvi-class launch, ITR complex"
+    },
+    {
+      "post_url": "https://twitter.com/PravatiPOdisha/status/2080623658972889228",
+      "platform": "Twitter/X",
+      "author": "PravatiPOdisha",
+      "published": "2026-07-24T11:58:31+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 1643,
+      "like_count": 15,
+      "text": "Heartiest congratulations to @DRDO_India and all stakeholders on the successful maiden flight test of the Long Range Surface to Air Missile \u2018Kusha\u2019, conducted from APJ Abdul Kalam Island, #Odisha.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HN_cMBiasAAKTCw.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/The_DragonLadyy/status/2082106813391274172",
+      "platform": "Twitter/X",
+      "author": "The_DragonLadyy",
+      "published": "2026-07-28T14:12:02+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 1619,
+      "like_count": 32,
+      "text": "After losing an S-400, in may 2025, DRDO suddenly remembered \"Atmanirbhar Bharat.\"\n\nIndia's DRDO successfully conducted the first flight test of its indigenous  (LRSAM) interceptor from APJ Abdul Kalam Island.\n\nDesigned under Project Kusha, the system aims to provide a domestic e",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam",
+        "interceptor"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOUhG05bsAEcsLR.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/sohamjani96/status/2078714262667846070",
+      "platform": "Twitter/X",
+      "author": "sohamjani96",
+      "published": "2026-07-19T05:31:15+00:00",
+      "query": "Agni missile test",
+      "view_count": 1617,
+      "like_count": 24,
+      "text": "India right now \ud83d\udd25\n\n\u2014 First privately developed orbital rocket launched   \n\u2014 First indigenous hydrogen-powered train flagged off \n\u2014 First Vande Bharat Sleeper Express launched  \n\u2014 Advanced Agni missile with MIRV technology successfully tested  \n\u2014 Agni-5 successfully test-fired, st",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-V"
+      ],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2078713935000408064/img/47VMoEfO3H-hflDF.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/manas_muduli/status/1978309401418064191",
+      "platform": "Twitter/X",
+      "author": "manas_muduli",
+      "published": "2025-10-15T03:58:11+00:00",
+      "query": "Wheeler Island missile",
+      "view_count": 1593,
+      "like_count": 24,
+      "text": "Here\u2019s a snippet from Dr. APJ Abdul Kalam\u2019s book \u201cIgnited Minds\u201d, where he wrote about how Wheeler Island in Odisha was allotted to DRDO for missile testing.\n\n#APJAbdulKalam",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "wheeler",
+        "abdul kalam",
+        "wheeler island"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/G3Rd6BfWEAAmzw-.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/otvnews/status/2065030533386785192",
+      "platform": "Twitter/X",
+      "author": "otvnews",
+      "published": "2026-06-11T11:17:00+00:00",
+      "query": "Balasore missile test",
+      "view_count": 1076,
+      "like_count": 7,
+      "text": "Mass evacuation in Odisha's Chandipur as DRDO prepares for missile test from LC-3\n#Odisha",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/card_img/2084341261167656960/vjCBoYMJ?format=jpg&name=orig"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/Pleiades7go/status/2078717016052289817",
+      "platform": "Twitter/X",
+      "author": "Pleiades7go",
+      "published": "2026-07-19T05:42:11+00:00",
+      "query": "Agni missile test",
+      "view_count": 985,
+      "like_count": 3,
+      "text": "Agni-IV\u3082\u4e00\u6bb5\u306f\u30de\u30eb\u30a8\u30fc\u30b8\u30f3\u30b0\u92fc\u3067\u306f\u306a\u304b\u3063\u305f\u3067\u3057\u305f\u3063\u3051\uff082\u6bb5\u306fCFRP\u3060\u3063\u305f\u3068\u601d\u3044\u307e\u3059\uff09\u3001\u3001\n\u4e8c\u6bb5\u7528\u3068\u3044\u3046\u3053\u3068\u306a\u3089\u6700\u8fd1\u306fCFRP\u7cfb\u3082\u51fa\u3066\u6765\u3066\u3066\u3001K-5 SLBM\u75282.4m\u7d1a\u30e2\u30fc\u30bf\u306e\u5730\u71c3\u3068\u304b\u3082\u3084\u3063\u3066\u307e\u3057\u305f\u304c\u3001\u3001\u3001",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-IV"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/card_img/2083821865978757120/oFbSQ-97?format=jpg&name=orig"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/SashankGuw/status/1958394784739176922",
+      "platform": "Twitter/X",
+      "author": "SashankGuw",
+      "published": "2025-08-21T05:04:36+00:00",
+      "query": "Wheeler Island missile",
+      "view_count": 965,
+      "like_count": 10,
+      "text": "Proud moment for India\ud83c\uddee\ud83c\uddf3 as we successfully test-fired the Agni-V missile on August 20, 2025! This nuclear-capable ICBM underscores our growing defense might and self-reliance.\n\ud83d\udea8Here's why it's a game-changer:\n\u26a1Impressive Range: With a tested trajectory of 4,790 km from Abdul Kal",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-V"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/Gy2dq_0WMAAr2J_.jpg",
+        "https://pbs.twimg.com/media/Gy2drAAXwAApl9j.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/unseen_updates/status/2065142371692712203",
+      "platform": "Twitter/X",
+      "author": "unseen_updates",
+      "published": "2026-06-11T18:41:24+00:00",
+      "query": "Balasore missile test",
+      "view_count": 922,
+      "like_count": 8,
+      "text": "India successfully conducted the test-fire of the second stage of a special missile from the Integrated Test Range (ITR) at Chandipur, Balasore district, Odisha, at around 5 PM today.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "chandipur",
+        "integrated test range"
+      ],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/ext_tw_video_thumb/2065142343825756160/pu/img/BDbMXApXyDZmOCm4.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/unseen_updates/status/2065345402841546770",
+      "platform": "Twitter/X",
+      "author": "unseen_updates",
+      "published": "2026-06-12T08:08:10+00:00",
+      "query": "Balasore missile test",
+      "view_count": 864,
+      "like_count": 7,
+      "text": "A loud sonic boom shook Balasore, Odisha, at around 10:09 AM, rattling homes and alarming residents. Reports suggest it may be linked to a missile test, with official details awaited.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore"
+      ],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/ext_tw_video_thumb/2065345386072743936/pu/img/1SI5J4xYYW5_OyQf.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/IndianDefenceT/status/2065074539952783476",
+      "platform": "Twitter/X",
+      "author": "IndianDefenceT",
+      "published": "2026-06-11T14:11:52+00:00",
+      "query": "Balasore missile test",
+      "view_count": 834,
+      "like_count": 3,
+      "text": "A secretive DRDO missile test was conducted from the Balasore/Chandipur range in Odisha under unusually tight security, attracting significant attention. No official details were released about the missile, leading to widespread speculation among defence analysts. Experts believe",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "chandipur"
+      ],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2065074449695866880/img/bomRJIs5ha9genZ-.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/postcard_news/status/2080580271280197875",
+      "platform": "Twitter/X",
+      "author": "postcard_news",
+      "published": "2026-07-24T09:06:06+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 673,
+      "like_count": 36,
+      "text": "Aatmanirbhar Bharat is firing up!\n\nThe DRDO has successfully conducted the maiden flight test of Long-Range Surface-to-Air Missile Kusha today  from the APJ Abdul Kalam Island off the coast of Odisha",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HN-0t3dbwAAwKwm.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/ArgusNews_in/status/2065039689980264526",
+      "platform": "Twitter/X",
+      "author": "ArgusNews_in",
+      "published": "2026-06-11T11:53:23+00:00",
+      "query": "Balasore missile test",
+      "view_count": 661,
+      "like_count": 8,
+      "text": "#ChandipurMissileTest | Second Phase Missile Trial Successfully Conducted.\n\nA missile was successfully test-fired from Launch Complex-3 (LC-3) at the Integrated Test Range (ITR), Chandipur in Balasore on Tuesday evening.\n\nThe second phase of the missile trial was conducted at aro",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "chandipur",
+        "integrated test range"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HKh-hTta8AASLVL.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/CISS_Islamabad/status/2074404126533067185",
+      "platform": "Twitter/X",
+      "author": "CISS_Islamabad",
+      "published": "2026-07-07T08:04:18+00:00",
+      "query": "Agni missile test",
+      "view_count": 600,
+      "like_count": 5,
+      "text": "\ud835\udc02\ud835\udc08\ud835\udc12\ud835\udc12 \ud835\udc0e\ud835\udc29\ud835\udc22\ud835\udc27\ud835\udc22\ud835\udc28\ud835\udc27 | \ud835\udc08\ud835\udc27\ud835\udc1d\ud835\udc22\ud835\udc1a\u2019\ud835\udc2c \ud835\udc00\ud835\udc20\ud835\udc27\ud835\udc22-\ud835\udc15\ud835\udc08: \ud835\udc00\ud835\udc27 \ud835\udc14\ud835\udc27\ud835\udc27\ud835\udc1e\ud835\udc1c\ud835\udc1e\ud835\udc2c\ud835\udc2c\ud835\udc1a\ud835\udc2b\ud835\udc32 \ud835\udc04\ud835\udc2c\ud835\udc1c\ud835\udc1a\ud835\udc25\ud835\udc1a\ud835\udc2d\ud835\udc22\ud835\udc28\ud835\udc27\n\n- Recently, Indian Defense Minister Rajnath Singh was asked by a reporter about an Agni-VI missile test. The minister\u00a0responded\u00a0with  a cryptic smile, stating, \u201cBe patient. Everything will turn out well.\u201d  Importantly, he",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-VI"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HMnDQS1bUAA-0QA.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/Kakashii2O12406/status/2065111359768187270",
+      "platform": "Twitter/X",
+      "author": "Kakashii2O12406",
+      "published": "2026-06-11T16:38:10+00:00",
+      "query": "Balasore missile test",
+      "view_count": 535,
+      "like_count": 23,
+      "text": "Balasore: Two rounds of missile testing were conducted on Wednesday (by DRDO), more tests are slated to be conducted on Thursday.-\nReport\n\nAny guess which missile it is?\n\nImage is to remind that DRDO should consider best missile test Facility(IYKYK)!",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HKi_1M9bIAA_ms6.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/thetribunechd/status/2065506368724111667",
+      "platform": "Twitter/X",
+      "author": "thetribunechd",
+      "published": "2026-06-12T18:47:48+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 519,
+      "like_count": 1,
+      "text": "India\u2019s flagship supersonic cruise missile, BrahMos, completed 25 years on Friday. It was first test-fired from a stationary vertical launcher at Chandipur off the Odisha coast on June 12, 2001 and has since evolved into a key precision-strike weapon in India\u2019s arsenal.\n\nReport b",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "brahmos"
+      ],
+      "matched_systems": [
+        "BrahMos"
+      ],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2065506149785628672/img/TtylbXvpJKLvY9PX.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/BLACKTIGER0412/status/2066511002007687533",
+      "platform": "Twitter/X",
+      "author": "BLACKTIGER0412",
+      "published": "2026-06-15T13:19:51+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 494,
+      "like_count": 26,
+      "text": "PRESS RELEASE: DRDO conducted a successful flight-test of Long Range Land Attack Cruise Missile (LRLACM) from Dr APJ Abdul Kalam Island off the coast of Odisha on 15th June 2026. All the test objectives were fully met, as per the data captured by various tracking instruments depl",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [
+        "Nirbhay"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HK24zIbbEAAMH6N.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/IGR_Media/status/2080576736836661365",
+      "platform": "Twitter/X",
+      "author": "IGR_Media",
+      "published": "2026-07-24T08:52:03+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 490,
+      "like_count": 6,
+      "text": "#IGR: India successfully carried out the maiden flight test of the indigenous Kusha long-range surface-to-air missile from APJ Abdul Kalam Island off the Odisha coast. The DOD said the missile intercepted a simulated high-speed, high-altitude aerial target during the trial.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2080576588270247936/img/ZVgHeTtgbEanjAeK.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/DefenseNewsIN/status/2083507342612766851",
+      "platform": "Twitter/X",
+      "author": "DefenseNewsIN",
+      "published": "2026-08-01T10:57:14+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 480,
+      "like_count": 4,
+      "text": "\ud83d\udea8 OSINT INTEL | INDIA ISSUES NEW STRATEGIC TEST NOTAM\n\nIndia has issued a NOTAM for August 6\u20137, 2026, covering a ~2,530 km flight corridor from Dr. APJ Abdul Kalam Island, Odisha, deep into the Bay of Bengal and the Indian Ocean Region. Based on the trajectory, corridor length an",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOoa4Y4aQAAin4o.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/AnchorAnandN/status/2066507377294413842",
+      "platform": "Twitter/X",
+      "author": "AnchorAnandN",
+      "published": "2026-06-15T13:05:27+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 436,
+      "like_count": 7,
+      "text": "DRDO  @DRDO_India conducts successful flight-test of Long Range Land Attack Cruise missile from Dr APJ Abdul Kalam Island off the coast of Odisha, Today. All the test objectives were fully met, as per the data captured by various tracking instruments deployed by Integrated Test R",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [
+        "Nirbhay"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HK21fiqaYAACBJL.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/InfuseInformer/status/2064782730752344572",
+      "platform": "Twitter/X",
+      "author": "InfuseInformer",
+      "published": "2026-06-10T18:52:19+00:00",
+      "query": "Balasore missile test",
+      "view_count": 431,
+      "like_count": 5,
+      "text": "#BREAKING | Agni-6 missile test likely from Chandipur ITR; over 11,000 residents evacuated as a precaution\n\nAuthorities in Odisha\u2019s Balasore district have evacuated more than 11,000 residents ahead of a crucial missile test likely to be conducted from the Integrated Test Range (I",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "chandipur",
+        "integrated test range",
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-VI"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HKeU8jUaYAALmOy.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/defpostmedia/status/2080920346710987014",
+      "platform": "Twitter/X",
+      "author": "defpostmedia",
+      "published": "2026-07-25T07:37:26+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 402,
+      "like_count": 8,
+      "text": "\ud83c\uddee\ud83c\uddf3 India's Defence Research and Development Organisation (DRDO) has conducted the maiden flight test of Kusha long-range surface-to-air missile, on July 23.\n\nThe flight test was conducted from DRDO's test facility on the APJ Abdul Kalam Island off the coast of Odisha against an e",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HODo12zW8AAcfcv.jpg"
+      ],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2080320549159641089/img/jqDQ9HzXCEnfHrOw.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/kaidensharmaa/status/2066507351365136548",
+      "platform": "Twitter/X",
+      "author": "kaidensharmaa",
+      "published": "2026-06-15T13:05:21+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 397,
+      "like_count": 19,
+      "text": "DRDO successfully tested the Long Range Land Attack Cruise Missile (LRLACM) from Odisha, achieving all objectives and collecting data at the Integrated Test Range Chandipur.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "integrated test range"
+      ],
+      "matched_systems": [
+        "Nirbhay"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HK21fGubEAAg0dH.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/LuharQA/status/2083467057991946716",
+      "platform": "Twitter/X",
+      "author": "LuharQA",
+      "published": "2026-08-01T08:17:10+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 395,
+      "like_count": 2,
+      "text": "India has reportedly issued a fresh notification for a likely long-range missile test in the Indian Ocean Region \u2014 danger zone extending to approximately 2,530 km.\n\n\ud83d\udcc5 Test window: 06-07 August 2026\n\ud83d\udccd Likely origin: Odisha coast (Balasore / Abdul Kalam Island)\n\nExact missile type ",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOn2PgvacAA9Z2U.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/odiagatha/status/1949455779985080618",
+      "platform": "Twitter/X",
+      "author": "odiagatha",
+      "published": "2025-07-27T13:04:11+00:00",
+      "query": "Wheeler Island missile",
+      "view_count": 376,
+      "like_count": 9,
+      "text": "On his death anniversary, we remember #APJAbdulKalam \u2014 not just as the Missile Man, but as someone who found a second home in Odisha.\n\nIt was on the quiet shores of Chandipur and Wheeler Island that India\u2019s missile dreams took flight \u2014 dreams Kalam nurtured with unmatched passion",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "wheeler",
+        "wheeler island"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/Gw3bsoNXwAAgu2k.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/ians_india/status/2066511840654627322",
+      "platform": "Twitter/X",
+      "author": "ians_india",
+      "published": "2026-06-15T13:23:11+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 370,
+      "like_count": 1,
+      "text": "Defence Research & Development Organisation (DRDO) conducted a successful flight-test of Long Range Land Attack Cruise Missile (LRLACM) from Dr APJ Abdul Kalam Island off the coast of Odisha on June 15, 2026. All the test objectives were fully met, as per the data captured by var",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [
+        "Nirbhay"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HK25jhtawAAIY4C.png"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/IndianDefenceT/status/2065053806141034571",
+      "platform": "Twitter/X",
+      "author": "IndianDefenceT",
+      "published": "2026-06-11T12:49:28+00:00",
+      "query": "Balasore missile test",
+      "view_count": 370,
+      "like_count": 4,
+      "text": "A secretive DRDO missile test was conducted from the Balasore/Chandipur range in Odisha under unusually tight security, attracting significant attention. No official details were released about the missile, leading to widespread speculation among defence analysts. Experts believe",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "chandipur"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HKiLe_BaAAANPgI.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/DeccanChronicle/status/2080543624442650746",
+      "platform": "Twitter/X",
+      "author": "DeccanChronicle",
+      "published": "2026-07-24T06:40:29+00:00",
+      "query": "Balasore missile test",
+      "view_count": 286,
+      "like_count": 0,
+      "text": "Balasore (#Odisha): The Defence Research and Development Organisation (#DRDO) on Thursday successfully conducted the maiden flight test of the Long-Range Surface-to-Air Missile (#LRSAM) system 'Kusha' from #APJAbdulKalam Island off the Odisha coast.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/card_img/2083093282356125697/85NUi3ZT?format=jpg&name=orig"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/path2shah/status/2066514057528840335",
+      "platform": "Twitter/X",
+      "author": "path2shah",
+      "published": "2026-06-15T13:31:59+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 271,
+      "like_count": 2,
+      "text": "DRDO Successfully Tests Long Range Land Attack Cruise Missile\n\nBalasore, Odisha\n\nThe Defence Research & Development Organisation (#DRDO) on Monday, June 15, 2026, conducted a successful flight-test of the indigenously developed Long Range Land Attack Cruise #Missile (#LRLACM) fro",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore"
+      ],
+      "matched_systems": [
+        "Nirbhay"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HK27lVtbwAAHckO.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/TheDCIndia/status/2064966020465606963",
+      "platform": "Twitter/X",
+      "author": "TheDCIndia",
+      "published": "2026-06-11T07:00:39+00:00",
+      "query": "Balasore missile test",
+      "view_count": 251,
+      "like_count": 2,
+      "text": "\ud83d\udea8 Secretive DRDO Missile Test at Balasore Raises Questions\n\nDRDO conducted a missile test from the Integrated Test Range (ITR) in Balasore, Odisha, but kept it low-profile with no official confirmation.\n\nThe secretive nature of the test has sparked speculation about which missile",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "integrated test range"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HKg7c7vagAAn0uf.png"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/Defence_XP/status/2065320999583912027",
+      "platform": "Twitter/X",
+      "author": "Defence_XP",
+      "published": "2026-06-12T06:31:12+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 236,
+      "like_count": 4,
+      "text": "Report: India successfully conducted a test of an important missile from the Integrated Test Range (ITR) at Chandipur. The missile was launched from Launch Pad-3. Defence sources stated that the test met all technical parameters and successfully hit its designated target.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "integrated test range"
+      ],
+      "matched_systems": [
+        "PDV / PAD"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HKl-gSpbIAAQgY6.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/Samindher_/status/2075139122508042571",
+      "platform": "Twitter/X",
+      "author": "Samindher_",
+      "published": "2026-07-09T08:44:55+00:00",
+      "query": "Integrated Test Range Odisha",
+      "view_count": 230,
+      "like_count": 8,
+      "text": "On 8 July 2026, DRDO successfully flight-tested the Pinaka LRGR at the Integrated Test Range, Chandipur, Odisha. The rocket completed all planned manoeuvres and struck its target with high precision\n\nZuii \ud83d\ude80",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "integrated test range"
+      ],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2074861238048501760/img/a1rt_GWsOMYc3B1-.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/dperi84/status/2066520715466301857",
+      "platform": "Twitter/X",
+      "author": "dperi84",
+      "published": "2026-06-15T13:58:27+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 228,
+      "like_count": 6,
+      "text": "DRDO has conducted a successful flight-test of Long Range Land Attack Cruise Missile (LRLACM) from Dr APJ Abdul Kalam Island off the coast of Odisha.\n\nAll the test objectives were fully met, as per the data captured by various tracking instruments deployed by Integrated Test Rang",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [
+        "Nirbhay"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HK3BoSAbYAAoTzB.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/defpostmedia/status/2065729819678036241",
+      "platform": "Twitter/X",
+      "author": "defpostmedia",
+      "published": "2026-06-13T09:35:43+00:00",
+      "query": "Integrated Test Range Odisha",
+      "view_count": 216,
+      "like_count": 2,
+      "text": "\ud83c\uddee\ud83c\uddf3 India's Defence Research and Development Organisation (DRDO) conducted the maiden flight-test of its Naval Anti-Ship Missile-Medium Range (NASM-MR) from the Integrated Test Range (ITR) in Odisha earlier this week.\n\nThe anti-ship missile was launched from a truck-based transpor",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "integrated test range"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HKrx9rhWIAA4D4x.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/TheGeostrata/status/2082138056174522425",
+      "platform": "Twitter/X",
+      "author": "TheGeostrata",
+      "published": "2026-07-28T16:16:11+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 202,
+      "like_count": 2,
+      "text": "KUSHA MISSILE:  ONE THAT CHANGED THE MATH\n\n@DRDO_India  test fired long range surface-to-air  missile Kusha on July 23, 2026 from APJ  Abdul Kalam Island, intercepting a simulated high-speed and high-altitude target on its very first attempt. Officially known as Extended Range Ai",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOU7nFiaMAAFlYC.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/vinaykhurana85/status/2053101690471985175",
+      "platform": "Twitter/X",
+      "author": "vinaykhurana85",
+      "published": "2026-05-09T13:16:02+00:00",
+      "query": "Wheeler Island missile",
+      "view_count": 186,
+      "like_count": 1,
+      "text": "**India just sent a LOUD message to the world.** \n          \ud83c\udf0d\ud83c\udf0d\ud83c\udf0f\nOn 08 MAY 2026, India successfully test-fired a long-range missile from Abdul Kalam/Wheeler Island into the Indian Ocean \u2014 with a demonstrated **3,560-km range ring** that covers massive swathes of Asia, Europe, Afri",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "wheeler",
+        "abdul kalam",
+        "wheeler island"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HH4VGzRW4AIH08Y.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/LuharQA/status/2084271856589439328",
+      "platform": "Twitter/X",
+      "author": "LuharQA",
+      "published": "2026-08-03T13:35:09+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 183,
+      "like_count": 1,
+      "text": "India has updated its NOTAM for a likely long-range missile test in the Indian Ocean \u2014 the exclusion zone has reportedly extended to around 3,760 km \ud83d\ude80\ud83c\uddee\ud83c\uddf3\n\n\ud83d\udcc5 Test window: 06-07 August 2026\n\ud83d\udccd Origin: Odisha coast (Dr. APJ Abdul Kalam Island / Balasore)\n\ud83c\udfaf Extended range suggests a po",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOzSM31aoAAqIlj.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/TNNavbharat/status/2064915171450253730",
+      "platform": "Twitter/X",
+      "author": "TNNavbharat",
+      "published": "2026-06-11T03:38:35+00:00",
+      "query": "Balasore missile test",
+      "view_count": 180,
+      "like_count": 2,
+      "text": "\u0905\u0917\u094d\u0928\u093f-6 \u0915\u0940 \u0917\u0930\u094d\u091c\u0928\u093e \u0938\u0947 \u0915\u093e\u0902\u092a\u0947\u0917\u093e \u0926\u0941\u0936\u094d\u092e\u0928; \u091a\u093e\u0902\u0926\u0940\u092a\u0941\u0930 \u092e\u0947\u0902 \u092e\u093f\u0938\u093e\u0907\u0932 \u092a\u0930\u0940\u0915\u094d\u0937\u0923 \u091c\u094b\u0921\u093c\u0917\u093e \u092d\u093e\u0930\u0924 \u0915\u0940 \u0924\u093e\u0915\u0924 \u0915\u093e \u0928\u092f\u093e \u0905\u0927\u094d\u092f\u093e\u092f, 11000 \u0932\u094b\u0917 \u0939\u091f\u093e\u090f \u0917\u090f\n\n#Agni6 #MissileTest #IndiaDefense #DRDO #Chandipur",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "agni"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/card_img/2082599547532976128/dlac3e2j?format=jpg&name=orig"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/RakshaSamachar/status/2066519625496723873",
+      "platform": "Twitter/X",
+      "author": "RakshaSamachar",
+      "published": "2026-06-15T13:54:07+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 146,
+      "like_count": 4,
+      "text": "\ud83d\udea8\ud83c\uddee\ud83c\uddf3 The DRDO has successfully flight-tested the indigenous Long Range Land Attack Cruise Missile (LRLACM) from Dr APJ Abdul Kalam Island off the coast of Odisha.\nThe missile successfully met all mission objectives, with flight performance validated through data collected by track",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [
+        "Nirbhay"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HK3ApAPbgAEZZ5l.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/defpostmedia/status/2066514997086212171",
+      "platform": "Twitter/X",
+      "author": "defpostmedia",
+      "published": "2026-06-15T13:35:43+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 137,
+      "like_count": 2,
+      "text": "\ud83c\uddee\ud83c\uddf3 India's Defence Research & Development Organisation (DRDO) conducted a flight-test of Long Range Land Attack Cruise Missile (LRLACM) on June 15. @DRDO_India \n\nThe missile was launched from a truck-based transporter erector launcher (TEL) at Dr APJ Abdul Kalam Island off the co",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [
+        "Nirbhay"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HK27y2HW0AAdroF.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/eraganeshkumar/status/2083719211936063698",
+      "platform": "Twitter/X",
+      "author": "eraganeshkumar",
+      "published": "2026-08-02T00:59:08+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 128,
+      "like_count": 4,
+      "text": "India Issues 2,530 km NOTAM for Bay of Bengal Missile Test\n\nIndia has issued a massive 2,530 km NOTAM (Notice to Airmen) stretching from Dr. APJ Abdul Kalam Island in the Bay of Bengal down into the Indian Ocean Region, scheduled for August 6\u20137, 2026.\n\nThe Strategic Significance:",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOrbkYCb0AAznNq.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/OmmcomNews/status/2080323189620855012",
+      "platform": "Twitter/X",
+      "author": "OmmcomNews",
+      "published": "2026-07-23T16:04:33+00:00",
+      "query": "Integrated Test Range Odisha",
+      "view_count": 122,
+      "like_count": 2,
+      "text": "The Defence Research and Development Organisation (DRDO) on Thursday successfully conducted the maiden flight-test of the indigenous \u2018Kusha\u2019 Long-Range Surface-to-Air Missile (LRSAM) from the Integrated Test Range \n#Odisha #OmmcomNews",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "integrated test range"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/card_img/2082933170090000384/3vz3PlK3?format=jpg&name=orig"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/VyomPallav/status/2074873604903424313",
+      "platform": "Twitter/X",
+      "author": "VyomPallav",
+      "published": "2026-07-08T15:09:51+00:00",
+      "query": "Integrated Test Range Odisha",
+      "view_count": 110,
+      "like_count": 2,
+      "text": "The Pinaka Long Range Guided Rocket (LRGR) was successfully tested \n\nfor a user-defined minimum range of 60 kilometres.The flight test was \n\nconducted by the DRDO on July 8, 2026, at the Integrated Test Range (ITR) in Chandipur, Odisha.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "integrated test range"
+      ],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2074857584952320001/img/W_eW94VdslitjllS.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/_likerainydays/status/2082096973096825106",
+      "platform": "Twitter/X",
+      "author": "_likerainydays",
+      "published": "2026-07-28T13:32:56+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 104,
+      "like_count": 0,
+      "text": "DRDO has successfully conducted the maiden flight test of Kusha Long Range Surface-to-Air missile from APJ Abdul Kalam Island, Odisha.\n\nProject Kusha aims to develop an indigenous long-range air defence system capable of protecting India against a wide range of aerial threats\n\nTh",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOUYKE1bsAANIeZ.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/RabiNaikBJP/status/2066556298855071944",
+      "platform": "Twitter/X",
+      "author": "RabiNaikBJP",
+      "published": "2026-06-15T16:19:51+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 98,
+      "like_count": 4,
+      "text": "Heartiest congratulations to @DRDO_India and all stakeholders on the successful flight-test of the indigenously developed Long Range Land Attack Cruise Missile (LRLACM) from Dr. APJ Abdul Kalam Island, Chandipur, Odisha.\n\nThis achievement is a testament to India's scientific exce",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "chandipur",
+        "abdul kalam"
+      ],
+      "matched_systems": [
+        "Nirbhay"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HK3hKuLa8AAcpcq.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/DwivediKum67621/status/1958412898075632023",
+      "platform": "Twitter/X",
+      "author": "DwivediKum67621",
+      "published": "2025-08-21T06:16:35+00:00",
+      "query": "Wheeler Island missile",
+      "view_count": 92,
+      "like_count": 3,
+      "text": "Hello Morning birds....\nIndia successfully test-fired its nuclear-capable Agni-5 missile for the second time. \nLaunched from Wheeler Island, it can carry a 1000 kg nuclear warhead. \nWith a 5000+ km range, it joins nations like the US, Russia, and China in ICBM capability.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "wheeler",
+        "wheeler island",
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-V"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/Gy2tkp5XIAAP83h.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/TheDailyPioneer/status/2066805730687230199",
+      "platform": "Twitter/X",
+      "author": "TheDailyPioneer",
+      "published": "2026-06-16T08:51:00+00:00",
+      "query": "Integrated Test Range Odisha",
+      "view_count": 84,
+      "like_count": 4,
+      "text": "India has successfully tested its Long Range Land Attack Cruise Missile (LRLACM), marking a major boost to its indigenous defence capabilities. \nThe test was carried out off the Odisha coast at the Integrated Test Range. The missile, developed as the successor to the Nirbhay syst",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "integrated test range",
+        "nirbhay"
+      ],
+      "matched_systems": [
+        "Nirbhay"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HK66SJTacAA-sjt.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/GlobePulses/status/2084273734979092770",
+      "platform": "Twitter/X",
+      "author": "GlobePulses",
+      "published": "2026-08-03T13:42:37+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 69,
+      "like_count": 0,
+      "text": "India just updated its missile test notice. The range has been extended to nearly 3,760 km over the Indian Ocean Region.\n\nTest window: 6\u20137 August 2026.\n\nLaunch expected from Dr APJ Abdul Kalam Island off Odisha.\n\nExact missile not disclosed.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOzTySKaEAAwM8K.png"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/VayamJijivisha/status/1960722511668421094",
+      "platform": "Twitter/X",
+      "author": "VayamJijivisha",
+      "published": "2025-08-27T15:14:09+00:00",
+      "query": "Wheeler Island missile",
+      "view_count": 60,
+      "like_count": 6,
+      "text": "\ud83d\ude80Agni-V Missile: India's Intercontinental Ballistic Missile\n\nThe Agni-V is India's most advanced nuclear-capable Intercontinental Ballistic Missile (ICBM), representing a significant milestone in the country's strategic defense capabilities. Developed by the Defence Research and ",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-V"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/GzXiu5VXIAAtOuB.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/riship2095/status/2065047143593967624",
+      "platform": "Twitter/X",
+      "author": "riship2095",
+      "published": "2026-06-11T12:23:00+00:00",
+      "query": "Balasore missile test",
+      "view_count": 54,
+      "like_count": 3,
+      "text": "India likely to test Agni-6 missile from Chandipur ITR\n\nAuthorities in Odisha\u2019s Balasore district have evacuated more than 11,000 residents ahead of a crucial missile test likely to be conducted from the Integrated Test Range (ITR) at Chandipur",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "balasore",
+        "chandipur",
+        "integrated test range",
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-VI"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HKiFbTRbkAAYRo_.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/BlitzIndiaMedia/status/2083869672462754030",
+      "platform": "Twitter/X",
+      "author": "BlitzIndiaMedia",
+      "published": "2026-08-02T10:57:00+00:00",
+      "query": "Abdul Kalam Island",
+      "view_count": 53,
+      "like_count": 0,
+      "text": "A sky is sovereign only when a country can defend it with instruments of its own making.\n\nFrom Dr APJ Abdul Kalam Island off Odisha, DRDO's Kusha \u2014 an indigenous Long-Range Surface-to-Air Missile \u2014 met and destroyed a high-speed, high-altitude target on its very first flight. Onl",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "abdul kalam"
+      ],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOtkIjSaUAAvMqm.png"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/RNA_NewsMedia/status/2084302430309929313",
+      "platform": "Twitter/X",
+      "author": "RNA_NewsMedia",
+      "published": "2026-08-03T15:36:38+00:00",
+      "query": "Agni missile test",
+      "view_count": 50,
+      "like_count": 0,
+      "text": "India extends Notam range to 3,760km for Odisha coast missile test\n\nIndia widens flight corridor for planned Odisha missile test to 3,760 km, fuelling speculation over an Agni-series missile or K-4 SLBM trial.",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "agni"
+      ],
+      "matched_systems": [
+        "K-4"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/card_img/2084302444218265602/yICXZptk?format=jpg&name=orig"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/News24eng/status/2083522540203618366",
+      "platform": "Twitter/X",
+      "author": "News24eng",
+      "published": "2026-08-01T11:57:38+00:00",
+      "query": "Agni missile test",
+      "view_count": 27,
+      "like_count": 0,
+      "text": "Agni-5, K-4, or\u2026? Modi govt clears 2530-km Indian Ocean corridor for missile test; is India preparing to a test new deadly weapon?\n\nREAD MORE\u27a1\ufe0fhttps://t.co/LifG6FMPlj\n\n#ModiGovt #IndianOcean #MissileTest #weapon",
+      "aoi_relevant": true,
+      "matched_keywords": [
+        "agni"
+      ],
+      "matched_systems": [
+        "Agni-V",
+        "K-4"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/card_img/2083522256987361280/OERR8TaM?format=jpg&name=orig"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/srijanpalsingh/status/2084310562021015827",
+      "platform": "Twitter/X",
+      "author": "srijanpalsingh",
+      "published": "2026-08-03T16:08:57+00:00",
+      "query": "Agni missile test",
+      "view_count": 6236,
+      "like_count": 214,
+      "text": "India has issued a NOTAM (Notice to Airmen) for 6\u20137 August, covering a 2,530-kilometer corridor over the Indian Ocean, temporarily restricting air traffic in the designated area.\n\nSuch NOTAMs are commonly issued before missile tests, military exercises, or other strategic activit",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2084310239332225024/img/ugCHSHEIowrYy05W.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/PTI_News/status/2081257880305480017",
+      "platform": "Twitter/X",
+      "author": "PTI_News",
+      "published": "2026-07-26T05:58:41+00:00",
+      "query": "DRDO missile test",
+      "view_count": 6219,
+      "like_count": 3,
+      "text": "Addressing the 136th episode of 'Mann ki Baat', PM Modi (@narendramodi) says, \"DRDO conducted successful test of Pinaka Long Range Guided Rocket this month. Behind this success, is the collective hard work of our scientists and engineers. Just 2-3 days ago, DRDO successfully cond",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOIbyp6boAA24rf.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/Zest328117/status/2077674865847656636",
+      "platform": "Twitter/X",
+      "author": "Zest328117",
+      "published": "2026-07-16T08:41:04+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 3133,
+      "like_count": 160,
+      "text": "\ud83d\udea8 DRDO Developing Indigenous 250 km Advanced S-Band Instrumentation Tracking Radar\n\n\ud83c\uddee\ud83c\uddf3 The Defence Research and Development Organisation (DRDO) is developing a next-generation Advanced S-Band Instrumentation Tracking Radar to significantly enhance India's missile flight-testing a",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HNViRm-aIAAyLB5.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/gaze_observer/status/2080920453645046109",
+      "platform": "Twitter/X",
+      "author": "gaze_observer",
+      "published": "2026-07-25T07:37:52+00:00",
+      "query": "Integrated Test Range Odisha",
+      "view_count": 2587,
+      "like_count": 7,
+      "text": "India Enters Elite Long-Range Air Defence Club \u2014 DRDO Conducts Maiden Flight Test of Kusha LRSAM; Places India Among Select Nations Capable of Advanced Indigenous Air Defence\n\nThe Test \u2014 Key Details\nIndia conducted maiden flight test of indigenously developed long-range surface-t",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HODp5ECaIAAIBNH.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/Zest328117/status/2081309915856138711",
+      "platform": "Twitter/X",
+      "author": "Zest328117",
+      "published": "2026-07-26T09:25:27+00:00",
+      "query": "DRDO missile test",
+      "view_count": 2459,
+      "like_count": 179,
+      "text": "\ud83d\udea8 DRDO Nears Another Milestone in India's Next-Generation SLCM Programme \ud83c\uddee\ud83c\uddf3\n\nDRDO is preparing an additional land-based developmental flight test of its Next-Generation Submarine-Launched Cruise Missile (SLCM), a major step toward equipping the Indian Navy with an indigenous long",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOJMVTFbYAAa02c.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/TheMilObserverr/status/2083496783645475181",
+      "platform": "Twitter/X",
+      "author": "TheMilObserverr",
+      "published": "2026-08-01T10:15:17+00:00",
+      "query": "Agni missile test",
+      "view_count": 2390,
+      "like_count": 74,
+      "text": "India Issues NOTAM For A Possible Long-Range Missile Test \ud83c\uddee\ud83c\uddf3\n\nIndia has issued a NOTAM for 6-7 August covering a missile test corridor of nearly 2,530 km over the Indian Ocean.\n\nWhile the missile has not been officially identified, the size of the designated zone points to a long",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOoRRnbaMAAnUuH.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/NewsArenaIndia/status/2081257066237222976",
+      "platform": "Twitter/X",
+      "author": "NewsArenaIndia",
+      "published": "2026-07-26T05:55:27+00:00",
+      "query": "DRDO missile test",
+      "view_count": 2243,
+      "like_count": 16,
+      "text": "\u201cFew days back, INS Mahendragiri was inducted into Indian Navy.\n\nDRDO conducted successful test of Pinaka long range guided rocket this month.\n\nKusha missile flight test was also conducted.\n\nAatmanirbhar Bharat is strengthening itself.\u201d\n\n- PM Modi in Mann ki Baat",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2081257021815640064/img/H2Z3BRvskCe4Fix2.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/Rajmalhotrachd/status/2075902128095449102",
+      "platform": "Twitter/X",
+      "author": "Rajmalhotrachd",
+      "published": "2026-07-11T11:16:50+00:00",
+      "query": "Integrated Test Range Odisha",
+      "view_count": 898,
+      "like_count": 25,
+      "text": "Don\u2019t skip this\u2014this development is important for UPSC Prelims, GS Paper III (Defence Technology & Internal Security), and Essay. It explains India\u2019s growing indigenous rocket artillery capabilities.\n\n\ud83d\udcf0 Why in News?\n\nDRDO successfully conducted the flight test of the Pinaka Long-",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HM8V-m8bwAA2hYD.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/thegeo_sync/status/2083875604617900184",
+      "platform": "Twitter/X",
+      "author": "thegeo_sync",
+      "published": "2026-08-02T11:20:35+00:00",
+      "query": "DRDO missile test",
+      "view_count": 478,
+      "like_count": 1,
+      "text": "A NOTAM corridor of around 2,530 km strongly suggests this is not a test of a short- or medium-range boost-glide system like the BM-04.\n\nThe size of the corridor points toward something much larger. It indicates that DRDO or the Strategic Forces Command (SFC) is more likely testi",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOtp0KRbIAEPS5n.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/NetramDefence/status/2082458989774950821",
+      "platform": "Twitter/X",
+      "author": "NetramDefence",
+      "published": "2026-07-29T13:31:28+00:00",
+      "query": "DRDO missile test",
+      "view_count": 439,
+      "like_count": 29,
+      "text": "5/10 \n\nMission Sudarshan Chakra serves as the overarching blueprint for a fully integrated aerospace  shield. Spearheaded by the DRDO, this ambitious initiative aims to construct an interlocked, AI enabled, multi-layered air and missile defense architecture across land, air, and ",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOZhaIabAAAfzqh.png"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/KyaaBaatHaii/status/2081219839583256816",
+      "platform": "Twitter/X",
+      "author": "KyaaBaatHaii",
+      "published": "2026-07-26T03:27:31+00:00",
+      "query": "DRDO missile test",
+      "view_count": 420,
+      "like_count": 19,
+      "text": "Palak jhapkata hu utne me DRDO ek missile test kar deta hai...\n\nJai Hind \ud83c\uddee\ud83c\uddf3",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2081219815642112000/img/nLKAcWAUUmBPqVxr.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/UpscIntel/status/2012546629929472047",
+      "platform": "Twitter/X",
+      "author": "UpscIntel",
+      "published": "2026-01-17T15:24:42+00:00",
+      "query": "Wheeler Island missile",
+      "view_count": 179,
+      "like_count": 7,
+      "text": "Islands of India \n\n\u2e3b\n\n1. Andaman & Nicobar Islands (Bay of Bengal)\n\nAndaman Group\n\u2022North Andaman\n\u2022Middle Andaman\n\u2022South Andaman\n\u2022Little Andaman\n\u2022Interview Island\n\u2022Baratang Island (Limestone caves, mud volcano)\n\u2022Long Island\n\u2022Rutland Island\n\u2022Passage Island\n\nNicobar Group\n\u2022Great Nic",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/G-4Ae4wWoAAOzfQ.jpg",
+        "https://pbs.twimg.com/media/G-4Ae33a0AEaGcN.jpg",
+        "https://pbs.twimg.com/media/G-4Ae4hXkAEZ_8h.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/defpostmedia/status/2074891967646007408",
+      "platform": "Twitter/X",
+      "author": "defpostmedia",
+      "published": "2026-07-08T16:22:49+00:00",
+      "query": "Chandipur missile test",
+      "view_count": 146,
+      "like_count": 2,
+      "text": "\ud83c\uddee\ud83c\uddf3 India's Defence Research and Development Organisation (DRDO) has successfully conducted a test firing of its Pinaka Long Range Guided Rocket (LRGR), on July 8. @DRDO_India \n\nThe missile was tested for a user defined minimum range of 60 km from a truck-based launcher at the Int",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2074857584952320001/img/W_eW94VdslitjllS.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/IndianDefenceT/status/2083091293899837699",
+      "platform": "Twitter/X",
+      "author": "IndianDefenceT",
+      "published": "2026-07-31T07:24:01+00:00",
+      "query": "DRDO missile test",
+      "view_count": 143,
+      "like_count": 1,
+      "text": "DRDO's ULPGM-V3 successfully demonstrated near-direct-hit accuracy during its latest flight test, validating its advanced terminal guidance system.\nThe drone-launched fire-and-forget missile precisely engaged its designated target, proving its high-precision strike capability aga",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2083091243685625857/img/Jnj0MErcYuzSzkPX.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/TheDCIndia/status/2083476073728331800",
+      "platform": "Twitter/X",
+      "author": "TheDCIndia",
+      "published": "2026-08-01T08:52:59+00:00",
+      "query": "DRDO missile test",
+      "view_count": 141,
+      "like_count": 2,
+      "text": "\ud83d\udea8 India Notifies Long-Range Missile Test in IOR\nIndia has issued a notification for a likely long-range missile test in the Indian Ocean Region.\nRange: ~2,530 km\nDates: 06\u201307 August 2026\n#MissileTest #IndianOcean #DRDO #StrategicForces",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOn-RwUaoAA5ets.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/debugliesnews/status/2084251899109236795",
+      "platform": "Twitter/X",
+      "author": "debugliesnews",
+      "published": "2026-08-03T12:15:50+00:00",
+      "query": "DRDO missile test",
+      "view_count": 133,
+      "like_count": 2,
+      "text": "DRDO\u2019s Space-Electronics Pivot: India 2031 - BLUF: DRDO\u2019s reported pivot toward advanced space electronics is strategically coherent, but the specific 20 July 2026 B.K. Das statements supplied in the brief remain unconfirmed by an accessible DRDO, Ministry of Defence, IEEE, or ot",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOzABcjWgAAyIY-.jpg",
+        "https://pbs.twimg.com/media/HOzADA9WAAE58m3.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/livetimes_news/status/2083534528560370027",
+      "platform": "Twitter/X",
+      "author": "livetimes_news",
+      "published": "2026-08-01T12:45:16+00:00",
+      "query": "DRDO missile test",
+      "view_count": 132,
+      "like_count": 2,
+      "text": "#WATCH | India Missile Test: \u092d\u093e\u0930\u0924 \u0915\u0947 \u0938\u0902\u092d\u093e\u0935\u093f\u0924 \u0932\u0902\u092c\u0940 \u0926\u0942\u0930\u0940 \u0915\u0947 \u092e\u093f\u0938\u093e\u0907\u0932 \u092a\u0930\u0940\u0915\u094d\u0937\u0923 \u0915\u094b \u0932\u0947\u0915\u0930 \u091a\u0930\u094d\u091a\u093e\u090f\u0902 \u0924\u0947\u091c \u0939\u0948\u0902\u0964 2,530 \u0915\u093f\u0932\u094b\u092e\u0940\u091f\u0930 \u0915\u0947 \u0915\u094d\u0937\u0947\u0924\u094d\u0930 \u0915\u094b \u0905\u0938\u094d\u0925\u093e\u092f\u0940 \u0930\u0942\u092a \u0938\u0947 \u092a\u094d\u0930\u0924\u093f\u092c\u0902\u0927\u093f\u0924 \u0915\u093f\u090f \u091c\u093e\u0928\u0947 \u0915\u0940 \u0916\u092c\u0930\u094b\u0902 \u0915\u0947 \u092c\u0940\u091a \u092c\u0921\u093c\u0947 \u092e\u093f\u0938\u093e\u0907\u0932 \u092a\u0930\u0940\u0915\u094d\u0937\u0923 \u0915\u0940 \u0905\u091f\u0915\u0932\u0947\u0902 \u0932\u0917\u093e\u0908 \u091c\u093e \u0930\u0939\u0940 \u0939\u0948\u0902\u0964 \u091c\u093e\u0928\u093f\u090f DRDO \u0915\u0940 \u0938\u0902\u092d\u093e\u0935\u093f\u0924 \u0924\u0948\u092f\u093e\u0930\u0940, \u0907\u0938 \u092a\u0930\u0940\u0915\u094d\u0937\u0923 \u0915\u093e \u0930\u0923\u0928\u0940\u0924\u093f\u0915 \u092e\u0939\u0924",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [],
+      "video_urls": [
+        "https://pbs.twimg.com/amplify_video_thumb/2083534291963957249/img/iHHcXwbmzLUjCY_k.jpg"
+      ],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/shivanipost/status/2084258986770178115",
+      "platform": "Twitter/X",
+      "author": "shivanipost",
+      "published": "2026-08-03T12:44:00+00:00",
+      "query": "DRDO missile test",
+      "view_count": 125,
+      "like_count": 1,
+      "text": "India issues 2,530-km #NOTAM ahead of likely long-range missile test - India Today",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/card_img/2084258931984171008/6QvIo2kv?format=jpg&name=orig"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/SakalaNews/status/2083515125609459907",
+      "platform": "Twitter/X",
+      "author": "SakalaNews",
+      "published": "2026-08-01T11:28:10+00:00",
+      "query": "Agni missile test",
+      "view_count": 112,
+      "like_count": 0,
+      "text": "\u0b2d\u0b3e\u0b30\u0b24 \u0b2a\u0b15\u0b4d\u0b37\u0b30\u0b41 \u0b2c\u0b19\u0b4d\u0b17\u0b4b\u0b2a\u0b38\u0b3e\u0b17\u0b30\u0b30\u0b47 \u0b2e\u0b3f\u0b38\u0b3e\u0b07\u0b32\u0b4d \u0b2a\u0b30\u0b40\u0b15\u0b4d\u0b37\u0b23 \u0b2a\u0b3e\u0b07\u0b01 'NOTAM' \u0b1c\u0b3e\u0b30\u0b3f: \u0b05\u0b17\u0b4d\u0b28\u0b3f \u0b15\u0b3f\u0b2e\u0b4d\u0b2c\u0b3e K-4 SLBM \u0b30 \u0b39\u0b4b\u0b07\u0b2a\u0b3e\u0b30\u0b47 \u0b2a\u0b30\u0b40\u0b15\u0b4d\u0b37\u0b23 https://t.co/arbU7R33RG \n#NOTAM #BayofBengal #MissileTest #India",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [
+        "K-4"
+      ],
+      "image_urls": [
+        "https://pbs.twimg.com/card_img/2083515028549025793/9JMR-7EN?format=jpg&name=orig"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/SouthAsiaIntel/status/2083461839489204376",
+      "platform": "Twitter/X",
+      "author": "SouthAsiaIntel",
+      "published": "2026-08-01T07:56:26+00:00",
+      "query": "DRDO missile test",
+      "view_count": 109,
+      "like_count": 1,
+      "text": "\ud83c\uddee\ud83c\uddf3 \ud835\udc08\ud835\udc27\ud835\udc1d\ud835\udc22\ud835\udc1a \ud835\udc08\ud835\udc2c\ud835\udc2c\ud835\udc2e\ud835\udc1e\ud835\udc2c \ud835\udc0d\ud835\udc28\ud835\udc2d\ud835\udc22\ud835\udc1f\ud835\udc22\ud835\udc1c\ud835\udc1a\ud835\udc2d\ud835\udc22\ud835\udc28\ud835\udc27 \ud835\udc1f\ud835\udc28\ud835\udc2b \ud835\udc0b\ud835\udc28\ud835\udc27\ud835\udc20-\ud835\udc11\ud835\udc1a\ud835\udc27\ud835\udc20\ud835\udc1e \ud835\udc0c\ud835\udc22\ud835\udc2c\ud835\udc2c\ud835\udc22\ud835\udc25\ud835\udc1e \ud835\udc13\ud835\udc1e\ud835\udc2c\ud835\udc2d\n\nIndia has issued a notification for a likely long-range missile test in the Indian Ocean Region.\n\nDetails:\n\u2022Range: Approximately 2,530 km\n\u2022Dates: 06\u201307 August 2026\n\nThe test is expected to take place in the designated area",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOnxegKW0AAm8uT.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/DSAlert/status/2082694746095661142",
+      "platform": "Twitter/X",
+      "author": "DSAlert",
+      "published": "2026-07-30T05:08:16+00:00",
+      "query": "DRDO missile test",
+      "view_count": 108,
+      "like_count": 0,
+      "text": "India\u2019s Layered Air Defence is Entering a New Era \ud83c\uddee\ud83c\uddf3\n\nIndia is steadily strengthening its air and missile defence architecture through a combination of indigenous innovation and strategic acquisitions.\n\nSome key developments:\n\n\ud83d\udd39 23 July 2026 \u2013 DRDO successfully conducted the maid",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOc3xJgbYAEKOP9.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/IndianDefenceT/status/2083070328885187047",
+      "platform": "Twitter/X",
+      "author": "IndianDefenceT",
+      "published": "2026-07-31T06:00:42+00:00",
+      "query": "DRDO missile test",
+      "view_count": 98,
+      "like_count": 0,
+      "text": "DRDO's ULPGM-V3 successfully demonstrated near-direct-hit accuracy during its latest flight test, validating its advanced terminal guidance system.\nThe drone-launched fire-and-forget missile precisely engaged its designated target, proving its high-precision strike capability aga",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOiNauJaMAAKd9x.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/thegeo_sync/status/2083145013350052163",
+      "platform": "Twitter/X",
+      "author": "thegeo_sync",
+      "published": "2026-07-31T10:57:28+00:00",
+      "query": "DRDO missile test",
+      "view_count": 77,
+      "like_count": 0,
+      "text": "\ud83d\udea8 Big boost for India\u2019s drone strike capability. \ud83c\uddee\ud83c\uddf3\n\nDRDO\u2019s ULPGM-V3 has scored a near direct hit during its latest flight test, showing just how accurate India\u2019s indigenous UAV-launched precision missile has become.\n\nThe missile is designed to be launched from drones and can tak",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOjRWJSbMAAsiFo.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/vexrmedia/status/2082937154158686684",
+      "platform": "Twitter/X",
+      "author": "vexrmedia",
+      "published": "2026-07-30T21:11:31+00:00",
+      "query": "DRDO missile test",
+      "view_count": 45,
+      "like_count": 3,
+      "text": "India\u2019s new long-range air-defense missile has completed its first successful flight test. DRDO says Kusha intercepted an electronic target simulating a fast, high-altitude aerial threat.",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HOgUTcFW8AAMQHc.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/defnewsofficial/status/2084208560872079844",
+      "platform": "Twitter/X",
+      "author": "defnewsofficial",
+      "published": "2026-08-03T09:23:38+00:00",
+      "query": "DRDO missile test",
+      "view_count": 34,
+      "like_count": 0,
+      "text": "India issues a 2,530-km NOTAM ahead of a strategic missile test off the Odisha coast, signalling preparations for a key defence activity.\n\nRead the full story: https://t.co/12ZMyalPdG \n\n#India #MissileTest #NOTAM #DRDO",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/card_img/2084208518190817280/nKiK4ksp?format=jpg&name=orig"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    },
+    {
+      "post_url": "https://twitter.com/cricket_chills/status/2053066945986183638",
+      "platform": "Twitter/X",
+      "author": "cricket_chills",
+      "published": "2026-05-09T10:57:58+00:00",
+      "query": "Wheeler Island missile",
+      "view_count": 28,
+      "like_count": 2,
+      "text": "APJ kalam Island! is one of India\u2019s most important strategic defence locations \ud83c\uddee\ud83c\uddf3\n\nLocated off the coast of Odisha, it serves as a major missile testing and defence research hub where several advanced missiles of India have been tested successfully.\nThe island was earlier known a",
+      "aoi_relevant": false,
+      "matched_keywords": [],
+      "matched_systems": [],
+      "image_urls": [
+        "https://pbs.twimg.com/media/HH31gI_bIAEwI7q.jpg"
+      ],
+      "video_urls": [],
+      "reproduced_in_report": null
+    }
+  ]
+}

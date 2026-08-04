@@ -1,8 +1,20 @@
 import { useCallback } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
-import { AlertTriangle, BookOpen, Clock, GitMerge, Radio, Satellite, Ship, Users, X } from 'lucide-react'
+import {
+  AlertTriangle,
+  BookOpen,
+  CloudSun,
+  Clock,
+  GitMerge,
+  Radio,
+  Satellite,
+  ShieldCheck,
+  Ship,
+  Users,
+  X,
+} from 'lucide-react'
 import { cn } from '@/utils/cn'
-import { relativeTime } from '@/utils/format'
+import { plainText, relativeTime } from '@/utils/format'
 import { levelColor } from '@/utils/levels'
 import { useEscapeKey } from '@/hooks/useEscapeKey'
 import { useAppSelector } from '@/store/store'
@@ -12,6 +24,9 @@ import {
   selectCoupledTrials,
   selectDangerAreas,
   selectEvacuations,
+  selectHazards,
+  selectSocialPosts,
+  selectWeather,
   selectImagery,
   selectItrStatus,
   selectMissiles,
@@ -62,6 +77,9 @@ export default function TargetDetailPage() {
   const social = useAppSelector(selectSocial)
   const danger = useAppSelector(selectDangerAreas)
   const evacuations = useAppSelector(selectEvacuations)
+  const weather = useAppSelector(selectWeather)
+  const hazards = useAppSelector(selectHazards)
+  const socialPosts = useAppSelector(selectSocialPosts)
   const missiles = useAppSelector(selectMissiles)
   const coupled = useAppSelector(selectCoupledTrials)
   const sources = useAppSelector(selectSources)
@@ -74,7 +92,14 @@ export default function TargetDetailPage() {
   if (!aoi && status !== 'loading') return <Navigate to="/" replace />
 
   const color = levelColor(assessment?.level)
-  const okSources = sources.filter((source) => source.status === 'ok').length
+  // `empty` means the feed answered with no detections — it worked.
+  const okSources = sources.filter((source) => source.status === 'ok' || source.status === 'empty').length
+  // How much of the scoring model went unobserved. The API reports this as
+  // `confidence`, but a bare percentage next to a score reads as a hedge rather
+  // than as "a fifth of the inputs are missing".
+  const missingWeight = (assessment?.indicators ?? [])
+    .filter((indicator) => !indicator.available)
+    .reduce((total, indicator) => total + indicator.weight, 0)
 
   return (
     <>
@@ -126,7 +151,7 @@ export default function TargetDetailPage() {
                   confidence {Math.round(assessment.confidence * 100)}%
                 </span>
               </div>
-              <p className="text-xs leading-relaxed text-fg">{assessment.narrative}</p>
+              <p className="text-xs leading-relaxed text-fg">{plainText(assessment.narrative)}</p>
             </section>
           )}
 
@@ -143,6 +168,13 @@ export default function TargetDetailPage() {
           {assessment && assessment.indicators.length > 0 && (
             <section>
               <FieldLabel>INDICATORS · {assessment.indicators.length}</FieldLabel>
+              {missingWeight > 0 && (
+                <p className="mb-1.5 text-[10.5px] leading-snug text-fg-subtle">
+                  {Math.round(missingWeight * 100)}% of the model&rsquo;s weight was not observed and is hatched below.
+                  The {assessment.score.toFixed(2)} score is computed over the remaining{' '}
+                  {Math.round((1 - missingWeight) * 100)}%, not over the whole model.
+                </p>
+              )}
               <ul className="flex flex-col gap-2.5">
                 {assessment.indicators.map((indicator) => (
                   <li key={indicator.key} className={cn(!indicator.available && 'opacity-50')}>
@@ -156,18 +188,29 @@ export default function TargetDetailPage() {
                       </span>
                     </div>
                     <div className="mt-1 h-1 overflow-hidden rounded-full bg-meter-off">
-                      <div
-                        className="h-full rounded-full transition-[width] duration-700"
-                        style={{
-                          // An unavailable indicator has a null score; an empty
-                          // bar is the honest rendering, not a zero-width NaN.
-                          width: `${Math.round(Math.min(1, Math.max(0, indicator.score ?? 0)) * 100)}%`,
-                          background: color,
-                        }}
-                      />
+                      {indicator.available ? (
+                        <div
+                          className="h-full rounded-full transition-[width] duration-700"
+                          style={{
+                            width: `${Math.round(Math.min(1, Math.max(0, indicator.score ?? 0)) * 100)}%`,
+                            background: color,
+                          }}
+                        />
+                      ) : (
+                        // An unavailable indicator has no score. An empty track
+                        // is indistinguishable from a measured 0.00, so hatch the
+                        // full width instead: the weight is still in the model,
+                        // it simply was not observed.
+                        <div
+                          className="h-full w-full rounded-full opacity-60"
+                          style={{
+                            backgroundImage: `repeating-linear-gradient(135deg, ${color}, ${color} 2px, transparent 2px, transparent 5px)`,
+                          }}
+                        />
+                      )}
                     </div>
                     {indicator.detail && (
-                      <p className="mt-1 text-[10.5px] leading-snug text-fg-subtle">{indicator.detail}</p>
+                      <p className="mt-1 text-[10.5px] leading-snug text-fg-subtle">{plainText(indicator.detail)}</p>
                     )}
                   </li>
                 ))}
@@ -189,10 +232,105 @@ export default function TargetDetailPage() {
                     key={gap}
                     className="rounded-lg border border-status-inferred/25 bg-status-inferred/10 px-2.5 py-2 text-[10.5px] leading-snug text-fg-muted"
                   >
-                    {gap}
+                    {plainText(gap)}
                   </li>
                 ))}
               </ul>
+            </section>
+          )}
+
+          {weather && (
+            <section>
+              <FieldLabel>
+                <span className="flex items-center gap-1.5">
+                  <CloudSun className="size-3" aria-hidden />
+                  LAUNCH WEATHER · {weather.summary.favourable} OF {weather.summary.windows_graded} FAVOURABLE
+                </span>
+              </FieldLabel>
+              <p className="mb-1.5 text-[10.5px] leading-snug text-fg-subtle">{weather.interpretation}</p>
+              <ul className="flex flex-col gap-1">
+                {weather.window_verdicts
+                  .filter((v) => v.verdict === 'favourable')
+                  .slice(0, 6)
+                  .map((v, index) => (
+                    <li
+                      key={`${v.start}-${index}`}
+                      className="flex items-center gap-2 rounded-lg border border-status-observed/30 bg-status-observed/10 px-2.5 py-1.5"
+                    >
+                      <span className="font-mono text-[10px] font-bold text-status-observed">FAVOURABLE</span>
+                      <span className="flex-1 truncate text-[10.5px] text-fg-muted">
+                        {v.start.slice(5, 16).replace('T', ' ')}Z · {v.hours_covered}h
+                      </span>
+                      <span className="font-mono text-[10px] text-fg-subtle tabular-nums">
+                        {Math.round(v.mean_cloud_cover_pct)}% cloud
+                      </span>
+                    </li>
+                  ))}
+              </ul>
+              {weather.summary.marginal_or_worse > 0 && (
+                <p className="mt-1.5 text-[10px] text-fg-subtle">
+                  {weather.summary.marginal_or_worse} further windows graded marginal or worse — mostly heavy cloud.
+                </p>
+              )}
+            </section>
+          )}
+
+          {hazards && (
+            <section>
+              <FieldLabel>
+                <span className="flex items-center gap-1.5">
+                  <ShieldCheck className="size-3" aria-hidden />
+                  CONFOUND CHECK
+                </span>
+              </FieldLabel>
+              <p className="rounded-lg border border-line bg-inset px-2.5 py-2 text-[10.5px] leading-snug text-fg-muted">
+                {hazards.verdict}
+              </p>
+              <p className="mt-1 text-[9.5px] text-fg-subtle italic">{hazards.role}</p>
+            </section>
+          )}
+
+          {socialPosts && Object.keys(socialPosts.summary.named_systems ?? {}).length > 0 && (
+            <section>
+              <FieldLabel>SYSTEMS NAMED IN REPORTING</FieldLabel>
+              <p className="mb-1.5 text-[10.5px] leading-snug text-fg-subtle">
+                Across {socialPosts.summary.items_aoi_relevant} relevant posts. What open sources are *saying* — not
+                what the geometry supports.
+              </p>
+              <div className="flex flex-wrap gap-1">
+                {Object.entries(socialPosts.summary.named_systems)
+                  .sort((a, b) => b[1] - a[1])
+                  .map(([name, count]) => (
+                    <span
+                      key={name}
+                      className="rounded-md border border-line bg-inset px-1.5 py-0.5 text-[10px] text-fg-muted"
+                    >
+                      {name} <span className="font-mono font-bold text-fg">{count}</span>
+                    </span>
+                  ))}
+              </div>
+            </section>
+          )}
+
+          {socialPosts && Object.keys(socialPosts.summary.top_keywords ?? {}).length > 0 && (
+            <section>
+              <FieldLabel>WHAT REPORTING IS TALKING ABOUT</FieldLabel>
+              <p className="mb-1.5 text-[10.5px] leading-snug text-fg-subtle">
+                The terms that put a post in this dossier, over {socialPosts.period_of_interest}. Volume is attention,
+                not corroboration — a widely repeated claim is still one claim.
+              </p>
+              <div className="flex flex-wrap gap-1">
+                {Object.entries(socialPosts.summary.top_keywords ?? {})
+                  .sort((a, b) => b[1] - a[1])
+                  .map(([term, count]) => (
+                    <span
+                      key={term}
+                      className="rounded-md border border-line bg-inset px-1.5 py-0.5 text-[10px] text-fg-muted"
+                    >
+                      {term} <span className="font-mono font-bold text-fg">{count}</span>
+                    </span>
+                  ))}
+              </div>
             </section>
           )}
 
@@ -205,7 +343,8 @@ export default function TargetDetailPage() {
                 </span>
               </FieldLabel>
               <p className="mb-1.5 text-[10.5px] leading-snug text-fg-subtle">
-                {evacuations.indicator.detail ?? 'Evacuation, road-closure and fishing-ban reports near the range.'}
+                {plainText(evacuations.indicator.detail) ??
+                  'Evacuation, road-closure and fishing-ban reports near the range.'}
               </p>
               <ul className="flex flex-col gap-1.5">
                 {evacuations.items.map((item, index) => (

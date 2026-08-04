@@ -48,9 +48,27 @@ export interface FeedItem {
   platform: string
   /** Pre-formatted relative age, e.g. `3m`. */
   time: string
+  /**
+   * Unix seconds, for ordering. `time` is already formatted and cannot be
+   * sorted; two feeds have to interleave by age to read as one stream.
+   */
+  timestamp?: number
   text: string
   /** 0–5. See `confidenceLabel`. */
   confidence: number
+  /** Post author, where the item came from an identifiable account. */
+  author?: string
+  /** Preview image. May 404 — it is hotlinked from the platform, not archived. */
+  thumbnail?: string
+  /** The original post. Opened in a new tab; the row is a pointer, not a copy. */
+  url?: string
+  /**
+   * Where to fly when the row is clicked.
+   *
+   * Set only when the item names a place. Most posts name a system and no
+   * location, and inventing a position for those would be a fabrication.
+   */
+  focus?: { lat: number; lng: number }
 }
 
 export interface Post {
@@ -105,6 +123,8 @@ export type ItrFeedId =
   | 'itr_routine'
   | 'itr_impact'
   | 'itr_danger_areas'
+  | 'itr_evacuations'
+  | 'itr_social'
   | 'itr_thermal'
   | 'itr_aircraft'
   | 'itr_imagery'

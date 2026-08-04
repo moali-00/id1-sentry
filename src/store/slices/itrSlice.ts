@@ -3,17 +3,22 @@ import {
   fetchAircraft,
   fetchAoi,
   fetchAssessment,
+  fetchContext,
   fetchCoupledTrials,
   fetchDangerAreas,
   fetchEvacuations,
+  fetchHazards,
   fetchImagery,
   fetchLaunchWindows,
   fetchMaritimeWarnings,
   fetchMissiles,
   fetchNotams,
   fetchSocial,
+  fetchSocialImages,
+  fetchSocialPosts,
   fetchSources,
   fetchThermal,
+  fetchWeather,
 } from '@/api/sentiry'
 import {
   aircraftPoints,
@@ -22,9 +27,14 @@ import {
   corridorAreas,
   coupledLines,
   dangerAreaAreas,
+  evacuationPoints,
   imageryAreas,
   sitePoints,
   socialFeedItems,
+  socialImageIndex,
+  socialPostFeedItems,
+  socialPostPoints,
+  socialSites,
   thermalPoints,
   warningAreas,
   warningPoints,
@@ -37,15 +47,20 @@ import type {
   CoupledTrialsResponse,
   DangerArea,
   DangerAreasResponse,
+  EvacuationPlace,
   EvacuationsResponse,
+  HazardsConnector,
   ImageryScene,
   LaunchWindowsResponse,
   MaritimeWarning,
   MissilesResponse,
   NotamsResponse,
+  SocialImagePost,
   SocialItem,
+  SocialPostsResponse,
   SourceHealth,
   ThermalDetection,
+  WeatherConnector,
 } from '@/types/sentiry'
 
 /**
@@ -70,6 +85,14 @@ interface ItrState {
   imagery: ImageryScene[]
   social: SocialItem[]
   evacuations: EvacuationsResponse | null
+  /** The richer per-platform sweep. Kept alongside `social`, not replacing it. */
+  socialPosts: SocialPostsResponse | null
+  /** Media recovered for the posts that carried pictures, joined on post URL. */
+  socialImages: SocialImagePost[]
+  /** Settlements from evacuation reporting, resolved to coordinates. */
+  evacuationPlaces: EvacuationPlace[]
+  weather: WeatherConnector | null
+  hazards: HazardsConnector | null
   notams: NotamsResponse | null
   dangerAreas: DangerAreasResponse | null
   missiles: MissilesResponse | null
@@ -93,6 +116,11 @@ const initialState: ItrState = {
   imagery: [],
   social: [],
   evacuations: null,
+  socialPosts: null,
+  socialImages: [],
+  evacuationPlaces: [],
+  weather: null,
+  hazards: null,
   notams: null,
   dangerAreas: null,
   missiles: null,
@@ -109,7 +137,7 @@ export interface ItrPayload extends Omit<ItrState, 'status' | 'streamStatus' | '
 }
 
 /** How many feeds `loadItr` fans out to — all failing means the API is down. */
-const FEED_COUNT = 14
+const FEED_COUNT = 19
 
 /**
  * Load every ITR feed at once.
@@ -131,6 +159,11 @@ export const loadItr = createAsyncThunk('itr/load', async (_: void, { signal }) 
     imagery,
     social,
     evacuations,
+    socialPosts,
+    socialImages,
+    context,
+    weather,
+    hazards,
     notams,
     dangerAreas,
     missiles,
@@ -146,6 +179,11 @@ export const loadItr = createAsyncThunk('itr/load', async (_: void, { signal }) 
     fetchImagery(options),
     fetchSocial(options),
     fetchEvacuations(options),
+    fetchSocialPosts(options),
+    fetchSocialImages(options),
+    fetchContext(options),
+    fetchWeather(options),
+    fetchHazards(options),
     fetchNotams(options),
     fetchDangerAreas(options),
     fetchMissiles(options),
@@ -170,6 +208,11 @@ export const loadItr = createAsyncThunk('itr/load', async (_: void, { signal }) 
     imagery: take(imagery, 'imagery')?.data.scenes ?? [],
     social: take(social, 'social')?.data.items ?? [],
     evacuations: take(evacuations, 'evacuations'),
+    socialPosts: take(socialPosts, 'social posts'),
+    socialImages: take(socialImages, 'social media')?.posts ?? [],
+    evacuationPlaces: take(context, 'evacuation geocoding')?.evacuation_geocoding.places ?? [],
+    weather: take(weather, 'weather'),
+    hazards: take(hazards, 'hazards'),
     notams: take(notams, 'notams'),
     dangerAreas: take(dangerAreas, 'danger areas'),
     missiles: take(missiles, 'missiles'),
@@ -211,6 +254,11 @@ const itrSlice = createSlice({
     selectWindows: (state) => state.windows,
     selectSocial: (state) => state.social,
     selectEvacuations: (state) => state.evacuations,
+    selectSocialPosts: (state) => state.socialPosts,
+    selectSocialImages: (state) => state.socialImages,
+    selectEvacuationPlaces: (state) => state.evacuationPlaces,
+    selectWeather: (state) => state.weather,
+    selectHazards: (state) => state.hazards,
     selectNotams: (state) => state.notams,
     selectDangerAreas: (state) => state.dangerAreas,
     selectMissiles: (state) => state.missiles,
@@ -232,6 +280,11 @@ export const {
   selectWindows,
   selectSocial,
   selectEvacuations,
+  selectSocialPosts,
+  selectSocialImages,
+  selectEvacuationPlaces,
+  selectWeather,
+  selectHazards,
   selectNotams,
   selectDangerAreas,
   selectMissiles,
@@ -245,12 +298,47 @@ export const {
   selectImagery,
 } = itrSlice.selectors
 
+/**
+ * Source health for every upstream, including the ones `/v1/sources` omits.
+ *
+ * The social sweep reports its own health inside `/v1/social/posts` and is
+ * absent from the sources roll-call, so on the raw list a feed that failed 25 of
+ * 70 calls reads as if it were never consulted. It is folded in here rather than
+ * in the panel so the counts in the header cover it too.
+ */
+export const selectAllSources = createSelector([selectSources, selectSocialPosts], (sources, posts): SourceHealth[] => {
+  if (!posts || sources.some((source) => source.source === posts.feed.source)) return sources
+
+  // Deliberately not the upstream's own note, which is a list of failed
+  // requests. What a reader needs from this row is which platforms are covered.
+  const covered = Object.keys(posts.summary.by_platform ?? {})
+  const detail = covered.length
+    ? `${posts.summary.items_aoi_relevant} posts on this target, from ${covered.join(' and ')}. Other platforms returned nothing.`
+    : 'No platform returned anything on this target.'
+
+  return [
+    ...sources,
+    {
+      source: posts.feed.source,
+      status: posts.feed.status,
+      detail,
+      fetched_at: posts.feed.fetched_at,
+      latency_ms: posts.feed.latency_ms ?? null,
+      configured: true,
+      // The sweep informs the picture but feeds no scored indicator.
+      used_for_assessment: false,
+    },
+  ]
+})
+
 /** Every ITR feature that plots as a point, across all its layers. */
 export const selectItrPoints = createSelector(
-  [selectAoi, selectWarnings, selectThermal, selectAircraft],
-  (aoi, warnings, thermal, aircraft): MapPoint[] => [
+  [selectAoi, selectWarnings, selectThermal, selectAircraft, selectEvacuationPlaces, selectSocialPosts],
+  (aoi, warnings, thermal, aircraft, places, posts): MapPoint[] => [
     ...(aoi ? sitePoints(aoi) : []),
     ...warningPoints(warnings),
+    ...evacuationPoints(places),
+    ...(aoi && posts ? socialPostPoints(posts.aoi_relevant_items, socialSites(aoi)) : []),
     ...thermalPoints(thermal),
     ...aircraftPoints(aircraft),
   ],
@@ -305,7 +393,18 @@ export const selectTargetSummary = createSelector(
  * Memoised on `social` alone — `Date.now()` is read once per recompute rather
  * than per render, which keeps the row list referentially stable.
  */
-export const selectItrFeedItems = createSelector([selectSocial], (social): FeedItem[] => socialFeedItems(social))
+export const selectItrFeedItems = createSelector(
+  [selectSocial, selectSocialPosts, selectSocialImages, selectAoi],
+  (social, posts, images, aoi): FeedItem[] => {
+    const swept =
+      posts && aoi ? socialPostFeedItems(posts.aoi_relevant_items, socialImageIndex(images), socialSites(aoi)) : []
+
+    // Newest first across both feeds. They cover the same target from different
+    // collectors, so interleaving them by time reads as one stream rather than
+    // as two lists stapled together.
+    return [...socialFeedItems(social), ...swept].sort((a, b) => (b.timestamp ?? 0) - (a.timestamp ?? 0))
+  },
+)
 
 export const { streamStatusChanged } = itrSlice.actions
 

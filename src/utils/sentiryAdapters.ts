@@ -7,10 +7,13 @@ import type {
   AoiResponse,
   CoupledTrial,
   DangerArea,
+  EvacuationPlace,
   GeoPolygon,
   ImageryScene,
   MaritimeWarning,
+  SocialImagePost,
   SocialItem,
+  SocialPost,
   ThermalDetection,
 } from '@/types/sentiry'
 
@@ -258,6 +261,39 @@ export function coupledLines(pairs: CoupledTrial[], origin: { lat: number; lon: 
   })
 }
 
+/**
+ * Settlements named in evacuation reporting, as map points.
+ *
+ * The `evacuation_notice` indicator scores 0.90 — the highest in the
+ * assessment — and until this connector arrived it had no geometry at all. A
+ * town 20 km from the island reads very differently from one 85 km away, and
+ * that distance is only checkable once both are on the map.
+ *
+ * Places the geocoder could not resolve are skipped rather than guessed at.
+ */
+export function evacuationPoints(places: EvacuationPlace[]): MapPoint[] {
+  return places.flatMap((place) => {
+    if (!place.found || place.lat === null || place.lon === null) return []
+
+    const distance =
+      place.distance_to_island_km === null ? '' : `${Math.round(place.distance_to_island_km)} km from island`
+
+    return [
+      {
+        id: `evac-${place.query}`,
+        layerId: 'itr_evacuations' as const,
+        lat: place.lat,
+        lng: place.lon,
+        label: place.query,
+        detail: [distance, place.display_name].filter(Boolean).join(' · '),
+        // Closer to the island is more significant; 50 km is the threshold the
+        // connector itself reports against.
+        severity: place.distance_to_island_km !== null && place.distance_to_island_km <= 50 ? 5 : 3,
+      },
+    ]
+  })
+}
+
 /** FIRMS detections. Severity comes from fire radiative power, not brightness. */
 export function thermalPoints(detections: ThermalDetection[]): MapPoint[] {
   return detections.map((detection, index) => ({
@@ -355,6 +391,7 @@ export function socialFeedItems(items: SocialItem[], now: number = Date.now()): 
   return items.map((item, index) => {
     const category: CategoryKey =
       item.evacuation_terms.length > 0 ? 'unrest' : item.forward_looking_terms.length > 0 ? 'military' : 'political'
+    const published = unixSeconds(item.published_at) ?? Math.floor(now / 1000)
 
     return {
       id: `itr-social-${index}`,
@@ -362,12 +399,156 @@ export function socialFeedItems(items: SocialItem[], now: number = Date.now()): 
       watchName: 'Abdul Kalam Island',
       category,
       platform: item.platform.replace(/_/g, ' ').toUpperCase(),
-      time: relativeTime(unixSeconds(item.published_at) ?? Math.floor(now / 1000), now),
+      time: relativeTime(published, now),
+      timestamp: published,
       text: truncate(item.title, FEED_TEXT_LIMIT),
       // AOI-relevant items were matched on a place or programme name; the rest
       // came in on a looser keyword and are worth less.
       confidence: item.aoi_relevant ? 4 : 2,
     }
+  })
+}
+
+/* ── Social posts ────────────────────────────────────────────────────────────
+ *
+ * Posts carry no coordinates. What they carry is the place *name* they matched
+ * on, and the two named sites already have positions in the AOI, so a post that
+ * says "Chandipur" can be put at Chandipur. A post that only names a missile is
+ * left off the map entirely — placing it at the island would be inventing a
+ * position the source never gave.
+ */
+
+/** Which matched place name resolves to which of the two known sites. */
+const ISLAND_TERMS = ['abdul kalam', 'wheeler', 'wheeler island', 'integrated test range', 'itr odisha']
+const CHANDIPUR_TERMS = ['chandipur', 'balasore', 'baleshwar', 'bhadrak']
+
+export interface SocialSite {
+  id: string
+  name: string
+  lat: number
+  lng: number
+}
+
+/** The sites posts can be attributed to, taken from the AOI itself. */
+export function socialSites(aoi: AoiResponse): SocialSite[] {
+  const sites: SocialSite[] = [
+    { id: 'island', name: aoi.target.name, lat: aoi.target.centre.lat, lng: aoi.target.centre.lon },
+  ]
+
+  // The secondary complex is optional in the contract. Without it, posts naming
+  // Chandipur simply get no marker rather than being folded into the island.
+  if (aoi.secondary_site) {
+    sites.push({
+      id: 'chandipur',
+      name: aoi.secondary_site.name,
+      lat: aoi.secondary_site.centre.lat,
+      lng: aoi.secondary_site.centre.lon,
+    })
+  }
+
+  return sites
+}
+
+function siteFor(post: SocialPost, sites: SocialSite[]): SocialSite | undefined {
+  const terms = post.matched_keywords.map((keyword) => keyword.toLowerCase())
+  // The island wins a tie: a post naming both is about the launch site, and
+  // Chandipur is routinely named as the nearest town rather than as the subject.
+  if (terms.some((term) => ISLAND_TERMS.includes(term))) return sites.find((site) => site.id === 'island')
+  if (terms.some((term) => CHANDIPUR_TERMS.includes(term))) return sites.find((site) => site.id === 'chandipur')
+  return undefined
+}
+
+/**
+ * Recovered media, indexed by the post it belongs to.
+ *
+ * A video's poster frame is as good a still as a photo, so both count. Built
+ * once per load rather than scanned per row.
+ */
+export function socialImageIndex(images: SocialImagePost[]): Map<string, string> {
+  const index = new Map<string, string>()
+  for (const entry of images) {
+    const url = entry.image_urls[0] ?? entry.video_urls[0]
+    if (url) index.set(entry.post_url, url)
+  }
+  return index
+}
+
+/**
+ * The per-platform sweep as activity-feed rows.
+ *
+ * Every post appears — no filtering by platform or relevance. The category is
+ * how the post was matched, strongest first: evacuation language is civil
+ * unrest, a named system is armed conflict, forward-looking wording is military
+ * movement, and a bare place name is political signalling.
+ */
+export function socialPostFeedItems(
+  posts: SocialPost[],
+  images: Map<string, string>,
+  sites: SocialSite[],
+  now: number = Date.now(),
+): FeedItem[] {
+  return posts.map((post, index) => {
+    const category: CategoryKey =
+      post.evacuation_terms.length > 0
+        ? 'unrest'
+        : post.matched_systems.length > 0
+          ? 'conflict'
+          : post.forward_looking_terms.length > 0
+            ? 'military'
+            : 'political'
+
+    const site = siteFor(post, sites)
+    const published = unixSeconds(post.published) ?? Math.floor(now / 1000)
+
+    return {
+      id: `itr-post-${post.platform}-${post.id || index}`,
+      clusterId: site ? `itr-social-${site.id}` : 'itr-social',
+      watchName: site?.name ?? 'Abdul Kalam Island',
+      category,
+      platform: post.platform,
+      time: relativeTime(published, now),
+      timestamp: published,
+      text: truncate(post.title, FEED_TEXT_LIMIT),
+      // A post that names a place *and* a system is the strongest kind here; one
+      // that only carries a loose keyword is the weakest.
+      confidence: site && post.matched_systems.length > 0 ? 5 : site ? 4 : post.aoi_relevant ? 3 : 2,
+      author: post.author?.alias ?? undefined,
+      thumbnail: images.get(post.url),
+      url: post.url,
+      focus: site ? { lat: site.lat, lng: site.lng } : undefined,
+    }
+  })
+}
+
+/**
+ * One marker per site, sized by how much reporting names it.
+ *
+ * Drawn as a count rather than as 183 overlapping pins: the position is the
+ * site's, not each post's, so a scatter would imply a precision the data does
+ * not have.
+ */
+export function socialPostPoints(posts: SocialPost[], sites: SocialSite[]): MapPoint[] {
+  const tally = new Map<string, number>()
+  for (const post of posts) {
+    const site = siteFor(post, sites)
+    if (site) tally.set(site.id, (tally.get(site.id) ?? 0) + 1)
+  }
+
+  return sites.flatMap((site) => {
+    const count = tally.get(site.id) ?? 0
+    if (count === 0) return []
+
+    return [
+      {
+        id: `social-site-${site.id}`,
+        layerId: 'itr_social' as const,
+        lat: site.lat,
+        lng: site.lng,
+        label: `${count} posts naming ${site.name}`,
+        detail: 'Attributed by the place named in the text, not by a location on the post.',
+        severity: count >= 100 ? 5 : count >= 40 ? 4 : 3,
+      },
+    ]
   })
 }
 

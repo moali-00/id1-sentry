@@ -6,7 +6,7 @@ import { relativeTime } from '@/utils/format'
 import { Panel } from '@/components/ui/Panel'
 import { IconButton } from '@/components/ui/IconButton'
 import { useAppDispatch, useAppSelector } from '@/store/store'
-import { selectError, selectLastFetchedAt, selectStatus } from '@/store/slices/monitoringSlice'
+import { selectLastFetchedAt, selectStatus } from '@/store/slices/monitoringSlice'
 import { selectStreamStatus } from '@/store/slices/itrSlice'
 import { selectTheme, toggleTheme } from '@/store/slices/themeSlice'
 
@@ -47,7 +47,6 @@ export function StatusPill({ onHealthClick }: { onHealthClick?: () => void }) {
   const dispatch = useAppDispatch()
   const theme = useAppSelector(selectTheme)
   const status = useAppSelector(selectStatus)
-  const error = useAppSelector(selectError)
   const lastFetchedAt = useAppSelector(selectLastFetchedAt)
   const stream = useAppSelector(selectStreamStatus)
   const now = useNow()
@@ -59,7 +58,9 @@ export function StatusPill({ onHealthClick }: { onHealthClick?: () => void }) {
 
   const health =
     status === 'error'
-      ? { dot: 'bg-status-missing', label: 'NO FEED', title: error ?? 'The monitoring API is unreachable' }
+      ? // Deliberately not the underlying failure message — it is a transport
+        // error, and it tells the reader nothing about the target.
+        { dot: 'bg-status-missing', label: 'NO FEED', title: 'Nothing is reporting on this target' }
       : staleSince !== null
         ? {
             dot: 'bg-status-inferred',
@@ -78,7 +79,7 @@ export function StatusPill({ onHealthClick }: { onHealthClick?: () => void }) {
       <button
         type="button"
         onClick={onHealthClick}
-        title={`${health.title} — click for per-source health`}
+        title={`${health.title} — click for collection status`}
         className="flex items-center gap-2 rounded-full px-1 py-0.5 transition-colors hover:bg-hover focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
       >
         <span className={cn('inline-block size-2 rounded-full', health.dot)} aria-hidden />

@@ -393,7 +393,12 @@ export interface CoupledTrialsResponse {
 
 export interface SourceHealth {
   source: string
-  status: 'ok' | 'degraded' | 'error' | 'unconfigured'
+  /**
+   * `empty` is not in the endpoint's own summary counts but does appear on
+   * individual rows — FIRMS answers correctly with no detections. It means the
+   * feed worked, which is the opposite of `error`.
+   */
+  status: 'ok' | 'degraded' | 'error' | 'empty' | 'unconfigured'
   detail: string | null
   fetched_at: string | null
   latency_ms: number | null
@@ -404,4 +409,183 @@ export interface SourceHealth {
 export interface SourcesResponse {
   sources: SourceHealth[]
   summary: { total: number; ok: number; degraded: number; unconfigured: number; error: number }
+}
+
+/* ── /v1/social/posts — the Social Links feed ─────────────────────────────── */
+
+/**
+ * A post from the per-platform social sweep.
+ *
+ * Richer than a `SocialItem`: it carries the author, engagement counts and any
+ * systems named in the text. There is **no image URL** anywhere in the payload —
+ * only `has_media`. A YouTube thumbnail can be derived from the video id, but a
+ * Twitter/X one cannot, so cards fall back to a platform glyph.
+ */
+export interface SocialPost {
+  platform: string
+  facet: string
+  endpoint: string
+  query: string
+  title: string
+  summary: string
+  url: string
+  id: string
+  published: string
+  author: { alias: string | null; id: string | null; url: string | null; followers: number | null } | null
+  lang: string | null
+  engagement: {
+    view_count?: number
+    like_count?: number
+    retweet_count?: number
+    reply_count?: number
+    quote_count?: number
+  } | null
+  hashtags: string[]
+  /** Whether the post carried media. Not a URL — see the note above. */
+  has_media: boolean
+  matched_keywords: string[]
+  aoi_relevant: boolean
+  evacuation_terms: string[]
+  forward_looking_terms: string[]
+  logistics_terms: string[]
+  matched_systems: MissileRef[]
+}
+
+/**
+ * One probe against one platform endpoint.
+ *
+ * The sweep is wide and lossy — 25 of 70 calls failed in the capture, mostly
+ * Facebook read timeouts. Which platform was *asked* and came back empty is a
+ * different fact from which was never reachable, and only this list separates
+ * them, so it is carried through rather than reduced to the failure count.
+ */
+export interface SocialCall {
+  endpoint: string
+  platform: string
+  facet: string
+  query: string
+  /**
+   * `empty` and `error` are not the same finding. `empty` is a successful query
+   * that found nothing — a negative observation. `error` is a blind spot. Only
+   * the former is evidence.
+   */
+  status: 'ok' | 'empty' | 'error'
+  /** Absent on `error` rows — the call never completed. */
+  exec_time?: number | null
+  /** Absent on `error` rows. */
+  returned?: number
+  /** The failure reason. Present only on `error` rows. */
+  detail?: string
+}
+
+export interface SocialPostsResponse {
+  captured_at: string
+  period_of_interest: string
+  aoi: string
+  provider: string
+  /** Provider credits burned by the sweep. */
+  sealagom_tokens_spent?: number
+  feed: Omit<FeedEnvelope<unknown>, 'data'>
+  calls: SocialCall[]
+  summary: {
+    calls_made: number
+    calls_failed: number
+    items_total: number
+    items_aoi_relevant: number
+    story_clusters: number
+    by_platform: Record<string, number>
+    aoi_relevant_by_platform: Record<string, number>
+    named_systems: Record<string, number>
+    top_keywords?: Record<string, number>
+    items_with_evacuation_language?: number
+    items_forward_looking?: number
+  }
+  aoi_relevant_items: SocialPost[]
+  all_items: SocialPost[]
+}
+
+/**
+ * A post whose attached media was recovered.
+ *
+ * The main sweep kept only a `has_media` flag and threw the URLs away; this is
+ * the same posts re-read for their pictures. Joined to `SocialPost` on
+ * `post_url` ↔ `url`.
+ *
+ * The URLs point at the platform's own image host, so they can expire or be
+ * deleted by the poster — every card that shows one has to survive it 404ing.
+ */
+export interface SocialImagePost {
+  post_url: string
+  platform: string
+  author: string | null
+  published: string
+  query: string
+  view_count: number | null
+  like_count: number | null
+  text: string
+  aoi_relevant: boolean
+  matched_keywords: string[]
+  /** Plain system names here, unlike `SocialPost.matched_systems`. */
+  matched_systems: string[]
+  image_urls: string[]
+  /** Video poster frames. Usable as a still; the video itself is not embedded. */
+  video_urls: string[]
+  reproduced_in_report: string | null
+}
+
+export interface SocialImagesResponse {
+  captured_at: string
+  aoi: string
+  posts: SocialImagePost[]
+}
+
+/* ── Connector captures ───────────────────────────────────────────────────── */
+
+/** A settlement named in evacuation reporting, resolved to coordinates. */
+export interface EvacuationPlace {
+  query: string
+  found: boolean
+  display_name: string | null
+  lat: number | null
+  lon: number | null
+  distance_to_island_km: number | null
+  distance_to_chandipur_itr_km: number | null
+}
+
+export interface ContextConnector {
+  evacuation_geocoding: {
+    status: string
+    queried: number
+    resolved: number
+    within_50km_of_island: number
+    places: EvacuationPlace[]
+    note: string
+  }
+}
+
+/** Weather graded against each declared window — a launch go/no-go. */
+export interface WindowVerdict {
+  start: string
+  end: string
+  hours_covered: number
+  mean_cloud_cover_pct: number
+  peak_gust_ms: number
+  peak_precipitation_mm: number
+  verdict: 'favourable' | 'marginal' | 'unfavourable' | string
+  reasons: string[]
+  heuristic?: string
+}
+
+export interface WeatherConnector {
+  status: string
+  hours_in_period: number
+  window_verdicts: WindowVerdict[]
+  summary: { windows_graded: number; favourable: number; marginal_or_worse: number }
+  interpretation: string
+}
+
+export interface HazardsConnector {
+  /** These feeds only ever subtract confidence; neither carries a weight. */
+  verdict: string
+  role: string
 }

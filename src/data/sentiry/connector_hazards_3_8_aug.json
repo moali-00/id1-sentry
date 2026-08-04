@@ -1,0 +1,36 @@
+{
+  "name": "connector_hazards_3_8_aug",
+  "captured_at": "2026-08-03T16:06:00.202893+00:00",
+  "period": "2026-08-03..2026-08-08",
+  "aoi": "Abdul Kalam Island (ITR), 20.75804N 87.085533E",
+  "sealagom_tokens_spent": 0,
+  "data": {
+    "seismicity": {
+      "status": "empty",
+      "bbox": {
+        "west": 85.5,
+        "south": 13.0,
+        "east": 94.0,
+        "north": 22.5
+      },
+      "events_total": 0,
+      "events_in_period": 0,
+      "events": []
+    },
+    "natural_events": {
+      "status": "empty",
+      "bbox": {
+        "west": 86.85,
+        "south": 20.55,
+        "east": 87.3,
+        "north": 21.2
+      },
+      "events_scanned": 200,
+      "events_in_aoi": 0,
+      "confounding_count": 0,
+      "events": []
+    },
+    "verdict": "No natural-event or seismic confound in the AOI for this period \u2014 a thermal detection over the pads or a tremor down-range cannot be explained away as a wildfire or an earthquake on this evidence.",
+    "role": "these feeds only ever subtract confidence; neither carries a weight"
+  }
+}

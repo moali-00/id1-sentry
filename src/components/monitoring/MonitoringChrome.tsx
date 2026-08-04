@@ -135,7 +135,6 @@ export function MonitoringChrome() {
         <AssessmentStrip />
       </div>
 
-      {/* Clear of the command bar, which occupies the band just under the pill. */}
       {sourcesOpen && (
         <div className="pointer-events-auto absolute top-[100px] left-1/2 -translate-x-1/2">
           <SourceHealthPanel />

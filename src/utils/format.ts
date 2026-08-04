@@ -37,3 +37,31 @@ export function truncate(text: string, limit: number): string {
 export function titleCase(text: string): string {
   return text.replace(/\b\w/g, (char) => char.toUpperCase())
 }
+
+/**
+ * Strip service plumbing out of prose that came from the payload.
+ *
+ * The assessment writes operator-facing sentences, but some of them end in an
+ * instruction to the service that produced them — "…— poll POST /v1/aircraft/
+ * observe on a schedule". That is a note to whoever runs the collection, not to
+ * whoever is reading the dossier, and it is the only kind of text in the feed
+ * that names an endpoint. Cut the clause rather than the sentence: the part
+ * before the dash is the actual finding.
+ */
+export function plainText(text: string): string
+export function plainText(text: string | null | undefined): string | undefined
+export function plainText(text: string | null | undefined): string | undefined {
+  if (!text) return text ?? undefined
+
+  return (
+    text
+      // The trailing "— poll GET /v1/… on a schedule" style advisory.
+      .replace(/\s*[—–-]\s*(?:poll|call|query|hit|fetch)\b[^.;]*/gi, '')
+      // Any bare method-and-path or path that survived elsewhere in the sentence.
+      .replace(/\b(?:GET|POST|PUT|PATCH|DELETE)\s+\/\S+/g, '')
+      .replace(/\s*\/v\d+\/\S+/g, '')
+      .replace(/\s{2,}/g, ' ')
+      .replace(/\s+([.;,])/g, '$1')
+      .trim()
+  )
+}

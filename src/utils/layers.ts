@@ -101,7 +101,7 @@ export const DATA_LAYERS: DataLayer[] = [
     label: 'Airspace watch',
     groupKey: 'itr_zones',
     color: '#a78bfa',
-    hint: 'ADS-B vacancy watch box across the Kolkata FIR approaches',
+    hint: 'The box whose air traffic is counted for signs of clearing',
     explain:
       'The box whose air traffic is counted. A drop below the hourly baseline suggests airspace is being cleared for a trial.',
     defaultOn: false,
@@ -174,7 +174,27 @@ export const DATA_LAYERS: DataLayer[] = [
     color: '#a78bfa',
     hint: 'Airspace danger areas declared by NOTAM over the Kolkata FIR',
     explain:
-      'Airspace closed by NOTAM. Where the shape is approximated from a centre and a radius it is drawn dashed, because the boundary is this service’s reconstruction rather than the authority’s.',
+      'Airspace closed by NOTAM. Where the shape is approximated from a centre and a radius it is drawn dashed, because the boundary is an approximation rather than the authority’s published outline.',
+    defaultOn: true,
+  },
+  {
+    id: 'itr_evacuations',
+    label: 'Civil precursors',
+    groupKey: 'itr_feeds',
+    color: '#c27aff',
+    hint: 'Settlements named in evacuation reporting, resolved to coordinates',
+    explain:
+      'A town named in evacuation, road-closure or fishing-ban reporting, placed on the map so the report can be checked against the declared danger areas rather than taken on trust. This is the strongest single indicator in the current assessment.',
+    defaultOn: true,
+  },
+  {
+    id: 'itr_social',
+    label: 'Reporting volume',
+    groupKey: 'itr_feeds',
+    color: '#38bdf8',
+    hint: 'How much open reporting names each of the two sites',
+    explain:
+      'How many posts name this site, placed at the site rather than at the poster. Posts carry no location of their own, so this counts what is being talked about, not where anyone was — and a post that names only a missile is not counted here at all.',
     defaultOn: true,
   },
   {
@@ -182,9 +202,9 @@ export const DATA_LAYERS: DataLayer[] = [
     label: 'Thermal detections',
     groupKey: 'itr_feeds',
     color: '#fb7185',
-    hint: 'FIRMS hotspots — off by default; almost all are agricultural burning',
+    hint: 'Satellite heat detections — off by default; almost all are farm burning',
     explain:
-      'A satellite heat detection, sized by fire radiative power. Off by default: all 28 in this capture are over the Bangladesh and Myanmar coast, hundreds of kilometres from the pad, and the thermal indicator scores 0.05 as a result. Switch it on when a detection inside the pad box would matter — that one would be significant.',
+      'A satellite heat detection, sized by how hot it burned. Off by default: every one currently showing is over the Bangladesh and Myanmar coast, hundreds of kilometres from the pad, so the heat reading barely moves the assessment. Switch it on when a detection inside the pad box would matter — that one would be significant.',
     // The densest layer and the least significant. Leaving it on packed 28
     // overlapping dots over the delta and buried the signal underneath.
     defaultOn: false,
@@ -194,9 +214,9 @@ export const DATA_LAYERS: DataLayer[] = [
     label: 'Aircraft',
     groupKey: 'itr_feeds',
     color: '#38bdf8',
-    hint: 'Live ADS-B contacts inside the airspace watch box',
+    hint: 'Aircraft currently transponding inside the airspace watch box',
     explain:
-      'A live ADS-B contact. The arrow points along its reported track and the dashed leader projects five minutes ahead — a heading, not a predicted flight path.',
+      'An aircraft broadcasting its position. The arrow points along its reported track and the dashed leader projects five minutes ahead — a heading, not a predicted flight path.',
     defaultOn: true,
   },
   {
@@ -254,7 +274,10 @@ export const SIGNAL_LAYER_IDS = DATA_LAYERS.filter((layer) => layer.groupKey ===
 const LAYER_PRIORITY: Partial<Record<DataLayerId, number>> = {
   itr_sites: 400,
   itr_warnings: 300,
+  itr_evacuations: 250,
   itr_aircraft: 200,
+  // Sits below the sites it is anchored to — it is a count *about* them.
+  itr_social: 150,
   itr_thermal: 0,
 }
 

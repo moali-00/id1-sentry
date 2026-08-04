@@ -2,11 +2,38 @@ import { cn } from '@/utils/cn'
 import { categoryColor } from '@/utils/constants'
 import type { CategoryKey } from '@/types/monitoring'
 
+/**
+ * Short codes for the platforms the feeds carry.
+ *
+ * The badge is a two-or-three character chip sitting beside the author's name;
+ * anything longer pushes the name out of the row. Unlisted platforms keep their
+ * first two letters rather than disappearing.
+ */
+const PLATFORM_CODE: Record<string, string> = {
+  'Twitter/X': 'X',
+  YouTube: 'YT',
+  Telegram: 'TG',
+  Instagram: 'IG',
+  Facebook: 'FB',
+  LinkedIn: 'IN',
+  TikTok: 'TT',
+  Snapchat: 'SC',
+  BoardReader: 'BR',
+  VK: 'VK',
+  'GOOGLE NEWS': 'NEWS',
+  'REDDIT SEARCH': 'RDT',
+}
+
 /** Source platform tag, e.g. `TG`, `X`, `VK`. */
 export function PlatformBadge({ platform }: { platform: string }) {
+  const code = PLATFORM_CODE[platform] ?? platform.slice(0, 2).toUpperCase()
+
   return (
-    <span className="rounded-[3px] bg-badge px-[5px] py-[2px] text-[8.5px] font-bold tracking-[0.03em] text-badge-fg">
-      {platform}
+    <span
+      title={platform}
+      className="flex-none rounded-[3px] bg-badge px-[5px] py-[2px] text-[8.5px] font-bold tracking-[0.03em] text-badge-fg"
+    >
+      {code}
     </span>
   )
 }

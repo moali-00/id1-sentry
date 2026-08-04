@@ -1,0 +1,312 @@
+{
+  "name": "social_posts_by_platform",
+  "captured_at": "2026-08-04T06:49:29.963552+00:00",
+  "period_of_interest": "2026-08-03..2026-08-08",
+  "aoi": "Abdul Kalam Island (ITR), 20.75804N 87.085533E",
+  "provider": "Social Links (osint.rest)",
+  "sealagom_tokens_spent": 0,
+  "feed": {
+    "source": "sociallinks",
+    "status": "degraded",
+    "detail": "7 of 27 calls failed: linkedin_phrase HTTP 503: {\"status\": \"error\", \"code\": 503, \"details\": {\"request_error\": \"The service is temporarily unavailable to process the request. We are sorry and we do our best to; linkedin_phrase HTTP 503: {\"status\": \"error\", \"code\": 503, \"details\": {\"request_error\": \"The service is temporarily unavailable to process the request. We are sorry and we do our best to; linkedin_phrase HTTP 503: {\"status\": \"error\", \"code\": 503, \"details\": {\"request_error\": \"The service is temporarily unavailable to process the request. We are sorry and we do our best to; linkedin_phrase HTTP 503: {\"status\": \"error\", \"code\": 503, \"details\": {\"request_error\": \"The service is temporarily unavailable to process the request. We are sorry and we do our best to",
+    "fetched_at": "2026-08-04T06:49:29.962469+00:00",
+    "latency_ms": 568000,
+    "meta": {
+      "calls_made": 27,
+      "calls_failed": 7,
+      "platforms": [
+        "Facebook",
+        "Instagram",
+        "LinkedIn",
+        "Telegram"
+      ],
+      "items_total": 1,
+      "items_aoi_relevant": 0,
+      "story_clusters": 0,
+      "billed_per_call": true
+    }
+  },
+  "summary": {
+    "calls_made": 27,
+    "calls_failed": 7,
+    "items_total": 1,
+    "items_aoi_relevant": 0,
+    "story_clusters": 0,
+    "by_platform": {
+      "Instagram": 1
+    },
+    "aoi_relevant_by_platform": {},
+    "named_systems": {},
+    "top_keywords": {},
+    "items_with_evacuation_language": 0,
+    "items_forward_looking": 0
+  },
+  "calls": [
+    {
+      "endpoint": "facebook_search",
+      "platform": "Facebook",
+      "facet": "phrase",
+      "query": "Abdul Kalam Island",
+      "status": "empty",
+      "exec_time": null,
+      "returned": 0
+    },
+    {
+      "endpoint": "facebook_search",
+      "platform": "Facebook",
+      "facet": "phrase",
+      "query": "Wheeler Island missile",
+      "status": "empty",
+      "exec_time": null,
+      "returned": 0
+    },
+    {
+      "endpoint": "facebook_search",
+      "platform": "Facebook",
+      "facet": "phrase",
+      "query": "Chandipur missile test",
+      "status": "empty",
+      "exec_time": null,
+      "returned": 0
+    },
+    {
+      "endpoint": "facebook_search",
+      "platform": "Facebook",
+      "facet": "phrase",
+      "query": "Balasore missile test",
+      "status": "empty",
+      "exec_time": null,
+      "returned": 0
+    },
+    {
+      "endpoint": "facebook_search",
+      "platform": "Facebook",
+      "facet": "phrase",
+      "query": "Integrated Test Range Odisha",
+      "status": "empty",
+      "exec_time": null,
+      "returned": 0
+    },
+    {
+      "endpoint": "facebook_search",
+      "platform": "Facebook",
+      "facet": "phrase",
+      "query": "DRDO missile test",
+      "status": "empty",
+      "exec_time": null,
+      "returned": 0
+    },
+    {
+      "endpoint": "facebook_search",
+      "platform": "Facebook",
+      "facet": "phrase",
+      "query": "Agni missile test",
+      "status": "empty",
+      "exec_time": null,
+      "returned": 0
+    },
+    {
+      "endpoint": "instagram_geo",
+      "platform": "Instagram",
+      "facet": "location",
+      "query": null,
+      "status": "empty",
+      "exec_time": 57.19987638294697,
+      "returned": 0
+    },
+    {
+      "endpoint": "instagram_stories_geo",
+      "platform": "Instagram",
+      "facet": "location",
+      "query": null,
+      "status": "ok",
+      "exec_time": 49.63285635411739,
+      "returned": 25
+    },
+    {
+      "endpoint": "instagram_tag",
+      "platform": "Instagram",
+      "facet": "hashtag",
+      "query": "drdo",
+      "status": "empty",
+      "exec_time": 45.422226173919626,
+      "returned": 0
+    },
+    {
+      "endpoint": "instagram_tag",
+      "platform": "Instagram",
+      "facet": "hashtag",
+      "query": "agni5",
+      "status": "empty",
+      "exec_time": 46.27378155698534,
+      "returned": 0
+    },
+    {
+      "endpoint": "instagram_tag",
+      "platform": "Instagram",
+      "facet": "hashtag",
+      "query": "missiletest",
+      "status": "empty",
+      "exec_time": 50.253059700015,
+      "returned": 0
+    },
+    {
+      "endpoint": "instagram_tag",
+      "platform": "Instagram",
+      "facet": "hashtag",
+      "query": "abdulkalamisland",
+      "status": "empty",
+      "exec_time": 48.34977586008608,
+      "returned": 0
+    },
+    {
+      "endpoint": "telegram_phrase",
+      "platform": "Telegram",
+      "facet": "phrase",
+      "query": "Abdul Kalam Island",
+      "status": "empty",
+      "exec_time": 4.119210749864578,
+      "returned": 0
+    },
+    {
+      "endpoint": "telegram_phrase",
+      "platform": "Telegram",
+      "facet": "phrase",
+      "query": "Wheeler Island missile",
+      "status": "empty",
+      "exec_time": 2.0697110570035875,
+      "returned": 0
+    },
+    {
+      "endpoint": "telegram_phrase",
+      "platform": "Telegram",
+      "facet": "phrase",
+      "query": "Chandipur missile test",
+      "status": "empty",
+      "exec_time": 2.9398930510506034,
+      "returned": 0
+    },
+    {
+      "endpoint": "telegram_phrase",
+      "platform": "Telegram",
+      "facet": "phrase",
+      "query": "Balasore missile test",
+      "status": "empty",
+      "exec_time": 2.5176377260359004,
+      "returned": 0
+    },
+    {
+      "endpoint": "telegram_phrase",
+      "platform": "Telegram",
+      "facet": "phrase",
+      "query": "Integrated Test Range Odisha",
+      "status": "empty",
+      "exec_time": 2.029941515997052,
+      "returned": 0
+    },
+    {
+      "endpoint": "telegram_phrase",
+      "platform": "Telegram",
+      "facet": "phrase",
+      "query": "DRDO missile test",
+      "status": "empty",
+      "exec_time": 2.1512025743722916,
+      "returned": 0
+    },
+    {
+      "endpoint": "telegram_phrase",
+      "platform": "Telegram",
+      "facet": "phrase",
+      "query": "Agni missile test",
+      "status": "empty",
+      "exec_time": 2.0792072389740497,
+      "returned": 0
+    },
+    {
+      "endpoint": "linkedin_phrase",
+      "platform": "LinkedIn",
+      "facet": "phrase",
+      "query": "Abdul Kalam Island",
+      "status": "error",
+      "detail": "HTTP 503: {\"status\": \"error\", \"code\": 503, \"details\": {\"request_error\": \"The service is temporarily unavailable to process the request. We are sorry and we do our best to"
+    },
+    {
+      "endpoint": "linkedin_phrase",
+      "platform": "LinkedIn",
+      "facet": "phrase",
+      "query": "Wheeler Island missile",
+      "status": "error",
+      "detail": "HTTP 503: {\"status\": \"error\", \"code\": 503, \"details\": {\"request_error\": \"The service is temporarily unavailable to process the request. We are sorry and we do our best to"
+    },
+    {
+      "endpoint": "linkedin_phrase",
+      "platform": "LinkedIn",
+      "facet": "phrase",
+      "query": "Chandipur missile test",
+      "status": "error",
+      "detail": "HTTP 503: {\"status\": \"error\", \"code\": 503, \"details\": {\"request_error\": \"The service is temporarily unavailable to process the request. We are sorry and we do our best to"
+    },
+    {
+      "endpoint": "linkedin_phrase",
+      "platform": "LinkedIn",
+      "facet": "phrase",
+      "query": "Balasore missile test",
+      "status": "error",
+      "detail": "HTTP 503: {\"status\": \"error\", \"code\": 503, \"details\": {\"request_error\": \"The service is temporarily unavailable to process the request. We are sorry and we do our best to"
+    },
+    {
+      "endpoint": "linkedin_phrase",
+      "platform": "LinkedIn",
+      "facet": "phrase",
+      "query": "Integrated Test Range Odisha",
+      "status": "error",
+      "detail": "HTTP 503: {\"status\": \"error\", \"code\": 503, \"details\": {\"request_error\": \"The service is temporarily unavailable to process the request. We are sorry and we do our best to"
+    },
+    {
+      "endpoint": "linkedin_phrase",
+      "platform": "LinkedIn",
+      "facet": "phrase",
+      "query": "DRDO missile test",
+      "status": "error",
+      "detail": "HTTP 503: {\"status\": \"error\", \"code\": 503, \"details\": {\"request_error\": \"The service is temporarily unavailable to process the request. We are sorry and we do our best to"
+    },
+    {
+      "endpoint": "linkedin_phrase",
+      "platform": "LinkedIn",
+      "facet": "phrase",
+      "query": "Agni missile test",
+      "status": "error",
+      "detail": "HTTP 503: {\"status\": \"error\", \"code\": 503, \"details\": {\"request_error\": \"The service is temporarily unavailable to process the request. We are sorry and we do our best to"
+    }
+  ],
+  "aoi_relevant_items": [],
+  "all_items": [
+    {
+      "platform": "Instagram",
+      "facet": "location",
+      "endpoint": "instagram_stories_geo",
+      "query": null,
+      "title": "",
+      "summary": "",
+      "url": null,
+      "id": null,
+      "published": null,
+      "author": {
+        "alias": "_____sagar___09",
+        "id": "10404840217",
+        "url": null,
+        "followers": null
+      },
+      "lang": null,
+      "engagement": {},
+      "hashtags": [],
+      "has_media": false,
+      "matched_keywords": [],
+      "aoi_relevant": false,
+      "evacuation_terms": [],
+      "forward_looking_terms": [],
+      "logistics_terms": [],
+      "matched_systems": []
+    }
+  ]
+}

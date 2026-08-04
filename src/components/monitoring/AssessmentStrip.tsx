@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { ArrowUpRight, Radar } from 'lucide-react'
+import { plainText } from '@/utils/format'
 import { levelColor } from '@/utils/levels'
 import { Panel } from '@/components/ui/Panel'
 import { useAppSelector } from '@/store/store'
@@ -70,7 +71,7 @@ export function AssessmentStrip() {
         />
 
         <span className="min-w-0 flex-1">
-          <span className="block truncate text-[11.5px] font-semibold text-fg">{assessment.narrative}</span>
+          <span className="block truncate text-[11.5px] font-semibold text-fg">{plainText(assessment.narrative)}</span>
           <span className="block truncate text-[10.5px] text-fg-subtle">
             {warnings.length} warnings · {thermal.length} thermal · {social.length} posts · {assessment.gaps.length}{' '}
             blind spots

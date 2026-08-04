@@ -1,0 +1,173 @@
+{
+  "name": "connector_context_3_8_aug",
+  "captured_at": "2026-08-03T16:06:00.202899+00:00",
+  "period": "2026-08-03..2026-08-08",
+  "aoi": "Abdul Kalam Island (ITR), 20.75804N 87.085533E",
+  "sealagom_tokens_spent": 0,
+  "data": {
+    "gdacs": {
+      "status": "ok",
+      "events_scanned": 236,
+      "radius_km": 300.0,
+      "events_within_radius": 0,
+      "events_overlapping_period": 0,
+      "events": [],
+      "note": "No disaster alert within 300.0 km of the range overlapping 2026-08-03..2026-08-08."
+    },
+    "evacuation_geocoding": {
+      "status": "ok",
+      "queried": 5,
+      "resolved": 4,
+      "within_50km_of_island": 1,
+      "places": [
+        {
+          "query": "Dhamra, Odisha",
+          "found": true,
+          "display_name": "Dhamra, Dhamara Marine, Bhadrak, Odisha, 756171, India",
+          "lat": 20.7955666,
+          "lon": 86.9010186,
+          "distance_to_island_km": 19.6,
+          "distance_to_chandipur_itr_km": 29.7
+        },
+        {
+          "query": "Bahabalpur, Odisha",
+          "found": true,
+          "display_name": "PHC, Bahabalpur, Basta, Baleshwar, Odisha, 756027, India",
+          "lat": 21.5206262,
+          "lon": 87.0955036,
+          "distance_to_island_km": 84.8,
+          "distance_to_chandipur_itr_km": 53.6
+        },
+        {
+          "query": "Chandipur, Odisha",
+          "found": true,
+          "display_name": "Chandipur, Baleshwar, Odisha, India",
+          "lat": 21.4338528,
+          "lon": 86.9745106,
+          "distance_to_island_km": 76.0,
+          "distance_to_chandipur_itr_km": 42.9,
+          "ambiguous_match": "resolved 43 km from the Chandipur ITR complex at 21.0483,86.9926 \u2014 this is a different settlement of the same name, not the range site"
+        },
+        {
+          "query": "Rasalpur, Balasore, Odisha",
+          "found": false
+        },
+        {
+          "query": "Balaramgadi, Odisha",
+          "found": true,
+          "display_name": "Balaramgadi Marine, Baleshwar, Odisha, 756025, India",
+          "lat": 21.4713323,
+          "lon": 87.0556185,
+          "distance_to_island_km": 79.4,
+          "distance_to_chandipur_itr_km": 47.5
+        }
+      ],
+      "note": "Coordinates for the settlements named in evacuation reporting, so the civil precursor can be checked against the declared danger areas rather than taken on the reporting's word."
+    },
+    "imagery_scenes": {
+      "status": "ok",
+      "collection": "sentinel-2-l2a",
+      "scenes": [
+        {
+          "id": "S2B_45QVC_20260801_0_L2A",
+          "datetime": "2026-08-01T04:53:05.238000Z",
+          "cloud_cover": 81.942683,
+          "platform": "sentinel-2b"
+        },
+        {
+          "id": "S2B_45QWC_20260801_0_L2A",
+          "datetime": "2026-08-01T04:53:02.110000Z",
+          "cloud_cover": 57.704014,
+          "platform": "sentinel-2b"
+        },
+        {
+          "id": "S2B_45QVD_20260801_0_L2A",
+          "datetime": "2026-08-01T04:52:50.706000Z",
+          "cloud_cover": 80.944109,
+          "platform": "sentinel-2b"
+        },
+        {
+          "id": "S2B_45QWD_20260801_0_L2A",
+          "datetime": "2026-08-01T04:52:47.447000Z",
+          "cloud_cover": 64.82358,
+          "platform": "sentinel-2b"
+        },
+        {
+          "id": "S2A_45QVC_20260729_0_L2A",
+          "datetime": "2026-07-29T04:53:22.805000Z",
+          "cloud_cover": 86.497509,
+          "platform": "sentinel-2a"
+        },
+        {
+          "id": "S2A_45QWC_20260729_0_L2A",
+          "datetime": "2026-07-29T04:53:19.676000Z",
+          "cloud_cover": 99.593472,
+          "platform": "sentinel-2a"
+        },
+        {
+          "id": "S2A_45QVD_20260729_0_L2A",
+          "datetime": "2026-07-29T04:53:08.280000Z",
+          "cloud_cover": 68.026203,
+          "platform": "sentinel-2a"
+        },
+        {
+          "id": "S2A_45QWD_20260729_0_L2A",
+          "datetime": "2026-07-29T04:53:05.016000Z",
+          "cloud_cover": 93.184566,
+          "platform": "sentinel-2a"
+        },
+        {
+          "id": "S2C_45QVC_20260727_0_L2A",
+          "datetime": "2026-07-27T04:53:06.537000Z",
+          "cloud_cover": 99.772555,
+          "platform": "sentinel-2c"
+        },
+        {
+          "id": "S2C_45QWC_20260727_0_L2A",
+          "datetime": "2026-07-27T04:53:03.405000Z",
+          "cloud_cover": 100,
+          "platform": "sentinel-2c"
+        },
+        {
+          "id": "S2C_45QVD_20260727_0_L2A",
+          "datetime": "2026-07-27T04:52:52.012000Z",
+          "cloud_cover": 99.540639,
+          "platform": "sentinel-2c"
+        },
+        {
+          "id": "S2C_45QWD_20260727_0_L2A",
+          "datetime": "2026-07-27T04:52:48.739000Z",
+          "cloud_cover": 100,
+          "platform": "sentinel-2c"
+        },
+        {
+          "id": "S2B_45QVC_20260722_0_L2A",
+          "datetime": "2026-07-22T04:53:05.434000Z",
+          "cloud_cover": 99.999994,
+          "platform": "sentinel-2b"
+        },
+        {
+          "id": "S2B_45QWC_20260722_0_L2A",
+          "datetime": "2026-07-22T04:53:02.307000Z",
+          "cloud_cover": 100,
+          "platform": "sentinel-2b"
+        },
+        {
+          "id": "S2B_45QVD_20260722_0_L2A",
+          "datetime": "2026-07-22T04:52:50.899000Z",
+          "cloud_cover": 99.999952,
+          "platform": "sentinel-2b"
+        },
+        {
+          "id": "S2B_45QWD_20260722_0_L2A",
+          "datetime": "2026-07-22T04:52:47.640000Z",
+          "cloud_cover": 100,
+          "platform": "sentinel-2b"
+        }
+      ],
+      "scene_count": 16,
+      "search_window": "2026-07-20..2026-08-08",
+      "note": "Free scene discovery over the pads, found without spending a Sentinel Hub credit. Extended 14 days before 2026-08-03 because most of the target period is still in the future and no scene can exist for a date that has not happened."
+    }
+  }
+}

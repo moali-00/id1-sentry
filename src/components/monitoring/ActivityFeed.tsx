@@ -12,7 +12,6 @@ import {
   hoverCluster,
   selectClusters,
   selectCluster,
-  selectError,
   selectFeed,
   selectHoveredClusterId,
   selectRails,
@@ -51,7 +50,6 @@ export function ActivityFeed() {
   const clusters = useAppSelector(selectClusters)
   const watches = useAppSelector(selectWatches)
   const status = useAppSelector(selectStatus)
-  const error = useAppSelector(selectError)
   const hoveredClusterId = useAppSelector(selectHoveredClusterId)
   const selectedClusterId = useAppSelector(selectSelectedClusterId)
   const isOpen = useAppSelector(selectRails).activity
@@ -79,9 +77,9 @@ export function ActivityFeed() {
   // move differs for each, so say which one it is rather than one generic line.
   const empty =
     status === 'error'
-      ? { title: 'No source connected', hint: error ?? 'The monitoring API could not be reached.', icon: PlugZap }
+      ? { title: 'No source connected', hint: 'Nothing is reporting on this target right now.', icon: PlugZap }
       : status === 'loading'
-        ? { title: 'Loading activity…', hint: 'Fetching the current snapshot from the API.', icon: Loader2 }
+        ? { title: 'Loading activity…', hint: 'Collecting the latest reporting.', icon: Loader2 }
         : WATCHES_ENABLED && watches.length === 0
           ? {
               title: 'No watches yet',
@@ -139,8 +137,14 @@ export function ActivityFeed() {
               active={hoveredClusterId === item.clusterId || selectedClusterId === item.clusterId}
               onHoverChange={(hovered) => dispatch(hoverCluster(hovered ? item.clusterId : null))}
               onSelect={() => {
-                const cluster = clusters.find((candidate) => candidate.id === item.clusterId)
                 dispatch(selectCluster(item.clusterId))
+                // A social row carries its own position; a watch row has to be
+                // resolved through its cluster.
+                if (item.focus) {
+                  flyTo(item.focus.lat, item.focus.lng)
+                  return
+                }
+                const cluster = clusters.find((candidate) => candidate.id === item.clusterId)
                 if (!cluster) return
                 flyTo(cluster.lat, cluster.lng)
                 void navigate(`/watch/${cluster.watchId}`)
