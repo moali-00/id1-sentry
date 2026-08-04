@@ -26,7 +26,7 @@ const trimTrailingSlash = (value: string): string => value.replace(/\/+$/, '')
 
 export const env = {
   /** Product name shown in the status pill. */
-  title: read(import.meta.env.VITE_SENTRY_DASHBOARD_TITLE, 'Open Monitoring'),
+  title: read(import.meta.env.VITE_SENTRY_DASHBOARD_TITLE, 'SENTRY'),
   /** Basemap tile templates, per theme. */
   tileUrls: {
     light: read(import.meta.env.VITE_MAP_TILE_URL_LIGHT, TILE_URLS.light),
