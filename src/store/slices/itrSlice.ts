@@ -31,15 +31,18 @@ import {
   imageryAreas,
   sitePoints,
   socialFeedItems,
+  socialClusters,
+  socialImageGallery,
   socialImageIndex,
+  socialPostDetails,
   socialPostFeedItems,
-  socialPostPoints,
+  socialPostsBySite,
   socialSites,
   thermalPoints,
   warningAreas,
   warningPoints,
 } from '@/utils/sentiryAdapters'
-import type { FeedItem, MapArea, MapLine, MapPoint } from '@/types/monitoring'
+import type { Cluster, FeedItem, MapArea, MapLine, MapPoint, Post } from '@/types/monitoring'
 import type {
   Aircraft,
   AoiResponse,
@@ -333,15 +336,51 @@ export const selectAllSources = createSelector([selectSources, selectSocialPosts
 
 /** Every ITR feature that plots as a point, across all its layers. */
 export const selectItrPoints = createSelector(
-  [selectAoi, selectWarnings, selectThermal, selectAircraft, selectEvacuationPlaces, selectSocialPosts],
-  (aoi, warnings, thermal, aircraft, places, posts): MapPoint[] => [
+  [selectAoi, selectWarnings, selectThermal, selectAircraft, selectEvacuationPlaces],
+  (aoi, warnings, thermal, aircraft, places): MapPoint[] => [
     ...(aoi ? sitePoints(aoi) : []),
     ...warningPoints(warnings),
     ...evacuationPoints(places),
-    ...(aoi && posts ? socialPostPoints(posts.aoi_relevant_items, socialSites(aoi)) : []),
     ...thermalPoints(thermal),
     ...aircraftPoints(aircraft),
   ],
+)
+
+/**
+ * The two named sites, resolved from the AOI. Memoised so the id-keyed lookups
+ * below stay referentially stable across renders.
+ */
+const selectSocialSites = createSelector([selectAoi], (aoi) => (aoi ? socialSites(aoi) : []))
+
+/**
+ * Reporting volume as numbered map clusters — one per named site.
+ *
+ * The same marker the dashboard uses for watch clusters, drawn dashed because
+ * the position comes from the place name in the text rather than from the post.
+ */
+export const selectSocialClusters = createSelector([selectSocialPosts, selectSocialSites], (posts, sites): Cluster[] =>
+  posts ? socialClusters(posts.aoi_relevant_items, sites) : [],
+)
+
+/** The posts behind each cluster, in the shape the detail panel renders. */
+export const selectSocialSiteDetails = createSelector(
+  [selectSocialPosts, selectSocialImages, selectSocialSites],
+  (posts, images, sites) => {
+    if (!posts) return new Map<string, { name: string; lat: number; lng: number; posts: Post[] }>()
+
+    const gallery = socialImageGallery(images)
+    const grouped = socialPostsBySite(posts.aoi_relevant_items, sites)
+
+    return new Map(
+      sites.flatMap((site) => {
+        const bucket = grouped.get(site.id)
+        if (!bucket || bucket.length === 0) return []
+        return [
+          [site.id, { name: site.name, lat: site.lat, lng: site.lng, posts: socialPostDetails(bucket, gallery) }],
+        ] as const
+      }),
+    )
+  },
 )
 
 /** Every ITR feature that plots as an area — AOI boxes, danger areas, footprints. */

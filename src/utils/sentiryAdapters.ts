@@ -1,6 +1,6 @@
 import { relativeTime, truncate } from '@/utils/format'
 import { destinationPoint, greatCircle } from '@/utils/geodesy'
-import type { CategoryKey, FeedItem, MapArea, MapLine, MapPoint } from '@/types/monitoring'
+import type { CategoryKey, Cluster, FeedItem, MapArea, MapLine, MapPoint, Post } from '@/types/monitoring'
 import type {
   Aircraft,
   AoiBoxKey,
@@ -488,15 +488,7 @@ export function socialPostFeedItems(
   now: number = Date.now(),
 ): FeedItem[] {
   return posts.map((post, index) => {
-    const category: CategoryKey =
-      post.evacuation_terms.length > 0
-        ? 'unrest'
-        : post.matched_systems.length > 0
-          ? 'conflict'
-          : post.forward_looking_terms.length > 0
-            ? 'military'
-            : 'political'
-
+    const category = postCategory(post)
     const site = siteFor(post, sites)
     const published = unixSeconds(post.published) ?? Math.floor(now / 1000)
 
@@ -520,36 +512,117 @@ export function socialPostFeedItems(
   })
 }
 
-/**
- * One marker per site, sized by how much reporting names it.
- *
- * Drawn as a count rather than as 183 overlapping pins: the position is the
- * site's, not each post's, so a scatter would imply a precision the data does
- * not have.
- */
-export function socialPostPoints(posts: SocialPost[], sites: SocialSite[]): MapPoint[] {
-  const tally = new Map<string, number>()
+/** Which category a post belongs to, by how it was matched. */
+function postCategory(post: SocialPost): CategoryKey {
+  if (post.evacuation_terms.length > 0) return 'unrest'
+  if (post.matched_systems.length > 0) return 'conflict'
+  if (post.forward_looking_terms.length > 0) return 'military'
+  return 'political'
+}
+
+/** Every post that named a given site, newest first. */
+export function socialPostsBySite(posts: SocialPost[], sites: SocialSite[]): Map<string, SocialPost[]> {
+  const grouped = new Map<string, SocialPost[]>()
+
   for (const post of posts) {
     const site = siteFor(post, sites)
-    if (site) tally.set(site.id, (tally.get(site.id) ?? 0) + 1)
+    if (!site) continue
+    const bucket = grouped.get(site.id)
+    if (bucket) bucket.push(post)
+    else grouped.set(site.id, [post])
   }
 
+  for (const bucket of grouped.values()) {
+    bucket.sort((a, b) => (unixSeconds(b.published) ?? 0) - (unixSeconds(a.published) ?? 0))
+  }
+
+  return grouped
+}
+
+/** Smallest and largest a reporting cluster is allowed to draw, in px. */
+const CLUSTER_MIN_SIZE = 34
+const CLUSTER_MAX_SIZE = 66
+
+/**
+ * One cluster per site, counting the reporting that names it.
+ *
+ * The same numbered circle the dashboard already uses for watch clusters, for
+ * the same reason: a count at a place reads instantly, and 183 individual pins
+ * at two coordinates would not.
+ *
+ * Always `inferred`, which draws the circle dashed. That is not decoration —
+ * the position is the site's, taken from the place name in the text. No post
+ * here carried a location of its own, and a solid marker would claim otherwise.
+ */
+export function socialClusters(posts: SocialPost[], sites: SocialSite[]): Cluster[] {
+  const grouped = socialPostsBySite(posts, sites)
+  const largest = Math.max(1, ...[...grouped.values()].map((bucket) => bucket.length))
+
   return sites.flatMap((site) => {
-    const count = tally.get(site.id) ?? 0
-    if (count === 0) return []
+    const bucket = grouped.get(site.id)
+    if (!bucket || bucket.length === 0) return []
+
+    // The category the reporting mostly falls into — the circle can only be one
+    // colour, and the detail panel breaks the rest down.
+    const tally = new Map<CategoryKey, number>()
+    for (const post of bucket) {
+      const category = postCategory(post)
+      tally.set(category, (tally.get(category) ?? 0) + 1)
+    }
+    const dominant = [...tally.entries()].sort((a, b) => b[1] - a[1])[0]?.[0] ?? 'political'
+
+    // Area, not radius, tracks the count — a circle twice as wide reads as four
+    // times as much, which would overstate the smaller site.
+    const share = Math.sqrt(bucket.length / largest)
 
     return [
       {
-        id: `social-site-${site.id}`,
-        layerId: 'itr_social' as const,
+        id: `social-${site.id}`,
+        watchId: site.id,
+        category: dominant,
+        count: bucket.length,
         lat: site.lat,
         lng: site.lng,
-        label: `${count} posts naming ${site.name}`,
-        detail: 'Attributed by the place named in the text, not by a location on the post.',
-        severity: count >= 100 ? 5 : count >= 40 ? 4 : 3,
+        size: Math.round(CLUSTER_MIN_SIZE + (CLUSTER_MAX_SIZE - CLUSTER_MIN_SIZE) * share),
+        inferred: true,
       },
     ]
   })
+}
+
+/**
+ * Posts in the shape the topic-detail panel already renders.
+ *
+ * The same `PostCard` the dashboard has always used — text, imagery, and a link
+ * to the original. Every image the post carried is passed through rather than
+ * just the one the feed row previews, since this is where someone has stopped
+ * to actually read it.
+ */
+export function socialPostDetails(
+  posts: SocialPost[],
+  images: Map<string, string[]>,
+  now: number = Date.now(),
+): Post[] {
+  return posts.map((post) => ({
+    platform: post.platform,
+    handle: post.author?.alias ? `@${post.author.alias}` : post.query,
+    author: post.author?.alias ?? undefined,
+    time: relativeTime(unixSeconds(post.published) ?? Math.floor(now / 1000), now),
+    // `summary` repeats the title on most posts; only add it when it says more.
+    text: post.summary && post.summary.trim() !== post.title.trim() ? `${post.title}\n\n${post.summary}` : post.title,
+    images: images.get(post.url),
+    url: post.url,
+  }))
+}
+
+/** Every recovered picture for a post, not just the first. */
+export function socialImageGallery(images: SocialImagePost[]): Map<string, string[]> {
+  const index = new Map<string, string[]>()
+  for (const entry of images) {
+    const urls = [...entry.image_urls, ...entry.video_urls]
+    if (urls.length > 0) index.set(entry.post_url, urls)
+  }
+  return index
 }
 
 /** Scene footprints, dashed because a footprint is coverage, not an object. */

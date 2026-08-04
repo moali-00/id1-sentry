@@ -138,10 +138,12 @@ export function ActivityFeed() {
               onHoverChange={(hovered) => dispatch(hoverCluster(hovered ? item.clusterId : null))}
               onSelect={() => {
                 dispatch(selectCluster(item.clusterId))
-                // A social row carries its own position; a watch row has to be
-                // resolved through its cluster.
+                // A social row carries its own position and opens the site's
+                // posts; a watch row has to be resolved through its cluster.
                 if (item.focus) {
                   flyTo(item.focus.lat, item.focus.lng)
+                  const siteId = item.clusterId.replace('itr-social-', '')
+                  if (siteId !== item.clusterId) void navigate(`/site/${siteId}`)
                   return
                 }
                 const cluster = clusters.find((candidate) => candidate.id === item.clusterId)

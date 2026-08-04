@@ -1,6 +1,7 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom'
 import MainLayout from '@/layouts/main_layout'
 import { RouteError } from '@/pages/route_error'
+import SiteDetailPage from '@/pages/site_detail'
 import TargetDetailPage from '@/pages/target_detail'
 import WatchDetailPage from '@/pages/watch_detail'
 
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
     errorElement: <RouteError />,
     children: [
       { path: 'target', element: <TargetDetailPage /> },
+      { path: 'site/:siteId', element: <SiteDetailPage /> },
       { path: 'watch/:watchId', element: <WatchDetailPage /> },
       { path: '*', element: <Navigate to="/" replace /> },
     ],

@@ -1,4 +1,4 @@
-import { useCallback } from 'react'
+import { useCallback, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useMapController } from '@/components/monitoring/MapContext'
 import { useClusterMarkers } from '@/hooks/useClusterMarkers'
@@ -9,7 +9,7 @@ import { useLineLayer } from '@/hooks/useLineLayer'
 import { useItrData } from '@/hooks/useItrData'
 import { usePointLayer } from '@/hooks/usePointLayer'
 import { useSignalPoints } from '@/hooks/useSignalPoints'
-import { selectItrAreas, selectItrLines, selectItrPoints } from '@/store/slices/itrSlice'
+import { selectItrAreas, selectItrLines, selectItrPoints, selectSocialClusters } from '@/store/slices/itrSlice'
 import type { Cluster } from '@/types/monitoring'
 import { useAppDispatch, useAppSelector } from '@/store/store'
 import {
@@ -54,6 +54,7 @@ export function MapCanvas() {
   const itrPoints = useAppSelector(selectItrPoints)
   const itrAreas = useAppSelector(selectItrAreas)
   const itrLines = useAppSelector(selectItrLines)
+  const socialClusters = useAppSelector(selectSocialClusters)
 
   useSignalPoints()
   useItrData()
@@ -79,6 +80,23 @@ export function MapCanvas() {
     [dispatch, navigate],
   )
 
+  // Reporting clusters open the site's posts rather than a watch. They are a
+  // second `useClusterMarkers` call rather than a flag on `Cluster`: the two
+  // sets have different lifetimes and different destinations, and sharing one
+  // reconciler would mean discriminating on the id inside the click handler.
+  const socialEnabled = useMemo(
+    () => Object.fromEntries(socialClusters.map((cluster) => [cluster.watchId, layerEnabled.itr_social])),
+    [socialClusters, layerEnabled.itr_social],
+  )
+
+  const handleSocialSelect = useCallback(
+    (cluster: Cluster) => {
+      dispatch(selectCluster(cluster.id))
+      void navigate(`/site/${cluster.watchId}`)
+    },
+    [dispatch, navigate],
+  )
+
   useClusterMarkers({
     map,
     clusters,
@@ -88,6 +106,17 @@ export function MapCanvas() {
     isLight,
     onHover: handleHover,
     onSelect: handleSelect,
+  })
+
+  useClusterMarkers({
+    map,
+    clusters: socialClusters,
+    enabled: socialEnabled,
+    hoveredClusterId,
+    selectedClusterId,
+    isLight,
+    onHover: handleHover,
+    onSelect: handleSocialSelect,
   })
 
   usePointLayer(map, points)
