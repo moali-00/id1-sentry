@@ -539,16 +539,24 @@ export function socialPostsBySite(posts: SocialPost[], sites: SocialSite[]): Map
   return grouped
 }
 
-/** Smallest and largest a reporting cluster is allowed to draw, in px. */
-const CLUSTER_MIN_SIZE = 34
-const CLUSTER_MAX_SIZE = 66
+/**
+ * Smallest and largest a reporting cluster is allowed to draw, in px.
+ *
+ * Deliberately small. The two sites are ~32 km apart, so at any zoom that shows
+ * both, big circles overlap each other *and* bury the sites, warnings and
+ * evacuation markers they sit on top of. This is a count attached to a place,
+ * not a feature in its own right, so it draws as a badge.
+ */
+const CLUSTER_MIN_SIZE = 22
+const CLUSTER_MAX_SIZE = 30
 
 /**
  * One cluster per site, counting the reporting that names it.
  *
  * The same numbered circle the dashboard already uses for watch clusters, for
  * the same reason: a count at a place reads instantly, and 183 individual pins
- * at two coordinates would not.
+ * at two coordinates would not. Drawn small and offset from the site marker by
+ * the caller, because it describes a point that is already on the map.
  *
  * Always `inferred`, which draws the circle dashed. That is not decoration —
  * the position is the site's, taken from the place name in the text. No post

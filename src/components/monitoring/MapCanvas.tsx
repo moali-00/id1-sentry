@@ -2,6 +2,7 @@ import { useCallback, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useMapController } from '@/components/monitoring/MapContext'
 import { useClusterMarkers } from '@/hooks/useClusterMarkers'
+import { createReportingIcon } from '@/utils/markerIcon'
 import { useDayNightLayer } from '@/hooks/useDayNightLayer'
 import { useGraticuleLayer } from '@/hooks/useGraticuleLayer'
 import { useAreaLayer } from '@/hooks/useAreaLayer'
@@ -117,6 +118,10 @@ export function MapCanvas() {
     isLight,
     onHover: handleHover,
     onSelect: handleSocialSelect,
+    icon: createReportingIcon,
+    // Under the sites, warnings and evacuation markers it annotates. Point
+    // layers sit between -500 and -100, so this clears all of them.
+    zIndexOffset: -600,
   })
 
   usePointLayer(map, points)

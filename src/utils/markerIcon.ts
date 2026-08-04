@@ -142,3 +142,51 @@ export function createPointIcon(point: MapPoint, { active, scale = 1 }: { active
     iconAnchor: [size / 2, size / 2],
   })
 }
+
+/** Height of a reporting pill, in px. Width follows the digit count. */
+const REPORTING_HEIGHT = 18
+
+/**
+ * The count of posts naming a site.
+ *
+ * Deliberately not a `createClusterIcon` circle. Every other marker near the
+ * island is a circle or a dashed box in a warm hue, and a yellow ring of posts
+ * beside a yellow maritime warning was unreadable — same shape, same colour,
+ * overlapping. So this is the one **solid pill** on the map, in a hue used
+ * nowhere else, offset up and to the right of the site it belongs to.
+ *
+ * It takes the layer's colour rather than the threat category's on purpose: the
+ * count is not itself a threat, it is how much is being said about a place.
+ */
+export function createReportingIcon(cluster: Cluster, { active }: { active: boolean }): DivIcon {
+  const color = layerColor('itr_social')
+  const label = String(cluster.count)
+  const width = REPORTING_HEIGHT + 5 * label.length
+
+  const style = [
+    `width:${width}px`,
+    `height:${REPORTING_HEIGHT}px`,
+    `border-radius:${REPORTING_HEIGHT / 2}px`,
+    'box-sizing:border-box',
+    'display:grid',
+    'place-items:center',
+    'font-weight:700',
+    'font-size:10.5px',
+    'letter-spacing:.02em',
+    'color:#fff',
+    `background:${color}`,
+    // A hairline in the page's own ring colour keeps the pill legible on both
+    // the pale and the satellite basemaps without a second hue.
+    'border:1.5px solid var(--c-ring)',
+    active ? `box-shadow:0 0 0 2px var(--c-ring),0 0 0 4px ${color}` : `box-shadow:0 1px 3px rgba(0,0,0,.35)`,
+  ].join(';')
+
+  return L.divIcon({
+    className: '',
+    html: `<div style="${style}">${label}</div>`,
+    iconSize: [width, REPORTING_HEIGHT],
+    // The anchor sits below-left of the pill, so the pill draws up and to the
+    // right of the site marker instead of on top of it.
+    iconAnchor: [-8, REPORTING_HEIGHT + 8],
+  })
+}

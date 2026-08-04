@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react'
-import L, { type Map as LeafletMap, type Marker } from 'leaflet'
+import L, { type DivIcon, type Map as LeafletMap, type Marker } from 'leaflet'
 import { createClusterIcon } from '@/utils/markerIcon'
 import type { Cluster } from '@/types/monitoring'
 
@@ -13,6 +13,17 @@ interface ClusterMarkerOptions {
   isLight: boolean
   onHover: (clusterId: string | null) => void
   onSelect: (cluster: Cluster) => void
+  /**
+   * Build the marker icon. Defaults to the standard cluster circle; the
+   * reporting counts pass their own so they cannot be mistaken for one.
+   */
+  icon?: (cluster: Cluster, options: { active: boolean; isLight: boolean }) => DivIcon
+  /**
+   * Leaflet stacking order. Markers default to 0, which puts them above the
+   * point layers (those sit below 0 by design), so a set of clusters that is
+   * *context* for the points has to opt into sitting underneath them.
+   */
+  zIndexOffset?: number
 }
 
 /**
@@ -32,6 +43,8 @@ export function useClusterMarkers({
   isLight,
   onHover,
   onSelect,
+  icon = createClusterIcon,
+  zIndexOffset = 0,
 }: ClusterMarkerOptions): void {
   const markersRef = useRef(new Map<string, Marker>())
 
@@ -58,15 +71,16 @@ export function useClusterMarkers({
       if (markers.has(cluster.id)) continue
 
       const marker = L.marker([cluster.lat, cluster.lng], {
-        icon: createClusterIcon(cluster, { active: false, isLight }),
+        icon: icon(cluster, { active: false, isLight }),
         riseOnHover: true,
+        zIndexOffset,
       })
       marker.on('mouseover', () => handlersRef.current.onHover(cluster.id))
       marker.on('mouseout', () => handlersRef.current.onHover(null))
       marker.on('click', () => handlersRef.current.onSelect(cluster))
       markers.set(cluster.id, marker)
     }
-  }, [map, clusters, isLight])
+  }, [map, clusters, isLight, icon, zIndexOffset])
 
   // Drop every marker when the map itself is replaced, so a StrictMode remount
   // does not leave orphans bound to a destroyed instance.
@@ -99,7 +113,7 @@ export function useClusterMarkers({
       if (!marker) continue
 
       const active = cluster.id === hoveredClusterId || cluster.id === selectedClusterId
-      marker.setIcon(createClusterIcon(cluster, { active, isLight }))
+      marker.setIcon(icon(cluster, { active, isLight }))
     }
-  }, [clusters, hoveredClusterId, selectedClusterId, isLight])
+  }, [clusters, hoveredClusterId, selectedClusterId, isLight, icon])
 }

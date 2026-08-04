@@ -191,11 +191,16 @@ export const DATA_LAYERS: DataLayer[] = [
     id: 'itr_social',
     label: 'Reporting volume',
     groupKey: 'itr_feeds',
-    color: '#38bdf8',
-    hint: 'How much open reporting names each of the two sites',
+    // Magenta, used by no other layer or threat category. The count used to
+    // take the dominant category's colour, which came out amber — the same
+    // yellow as a maritime warning, in the same shape, on top of it.
+    color: '#e879f9',
+    hint: 'How much open reporting names each site — off by default',
     explain:
-      'How many posts name this site, placed at the site rather than at the poster. Posts carry no location of their own, so this counts what is being talked about, not where anyone was — and a post that names only a missile is not counted here at all.',
-    defaultOn: true,
+      'How many posts name this site, placed at the site rather than at the poster. Click it to read them. Posts carry no location of their own, so this counts what is being talked about, not where anyone was — and a post that names only a missile is not counted here at all.',
+    // Off by default. It is commentary rather than observation, and it sits on
+    // top of the sites, warnings and evacuation markers that are the subject.
+    defaultOn: false,
   },
   {
     id: 'itr_thermal',
