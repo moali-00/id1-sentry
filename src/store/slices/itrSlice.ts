@@ -264,8 +264,7 @@ export const selectItrAreas = createSelector(
     ...warningAreas(warnings),
     ...imageryAreas(imagery),
     ...dangerAreaAreas(danger ? [...danger.active, ...danger.upcoming] : ([] as DangerArea[])),
-    // Corridors are drawn from the launch site, so they need the AOI centre.
-    ...(aoi ? corridorAreas(warnings, aoi.target.centre) : []),
+    ...corridorAreas(warnings),
   ],
 )
 

@@ -169,6 +169,8 @@ export interface MaritimeWarning {
   named_systems?: MissileRef[]
   /** Set when a named system's range contradicts the declared geometry. */
   name_geometry_mismatch?: boolean
+  /** Pre-formatted relative timing, e.g. `window opens in 2.6d`. */
+  timing?: string
 }
 
 export interface MaritimeWarningsResponse {

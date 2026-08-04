@@ -1,5 +1,5 @@
 import { relativeTime, truncate } from '@/utils/format'
-import { corridorWedge, destinationPoint, greatCircle } from '@/utils/geodesy'
+import { destinationPoint, greatCircle } from '@/utils/geodesy'
 import type { CategoryKey, FeedItem, MapArea, MapLine, MapPoint } from '@/types/monitoring'
 import type {
   Aircraft,
@@ -174,43 +174,52 @@ export function dangerAreaAreas(areas: DangerArea[]): MapArea[] {
 }
 
 /**
- * Launch corridors — the wedge each warning's geometry describes.
+ * Launch corridors — the danger area each warning actually declared.
  *
- * This is the most direct answer to "where is this aimed": the warning already
- * carries a bearing, an angular span and near/far distances, so the shape is
- * the authority's own declaration rather than anything inferred here.
+ * Drawn from the warning's own `positions`, which are the coordinates the
+ * authority published. An earlier version synthesised a wedge from
+ * `{bearing_deg, bearing_span_deg, near_km, far_km}` instead, and that was
+ * badly wrong: when a declared polygon *wraps around* the launch site, the
+ * angular spread measured from that origin comes out near 240°, and sweeping a
+ * sector across it painted a fan over India, Sri Lanka, Myanmar and Indonesia.
+ * The real area is a narrow ocean corridor. Warning 819/26 is the case in
+ * point — six vertices running 3,800 km south into the Indian Ocean and back.
  *
- * Drawn from the launch site, since that is the vertex the corridor is measured
- * from.
+ * The corridor figures are still used, but only as *description*: bearing and
+ * range in the tooltip, and the range class that narrows the candidate systems.
+ *
+ * A handful of warnings publish one or two points rather than an area. Those
+ * cannot be a polygon, so they are left to the centroid marker instead of being
+ * inflated into a shape the authority never declared.
  */
-export function corridorAreas(warnings: MaritimeWarning[], origin: { lat: number; lon: number }): MapArea[] {
+export function corridorAreas(warnings: MaritimeWarning[]): MapArea[] {
   return warnings.flatMap((warning) => {
-    const corridor = warning.corridor
-    if (!corridor) return []
+    const positions = warning.positions ?? []
+    if (positions.length < 3) return []
 
+    const corridor = warning.corridor
     const systems = warning.likely_systems
+
     const detail = [
-      `bearing ${Math.round(corridor.bearing_deg)}° ±${Math.round(corridor.bearing_span_deg / 2)}°`,
-      `${Math.round(corridor.near_km)}–${Math.round(corridor.far_km)} km`,
+      corridor ? `bearing ${Math.round(corridor.bearing_deg)}° · ${Math.round(corridor.far_km)} km reach` : null,
       systems ? `${systems.label} (${systems.confidence})` : null,
+      warning.timing,
     ]
       .filter(Boolean)
       .join(' · ')
+
+    // Confidence in the range class, not in the geometry — the polygon is
+    // exactly what was published, so the shape itself is not in doubt.
+    const emphasis = systems?.confidence === 'high' ? 1 : systems?.confidence === 'medium' ? 0.75 : 0.5
 
     return [
       {
         id: `corridor-${warning.message_id}`,
         layerId: 'itr_corridors' as const,
-        ring: corridorWedge(
-          origin.lat,
-          origin.lon,
-          corridor.bearing_deg,
-          corridor.bearing_span_deg,
-          corridor.near_km,
-          corridor.far_km,
-        ),
-        label: `${warning.number} corridor`,
+        ring: positions.map((position) => [position.lat, position.lon] as [number, number]),
+        label: `${warning.number} declared danger area`,
         detail,
+        emphasis,
       },
     ]
   })
