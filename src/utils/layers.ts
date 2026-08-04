@@ -142,9 +142,19 @@ export const DATA_LAYERS: DataLayer[] = [
     label: 'Launch corridors',
     groupKey: 'itr_feeds',
     color: '#f43f5e',
-    hint: 'Where each declared trial is aimed — a wedge on the warning’s own bearing and range',
+    hint: 'Declared danger areas for launch trials — the signal, separated from routine range activity',
     explain:
-      'The wedge a warning’s own geometry describes, drawn from the launch site. A narrow arc is a real bearing; a wide one covers more map while revealing far less, and is drawn faint and dashed to say so.',
+      'A danger area India declared for an experimental flight trial — the coordinates published in the warning itself, not an inferred shape. These are the launch indicators; routine firing exercises are on their own layer.',
+    defaultOn: true,
+  },
+  {
+    id: 'itr_routine',
+    label: 'Routine exercises',
+    groupKey: 'itr_feeds',
+    color: '#94a3b8',
+    hint: 'Firing exercises and navigation hazards — standing range activity, not launch trials',
+    explain:
+      'A gunnery, air-defence or navigation warning. These are in force for weeks at a time and would be here whether or not a test were coming, so they are drawn back as background rather than as signal.',
     defaultOn: true,
   },
   {
@@ -172,10 +182,12 @@ export const DATA_LAYERS: DataLayer[] = [
     label: 'Thermal detections',
     groupKey: 'itr_feeds',
     color: '#fb7185',
-    hint: 'FIRMS VIIRS/MODIS hotspots, sized by fire radiative power',
+    hint: 'FIRMS hotspots — off by default; almost all are agricultural burning',
     explain:
-      'A satellite heat detection, sized by fire radiative power. Most are agricultural burning; only one inside the pad box would indicate a launch.',
-    defaultOn: true,
+      'A satellite heat detection, sized by fire radiative power. Off by default: all 28 in this capture are over the Bangladesh and Myanmar coast, hundreds of kilometres from the pad, and the thermal indicator scores 0.05 as a result. Switch it on when a detection inside the pad box would matter — that one would be significant.',
+    // The densest layer and the least significant. Leaving it on packed 28
+    // overlapping dots over the delta and buried the signal underneath.
+    defaultOn: false,
   },
   {
     id: 'itr_aircraft',
@@ -230,6 +242,23 @@ export const layersInGroup = (groupKey: LayerGroupKey): DataLayer[] =>
 export const SIGNAL_LAYER_IDS = DATA_LAYERS.filter((layer) => layer.groupKey === 'signals').map(
   (layer) => layer.id,
 ) as SignalLayerId[]
+
+/**
+ * Stacking priority when markers overlap. Higher sits on top.
+ *
+ * The subject of the dashboard must never be hidden behind context. Thermal
+ * detections are the densest layer *and* the least significant — they score
+ * 0.05 in the assessment because they are almost all agricultural burning — so
+ * they sit at the bottom.
+ */
+const LAYER_PRIORITY: Partial<Record<DataLayerId, number>> = {
+  itr_sites: 400,
+  itr_warnings: 300,
+  itr_aircraft: 200,
+  itr_thermal: 0,
+}
+
+export const layerPriority = (id: DataLayerId): number => LAYER_PRIORITY[id] ?? 100
 
 export const DEFAULT_LAYER_STATE: Record<DataLayerId, boolean> = Object.fromEntries(
   DATA_LAYERS.map((layer) => [layer.id, layer.defaultOn]),

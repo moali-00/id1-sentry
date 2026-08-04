@@ -100,10 +100,15 @@ const DEFAULT_SEVERITY = 2
  * own subject, and context layers must not compete with them. Hence a plain dot
  * with a soft ring rather than a bordered, labelled circle.
  */
-export function createPointIcon(point: MapPoint, { active }: { active: boolean }): DivIcon {
+export function createPointIcon(point: MapPoint, { active, scale = 1 }: { active: boolean; scale?: number }): DivIcon {
   const color = layerColor(point.layerId)
   const severity = Math.min(POINT_SIZES.length - 1, Math.max(0, Math.round(point.severity ?? DEFAULT_SEVERITY)))
-  const size = POINT_SIZES[severity]
+
+  // Thermal is the densest layer and the least significant — 28 detections that
+  // are almost all agricultural burning. Drawing it subordinate is both the
+  // declutter and the honest weighting.
+  const weight = point.layerId === 'itr_thermal' ? 0.7 : 1
+  const size = Math.max(5, Math.round(POINT_SIZES[severity] * scale * weight))
 
   // The monitored sites get a slow, wide halo so the eye lands on the subject
   // before it starts reading the context layers around it.

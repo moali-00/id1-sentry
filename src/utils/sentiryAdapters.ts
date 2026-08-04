@@ -200,7 +200,18 @@ export function corridorAreas(warnings: MaritimeWarning[]): MapArea[] {
     const corridor = warning.corridor
     const systems = warning.likely_systems
 
+    // A launch trial is the thing being watched for. A firing exercise or a
+    // navigation hazard is standing range activity that would be in force
+    // whether or not a test were coming — drawing them alike hid exactly the
+    // distinction the dashboard exists to make.
+    //
+    // Keyed on `kind` alone. `is_launch_indicator` is broader — it marks any
+    // warning that feeds the launch score, and is true for firing exercises
+    // too, so including it classified all five as trials and changed nothing.
+    const isTrial = warning.kind === 'launch_trial'
+
     const detail = [
+      warning.kind.replace(/_/g, ' '),
       corridor ? `bearing ${Math.round(corridor.bearing_deg)}° · ${Math.round(corridor.far_km)} km reach` : null,
       systems ? `${systems.label} (${systems.confidence})` : null,
       warning.timing,
@@ -208,18 +219,15 @@ export function corridorAreas(warnings: MaritimeWarning[]): MapArea[] {
       .filter(Boolean)
       .join(' · ')
 
-    // Confidence in the range class, not in the geometry — the polygon is
-    // exactly what was published, so the shape itself is not in doubt.
-    const emphasis = systems?.confidence === 'high' ? 1 : systems?.confidence === 'medium' ? 0.75 : 0.5
-
     return [
       {
         id: `corridor-${warning.message_id}`,
-        layerId: 'itr_corridors' as const,
+        layerId: isTrial ? ('itr_corridors' as const) : ('itr_routine' as const),
         ring: positions.map((position) => [position.lat, position.lon] as [number, number]),
-        label: `${warning.number} declared danger area`,
+        label: `${warning.number} · ${warning.kind.replace(/_/g, ' ')}`,
         detail,
-        emphasis,
+        // Routine activity recedes; a trial is drawn at full strength.
+        emphasis: isTrial ? 1 : 0.45,
       },
     ]
   })

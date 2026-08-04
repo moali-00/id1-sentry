@@ -102,6 +102,7 @@ export type ItrFeedId =
   | 'itr_sites'
   | 'itr_warnings'
   | 'itr_corridors'
+  | 'itr_routine'
   | 'itr_impact'
   | 'itr_danger_areas'
   | 'itr_thermal'
@@ -162,6 +163,13 @@ export interface MapArea {
   detail?: string
   /** Drawn dashed for a footprint or a forecast area rather than a hard boundary. */
   dashed?: boolean
+  /**
+   * 0–1 confidence in what the shape asserts. Drives how strongly it is drawn.
+   *
+   * Routine range activity recedes; a declared launch trial draws at full
+   * strength. Without this every warning looked equally important.
+   */
+  emphasis?: number
 }
 
 /**
