@@ -17,7 +17,7 @@ export function RouteError() {
         <AlertTriangle className="size-6 text-status-inferred" aria-hidden />
         <h1 className="text-base font-bold text-fg">The dashboard hit a problem</h1>
         <p className="text-xs break-words text-fg-muted">{message}</p>
-        <a href="/" className="mt-2 rounded-md bg-accent px-4 py-2 text-xs font-bold text-white hover:opacity-90">
+        <a href="/" className="mt-2 rounded-md bg-accent px-4 py-2 text-xs font-bold text-accent-fg hover:opacity-90">
           Reload the map
         </a>
       </div>

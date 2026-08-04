@@ -24,7 +24,7 @@ export function Legend() {
     <Panel className="animate-rise w-48 flex-none px-3 py-2.5" style={{ animationDelay: '160ms' }}>
       {WATCHES_ENABLED && (
         <div className="mb-2.5 flex flex-col gap-1.5">
-          <h2 className="text-[10px] font-bold tracking-[0.08em] text-fg-muted">THREAT CATEGORIES</h2>
+          <h2 className="label-micro text-fg-muted">THREAT CATEGORIES</h2>
           {CATEGORY_KEYS.map((key) => (
             <div key={key} className="flex items-center gap-2 text-xs text-fg">
               <CategorySwatch category={key} className="size-[11px]" />
@@ -40,7 +40,7 @@ export function Legend() {
             WATCHES_ENABLED ? 'flex flex-col gap-1.5 border-t border-line-soft pt-2.5' : 'flex flex-col gap-1.5'
           }
         >
-          <h2 className="text-[10px] font-bold tracking-[0.08em] text-fg-muted">ACTIVE LAYERS</h2>
+          <h2 className="label-micro text-fg-muted">ACTIVE LAYERS</h2>
           {activeLayers.map((layer) => (
             <div key={layer.id} className="flex items-center gap-2 text-xs text-fg">
               <span aria-hidden style={{ background: layer.color }} className="size-[11px] flex-none rounded-full" />

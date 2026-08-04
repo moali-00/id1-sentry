@@ -102,9 +102,7 @@ export function StatusPill({ onHealthClick }: { onHealthClick?: () => void }) {
                 stream === 'live' ? 'animate-pulse-live bg-status-observed' : 'bg-status-inferred',
               )}
             />
-            <span className="text-[10px] font-bold tracking-[0.06em] text-fg-subtle">
-              {stream === 'live' ? 'STREAM' : 'RECONNECT'}
-            </span>
+            <span className="label-micro text-fg-subtle">{stream === 'live' ? 'STREAM' : 'RECONNECT'}</span>
           </span>
         </>
       )}

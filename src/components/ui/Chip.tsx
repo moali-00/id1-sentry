@@ -21,7 +21,7 @@ export function Chip({ children, active, onClick, dashed = false, className }: C
         'rounded-md border-[1.5px] px-3 py-1.5 text-xs font-semibold transition-colors',
         'focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none',
         dashed ? 'border-dashed' : 'border-solid',
-        active ? 'border-accent bg-accent text-white' : 'border-line bg-control text-fg hover:border-accent',
+        active ? 'border-accent bg-accent text-accent-fg' : 'border-line bg-control text-fg hover:border-accent',
         className,
       )}
     >

@@ -110,7 +110,7 @@ export interface WatchDetail {
 export type LayerGroupKey = 'watches' | 'signals' | 'itr_zones' | 'itr_feeds' | 'display'
 
 export type SignalLayerId = 'global_incidents' | 'earthquakes' | 'live_news' | 'maritime'
-export type DisplayLayerId = 'day_night' | 'graticule'
+export type DisplayLayerId = 'day_night' | 'graticule' | 'terrain'
 
 /** The four AOI boxes from `/v1/aoi`, drawn as polygons. */
 export type AoiZoneId = 'aoi_pad' | 'aoi_range' | 'aoi_airspace' | 'aoi_downrange'
@@ -168,6 +168,13 @@ export interface MapPoint {
   bearingDeg?: number
   /** Ground speed in m/s — drives the length of the projection leader. */
   speedMs?: number
+  /**
+   * Reported altitude in metres. Present only for airborne contacts.
+   *
+   * Reported, not inferred: absent when the contact broadcast neither a barometric
+   * nor a geometric altitude, which is ordinary for an aircraft on the ground.
+   */
+  altitudeM?: number
 }
 
 /**
@@ -177,7 +184,7 @@ export interface MapPoint {
 export interface MapArea {
   id: string
   layerId: AoiZoneId | ItrFeedId
-  /** `[lat, lng]` pairs — Leaflet's order, not GeoJSON's. */
+  /** `[lon, lat]` pairs — GeoJSON's order, which is also MapLibre's. */
   ring: [number, number][]
   label: string
   detail?: string
@@ -190,6 +197,16 @@ export interface MapArea {
    * strength. Without this every warning looked equally important.
    */
   emphasis?: number
+  /**
+   * Floor and ceiling in metres, where the authority published both.
+   *
+   * Airspace is a volume and a NOTAM declares one, so a danger area with a
+   * readable ceiling is extruded to it. **Set only from published figures** — see
+   * `utils/altitude.ts`. Absent means the ceiling was unpublished (`UNL`) or
+   * unreadable, and the area draws flat rather than to a guessed height.
+   */
+  baseM?: number
+  heightM?: number
 }
 
 /**
@@ -201,7 +218,7 @@ export interface MapArea {
 export interface MapLine {
   id: string
   layerId: ItrFeedId
-  /** `[lat, lng]` pairs — Leaflet's order. */
+  /** `[lon, lat]` pairs — GeoJSON's order. */
   path: [number, number][]
   label: string
   detail?: string

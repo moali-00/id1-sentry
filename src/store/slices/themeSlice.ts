@@ -6,11 +6,18 @@ export type Theme = 'light' | 'dark'
 export const THEME_STORAGE_KEY = 'sentry-theme'
 
 /**
- * Light by default. The dashboard's job is legibility, and a dark surface over
- * a dark basemap was reading as murky rather than as a command centre. Dark is
- * one click away in the status pill for operators who want it.
+ * Dark by default, paired with the dark basemap.
+ *
+ * This reverses an earlier call. Light was the default because a dark surface over
+ * a dark basemap read as murky — and it did, while the panels were a neutral
+ * grey-black with a flat shadow and the basemap was a raster. What fixed it was
+ * giving the dark palette a blue-black hue with a cyan rim light on every panel
+ * (see `panel-surface` in `index.css`), so a panel now has an edge of its own
+ * against the map instead of dissolving into it.
+ *
+ * Light is unchanged and one click away in the status pill.
  */
-const DEFAULT_THEME: Theme = 'light'
+const DEFAULT_THEME: Theme = 'dark'
 
 const isTheme = (value: unknown): value is Theme => value === 'light' || value === 'dark'
 

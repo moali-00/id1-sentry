@@ -1,31 +1,28 @@
-import { useEffect } from 'react'
-import L, { type Map as LeafletMap } from 'leaflet'
-
 /**
- * Draw the solar terminator — the shaded half of the world is in darkness now.
+ * Where the sun is, and therefore which half of the world is dark.
  *
- * The maths is a low-precision solar-position model (good to a fraction of a
- * degree, which is far below what a world-scale polygon can show) so the layer
+ * A low-precision solar-position model — good to a fraction of a degree, which
+ * is far below what a world-scale polygon can show — so the day/night layer
  * needs no dependency and no network call.
+ *
+ * Pure functions with the instant passed in, like the adapters: a batch of
+ * geometry stays internally consistent even if it straddles a minute boundary.
  */
 
 const RAD = Math.PI / 180
 const DEG = 180 / Math.PI
 
-/** How often the terminator is redrawn. The Earth turns 0.25° in a minute. */
-const REDRAW_MS = 60_000
-
 /** Vertices along the terminator. 2° of longitude is smooth at world zoom. */
 const STEP_DEGREES = 2
 
-interface SunPosition {
+export interface SunPosition {
   /** Solar declination, radians. Positive is northern summer. */
   declination: number
   /** Longitude directly under the sun, degrees. */
   subsolarLng: number
 }
 
-function sunPosition(at: Date): SunPosition {
+export function sunPosition(at: Date): SunPosition {
   // Days since the J2000.0 epoch.
   const julianDay = at.getTime() / 86_400_000 + 2440587.5
   const n = julianDay - 2451545
@@ -45,12 +42,12 @@ function sunPosition(at: Date): SunPosition {
 }
 
 /**
- * Ring enclosing the unlit hemisphere.
+ * Ring enclosing the unlit hemisphere, as GeoJSON `[lon, lat]`.
  *
  * The terminator itself is only a curve, so the ring is closed over whichever
  * pole is in polar night — the south in northern summer, and vice versa.
  */
-function nightRing(at: Date): L.LatLngExpression[] {
+export function nightRing(at: Date): [number, number][] {
   const { declination, subsolarLng } = sunPosition(at)
 
   // Near an equinox `tan(declination)` approaches zero and the latitude blows
@@ -59,41 +56,14 @@ function nightRing(at: Date): L.LatLngExpression[] {
   const safeTanDec = Math.abs(tanDec) < 1e-6 ? Math.sign(tanDec || 1) * 1e-6 : tanDec
 
   const darkPole = declination > 0 ? -90 : 90
-  const ring: L.LatLngExpression[] = []
+  const ring: [number, number][] = []
 
   for (let lng = -180; lng <= 180; lng += STEP_DEGREES) {
     const hourAngle = (lng - subsolarLng) * RAD
     const lat = Math.atan(-Math.cos(hourAngle) / safeTanDec) * DEG
-    ring.push([lat, lng])
+    ring.push([lng, lat])
   }
 
-  ring.push([darkPole, 180], [darkPole, -180])
+  ring.push([180, darkPole], [-180, darkPole])
   return ring
-}
-
-export function useDayNightLayer(map: LeafletMap | null, visible: boolean): void {
-  useEffect(() => {
-    if (!map || !visible) return
-
-    const polygon = L.polygon(nightRing(new Date()), {
-      // Night is a wash over the basemap, not a feature to click.
-      interactive: false,
-      stroke: true,
-      color: '#64748b',
-      weight: 1,
-      opacity: 0.35,
-      fillColor: '#0b1220',
-      fillOpacity: 0.22,
-    }).addTo(map)
-
-    // Behind every marker but above the tiles.
-    polygon.bringToBack()
-
-    const timer = window.setInterval(() => polygon.setLatLngs(nightRing(new Date())), REDRAW_MS)
-
-    return () => {
-      window.clearInterval(timer)
-      polygon.remove()
-    }
-  }, [map, visible])
 }

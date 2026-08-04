@@ -40,7 +40,7 @@ export function SharePanel() {
 
   return (
     <Panel className="w-[320px] p-3">
-      <h2 className="mb-2 flex items-center gap-1.5 text-[10px] font-bold tracking-[0.08em] text-title">
+      <h2 className="mb-2 flex items-center gap-1.5 label-micro text-title">
         <Link2 className="size-3.5" aria-hidden />
         SHARE THIS VIEW
       </h2>
@@ -59,7 +59,7 @@ export function SharePanel() {
         className={cn(
           'flex w-full items-center justify-center gap-1.5 rounded-md py-2 text-xs font-semibold transition-colors',
           'focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none',
-          copied ? 'bg-status-observed text-white' : 'bg-accent text-white hover:opacity-90',
+          copied ? 'bg-status-observed text-on-bright' : 'bg-accent text-accent-fg hover:opacity-90',
         )}
       >
         {copied ? <Check className="size-3.5" aria-hidden /> : <Copy className="size-3.5" aria-hidden />}

@@ -13,6 +13,7 @@ export interface ShortcutActions {
   toggleActivity: () => void
   focusSearch: () => void
   togglePresets: () => void
+  toggleDisplay: () => void
   toggleShare: () => void
   resetView: () => void
   toggleFullscreen: () => void
@@ -40,7 +41,8 @@ export const SHORTCUTS: Shortcut[] = [
     action: 'focusSearch',
     matches: (event) => ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === 'k') || plain('/')(event),
   },
-  { keyLabel: 'P', description: 'Jump-to presets', action: 'togglePresets', matches: plain('p') },
+  { keyLabel: 'P', description: 'Region presets', action: 'togglePresets', matches: plain('p') },
+  { keyLabel: 'D', description: 'Display settings', action: 'toggleDisplay', matches: plain('d') },
   { keyLabel: 'S', description: 'Share this view', action: 'toggleShare', matches: plain('s') },
   { keyLabel: 'R', description: 'Reset to the opening view', action: 'resetView', matches: plain('r') },
   { keyLabel: 'F', description: 'Fullscreen', action: 'toggleFullscreen', matches: plain('f') },

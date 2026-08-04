@@ -1,5 +1,6 @@
 import { relativeTime, truncate } from '@/utils/format'
 import { destinationPoint, greatCircle } from '@/utils/geodesy'
+import { verticalExtent } from '@/utils/altitude'
 import type { CategoryKey, Cluster, FeedItem, MapArea, MapLine, MapPoint, Post } from '@/types/monitoring'
 import type {
   Aircraft,
@@ -20,9 +21,11 @@ import type {
 /**
  * Sentiry wire shapes → the map's own view models.
  *
- * The one rule worth remembering: **GeoJSON is `[lon, lat]` and Leaflet is
- * `[lat, lng]`.** Every ring crossing this boundary gets flipped exactly once,
- * here, so no component has to think about it.
+ * The one rule worth remembering: **every ring and path here is GeoJSON
+ * `[lon, lat]`**, which is both what the API sends and what MapLibre draws. A
+ * coordinate is never flipped anywhere in the app. Where the wire format gives
+ * named `{lat, lon}` fields instead of a tuple, the pair is reordered on the way
+ * out — that is a reordering of named fields, not a flip you have to track.
  */
 
 const unixSeconds = (iso: string | null | undefined): number | undefined => {
@@ -31,9 +34,18 @@ const unixSeconds = (iso: string | null | undefined): number | undefined => {
   return Number.isFinite(ms) ? Math.floor(ms / 1000) : undefined
 }
 
-/** GeoJSON `[[lon, lat], …]` → Leaflet `[[lat, lng], …]`. */
-function toLeafletRing(polygon: GeoPolygon): [number, number][] {
-  return (polygon.coordinates[0] ?? []).map(([lon, lat]) => [lat, lon] as [number, number])
+/**
+ * The outer ring of a GeoJSON polygon, `[[lon, lat], …]`.
+ *
+ * No reordering — the wire format is already the render format. Holes are
+ * dropped: nothing the API sends has any, and drawing one would need a
+ * `MapArea` that carries more than a single ring.
+ */
+function outerRing(polygon: GeoPolygon): [number, number][] {
+  // The wire type is `number[][][]` — GeoJSON does not constrain a position to
+  // two ordinates, since a third would be elevation. Nothing the API sends
+  // carries one, so the pair is taken and any extra dropped.
+  return (polygon.coordinates[0] ?? []).map(([lon, lat]) => [lon, lat] as [number, number])
 }
 
 const AOI_ZONE_BY_BOX: Record<AoiBoxKey, MapArea['layerId']> = {
@@ -52,7 +64,7 @@ export function aoiZones(aoi: AoiResponse): MapArea[] {
       {
         id: `aoi-${key}`,
         layerId: AOI_ZONE_BY_BOX[key],
-        ring: toLeafletRing(box.geojson),
+        ring: outerRing(box.geojson),
         label: key.toUpperCase(),
         detail: box.purpose,
       },
@@ -126,10 +138,10 @@ export function warningAreas(warnings: MaritimeWarning[]): MapArea[] {
         id: `warning-area-${warning.message_id}`,
         layerId: 'itr_warnings' as const,
         ring: [
-          [b.south, b.west],
-          [b.south, b.east],
-          [b.north, b.east],
-          [b.north, b.west],
+          [b.west, b.south],
+          [b.east, b.south],
+          [b.east, b.north],
+          [b.west, b.north],
         ],
         label: `${warning.number} danger area`,
         detail: warning.kind.replace(/_/g, ' '),
@@ -142,10 +154,10 @@ export function warningAreas(warnings: MaritimeWarning[]): MapArea[] {
 /**
  * Airspace danger areas declared by NOTAM.
  *
- * `positions` is already a closed ring in lat/lon, so it only needs reordering.
- * A coarse geometry — a NOTAM giving a centre and a radius rather than a
- * published boundary — is drawn dashed, because the shape is this service's
- * approximation rather than the authority's.
+ * `positions` is already a closed ring, as named `{lat, lon}` pairs, so it only
+ * needs pulling into tuples. A coarse geometry — a NOTAM giving a centre and a
+ * radius rather than a published boundary — is drawn dashed, because the shape
+ * is this service's approximation rather than the authority's.
  */
 export function dangerAreaAreas(areas: DangerArea[]): MapArea[] {
   return areas.flatMap((area) => {
@@ -163,14 +175,20 @@ export function dangerAreaAreas(areas: DangerArea[]): MapArea[] {
     const distance =
       area.distance_to_island_km === null ? '' : ` · ${Math.round(area.distance_to_island_km)} km from island`
 
+    // The declared vertical extent, where there is one to read. `UNL` — which is
+    // what every warning in the current capture publishes — yields null, and the
+    // area stays a flat outline rather than being extruded to an invented ceiling.
+    const extent = verticalExtent(area.lower_limit, area.upper_limit)
+
     return [
       {
         id: `danger-${area.notam_id}`,
         layerId: 'itr_danger_areas' as const,
-        ring: area.positions.map((position) => [position.lat, position.lon] as [number, number]),
+        ring: area.positions.map((position) => [position.lon, position.lat] as [number, number]),
         label: `${area.notam_id} · danger area`,
         detail: `${when}${distance} · ${area.lower_limit ?? 'SFC'}–${area.upper_limit ?? 'UNL'}`,
         dashed: area.geometry_coarse,
+        ...(extent ?? {}),
       },
     ]
   })
@@ -226,7 +244,7 @@ export function corridorAreas(warnings: MaritimeWarning[]): MapArea[] {
       {
         id: `corridor-${warning.message_id}`,
         layerId: isTrial ? ('itr_corridors' as const) : ('itr_routine' as const),
-        ring: positions.map((position) => [position.lat, position.lon] as [number, number]),
+        ring: positions.map((position) => [position.lon, position.lat] as [number, number]),
         label: `${warning.number} · ${warning.kind.replace(/_/g, ' ')}`,
         detail,
         // Routine activity recedes; a trial is drawn at full strength.
@@ -334,6 +352,11 @@ export function aircraftPoints(aircraft: Aircraft[]): MapPoint[] {
         timestamp: contact.last_contact,
         bearingDeg: contact.true_track ?? undefined,
         speedMs: contact.velocity ?? undefined,
+        // Barometric first, geometric as the fallback — barometric is what ATC and
+        // the NOTAM limits are both expressed against, so it is the one that can be
+        // compared to a declared ceiling. Null when the contact reports neither,
+        // which is normal for a ground contact.
+        altitudeM: altitude ?? undefined,
       },
     ]
   })
@@ -364,7 +387,7 @@ export function aircraftProjections(aircraft: Aircraft[]): MapLine[] {
       {
         id: `aircraft-track-${contact.icao24}`,
         layerId: 'itr_aircraft' as const,
-        path: [[contact.latitude, contact.longitude], ahead],
+        path: [[contact.longitude, contact.latitude], ahead],
         label: contact.callsign?.trim() || contact.icao24,
         detail: `${Math.round(contact.true_track)}° · ${Math.round(contact.velocity * 3.6)} km/h · ${PROJECTION_MINUTES} min ahead`,
         dashed: true,
@@ -644,7 +667,7 @@ export function imageryAreas(scenes: ImageryScene[]): MapArea[] {
   return scenes.map((scene) => ({
     id: `imagery-${scene.scene_id}`,
     layerId: 'itr_imagery' as const,
-    ring: toLeafletRing(scene.geometry),
+    ring: outerRing(scene.geometry),
     label: `${scene.constellation.toUpperCase()} · ${scene.resolution_m} m`,
     detail: `${Math.round(scene.cloud_cover)}% cloud · ${scene.acquired_at.slice(0, 10)}`,
     dashed: true,

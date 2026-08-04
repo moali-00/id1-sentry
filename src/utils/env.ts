@@ -1,4 +1,4 @@
-import { NOMINATIM_URL, TILE_ATTRIBUTION, TILE_URLS } from '@/utils/constants'
+import { NOMINATIM_URL, TERRAIN_DEM_URL, TILE_ATTRIBUTION } from '@/utils/constants'
 
 /**
  * Typed access to the build-time environment.
@@ -16,6 +16,12 @@ const read = (value: string | undefined, fallback: string): string => {
   return trimmed.length > 0 ? trimmed : fallback
 }
 
+/** An override that is absent, rather than one that falls back to a default. */
+const readOptional = (value: string | undefined): string | null => {
+  const trimmed = (value ?? '').trim()
+  return trimmed.length > 0 ? trimmed : null
+}
+
 const readNumber = (value: string | undefined, fallback: number): number => {
   const parsed = Number(read(value, ''))
   return Number.isFinite(parsed) && parsed > 0 ? parsed : fallback
@@ -27,12 +33,28 @@ const trimTrailingSlash = (value: string): string => value.replace(/\/+$/, '')
 export const env = {
   /** Product name shown in the status pill. */
   title: read(import.meta.env.VITE_SENTRY_DASHBOARD_TITLE, 'SENTRY'),
-  /** Basemap tile templates, per theme. */
+  /**
+   * Raster tile templates that stand in for the light and dark **vector**
+   * basemaps when set.
+   *
+   * Null by default, which means "load CARTO's published GL style". An
+   * air-gapped host almost always serves plain raster tiles, so an override
+   * switches that basemap from vector to raster rather than expecting the
+   * internal host to publish a style document too.
+   */
   tileUrls: {
-    light: read(import.meta.env.VITE_MAP_TILE_URL_LIGHT, TILE_URLS.light),
-    dark: read(import.meta.env.VITE_MAP_TILE_URL_DARK, TILE_URLS.dark),
+    light: readOptional(import.meta.env.VITE_MAP_TILE_URL_LIGHT),
+    dark: readOptional(import.meta.env.VITE_MAP_TILE_URL_DARK),
   },
   tileAttribution: read(import.meta.env.VITE_MAP_TILE_ATTRIBUTION, TILE_ATTRIBUTION),
+  /**
+   * Elevation tile template for the 3D terrain layer.
+   *
+   * Defaults to the public AWS Open Data bucket, which is keyless but carries no
+   * SLA — so an internal DEM can be pointed at here. **Any replacement must be
+   * terrarium-encoded**, since that is what the reader is configured for.
+   */
+  terrainUrl: read(import.meta.env.VITE_TERRAIN_URL, TERRAIN_DEM_URL),
   /**
    * Root of the monitoring API. Empty until the backend is deployed, in which
    * case the dashboard starts empty and reports "no source connected".

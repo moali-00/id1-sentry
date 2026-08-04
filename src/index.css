@@ -16,9 +16,10 @@
  *
  * Components should therefore reference `bg-panel` / `text-fg-muted` /
  * `border-line` and never a raw hex literal. The only legitimate exceptions are
- * the per-category threat hues, which are data-driven (see CATEGORIES in
- * `src/features/monitoring/constants.ts`) and are consumed as values in JS for
- * Leaflet's `divIcon` HTML.
+ * the per-category threat and layer hues, which are data-driven (see CATEGORIES
+ * in `src/utils/constants.ts` and DATA_LAYERS in `src/utils/layers.ts`) and are
+ * consumed as values — in marker inline styles and in MapLibre paint expressions,
+ * neither of which can reference a Tailwind class.
  */
 
 @custom-variant dark (&:where(.dark, .dark *));
@@ -46,9 +47,11 @@
 
   /* ── Accent ── */
   --c-accent: #2563eb;
+  --c-accent-fg: #ffffff; /* text/icons on an accent fill */
   --c-accent-soft: rgba(37, 99, 235, 0.05); /* AI insight card fill */
   --c-accent-line: rgba(37, 99, 235, 0.18); /* AI insight card border */
   --c-ring: #ffffff; /* halo behind a selected map marker */
+  --c-glow: transparent; /* panel rim light — dark palette only */
 
   /* ── Overlays ── */
   --c-scrim: rgba(20, 26, 38, 0.28);
@@ -65,39 +68,56 @@
   --c-attribution: rgba(255, 255, 255, 0.7);
 }
 
+/*
+ * The dark palette — and the default one.
+ *
+ * Deliberately a *blue*-black rather than a neutral grey-black, with a cyan
+ * accent. That is what makes a monitoring surface read as an instrument rather
+ * than as a dimmed web page: the hue gives the panels somewhere to sit against
+ * the map, and cyan is the one accent that stays legible over both the dark
+ * basemap and satellite imagery without colliding with any threat category.
+ *
+ * Borders carry a trace of the accent hue instead of being neutral grey. At 1px
+ * that does not read as blue — it reads as the panel having an edge that belongs
+ * to the same system as everything else on screen.
+ */
 .dark {
-  --c-sea: #0e1216;
-  --c-panel: rgba(28, 28, 28, 0.94);
-  --c-surface: #1c1c1c;
-  --c-inset: #141414;
-  --c-control: rgba(255, 255, 255, 0.06);
-  --c-hover: rgba(255, 255, 255, 0.05);
-  --c-active: rgba(96, 165, 250, 0.08);
-  --c-off: #4b5563;
+  --c-sea: #050a0f;
+  --c-panel: rgba(9, 17, 26, 0.82);
+  --c-surface: #0a131d;
+  --c-inset: #060e16;
+  --c-control: rgba(125, 211, 252, 0.07);
+  --c-hover: rgba(34, 211, 238, 0.09);
+  --c-active: rgba(34, 211, 238, 0.12);
+  --c-off: #33475a;
 
-  --c-line: #374151;
-  --c-line-soft: rgba(255, 255, 255, 0.06);
+  --c-line: rgba(103, 232, 249, 0.16);
+  --c-line-soft: rgba(125, 211, 252, 0.09);
 
-  --c-title: #d1d5db;
-  --c-fg: #f3f4f6;
-  --c-fg-muted: #9ca3af;
-  --c-fg-subtle: #6b7280;
+  --c-title: #67e8f9;
+  --c-fg: #e6f3f8;
+  --c-fg-muted: #8ba7ba;
+  --c-fg-subtle: #5b7488;
 
-  --c-accent: #60a5fa;
-  --c-accent-soft: rgba(96, 165, 250, 0.07);
-  --c-accent-line: rgba(96, 165, 250, 0.22);
-  --c-ring: #0b1016;
+  --c-accent: #22d3ee;
+  /* Near-black, not white. White on cyan fails contrast badly, and every active
+     segment, toggle and primary button is filled with the accent. */
+  --c-accent-fg: #04121a;
+  --c-accent-soft: rgba(34, 211, 238, 0.08);
+  --c-accent-line: rgba(34, 211, 238, 0.26);
+  --c-ring: #050a0f;
+  --c-glow: rgba(34, 211, 238, 0.1);
 
-  --c-scrim: rgba(0, 0, 0, 0.55);
-  --c-scrim-strong: rgba(0, 0, 0, 0.6);
+  --c-scrim: rgba(2, 6, 11, 0.62);
+  --c-scrim-strong: rgba(2, 6, 11, 0.72);
 
-  --c-badge: rgba(255, 255, 255, 0.1);
-  --c-badge-fg: #f3f4f6;
-  --c-meter: #9fb0bd;
-  --c-meter-off: rgba(255, 255, 255, 0.13);
+  --c-badge: rgba(125, 211, 252, 0.12);
+  --c-badge-fg: #cbeef7;
+  --c-meter: #22d3ee;
+  --c-meter-off: rgba(125, 211, 252, 0.14);
 
-  --c-thumb: rgba(255, 255, 255, 0.14);
-  --c-attribution: rgba(0, 0, 0, 0.5);
+  --c-thumb: rgba(125, 211, 252, 0.18);
+  --c-attribution: rgba(2, 6, 11, 0.62);
 }
 
 @theme inline {
@@ -123,6 +143,7 @@
   --color-fg-subtle: var(--c-fg-subtle);
 
   --color-accent: var(--c-accent);
+  --color-accent-fg: var(--c-accent-fg);
   --color-accent-soft: var(--c-accent-soft);
   --color-accent-line: var(--c-accent-line);
   --color-ring-halo: var(--c-ring);
@@ -149,14 +170,21 @@
   --color-status-observed: #05df72;
   --color-status-inferred: #fbbf24;
   --color-status-missing: #ff6467;
+
+  /* Foreground for text sitting on one of the bright status fills above. Those
+     hues are fixed in both palettes, so their contrast partner is fixed too —
+     white on a #05df72 fill fails in either theme. */
+  --color-on-bright: #04121a;
 }
 
+/* Dark is the default, so it is the base; the light class opts out. `index.html`
+   stamps one of the two on <html> before first paint either way. */
 html {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
-html.dark {
-  color-scheme: dark;
+html.light {
+  color-scheme: light;
 }
 
 body {
@@ -196,6 +224,32 @@ body {
   }
 }
 
+/*
+ * The one micro-label used for every section heading, field caption and rail
+ * title.
+ *
+ * Monospace and letterspaced on purpose. These are instrument labels, not prose:
+ * a fixed advance keeps a stack of them optically aligned down the rail, which a
+ * proportional face cannot do at 10px, and it is most of what separates a console
+ * from a settings page. Defined once here because it was being re-declared with
+ * slightly different sizes and tracking in five components.
+ */
+@utility label-micro {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Any figure that changes in place — counts, coordinates, zoom, scores. Tabular
+   digits stop the row from reflowing as the number ticks. */
+@utility numeric {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+}
+
 /* ── Surfaces ─────────────────────────────────────────────────────────────── */
 
 /*
@@ -211,13 +265,63 @@ body {
     0 1px 2px rgba(15, 23, 42, 0.04),
     0 8px 24px -6px rgba(15, 23, 42, 0.12),
     0 16px 48px -12px rgba(15, 23, 42, 0.1);
+
+  /*
+   * The sheen that makes a panel read as a pane of glass rather than a filled box.
+   *
+   * A single top-to-bottom gradient over the translucent fill: brightest along the
+   * top edge, gone by a third of the way down, and very slightly darker at the
+   * foot. That is how a real sheet of glass catches a light source above it, and it
+   * is enough to give the surface depth without touching text contrast — the
+   * gradient is off by the time it reaches the second row of content.
+   *
+   * `background-image` rather than `background`, so `bg-panel`'s colour still shows
+   * through underneath and the theme keeps control of the tint.
+   */
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0) 34%,
+    rgba(15, 23, 42, 0.022) 100%
+  );
+  /* Saturating what shows through keeps the map's colours from going grey behind
+     the blur, which is what makes cheap glass look like frosted plastic. */
+  backdrop-filter: blur(14px) saturate(1.35);
+  -webkit-backdrop-filter: blur(14px) saturate(1.35);
 }
 
+/*
+ * In dark the panel gets a rim light as well as a shadow.
+ *
+ * A dark panel on a dark map has no edge of its own — the drop shadow does
+ * nothing, because there is nothing lighter for it to fall on. The 1px outer ring
+ * in the accent hue is what separates the two, and the inset top highlight keeps
+ * it reading as glass rather than as a flat outline.
+ */
 .dark .panel-surface {
   box-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.4),
-    0 10px 30px -8px rgba(0, 0, 0, 0.55),
-    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    0 0 0 1px var(--c-glow),
+    0 1px 2px rgba(0, 0, 0, 0.5),
+    0 12px 34px -10px rgba(0, 0, 0, 0.7),
+    inset 0 1px 0 rgba(190, 240, 255, 0.09);
+
+  /*
+   * Same sheen, cooled and carrying a little more of it.
+   *
+   * A dark panel needs the gradient more than a light one: it has no edge of its
+   * own against a dark map, so the fall-off from a lit top to a darker foot is
+   * doing real work telling you where the surface starts and ends. The highlight is
+   * tinted toward the accent so it reads as the same light source as the rim.
+   */
+  background-image: linear-gradient(
+    180deg,
+    rgba(125, 211, 252, 0.09) 0%,
+    rgba(125, 211, 252, 0.018) 26%,
+    rgba(2, 6, 11, 0) 52%,
+    rgba(2, 6, 11, 0.16) 100%
+  );
+  backdrop-filter: blur(18px) saturate(1.5);
+  -webkit-backdrop-filter: blur(18px) saturate(1.5);
 }
 
 /* ── Animations ───────────────────────────────────────────────────────────── */
@@ -272,8 +376,8 @@ body {
   }
 }
 
-/* Applied inside Leaflet's `divIcon` HTML, which Tailwind cannot scan — so this
-   stays a plain class rather than a utility composition. */
+/* A plain class rather than an `@utility`, because it pairs with the `--bloom`
+   custom property each marker sets for its own hue — see `sentry-ping` above. */
 .sentry-bloom {
   animation: sentry-bloom 2.8s ease-out infinite;
 }
@@ -303,66 +407,79 @@ body {
   }
 }
 
-/* ── Leaflet overrides ────────────────────────────────────────────────────── */
+/* ── MapLibre overrides ───────────────────────────────────────────────────────
+ *
+ * MapLibre's stylesheet is imported unlayered in `main.tsx`, and unlayered CSS
+ * beats anything in `@layer utilities` regardless of specificity — so a Tailwind
+ * class will not override a MapLibre rule. Everything that has to win is written
+ * here as plain unlayered CSS, which is also why the `!important`s stay.
+ */
 
-.leaflet-container {
-  background: var(--c-sea) !important;
+.maplibregl-map {
   font-family: inherit;
 }
 
-.leaflet-control-attribution {
+/* The canvas is transparent where no tile has loaded, so the sea colour has to
+   come from behind it. `<MapCanvas />` sets `bg-sea` on the wrapper for that. */
+.maplibregl-canvas {
+  outline: none;
+}
+
+.maplibregl-ctrl-attrib {
   background: var(--c-attribution) !important;
   color: var(--c-fg-subtle) !important;
   font-size: 9px;
 }
 
-.leaflet-control-attribution a {
+.maplibregl-ctrl-attrib a {
   color: var(--c-fg-muted) !important;
 }
 
-/* Point-layer tooltips. Leaflet renders these outside React, so they are styled
-   here rather than with utility classes. */
-.leaflet-tooltip {
+/* Feature tooltips. These are MapLibre popups, positioned outside the React tree,
+   so the frame is styled here and only the contents use utility classes. */
+.map-tooltip {
+  /* A popup under the cursor would trigger the feature's own mouse-out and make
+     the tooltip flicker as it followed the pointer. */
+  pointer-events: none;
+  /* Above the map, below the floating chrome (which sits at z-1000). */
+  z-index: 500;
+}
+
+.map-tooltip .maplibregl-popup-content {
   padding: 7px 9px;
-  border: 1px solid var(--c-line) !important;
+  border: 1px solid var(--c-line);
   border-radius: 9px;
-  background: var(--c-surface) !important;
-  color: var(--c-fg) !important;
+  background: var(--c-surface);
+  color: var(--c-fg);
   font-size: 11px;
   line-height: 1.35;
   box-shadow:
     0 2px 6px rgba(15, 23, 42, 0.08),
     0 10px 28px -8px rgba(15, 23, 42, 0.22);
-  /*
-   * Every tooltip carries an explanatory sentence, so it has to wrap — but
-   * wrapping alone collapses it to a one-word-wide column.
-   *
-   * Leaflet tooltips are `position: absolute` inside `.leaflet-pane`, which has
-   * no width of its own. That makes the containing block 0px, so an auto width
-   * shrink-to-fits to the *minimum* content width — the longest single word.
-   * Leaflet never hits this because its default is `white-space: nowrap`.
-   *
-   * `width: max-content` sets the preferred width explicitly and sidesteps the
-   * shrink-to-fit entirely; `max-width` then caps it. Both are needed.
-   */
+  /* Every tooltip carries an explanatory sentence, so it has to wrap. MapLibre
+     sets the popup's own width from `maxWidth`, so unlike Leaflet no
+     `width: max-content` workaround is needed here. */
   white-space: normal;
-  width: max-content;
-  max-width: 280px;
 }
 
-.leaflet-tooltip-top::before {
-  border-top-color: var(--c-line) !important;
+/* The callout arrow is a bordered triangle per anchor direction; it takes the
+   surface colour so it reads as part of the panel rather than a stray mark. */
+.map-tooltip .maplibregl-popup-tip {
+  border-top-color: var(--c-surface);
+  border-bottom-color: var(--c-surface);
+  border-left-color: var(--c-surface);
+  border-right-color: var(--c-surface);
 }
 
-/* Scale bar. Leaflet docks it bottom-left, which is where the legend floats, so
-   it is pushed clear of the legend's width rather than moved to another corner —
-   a scale reads best next to the map's edge. */
-.leaflet-bottom.leaflet-left {
+/* Scale bar. MapLibre docks bottom-left, which is where the legend floats, so it
+   is pushed clear of the legend's width rather than moved to another corner — a
+   scale reads best next to the map's edge. */
+.maplibregl-ctrl-bottom-left {
   margin-bottom: 0.5rem;
   margin-left: 13.5rem;
 }
 
-.leaflet-control-scale-line {
+.maplibregl-ctrl-scale {
   border: 1px solid var(--c-line) !important;
   border-top: none !important;
   border-radius: 0 0 4px 4px;

@@ -1,36 +1,52 @@
-import { useCallback, useMemo, useRef, type ReactNode } from 'react'
-import { FOCUS_ZOOM } from '@/utils/constants'
+import { useCallback, useMemo, useState, type ReactNode } from 'react'
+import type { Map as MapLibreMap } from 'maplibre-gl'
+import { FOCUS_ZOOM, ZOOM_DELTA } from '@/utils/constants'
 import { MapContext, type MapController } from '@/components/monitoring/MapContext'
-import { useLeafletMap, useTileLayer } from '@/hooks/useLeafletMap'
 
 const DEFAULT_FLY_DURATION_S = 0.8
 
+/** Seconds are the unit the callers speak; MapLibre wants milliseconds. */
+const SECONDS_TO_MS = 1000
+
 /**
- * Owns the Leaflet instance and exposes it to the chrome.
+ * Holds the map instance and exposes it to the chrome.
  *
- * The container element is rendered by `<MapCanvas />`, which attaches
- * `containerRef` — keeping the map's lifecycle here while the DOM node stays
- * where it belongs in the layout.
+ * The instance itself is created by `<MapCanvas />`, which renders react-map-gl's
+ * `<Map>` and hands the loaded map back through `onReady`. That inversion —
+ * canvas creates, provider holds — exists because the chrome needs the map and
+ * is not a child of the canvas: the search bar flies to a result, the zoom
+ * buttons zoom, the coordinate readout tracks the cursor.
+ *
+ * react-map-gl ships its own `useMap()`, but it only resolves for components
+ * *inside* `<Map>`. Keeping our own context means the chrome does not have to
+ * move into the map's subtree to reach it.
  */
 export function MapProvider({ children }: { children: ReactNode }) {
-  const containerRef = useRef<HTMLDivElement | null>(null)
-  const map = useLeafletMap(containerRef)
-  useTileLayer(map)
+  const [map, setMap] = useState<MapLibreMap | null>(null)
 
   const flyTo = useCallback<MapController['flyTo']>(
     (lat, lng, options) => {
-      map?.flyTo([lat, lng], options?.zoom ?? FOCUS_ZOOM, {
-        duration: options?.duration ?? DEFAULT_FLY_DURATION_S,
+      map?.flyTo({
+        center: [lng, lat],
+        zoom: options?.zoom ?? FOCUS_ZOOM,
+        duration: (options?.duration ?? DEFAULT_FLY_DURATION_S) * SECONDS_TO_MS,
+        // Omitted means "leave the camera as the operator set it". Only a preset
+        // that is about the third dimension states a tilt; a fly-to from the
+        // search bar or the activity feed should not quietly level the view.
+        ...(options?.pitch === undefined ? {} : { pitch: options.pitch }),
+        ...(options?.bearing === undefined ? {} : { bearing: options.bearing }),
       })
     },
     [map],
   )
 
-  const zoomIn = useCallback(() => map?.zoomIn(), [map])
-  const zoomOut = useCallback(() => map?.zoomOut(), [map])
+  // MapLibre's own `zoomIn`/`zoomOut` step a whole level. The dashboard has
+  // always moved in fractions, so the buttons ease by `ZOOM_DELTA` instead.
+  const zoomIn = useCallback(() => map?.easeTo({ zoom: map.getZoom() + ZOOM_DELTA }), [map])
+  const zoomOut = useCallback(() => map?.easeTo({ zoom: map.getZoom() - ZOOM_DELTA }), [map])
 
   const value = useMemo<MapController>(
-    () => ({ containerRef, map, flyTo, zoomIn, zoomOut }),
+    () => ({ map, onReady: setMap, flyTo, zoomIn, zoomOut }),
     [map, flyTo, zoomIn, zoomOut],
   )
 

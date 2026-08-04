@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import type { LeafletMouseEvent } from 'leaflet'
+import type { MapMouseEvent } from 'maplibre-gl'
 import { useMapController } from '@/components/monitoring/MapContext'
 import { Panel } from '@/components/ui/Panel'
 
@@ -29,8 +29,8 @@ export function CoordinateReadout() {
   const [position, setPosition] = useState<Readout | null>(null)
   const [zoom, setZoom] = useState<number | null>(null)
   const [tracking, setTracking] = useState(false)
-  // Read inside the Leaflet handlers so the listeners bind once, rather than
-  // being torn down and rebuilt every time the pointer enters or leaves.
+  // Read inside the map handlers so the listeners bind once, rather than being
+  // torn down and rebuilt every time the pointer enters or leaves.
   const trackingRef = useRef(false)
 
   useEffect(() => {
@@ -38,10 +38,10 @@ export function CoordinateReadout() {
 
     const centre = () => setPosition({ lat: map.getCenter().lat, lng: map.getCenter().lng })
 
-    const handleMove = (event: LeafletMouseEvent) => {
+    const handleMove = (event: MapMouseEvent) => {
       trackingRef.current = true
       setTracking(true)
-      setPosition({ lat: event.latlng.lat, lng: event.latlng.lng })
+      setPosition({ lat: event.lngLat.lat, lng: event.lngLat.lng })
     }
 
     const handleOut = () => {
@@ -77,12 +77,12 @@ export function CoordinateReadout() {
 
   return (
     <Panel className="absolute right-4 bottom-4 flex items-center gap-2.5 px-3 py-1.5">
-      <span className="font-mono text-[11px] text-fg tabular-nums">{formatPair(position)}</span>
+      <span className="numeric text-[11px] text-fg">{formatPair(position)}</span>
       <span className="h-3 w-px bg-line" aria-hidden />
       {/* Zoom is fractional now, so it is fixed to one place rather than
           printing a long float as the wheel moves. */}
-      <span className="font-mono text-[11px] text-fg-muted tabular-nums">z{zoom?.toFixed(1) ?? '–'}</span>
-      <span className="text-[9px] font-bold tracking-[0.06em] text-fg-subtle">{tracking ? 'CURSOR' : 'CENTRE'}</span>
+      <span className="numeric text-[11px] text-fg-muted">z{zoom?.toFixed(1) ?? '–'}</span>
+      <span className="label-micro text-fg-subtle">{tracking ? 'CURSOR' : 'CENTRE'}</span>
     </Panel>
   )
 }

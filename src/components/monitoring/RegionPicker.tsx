@@ -13,9 +13,10 @@ interface RegionPickerProps {
 /**
  * Region-drawing surface for the watch form.
  *
- * A schematic stand-in rather than a live Leaflet instance: the modal sits over
- * the real map, and mounting a second map purely to draw a rectangle costs more
- * than it returns. Swapping in `leaflet-draw` later only touches this file.
+ * A schematic stand-in rather than a live map instance: the modal sits over the
+ * real map, and mounting a second GL context purely to draw a rectangle costs
+ * considerably more than it returns. Swapping in a real draw surface — `terra-draw`
+ * or `mapbox-gl-draw`, both of which speak MapLibre — only touches this file.
  */
 export function RegionPicker({ hasRegion, onChange }: RegionPickerProps) {
   return (

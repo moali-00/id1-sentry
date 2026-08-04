@@ -33,10 +33,21 @@ const ALL_GROUPS: { key: LayerGroupKey; label: string }[] = [
 ]
 
 /**
+ * The groups the layer rail renders.
+ *
  * `watches` always renders — it holds the ITR target row, which is not an
- * operator watch. Only the generic demo signal layers go with the flag.
+ * operator watch. The generic demo signal layers go with `WATCHES_ENABLED`.
+ *
+ * **`display` is not in the rail.** Its three overlays are real layers and stay in
+ * `DATA_LAYERS` — the registry, the URL's `layers=` list and `layerEnabled` all
+ * still know about them — but they are rendered by `DisplayPanel` in the command
+ * bar, alongside the projection and basemap controls they belong with. The rail is
+ * for *what is drawn on the map*; how it is drawn is a different question, and
+ * keeping both in one list pushed the flat/globe switch below the fold.
  */
-export const LAYER_GROUPS = ALL_GROUPS.filter((group) => WATCHES_ENABLED || group.key !== 'signals')
+export const LAYER_GROUPS = ALL_GROUPS.filter(
+  (group) => group.key !== 'display' && (WATCHES_ENABLED || group.key !== 'signals'),
+)
 
 export const DATA_LAYERS: DataLayer[] = [
   {
@@ -235,6 +246,18 @@ export const DATA_LAYERS: DataLayer[] = [
     defaultOn: false,
   },
 
+  {
+    id: 'terrain',
+    label: '3D terrain',
+    groupKey: 'display',
+    color: '#a3a3a3',
+    hint: 'Elevation from a global DEM — tilt the camera to see it',
+    explain:
+      'Real elevation, drawn at true scale rather than exaggerated. It matters here because the pad complex, the Chandipur range and every settlement named in evacuation reporting sit within a few metres of sea level — which is a thing worth being able to see. Off by default: it loads a second set of tiles, and an ocean danger area has no relief to read.',
+    // Off by default. It costs a second tile pyramid from a third-party bucket,
+    // and most of what this dashboard draws is over water.
+    defaultOn: false,
+  },
   {
     id: 'day_night',
     label: 'Day / night',

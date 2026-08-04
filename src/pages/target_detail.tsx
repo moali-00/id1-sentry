@@ -59,7 +59,7 @@ function windowLabel(startsInHours: number | undefined): string {
 function Stat({ value, label }: { value: number | string; label: string }) {
   return (
     <div className="rounded-lg bg-inset px-2.5 py-2">
-      <p className="font-mono text-base leading-none font-bold text-fg tabular-nums">{value}</p>
+      <p className="numeric text-base leading-none font-bold text-fg">{value}</p>
       <p className="mt-1 text-[9.5px] leading-tight text-fg-subtle">{label}</p>
     </div>
   )
@@ -123,7 +123,7 @@ export default function TargetDetailPage() {
         <div className="flex flex-col gap-4 p-4 pb-8">
           <header className="flex items-start gap-2.5 border-b border-line pb-3.5">
             <div className="min-w-0 flex-1">
-              <p className="text-[9.5px] font-bold tracking-[0.09em] text-fg-subtle">TARGET DOSSIER</p>
+              <p className="label-micro text-fg-subtle">TARGET DOSSIER</p>
               <h2 className="truncate text-[17px] leading-tight font-bold text-fg">{aoi?.target.name}</h2>
               <p className="mt-0.5 text-[11px] text-fg-muted">{aoi?.target.facility}</p>
               {aoi?.target.aliases && aoi.target.aliases.length > 0 && (
@@ -144,9 +144,7 @@ export default function TargetDetailPage() {
                 >
                   {assessment.level.toUpperCase()}
                 </span>
-                <span className="font-mono text-[11px] font-bold text-fg tabular-nums">
-                  {assessment.score.toFixed(2)}
-                </span>
+                <span className="numeric text-[11px] font-bold text-fg">{assessment.score.toFixed(2)}</span>
                 <span className="text-[10.5px] text-fg-muted">
                   confidence {Math.round(assessment.confidence * 100)}%
                 </span>
@@ -180,10 +178,8 @@ export default function TargetDetailPage() {
                   <li key={indicator.key} className={cn(!indicator.available && 'opacity-50')}>
                     <div className="flex items-baseline gap-2">
                       <span className="flex-1 truncate text-[11.5px] font-semibold text-fg">{indicator.label}</span>
-                      <span className="font-mono text-[9.5px] text-fg-subtle tabular-nums">
-                        w{indicator.weight.toFixed(2)}
-                      </span>
-                      <span className="font-mono text-[11px] font-bold text-fg tabular-nums">
+                      <span className="numeric text-[9.5px] text-fg-subtle">w{indicator.weight.toFixed(2)}</span>
+                      <span className="numeric text-[11px] font-bold text-fg">
                         {indicator.score === null ? '—' : indicator.score.toFixed(2)}
                       </span>
                     </div>
@@ -261,7 +257,7 @@ export default function TargetDetailPage() {
                       <span className="flex-1 truncate text-[10.5px] text-fg-muted">
                         {v.start.slice(5, 16).replace('T', ' ')}Z · {v.hours_covered}h
                       </span>
-                      <span className="font-mono text-[10px] text-fg-subtle tabular-nums">
+                      <span className="numeric text-[10px] text-fg-subtle">
                         {Math.round(v.mean_cloud_cover_pct)}% cloud
                       </span>
                     </li>
@@ -448,7 +444,7 @@ export default function TargetDetailPage() {
                         </span>
                       )}
                       {warning.distance_to_island_km !== null && (
-                        <span className="ml-auto font-mono text-[10px] text-fg-subtle tabular-nums">
+                        <span className="ml-auto numeric text-[10px] text-fg-subtle ">
                           {Math.round(warning.distance_to_island_km)} km
                         </span>
                       )}
@@ -457,7 +453,7 @@ export default function TargetDetailPage() {
 
                     {warning.likely_systems && (
                       <div className="mt-2 border-t border-line-soft pt-2">
-                        <p className="text-[9.5px] font-bold tracking-[0.05em] text-fg-subtle">
+                        <p className="label-micro text-fg-subtle">
                           {warning.likely_systems.label.toUpperCase()} · {warning.likely_systems.confidence} confidence
                         </p>
                         <p className="mt-0.5 text-[10px] text-fg-subtle">{warning.likely_systems.basis}</p>
@@ -528,7 +524,7 @@ export default function TargetDetailPage() {
                       <span className="font-mono text-[11px] font-bold text-fg">{pair.near_warning.number}</span>
                       <span className="text-[10px] text-fg-subtle">→</span>
                       <span className="font-mono text-[11px] font-bold text-fg">{pair.far_warning.number}</span>
-                      <span className="ml-auto font-mono text-[10.5px] font-bold text-cat-conflict tabular-nums">
+                      <span className="ml-auto numeric text-[10.5px] font-bold text-cat-conflict ">
                         {Math.round(pair.impact_distance_km)} km
                       </span>
                     </div>

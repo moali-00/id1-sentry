@@ -1,13 +1,28 @@
-import { createContext, use, type RefObject } from 'react'
-import type { Map as LeafletMap } from 'leaflet'
+import { createContext, use } from 'react'
+import type { Map as MapLibreMap } from 'maplibre-gl'
 
 export interface MapController {
-  /** Attach to the element the map renders into. Owned by `MapProvider`. */
-  containerRef: RefObject<HTMLDivElement | null>
-  /** Null until Leaflet has initialised. */
-  map: LeafletMap | null
-  /** Animate to a coordinate. Falls back to the default focus zoom. */
-  flyTo: (lat: number, lng: number, options?: { zoom?: number; duration?: number }) => void
+  /**
+   * Null until the map is constructed.
+   *
+   * Non-null does **not** mean the style has finished loading — anything that
+   * needs a loaded style must check `isStyleLoaded()` or wait for `style.load`,
+   * as `useTerrain` and `useFeatureHover` do. Camera calls are safe immediately.
+   */
+  map: MapLibreMap | null
+  /** Set by `<MapCanvas />` from its map ref. Owned by `MapProvider`. */
+  onReady: (map: MapLibreMap | null) => void
+  /**
+   * Animate to a coordinate. Falls back to the default focus zoom.
+   *
+   * Arguments are lat-then-lng because that is how a person reads a coordinate
+   * off a report; the conversion to MapLibre's `[lng, lat]` happens inside.
+   */
+  flyTo: (
+    lat: number,
+    lng: number,
+    options?: { zoom?: number; duration?: number; pitch?: number; bearing?: number },
+  ) => void
   zoomIn: () => void
   zoomOut: () => void
 }

@@ -11,16 +11,24 @@ const R_KM = 6371.0088
 const RAD = Math.PI / 180
 const DEG = 180 / Math.PI
 
-/** Leaflet order — `[lat, lng]`. */
-export type LatLngTuple = [number, number]
+/**
+ * GeoJSON order — `[lon, lat]`.
+ *
+ * The whole app speaks this order: MapLibre consumes GeoJSON directly, so a
+ * coordinate is never flipped anywhere between the API and the map.
+ */
+export type LngLatTuple = [number, number]
 
 /**
  * The point `distanceKm` away from `[lat, lng]` along a compass `bearingDeg`.
  *
+ * Arguments are named, so they read in the familiar lat-then-lon order; the
+ * *return* is a GeoJSON tuple, because that is what gets drawn.
+ *
  * This is what turns a corridor's `{bearing_deg, near_km, far_km}` into an
  * actual shape on the map.
  */
-export function destinationPoint(lat: number, lng: number, bearingDeg: number, distanceKm: number): LatLngTuple {
+export function destinationPoint(lat: number, lng: number, bearingDeg: number, distanceKm: number): LngLatTuple {
   const angular = distanceKm / R_KM
   const bearing = bearingDeg * RAD
   const lat1 = lat * RAD
@@ -35,7 +43,7 @@ export function destinationPoint(lat: number, lng: number, bearingDeg: number, d
 
   // Normalise longitude into [-180, 180] so a corridor crossing the date line
   // does not draw a stripe across the whole map.
-  return [lat2 * DEG, ((lng2 * DEG + 540) % 360) - 180]
+  return [((lng2 * DEG + 540) % 360) - 180, lat2 * DEG]
 }
 
 /**
@@ -54,11 +62,11 @@ export function corridorWedge(
   nearKm: number,
   farKm: number,
   steps = 24,
-): LatLngTuple[] {
+): LngLatTuple[] {
   const half = spanDeg / 2
   const start = bearingDeg - half
   const end = bearingDeg + half
-  const ring: LatLngTuple[] = []
+  const ring: LngLatTuple[] = []
 
   // Outer arc, left to right.
   for (let i = 0; i <= steps; i += 1) {
@@ -81,7 +89,7 @@ export function corridorWedge(
  * A straight line in Web Mercator is not the shortest path over 1,200 km, and
  * drawing one would misrepresent where a coupled trial actually reaches.
  */
-export function greatCircle(fromLat: number, fromLng: number, toLat: number, toLng: number, steps = 48): LatLngTuple[] {
+export function greatCircle(fromLat: number, fromLng: number, toLat: number, toLng: number, steps = 48): LngLatTuple[] {
   const lat1 = fromLat * RAD
   const lng1 = fromLng * RAD
   const lat2 = toLat * RAD
@@ -94,9 +102,9 @@ export function greatCircle(fromLat: number, fromLng: number, toLat: number, toL
     )
 
   // Coincident endpoints have no arc to interpolate.
-  if (delta === 0) return [[fromLat, fromLng]]
+  if (delta === 0) return [[fromLng, fromLat]]
 
-  const points: LatLngTuple[] = []
+  const points: LngLatTuple[] = []
   for (let i = 0; i <= steps; i += 1) {
     const f = i / steps
     const a = Math.sin((1 - f) * delta) / Math.sin(delta)
@@ -106,7 +114,7 @@ export function greatCircle(fromLat: number, fromLng: number, toLat: number, toL
     const y = a * Math.cos(lat1) * Math.sin(lng1) + b * Math.cos(lat2) * Math.sin(lng2)
     const z = a * Math.sin(lat1) + b * Math.sin(lat2)
 
-    points.push([Math.atan2(z, Math.hypot(x, y)) * DEG, Math.atan2(y, x) * DEG])
+    points.push([Math.atan2(y, x) * DEG, Math.atan2(z, Math.hypot(x, y)) * DEG])
   }
 
   return points

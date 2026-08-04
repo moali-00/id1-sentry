@@ -48,10 +48,8 @@ export function LayerGroupSection({
           )}
         >
           <Chevron className="size-3.5 flex-none text-fg-subtle" aria-hidden />
-          <span className="flex-1 truncate text-[10px] font-bold tracking-[0.08em] text-title">{label}</span>
-          <span
-            className={cn('font-mono text-[10px] tabular-nums', anyOn ? 'font-semibold text-accent' : 'text-fg-subtle')}
-          >
+          <span className="flex-1 truncate label-micro text-title">{label}</span>
+          <span className={cn('numeric text-[10px]', anyOn ? 'font-semibold text-accent' : 'text-fg-subtle')}>
             {activeCount}/{totalCount}
           </span>
         </button>

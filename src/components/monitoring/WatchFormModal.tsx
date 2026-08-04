@@ -102,7 +102,7 @@ export function WatchFormModal({ mode, initialDraft, onSave, onClose }: WatchFor
                       aria-pressed={active}
                       className={cn(
                         'rounded-md px-3 py-1.5 text-xs transition-colors focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none',
-                        active ? 'bg-accent font-bold text-white' : 'font-semibold text-fg-muted hover:text-fg',
+                        active ? 'bg-accent font-bold text-accent-fg' : 'font-semibold text-fg-muted hover:text-fg',
                       )}
                     >
                       {type.label}
@@ -194,7 +194,7 @@ export function WatchFormModal({ mode, initialDraft, onSave, onClose }: WatchFor
             <button
               type="submit"
               disabled={saving}
-              className="flex min-w-[116px] items-center justify-center gap-1.5 rounded-md bg-accent px-4 py-2 text-xs font-bold text-white shadow-lg disabled:cursor-default"
+              className="flex min-w-[116px] items-center justify-center gap-1.5 rounded-md bg-accent px-4 py-2 text-xs font-bold text-accent-fg shadow-lg disabled:cursor-default"
             >
               {saving ? (
                 <>

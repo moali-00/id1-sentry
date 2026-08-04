@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSelector, createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { fetchPoints } from '@/api/monitoring'
 import { DATA_LAYERS, DEFAULT_LAYER_STATE, SIGNAL_LAYER_IDS, layersInGroup } from '@/utils/layers'
-import { DEFAULT_BASEMAP, type BasemapId } from '@/utils/constants'
+import { DEFAULT_BASEMAP, DEFAULT_PROJECTION, type BasemapId, type ProjectionId } from '@/utils/constants'
 import type { DataLayerId, LayerGroupKey, MapPoint, SignalLayerId } from '@/types/monitoring'
 
 /**
@@ -21,6 +21,14 @@ interface LayersState {
   loading: Record<SignalLayerId, boolean>
   /** Chosen basemap. Independent of the chrome theme. */
   basemap: BasemapId
+  /**
+   * Flat or globe.
+   *
+   * A mode, not a camera. Pitch and bearing stay MapLibre's to own — mirroring
+   * them into Redux would dispatch on every frame of a drag; the projection
+   * changes only when the operator asks for it.
+   */
+  projection: ProjectionId
 }
 
 const emptyPoints = () =>
@@ -31,15 +39,15 @@ const noneLoading = () =>
 
 const initialState: LayersState = {
   enabled: { ...DEFAULT_LAYER_STATE },
-  // All three open: a collapsed group hides what the dashboard can do, and the
-  // basemap picker in `display` is the first thing an operator reaches for.
-  // The ITR groups open because that target is the subject of the dashboard;
-  // the generic demo layers and display toggles start collapsed so the rail
-  // does not open at full height.
-  expanded: { watches: true, signals: false, itr_zones: true, itr_feeds: true, display: false },
+  // A collapsed group hides what the dashboard can do, so the ITR groups open —
+  // that target is the subject. Only the generic demo signal layers start
+  // collapsed, and they are off anyway. `display` is carried for the type's sake
+  // but the rail no longer renders that group; its controls live in `DisplayPanel`.
+  expanded: { watches: true, signals: false, itr_zones: true, itr_feeds: true, display: true },
   points: emptyPoints(),
   loading: noneLoading(),
   basemap: DEFAULT_BASEMAP,
+  projection: DEFAULT_PROJECTION,
 }
 
 /**
@@ -82,6 +90,10 @@ const layersSlice = createSlice({
     setBasemap(state, action: PayloadAction<BasemapId>) {
       state.basemap = action.payload
     },
+
+    setProjection(state, action: PayloadAction<ProjectionId>) {
+      state.projection = action.payload
+    },
   },
 
   extraReducers: (builder) => {
@@ -106,13 +118,21 @@ const layersSlice = createSlice({
     selectLayerPoints: (state) => state.points,
     selectLayerLoading: (state) => state.loading,
     selectBasemap: (state) => state.basemap,
+    selectProjection: (state) => state.projection,
   },
 })
 
-export const { toggleLayer, setGroupEnabled, toggleGroupExpanded, setEnabledLayers, setBasemap } = layersSlice.actions
+export const { toggleLayer, setGroupEnabled, toggleGroupExpanded, setEnabledLayers, setBasemap, setProjection } =
+  layersSlice.actions
 
-export const { selectLayerEnabled, selectExpandedGroups, selectLayerPoints, selectLayerLoading, selectBasemap } =
-  layersSlice.selectors
+export const {
+  selectLayerEnabled,
+  selectExpandedGroups,
+  selectLayerPoints,
+  selectLayerLoading,
+  selectBasemap,
+  selectProjection,
+} = layersSlice.selectors
 
 /** Ids of every layer currently switched on, in registry order. */
 export const selectActiveLayerIds = createSelector([selectLayerEnabled], (enabled) =>

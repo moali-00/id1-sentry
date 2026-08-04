@@ -80,7 +80,7 @@ export function SourceHealthPanel() {
   return (
     <Panel className="w-[340px] p-3">
       <div className="mb-2 flex items-baseline justify-between">
-        <h2 className="text-[10px] font-bold tracking-[0.08em] text-title">COLLECTION STATUS</h2>
+        <h2 className="label-micro text-title">COLLECTION STATUS</h2>
         <span className="text-[10px] text-fg-subtle">
           {(counts.ok ?? 0) + (counts.empty ?? 0)} reporting · {counts.degraded ?? 0} partial ·{' '}
           {(counts.error ?? 0) + (counts.unconfigured ?? 0)} down

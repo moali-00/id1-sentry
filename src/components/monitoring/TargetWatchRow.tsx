@@ -47,12 +47,12 @@ export function TargetWatchRow() {
 
         <span className={cn('flex-1 truncate text-[13px] text-fg', !enabled && 'line-through')}>{target.name}</span>
 
-        <span className="font-mono text-xs font-bold text-fg-muted tabular-nums">{target.featureCount}</span>
+        <span className="numeric text-xs font-bold text-fg-muted">{target.featureCount}</span>
 
         <span
           className={cn(
-            'rounded-[10px] px-1.5 py-[2px] text-[8.5px] font-bold tracking-[0.05em] text-white',
-            enabled ? 'bg-accent' : 'bg-off',
+            'rounded-[10px] px-1.5 py-[2px] text-[8.5px] font-bold tracking-[0.05em]',
+            enabled ? 'bg-accent text-accent-fg' : 'bg-off text-white',
           )}
         >
           {enabled ? 'ON' : 'OFF'}

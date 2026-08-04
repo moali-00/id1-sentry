@@ -31,7 +31,9 @@ export function PlatformBadge({ platform }: { platform: string }) {
   return (
     <span
       title={platform}
-      className="flex-none rounded-[3px] bg-badge px-[5px] py-[2px] text-[8.5px] font-bold tracking-[0.03em] text-badge-fg"
+      // Hairline border as well as a fill. A bare fill on a dark panel reads as a
+      // smudge; the edge is what makes it a chip.
+      className="numeric flex-none rounded-[3px] border border-line-soft bg-badge px-[5px] py-[2px] text-[8.5px] font-bold tracking-[0.03em] text-badge-fg"
     >
       {code}
     </span>

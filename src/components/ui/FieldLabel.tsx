@@ -10,7 +10,7 @@ interface FieldLabelProps {
 
 /** The small uppercase caption above every field, stat and section. */
 export function FieldLabel({ children, htmlFor, className }: FieldLabelProps) {
-  const classes = cn('mb-1.5 block text-[10px] font-bold tracking-[0.07em] text-fg-subtle', className)
+  const classes = cn('mb-1.5 block label-micro text-fg-subtle', className)
 
   return htmlFor ? (
     <label htmlFor={htmlFor} className={classes}>

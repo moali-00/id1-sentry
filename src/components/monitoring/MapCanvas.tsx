@@ -1,17 +1,22 @@
 import { useCallback, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import MapGL, { ScaleControl, type MapLayerMouseEvent, type MapRef } from 'react-map-gl/maplibre'
 import { useMapController } from '@/components/monitoring/MapContext'
-import { useClusterMarkers } from '@/hooks/useClusterMarkers'
-import { createReportingIcon } from '@/utils/markerIcon'
-import { useDayNightLayer } from '@/hooks/useDayNightLayer'
-import { useGraticuleLayer } from '@/hooks/useGraticuleLayer'
-import { useAreaLayer } from '@/hooks/useAreaLayer'
-import { useLineLayer } from '@/hooks/useLineLayer'
+import { AreaLayers } from '@/components/monitoring/layers/AreaLayers'
+import { LineLayers } from '@/components/monitoring/layers/LineLayers'
+import { ClusterMarkers, ReportingMarkers } from '@/components/monitoring/layers/ClusterMarkers'
+import { PointMarkers } from '@/components/monitoring/layers/PointMarkers'
+import { DayNightLayer } from '@/components/monitoring/layers/DayNightLayer'
+import { GraticuleLayer } from '@/components/monitoring/layers/GraticuleLayer'
+import { FeatureTooltip, MapTooltip } from '@/components/monitoring/FeatureTooltip'
+import { useFeatureHover } from '@/hooks/useFeatureHover'
+import { useMapCamera } from '@/hooks/useMapCamera'
+import { useProjectionPitch } from '@/hooks/useProjectionPitch'
+import { useTerrain } from '@/hooks/useTerrain'
 import { useItrData } from '@/hooks/useItrData'
-import { usePointLayer } from '@/hooks/usePointLayer'
 import { useSignalPoints } from '@/hooks/useSignalPoints'
 import { selectItrAreas, selectItrLines, selectItrPoints, selectSocialClusters } from '@/store/slices/itrSlice'
-import type { Cluster } from '@/types/monitoring'
+import type { Cluster, DataLayerId } from '@/types/monitoring'
 import { useAppDispatch, useAppSelector } from '@/store/store'
 import {
   hoverCluster,
@@ -21,21 +26,35 @@ import {
   selectHoveredClusterId,
   selectSelectedClusterId,
 } from '@/store/slices/monitoringSlice'
-import { selectBasemap, selectLayerEnabled, selectVisiblePoints } from '@/store/slices/layersSlice'
-import { BASEMAPS } from '@/utils/constants'
-import { WATCHES_ENABLED } from '@/utils/layers'
+import { selectBasemap, selectLayerEnabled, selectProjection, selectVisiblePoints } from '@/store/slices/layersSlice'
+import { selectTheme } from '@/store/slices/themeSlice'
+import { BASEMAPS, INITIAL_VIEW, MAX_PITCH, MAX_ZOOM, MIN_ZOOM, SKY } from '@/utils/constants'
+import { basemapStyle } from '@/utils/mapStyle'
+import { HOVERABLE_LAYER_IDS } from '@/utils/mapLayers'
+import { WATCHES_ENABLED, dataLayer } from '@/utils/layers'
 
-/** Stable empty array — a fresh `[]` each render would re-run the marker sync. */
+/** Stable empty array — a fresh `[]` each render would re-feed the sources. */
 const NO_CLUSTERS: Cluster[] = []
+
+/**
+ * Tilt, in degrees, past which extruded volumes are worth drawing.
+ *
+ * Below this the camera is close enough to straight down that a volume and its
+ * footprint are the same picture. The globe's own resting tilt is 14°, so this
+ * sits just under it — switching to the globe reveals the volumes.
+ */
+const EXTRUSION_MIN_PITCH = 10
 
 /**
  * The map itself — the product surface every other panel floats above.
  *
- * Renders nothing but the container Leaflet draws into; all marker syncing is
- * delegated to `useClusterMarkers`.
+ * react-map-gl creates the MapLibre instance and hands it to `MapProvider`
+ * through `onReady`; everything drawn on it is a child component here. There is
+ * no imperative layer reconciliation left: React diffs the markers and the
+ * GeoJSON sources, which is what replaced six hooks of ref-keyed bookkeeping.
  */
 export function MapCanvas() {
-  const { containerRef, map } = useMapController()
+  const { onReady } = useMapController()
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
@@ -47,9 +66,14 @@ export function MapCanvas() {
   const enabled = useAppSelector(selectEnabled)
   const hoveredClusterId = useAppSelector(selectHoveredClusterId)
   const selectedClusterId = useAppSelector(selectSelectedClusterId)
+  const basemapId = useAppSelector(selectBasemap)
+  const projection = useAppSelector(selectProjection)
   // Marker contrast follows the basemap, not the chrome theme — the markers are
   // drawn on the tiles, not on the panels.
-  const isLight = BASEMAPS[useAppSelector(selectBasemap)].isLight
+  const isLight = BASEMAPS[basemapId].isLight
+  // The sky is the exception: it is *not* part of the basemap, it is the space
+  // around the globe, so it follows the chrome theme like every other surface.
+  const theme = useAppSelector(selectTheme)
   const points = useAppSelector(selectVisiblePoints)
   const layerEnabled = useAppSelector(selectLayerEnabled)
   const itrPoints = useAppSelector(selectItrPoints)
@@ -59,12 +83,26 @@ export function MapCanvas() {
 
   useSignalPoints()
   useItrData()
+  useProjectionPitch(projection)
+  useTerrain(layerEnabled.terrain)
+
+  const hoveredFeature = useFeatureHover(HOVERABLE_LAYER_IDS)
+
+  // Extruded volumes are only mounted once the camera is actually tilted. Straight
+  // down, an extrusion looks exactly like its own footprint.
+  const { pitch } = useMapCamera()
+  const tilted = pitch > EXTRUSION_MIN_PITCH
+
+  const mapStyle = useMemo(() => basemapStyle(basemapId), [basemapId])
 
   // Both the generic signal layers and the ITR feeds are filtered by the same
   // per-layer toggles, so they can share the marker and polygon renderers.
-  const visibleItrPoints = itrPoints.filter((point) => layerEnabled[point.layerId])
-  const visibleItrAreas = itrAreas.filter((area) => layerEnabled[area.layerId])
-  const visibleItrLines = itrLines.filter((line) => layerEnabled[line.layerId])
+  const visiblePoints = useMemo(
+    () => [...points, ...itrPoints.filter((point) => layerEnabled[point.layerId])],
+    [points, itrPoints, layerEnabled],
+  )
+  const visibleAreas = useMemo(() => itrAreas.filter((area) => layerEnabled[area.layerId]), [itrAreas, layerEnabled])
+  const visibleLines = useMemo(() => itrLines.filter((line) => layerEnabled[line.layerId]), [itrLines, layerEnabled])
 
   const handleHover = useCallback(
     (clusterId: string | null) => {
@@ -81,10 +119,7 @@ export function MapCanvas() {
     [dispatch, navigate],
   )
 
-  // Reporting clusters open the site's posts rather than a watch. They are a
-  // second `useClusterMarkers` call rather than a flag on `Cluster`: the two
-  // sets have different lifetimes and different destinations, and sharing one
-  // reconciler would mean discriminating on the id inside the click handler.
+  // Reporting clusters open the site's posts rather than a watch.
   const socialEnabled = useMemo(
     () => Object.fromEntries(socialClusters.map((cluster) => [cluster.watchId, layerEnabled.itr_social])),
     [socialClusters, layerEnabled.itr_social],
@@ -98,38 +133,120 @@ export function MapCanvas() {
     [dispatch, navigate],
   )
 
-  useClusterMarkers({
-    map,
-    clusters,
-    enabled,
-    hoveredClusterId,
-    selectedClusterId,
-    isLight,
-    onHover: handleHover,
-    onSelect: handleSelect,
-  })
+  // The pointer must read as clickable over a cluster but not over a danger area,
+  // which is context. Areas and lines get a tooltip and nothing else.
+  const handleMouseMove = useCallback((event: MapLayerMouseEvent) => {
+    event.target.getCanvas().style.cursor = event.features?.length ? 'help' : ''
+  }, [])
 
-  useClusterMarkers({
-    map,
-    clusters: socialClusters,
-    enabled: socialEnabled,
-    hoveredClusterId,
-    selectedClusterId,
-    isLight,
-    onHover: handleHover,
-    onSelect: handleSocialSelect,
-    icon: createReportingIcon,
-    // Under the sites, warnings and evacuation markers it annotates. Point
-    // layers sit between -500 and -100, so this clears all of them.
-    zIndexOffset: -600,
-  })
+  // Hand the instance to `MapProvider` on mount, and clear it on unmount so a
+  // remount never leaves the chrome holding a destroyed map.
+  const handleRef = useCallback(
+    (ref: MapRef | null) => {
+      onReady(ref ? ref.getMap() : null)
+    },
+    [onReady],
+  )
 
-  usePointLayer(map, points)
-  usePointLayer(map, visibleItrPoints)
-  useAreaLayer(map, visibleItrAreas)
-  useLineLayer(map, visibleItrLines)
-  useDayNightLayer(map, layerEnabled.day_night)
-  useGraticuleLayer(map, layerEnabled.graticule)
+  return (
+    /*
+     * Two elements, not one, and that is load-bearing.
+     *
+     * MapLibre's stylesheet sets `.maplibregl-map { position: relative }`
+     * unlayered, and Tailwind v4 emits its utilities inside `@layer utilities` —
+     * where an unlayered rule wins whatever the source order or specificity. Put
+     * `absolute inset-0` straight on the map container and MapLibre silently
+     * overrides it, collapsing the map to zero height and rendering nothing, with
+     * no error. That is what sank the first attempt at this migration.
+     *
+     * So the *wrapper* is what Tailwind positions, and the map container inside it
+     * takes its size from an inline style — which no stylesheet can override.
+     */
+    <div className="absolute inset-0 z-0 bg-sea">
+      <MapGL
+        // `initialViewState`, not `viewState`: the camera is MapLibre's to own.
+        // Driving it from React state would re-render the tree on every frame of
+        // a pan, and `useMapUrlState` already mirrors it into the query string.
+        initialViewState={{
+          latitude: INITIAL_VIEW.center[0],
+          longitude: INITIAL_VIEW.center[1],
+          zoom: INITIAL_VIEW.zoom,
+        }}
+        mapStyle={mapStyle}
+        projection={projection}
+        // Sky is declared even in Mercator: MapLibre ignores the atmosphere there,
+        // but keeping it set means switching to the globe does not have to wait
+        // for a second style update to look right.
+        sky={SKY[theme]}
+        minZoom={MIN_ZOOM}
+        maxZoom={MAX_ZOOM}
+        // Raised from MapLibre's default 60 so the camera can look *along* a range
+        // rather than only down at it — which is the whole point of the tilt.
+        maxPitch={MAX_PITCH}
+        // The rails supply their own zoom buttons, positioned clear of the chrome,
+        // so no NavigationControl is mounted.
+        attributionControl={{ compact: false }}
+        interactiveLayerIds={HOVERABLE_LAYER_IDS}
+        onMouseMove={handleMouseMove}
+        /*
+         * The instance is taken from the ref, not from `onLoad`.
+         *
+         * `load` is a one-shot event, and under StrictMode's mount → unmount →
+         * remount it can be missed entirely — leaving `MapProvider.map` null
+         * forever, so no layer, marker or chrome control ever binds and the map
+         * renders as an empty canvas with no error to show for it.
+         *
+         * A ref fires on every mount and carries the instance whether or not the
+         * style has finished loading. Everything downstream that needs a loaded
+         * style already checks for one (`useTerrain`, `useFeatureHover`), so this
+         * is both the earlier and the more reliable signal.
+         */
+        ref={handleRef}
+        onError={(event) => console.error('MapLibre:', event.error?.message ?? event.error ?? event)}
+        style={{ width: '100%', height: '100%' }}
+      >
+        <ScaleControl position="bottom-left" unit="metric" maxWidth={120} />
 
-  return <div ref={containerRef} className="absolute inset-0 z-0 bg-sea" />
+        {/*
+          Draw order is the mount order of these children, and it is deliberate:
+          the display washes go down first, then areas, then the lines that assert
+          a direction over them. Markers are DOM and always sit above all of it.
+        */}
+        {layerEnabled.day_night && <DayNightLayer />}
+        {layerEnabled.graticule && <GraticuleLayer />}
+        <AreaLayers areas={visibleAreas} extruded={tilted} isLight={isLight} />
+        <LineLayers lines={visibleLines} />
+
+        <ReportingMarkers
+          clusters={socialClusters}
+          enabled={socialEnabled}
+          hoveredClusterId={hoveredClusterId}
+          selectedClusterId={selectedClusterId}
+          onHover={handleHover}
+          onSelect={handleSocialSelect}
+        />
+        <PointMarkers points={visiblePoints} />
+        <ClusterMarkers
+          clusters={clusters}
+          enabled={enabled}
+          hoveredClusterId={hoveredClusterId}
+          selectedClusterId={selectedClusterId}
+          isLight={isLight}
+          onHover={handleHover}
+          onSelect={handleSelect}
+        />
+
+        {hoveredFeature && (
+          <MapTooltip lat={hoveredFeature.lat} lng={hoveredFeature.lng}>
+            <FeatureTooltip
+              layerId={hoveredFeature.props.layerId as DataLayerId}
+              title={hoveredFeature.props.label}
+              detail={hoveredFeature.props.detail || undefined}
+              meta={dataLayer(hoveredFeature.props.layerId as DataLayerId)?.label}
+            />
+          </MapTooltip>
+        )}
+      </MapGL>
+    </div>
+  )
 }

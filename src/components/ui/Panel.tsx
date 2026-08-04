@@ -20,7 +20,11 @@ export function Panel({ children, className, style }: PanelProps) {
     <div
       style={style}
       className={cn(
-        'panel-surface pointer-events-auto rounded-xl border border-line bg-panel backdrop-blur-md',
+        // The blur belongs to `panel-surface`, which pairs it with a saturation
+        // boost and the glass sheen. Adding `backdrop-blur-*` here as well would put
+        // two `backdrop-filter` declarations on one element, and which of the two
+        // utilities wins depends on their order in the generated stylesheet.
+        'panel-surface pointer-events-auto rounded-xl border border-line bg-panel',
         className,
       )}
     >
@@ -35,5 +39,5 @@ export function PanelHeader({ children, className }: PanelProps) {
 }
 
 export function PanelTitle({ children, className }: PanelProps) {
-  return <span className={cn('flex-1 text-[10px] font-bold tracking-[0.08em] text-title', className)}>{children}</span>
+  return <span className={cn('flex-1 label-micro text-title', className)}>{children}</span>
 }

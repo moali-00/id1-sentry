@@ -1,7 +1,6 @@
 import { ChevronLeft, ChevronRight, Layers, Plus } from 'lucide-react'
 import { categoryColor } from '@/utils/constants'
 import { LAYER_GROUPS, WATCHES_ENABLED, layersInGroup } from '@/utils/layers'
-import { BasemapPicker } from '@/components/monitoring/BasemapPicker'
 import { LayerGroupSection } from '@/components/monitoring/LayerGroupSection'
 import { LayerRow } from '@/components/monitoring/LayerRow'
 import { TargetWatchRow } from '@/components/monitoring/TargetWatchRow'
@@ -36,10 +35,13 @@ interface LayerRailProps {
 /**
  * Left rail: every map layer, grouped and collapsible.
  *
- * The operator's watches are the first group and behave exactly as they always
- * have; `signals` and `display` add catalogue layers from `utils/layers.ts`.
- * Grouping them in one rail — rather than adding a second panel — keeps a single
- * answer to "what is currently drawn on this map".
+ * The operator's watches are the first group; the rest are catalogue layers from
+ * `utils/layers.ts`. One rail rather than several panels keeps a single answer to
+ * "what is currently drawn on this map".
+ *
+ * The `display` group is deliberately absent — projection, basemap and the
+ * cartographic overlays answer *how* the map is drawn, not what is on it, and they
+ * live in `DisplayPanel` off the command bar.
  */
 export function LayerRail({ onCreate, onEdit }: LayerRailProps) {
   const dispatch = useAppDispatch()
@@ -161,7 +163,7 @@ export function LayerRail({ onCreate, onEdit }: LayerRailProps) {
                     <button
                       type="button"
                       onClick={onCreate}
-                      className="mx-1 mt-1.5 flex items-center justify-center gap-1.5 rounded-md border-[1.5px] border-dashed border-line py-2 text-xs font-semibold text-fg transition-colors hover:border-solid hover:border-accent hover:bg-accent hover:text-white focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
+                      className="mx-1 mt-1.5 flex items-center justify-center gap-1.5 rounded-md border-[1.5px] border-dashed border-line py-2 text-xs font-semibold text-fg transition-colors hover:border-solid hover:border-accent hover:bg-accent hover:text-accent-fg focus-visible:ring-2 focus-visible:ring-accent focus-visible:outline-none"
                     >
                       <Plus className="size-3.5" aria-hidden /> New watch
                     </button>
@@ -169,7 +171,6 @@ export function LayerRail({ onCreate, onEdit }: LayerRailProps) {
                 </>
               ) : (
                 <>
-                  {group.key === 'display' && <BasemapPicker />}
                   {layersInGroup(group.key).map((layer) => {
                     // Only `signals` layers carry points; the registry guarantees
                     // their ids are `SignalLayerId`s, which the group key narrows.

@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#e8ecec" />
+    <!-- Matches `--c-sea` in the dark palette, which is the default. -->
+    <meta name="theme-color" content="#050a0f" />
     <meta
       name="description"
       content="ID1 Sentry Dashboard — geospatial live monitoring of OSINT watches, clusters and activity."
@@ -17,10 +18,10 @@
       ;(function () {
         try {
           var stored = localStorage.getItem('sentry-theme')
-          var theme = stored === 'light' || stored === 'dark' ? stored : 'light'
+          var theme = stored === 'light' || stored === 'dark' ? stored : 'dark'
           document.documentElement.classList.add(theme)
         } catch (_) {
-          document.documentElement.classList.add('light')
+          document.documentElement.classList.add('dark')
         }
       })()
     </script>

@@ -111,7 +111,7 @@ export default function WatchDetailPage() {
           </header>
 
           <section className="rounded-xl border border-accent-line bg-accent-soft p-3">
-            <h3 className="mb-2 flex items-center gap-1.5 text-[10px] font-bold tracking-[0.07em] text-accent">
+            <h3 className="mb-2 flex items-center gap-1.5 label-micro text-accent">
               <Sparkles className="size-3.5" aria-hidden />
               AI INSIGHTS · POSTS ON THIS TOPIC
             </h3>
