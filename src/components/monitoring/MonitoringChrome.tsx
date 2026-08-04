@@ -136,7 +136,7 @@ export function MonitoringChrome() {
       </div>
 
       {sourcesOpen && (
-        <div className="pointer-events-auto absolute top-[100px] left-1/2 -translate-x-1/2">
+        <div className="pointer-events-auto absolute top-[126px] left-1/2 -translate-x-1/2">
           <SourceHealthPanel />
         </div>
       )}

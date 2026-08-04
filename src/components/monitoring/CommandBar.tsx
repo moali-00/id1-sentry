@@ -38,7 +38,9 @@ export function CommandBar({
   const toggle = (next: Exclude<CommandPopover, null>) => onPopoverChange(popover === next ? null : next)
 
   return (
-    <div className="pointer-events-none absolute top-[52px] left-1/2 flex -translate-x-1/2 items-start gap-2">
+    // 70px clears the status pill, which starts at 16px and is ~42px tall.
+    // At 52 the two rows overlapped by a few pixels and read as one blob.
+    <div className="pointer-events-none absolute top-[70px] left-1/2 flex -translate-x-1/2 items-start gap-3">
       <SearchBar onSelect={onSearchSelect} focusToken={focusToken} />
 
       <Panel className="pointer-events-auto flex items-center gap-1 rounded-full p-1.5">

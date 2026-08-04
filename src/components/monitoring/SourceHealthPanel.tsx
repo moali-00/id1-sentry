@@ -52,6 +52,23 @@ const SOURCE_LABEL: Record<string, string> = {
 
 const labelFor = (id: string) => SOURCE_LABEL[id] ?? id.replace(/[_-]+/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase())
 
+/**
+ * What a stream being down or partial actually costs.
+ *
+ * Some upstreams explain themselves usefully — the navigation-warning caveat is
+ * worth reading. Others report only a transport failure, which is stripped on
+ * the way in, leaving a red row with no reason beside it. A bare DOWN with no
+ * consequence is alarming without being informative, so say which kind it is: a
+ * stream that feeds the score leaves a hole in it, and one that does not is
+ * worth knowing about but changes nothing.
+ */
+function consequenceOf(source: SourceHealth): string | undefined {
+  if (source.status === 'ok' || source.status === 'empty') return undefined
+  return source.used_for_assessment
+    ? 'Not contributing to the current assessment.'
+    : 'Not part of the assessment — the score is unaffected.'
+}
+
 export function SourceHealthPanel() {
   const sources = useAppSelector(selectAllSources)
 
@@ -76,6 +93,7 @@ export function SourceHealthPanel() {
         <ul className="scroll-thin flex max-h-72 flex-col gap-1 overflow-y-auto">
           {sources.map((source) => {
             const style = STATUS_STYLE[source.status] ?? STATUS_STYLE.unconfigured
+            const note = plainText(source.detail) || consequenceOf(source)
 
             return (
               <li key={source.source} className="rounded-md bg-inset px-2 py-1.5">
@@ -94,9 +112,7 @@ export function SourceHealthPanel() {
                   </span>
                 </div>
 
-                {source.detail && (
-                  <p className="mt-1 text-[10px] leading-snug text-fg-subtle">{plainText(source.detail)}</p>
-                )}
+                {note && <p className="mt-1 text-[10px] leading-snug text-fg-subtle">{note}</p>}
               </li>
             )
           })}
