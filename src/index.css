@@ -71,53 +71,64 @@
 /*
  * The dark palette — and the default one.
  *
- * Deliberately a *blue*-black rather than a neutral grey-black, with a cyan
- * accent. That is what makes a monitoring surface read as an instrument rather
- * than as a dimmed web page: the hue gives the panels somewhere to sit against
- * the map, and cyan is the one accent that stays legible over both the dark
- * basemap and satellite imagery without colliding with any threat category.
+ * These values are the design system's dark ramp, mapped onto the roles above
+ * rather than used freehand. The four background steps are assigned by depth, so
+ * a surface is never picked by eye:
+ *
+ *   bg-root     #0d1117  the canvas everything floats over — the map, the page
+ *   bg-elevated #161b22  a panel lifted off it: the rails, detail panel, modal
+ *   bg-surface  #1c2128  content *inside* a panel — cards, rows, form fields
+ *   bg-subtle   #1e2939  interactive chrome — icon buttons, badges, OFF pills
+ *
+ * bg-subtle is the only one of the four carrying blue, and it is deliberately
+ * the brightest: a control has to look pressable against the panel it sits on,
+ * and a step in hue does that where a step in lightness alone reads as noise.
+ *
+ * The text ramp is five steps, and its brightest is reserved — `--c-title` sits
+ * one below `--c-fg` because rail headings are labels, not content, and should
+ * not out-shout the readings they caption.
  *
  * Borders carry a trace of the accent hue instead of being neutral grey. At 1px
  * that does not read as blue — it reads as the panel having an edge that belongs
  * to the same system as everything else on screen.
  */
 .dark {
-  --c-sea: #050a0f;
-  --c-panel: rgba(9, 17, 26, 0.82);
-  --c-surface: #0a131d;
-  --c-inset: #060e16;
-  --c-control: rgba(125, 211, 252, 0.07);
-  --c-hover: rgba(34, 211, 238, 0.09);
-  --c-active: rgba(34, 211, 238, 0.12);
-  --c-off: #33475a;
+  --c-sea: #0d1117; /* bg-root */
+  --c-panel: rgba(22, 27, 34, 0.82); /* bg-elevated, translucent over the map */
+  --c-surface: #161b22; /* bg-elevated */
+  --c-inset: #1c2128; /* bg-surface */
+  --c-control: #1e2939; /* bg-subtle */
+  --c-hover: rgba(81, 162, 255, 0.08);
+  --c-active: rgba(81, 162, 255, 0.14);
+  --c-off: #4a5565; /* text-faint — an OFF pill is a disabled reading */
 
-  --c-line: rgba(103, 232, 249, 0.16);
-  --c-line-soft: rgba(125, 211, 252, 0.09);
+  --c-line: rgba(81, 162, 255, 0.14);
+  --c-line-soft: rgba(153, 161, 175, 0.12);
 
-  --c-title: #67e8f9;
-  --c-fg: #e6f3f8;
-  --c-fg-muted: #8ba7ba;
-  --c-fg-subtle: #5b7488;
+  --c-title: #d1d5dc; /* text-secondary */
+  --c-fg: #f3f4f6; /* text-primary */
+  --c-fg-muted: #99a1af; /* text-muted */
+  --c-fg-subtle: #6a7282; /* text-dim */
 
-  --c-accent: #22d3ee;
-  /* Near-black, not white. White on cyan fails contrast badly, and every active
-     segment, toggle and primary button is filled with the accent. */
-  --c-accent-fg: #04121a;
-  --c-accent-soft: rgba(34, 211, 238, 0.08);
-  --c-accent-line: rgba(34, 211, 238, 0.26);
-  --c-ring: #050a0f;
-  --c-glow: rgba(34, 211, 238, 0.1);
+  --c-accent: #51a2ff; /* blue */
+  /* Near-black, not white. White on this blue lands around 2.9:1 and fails, and
+     every active segment, toggle and primary button is filled with the accent. */
+  --c-accent-fg: #0d1117;
+  --c-accent-soft: rgba(81, 162, 255, 0.08);
+  --c-accent-line: rgba(81, 162, 255, 0.26);
+  --c-ring: #0d1117;
+  --c-glow: rgba(81, 162, 255, 0.13);
 
-  --c-scrim: rgba(2, 6, 11, 0.62);
-  --c-scrim-strong: rgba(2, 6, 11, 0.72);
+  --c-scrim: rgba(13, 17, 23, 0.62);
+  --c-scrim-strong: rgba(13, 17, 23, 0.74);
 
-  --c-badge: rgba(125, 211, 252, 0.12);
-  --c-badge-fg: #cbeef7;
-  --c-meter: #22d3ee;
-  --c-meter-off: rgba(125, 211, 252, 0.14);
+  --c-badge: #1e2939;
+  --c-badge-fg: #d1d5dc;
+  --c-meter: #51a2ff;
+  --c-meter-off: rgba(74, 85, 101, 0.45); /* text-faint, dropped back */
 
-  --c-thumb: rgba(125, 211, 252, 0.18);
-  --c-attribution: rgba(2, 6, 11, 0.62);
+  --c-thumb: rgba(153, 161, 175, 0.22);
+  --c-attribution: rgba(13, 17, 23, 0.64);
 }
 
 @theme inline {
@@ -159,22 +170,42 @@
   /* ── Fixed hues ──
      Threat categories and status colours are semantic data, not theming: a
      "conflict" cluster must read the same red in both palettes so an analyst
-     switching themes never re-learns the legend. */
-  --color-cat-political: #fbbf24;
-  --color-cat-military: #60a5fa;
-  --color-cat-conflict: #ff6467;
-  --color-cat-unrest: #c27aff;
+     switching themes never re-learns the legend.
+
+     Five categories need five hues that survive being 8px dots on satellite
+     imagery, so they are drawn from the design system's accent row: amber for
+     political, blue-strong for military, red for conflict, purple for unrest.
+     Military takes blue-*strong* rather than plain blue so a cluster is never
+     mistaken for a piece of accent-coloured chrome. Infrastructure keeps teal —
+     it is outside the palette, and stays outside it because the remaining accent
+     (green) is already spoken for by live/observed status, and a category that
+     shares a hue with a status pill is the one collision that actually misleads. */
+  --color-cat-political: #fbbf24; /* amber */
+  --color-cat-military: #2b7fff; /* blue-strong */
+  --color-cat-conflict: #ff6467; /* red */
+  --color-cat-unrest: #c27aff; /* purple */
   --color-cat-infra: #2dd4bf;
 
-  --color-status-live: #05df72;
+  --color-status-live: #05df72; /* green */
   --color-status-observed: #05df72;
-  --color-status-inferred: #fbbf24;
-  --color-status-missing: #ff6467;
+  --color-status-inferred: #fbbf24; /* amber */
+  --color-status-missing: #ff6467; /* red */
 
-  /* Foreground for text sitting on one of the bright status fills above. Those
-     hues are fixed in both palettes, so their contrast partner is fixed too —
-     white on a #05df72 fill fails in either theme. */
-  --color-on-bright: #04121a;
+  /* ── Risk ──
+     The assessment ramp, mirroring the design system's risk row. Fixed for the
+     same reason the categories are. `medium` is the one non-obvious step: a grey
+     between green and amber is the system's own ordering, and it is right for a
+     watch level, which is neither reassuring nor alarming. Consumed as values in
+     `src/utils/levels.ts`, where a level maps onto one of these. */
+  --color-risk-critical: #ff6467;
+  --color-risk-high: #fbbf24;
+  --color-risk-medium: #90a1b9;
+  --color-risk-low: #05df72;
+
+  /* Foreground for text sitting on one of the bright status or risk fills above.
+     Those hues are fixed in both palettes, so their contrast partner is fixed
+     too — white on a #05df72 fill fails in either theme. */
+  --color-on-bright: #0d1117;
 }
 
 /* Dark is the default, so it is the base; the light class opts out. `index.html`
@@ -303,7 +334,7 @@ body {
     0 0 0 1px var(--c-glow),
     0 1px 2px rgba(0, 0, 0, 0.5),
     0 12px 34px -10px rgba(0, 0, 0, 0.7),
-    inset 0 1px 0 rgba(190, 240, 255, 0.09);
+    inset 0 1px 0 rgba(209, 213, 220, 0.08);
 
   /*
    * Same sheen, cooled and carrying a little more of it.
@@ -315,10 +346,10 @@ body {
    */
   background-image: linear-gradient(
     180deg,
-    rgba(125, 211, 252, 0.09) 0%,
-    rgba(125, 211, 252, 0.018) 26%,
-    rgba(2, 6, 11, 0) 52%,
-    rgba(2, 6, 11, 0.16) 100%
+    rgba(81, 162, 255, 0.09) 0%,
+    rgba(81, 162, 255, 0.018) 26%,
+    rgba(13, 17, 23, 0) 52%,
+    rgba(13, 17, 23, 0.16) 100%
   );
   backdrop-filter: blur(18px) saturate(1.5);
   -webkit-backdrop-filter: blur(18px) saturate(1.5);

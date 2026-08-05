@@ -8,7 +8,15 @@ import { IconButton } from '@/components/ui/IconButton'
 import { useAppDispatch, useAppSelector } from '@/store/store'
 import { selectLastFetchedAt, selectStatus } from '@/store/slices/monitoringSlice'
 import { selectStreamStatus } from '@/store/slices/itrSlice'
+import { selectLayerEnabled } from '@/store/slices/layersSlice'
+import {
+  selectFlightCount,
+  selectFlightRegion,
+  selectFlightStreamStatus,
+  selectFlightsDegraded,
+} from '@/store/slices/flightsSlice'
 import { selectTheme, toggleTheme } from '@/store/slices/themeSlice'
+import { hasFlightApi } from '@/utils/env'
 
 /** A feed older than this reads as stale rather than live. */
 const STALE_AFTER_MS = 3 * 60_000
@@ -49,8 +57,43 @@ export function StatusPill({ onHealthClick }: { onHealthClick?: () => void }) {
   const status = useAppSelector(selectStatus)
   const lastFetchedAt = useAppSelector(selectLastFetchedAt)
   const stream = useAppSelector(selectStreamStatus)
+  const aircraftOn = useAppSelector(selectLayerEnabled).itr_aircraft
+  const flightStream = useAppSelector(selectFlightStreamStatus)
+  const flightDegraded = useAppSelector(selectFlightsDegraded)
+  const flightCount = useAppSelector(selectFlightCount)
+  const flightRegion = useAppSelector(selectFlightRegion)
   const now = useNow()
   const clock = formatClock(now)
+
+  /**
+   * ADS-B health, shown only while the layer is on.
+   *
+   * `degraded` outranks the socket being up, and that ordering is the point: a
+   * healthy connection delivering frozen positions is the failure the API guide
+   * warns about, because it is the one that looks fine. An operator must not read
+   * a stationary aircraft as an aircraft that is holding.
+   */
+  const traffic =
+    !aircraftOn || !hasFlightApi()
+      ? null
+      : flightDegraded
+        ? { dot: 'bg-status-inferred', label: 'ADS-B STALE', title: 'Upstream ADS-B sources are failing — positions are frozen' }
+        : flightStream === 'open'
+          ? {
+              dot: 'animate-pulse-live bg-status-observed',
+              label: `ADS-B · ${flightCount}`,
+              // The region is named because the backend tracks one shared area that
+              // any caller can repoint. If it ever reads as somewhere other than the
+              // island, that is the explanation for an empty layer.
+              title: flightRegion
+                ? `${flightCount} aircraft within ${Math.round(flightRegion.radius_km)} km of ${flightRegion.name}, updating every ~2s`
+                : `${flightCount} aircraft tracked, updating every ~2s`,
+            }
+          : {
+              dot: 'bg-status-inferred',
+              label: 'ADS-B ↻',
+              title: 'Reconnecting to the flight stream',
+            }
 
   // Seconds-since-epoch of the last refresh, but only once it counts as stale.
   const staleSince =
@@ -103,6 +146,16 @@ export function StatusPill({ onHealthClick }: { onHealthClick?: () => void }) {
               )}
             />
             <span className="label-micro text-fg-subtle">{stream === 'live' ? 'STREAM' : 'RECONNECT'}</span>
+          </span>
+        </>
+      )}
+
+      {traffic && (
+        <>
+          <span className="h-3.5 w-px bg-line" aria-hidden />
+          <span title={traffic.title} className="flex items-center gap-1.5">
+            <span aria-hidden className={cn('inline-block size-1.5 rounded-full', traffic.dot)} />
+            <span className="label-micro text-fg-subtle">{traffic.label}</span>
           </span>
         </>
       )}

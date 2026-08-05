@@ -30,7 +30,11 @@ export function LayerGroupSection({
   onToggleAll,
   children,
 }: LayerGroupSectionProps) {
-  const allOn = activeCount > 0 && activeCount === totalCount
+  // `anyOn`, not `allOn`, because that is what the click actually does: the rail
+  // clears the group if anything in it is on, and only turns everything on from
+  // a fully-off group. Labelling from `allOn` made a partly-on group read "Turn
+  // on all" while the click turned it off — invisible when the watches group held
+  // one row, and the normal case now that it holds thirteen.
   const anyOn = activeCount > 0
   const Chevron = expanded ? ChevronDown : ChevronRight
   const Toggle = anyOn ? ToggleRight : ToggleLeft
@@ -57,8 +61,8 @@ export function LayerGroupSection({
         <button
           type="button"
           onClick={onToggleAll}
-          title={allOn ? `Turn off all ${label}` : `Turn on all ${label}`}
-          aria-label={allOn ? `Turn off all ${label}` : `Turn on all ${label}`}
+          title={anyOn ? `Turn off all ${label}` : `Turn on all ${label}`}
+          aria-label={anyOn ? `Turn off all ${label}` : `Turn on all ${label}`}
           aria-pressed={anyOn}
           className={cn(
             'grid size-6 flex-none place-items-center rounded-md transition-colors',

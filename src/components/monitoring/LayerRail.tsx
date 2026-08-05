@@ -1,6 +1,7 @@
 import { ChevronLeft, ChevronRight, Layers, Plus } from 'lucide-react'
 import { categoryColor } from '@/utils/constants'
 import { LAYER_GROUPS, WATCHES_ENABLED, layersInGroup } from '@/utils/layers'
+import { CameraLayerRow } from '@/components/monitoring/CameraLayerRow'
 import { LayerGroupSection } from '@/components/monitoring/LayerGroupSection'
 import { LayerRow } from '@/components/monitoring/LayerRow'
 import { TargetWatchRow } from '@/components/monitoring/TargetWatchRow'
@@ -31,6 +32,14 @@ interface LayerRailProps {
   onCreate: () => void
   onEdit: (watch: Watch) => void
 }
+
+/**
+ * How many swatches the collapsed rail shows before it summarises the rest.
+ *
+ * Twelve fits a 900px-tall window without scrolling the gutter, which is the
+ * point of the collapsed state.
+ */
+const COLLAPSED_SWATCH_LIMIT = 12
 
 /**
  * Left rail: every map layer, grouped and collapsible.
@@ -95,17 +104,26 @@ export function LayerRail({ onCreate, onEdit }: LayerRailProps) {
         .map((layer) => layer.color),
     ]
 
+    // The collapsed rail is a glance, not an inventory: it answers "roughly what
+    // is on the map" in a 46px gutter. With watches enabled the honest count runs
+    // to the high twenties, which turns the gutter into a scrolling ribbon taller
+    // than the window and stops reading as a summary at all. Capped, with the
+    // remainder stated rather than silently dropped — the same "+N" the platform
+    // chips use in `WatchFormModal`.
+    const visible = activeSwatches.slice(0, COLLAPSED_SWATCH_LIMIT)
+    const overflow = activeSwatches.length - visible.length
+
     return (
       <Panel className="scroll-thin w-[46px] flex-none overflow-y-auto">
         <button
           type="button"
           onClick={toggleOpen}
-          title="Show layers"
-          aria-label="Show layers"
+          title={`Show layers — ${activeSwatches.length} active`}
+          aria-label={`Show layers — ${activeSwatches.length} active`}
           className="flex w-full flex-col items-center gap-2.5 py-3 focus-visible:outline-none"
         >
           <Layers className="size-4 text-fg-muted" aria-hidden />
-          {activeSwatches.map((color, index) => (
+          {visible.map((color, index) => (
             <span
               key={`${color}-${index}`}
               aria-hidden
@@ -113,6 +131,11 @@ export function LayerRail({ onCreate, onEdit }: LayerRailProps) {
               className="size-4 rounded-[3px]"
             />
           ))}
+          {overflow > 0 && (
+            <span aria-hidden className="label-micro text-fg-subtle">
+              +{overflow}
+            </span>
+          )}
           <ChevronRight className="size-3.5 text-fg-muted" aria-hidden />
         </button>
       </Panel>
@@ -169,6 +192,11 @@ export function LayerRail({ onCreate, onEdit }: LayerRailProps) {
                     </button>
                   )}
                 </>
+              ) : group.key === 'cameras' ? (
+                // Its own row component: the camera layer has states between "drawn"
+                // and "not drawn" — zoomed too far out, nothing in this area, an
+                // upstream down — and each looks like a bug unless it is said out loud.
+                <CameraLayerRow />
               ) : (
                 <>
                   {layersInGroup(group.key).map((layer) => {

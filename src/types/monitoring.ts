@@ -107,10 +107,20 @@ export interface WatchDetail {
  */
 
 /** Rail groups, in render order. `watches` holds the user's own watches. */
-export type LayerGroupKey = 'watches' | 'signals' | 'itr_zones' | 'itr_feeds' | 'display'
+export type LayerGroupKey = 'watches' | 'signals' | 'itr_zones' | 'itr_feeds' | 'cameras' | 'display'
 
 export type SignalLayerId = 'global_incidents' | 'earthquakes' | 'live_news' | 'maritime'
 export type DisplayLayerId = 'day_night' | 'graticule' | 'terrain'
+
+/**
+ * Open-source camera feeds.
+ *
+ * One layer, not one per country: a camera is a camera whichever authority
+ * publishes it, and the delivery mode that actually differs between them is drawn
+ * on the marker rather than split across rail rows. Its own group because it is the
+ * only layer that re-queries as the map moves — see `useCameraRegistry`.
+ */
+export type CameraLayerId = 'cctv'
 
 /** The four AOI boxes from `/v1/aoi`, drawn as polygons. */
 export type AoiZoneId = 'aoi_pad' | 'aoi_range' | 'aoi_airspace' | 'aoi_downrange'
@@ -129,7 +139,7 @@ export type ItrFeedId =
   | 'itr_aircraft'
   | 'itr_imagery'
 
-export type DataLayerId = SignalLayerId | DisplayLayerId | AoiZoneId | ItrFeedId
+export type DataLayerId = SignalLayerId | DisplayLayerId | AoiZoneId | ItrFeedId | CameraLayerId
 
 export interface DataLayer {
   id: DataLayerId

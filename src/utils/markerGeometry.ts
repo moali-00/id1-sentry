@@ -46,6 +46,16 @@ export const REPORTING_OFFSET: [number, number] = [8, -8]
 /** Below this diameter a cluster's count label needs a smaller type size to fit. */
 export const SMALL_MARKER_SIZE = 28
 
+/**
+ * Side of the camera marker's body, in px.
+ *
+ * Larger than a point dot (9–20) because it is a control rather than a plotted
+ * observation, and it needs to stay hittable at the density this layer reaches —
+ * eighty cameras across central London. It carries a visible lens at this size;
+ * much smaller and the glyph collapses into a coloured square.
+ */
+export const CAMERA_SIZE = 15
+
 /* ── Marker stacking ─────────────────────────────────────────────────────────
  *
  * **Every one of these must stay positive.**
@@ -79,6 +89,19 @@ export const REPORTING_Z = 1
  * Leaves headroom above the reporting pills and stays clear of the clusters.
  */
 export const POINT_BASE_Z = 101
+
+/**
+ * Cameras, above the plotted context layers and below the watch clusters.
+ *
+ * Deliberately in that gap. A camera is clickable, so it must not sit under a
+ * danger-area point that is only hoverable — but it is also *not* the subject of
+ * this dashboard, and eighty of them over a city must never bury the target's own
+ * sites and warnings.
+ */
+export const CAMERA_Z = 501
+
+/** A hovered camera lifts clear of the ones crowding it. */
+export const CAMERA_HOVER_Z = 551
 
 /** Watch clusters — the operator's own subject, above every context layer. */
 export const CLUSTER_Z = 601

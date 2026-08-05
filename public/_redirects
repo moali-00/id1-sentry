@@ -1,3 +1,14 @@
+# Camera endpoints first. The catch-all below would otherwise rewrite them to
+# index.html, and the fetch would then "succeed" with an HTML body — surfacing as a
+# JSON parse error rather than as a missing route.
+#
+# netlify.toml carries the same three rules and takes precedence over this file;
+# these are duplicated here so the built `dist` stays self-describing if it is ever
+# served by something other than Netlify.
+/api/cctv                /.netlify/functions/cctv                200
+/api/cctv-frame          /.netlify/functions/cctv-frame          200
+/api/cctv-stream-status  /.netlify/functions/cctv-stream-status  200
+
 # Client-side routes (/target, /watch/:id) must reach index.html rather than
 # 404ing. Netlify and Cloudflare Pages both read this file.
 /*  /index.html  200

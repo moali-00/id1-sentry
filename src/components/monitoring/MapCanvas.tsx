@@ -6,15 +6,20 @@ import { AreaLayers } from '@/components/monitoring/layers/AreaLayers'
 import { LineLayers } from '@/components/monitoring/layers/LineLayers'
 import { ClusterMarkers, ReportingMarkers } from '@/components/monitoring/layers/ClusterMarkers'
 import { PointMarkers } from '@/components/monitoring/layers/PointMarkers'
+import { CameraMarkers } from '@/components/monitoring/layers/CameraMarkers'
 import { DayNightLayer } from '@/components/monitoring/layers/DayNightLayer'
 import { GraticuleLayer } from '@/components/monitoring/layers/GraticuleLayer'
 import { FeatureTooltip, MapTooltip } from '@/components/monitoring/FeatureTooltip'
+import { AircraftTooltip } from '@/components/monitoring/AircraftTooltip'
 import { useFeatureHover } from '@/hooks/useFeatureHover'
 import { useMapCamera } from '@/hooks/useMapCamera'
 import { useProjectionPitch } from '@/hooks/useProjectionPitch'
 import { useTerrain } from '@/hooks/useTerrain'
+import { useAircraftLayer } from '@/hooks/useAircraftLayer'
+import { useAircraftTrail } from '@/hooks/useAircraftTrail'
 import { useItrData } from '@/hooks/useItrData'
 import { useSignalPoints } from '@/hooks/useSignalPoints'
+import { useCameraRegistry } from '@/hooks/useCameraRegistry'
 import { selectItrAreas, selectItrLines, selectItrPoints, selectSocialClusters } from '@/store/slices/itrSlice'
 import type { Cluster, DataLayerId } from '@/types/monitoring'
 import { useAppDispatch, useAppSelector } from '@/store/store'
@@ -27,6 +32,8 @@ import {
   selectSelectedClusterId,
 } from '@/store/slices/monitoringSlice'
 import { selectBasemap, selectLayerEnabled, selectProjection, selectVisiblePoints } from '@/store/slices/layersSlice'
+import { selectFlight, selectSelectedFlightHex } from '@/store/slices/flightsSlice'
+import { selectVisibleCameras } from '@/store/slices/camerasSlice'
 import { selectTheme } from '@/store/slices/themeSlice'
 import { BASEMAPS, INITIAL_VIEW, MAX_PITCH, MAX_ZOOM, MIN_ZOOM, SKY } from '@/utils/constants'
 import { basemapStyle } from '@/utils/mapStyle'
@@ -80,13 +87,23 @@ export function MapCanvas() {
   const itrAreas = useAppSelector(selectItrAreas)
   const itrLines = useAppSelector(selectItrLines)
   const socialClusters = useAppSelector(selectSocialClusters)
+  const selectedFlightHex = useAppSelector(selectSelectedFlightHex)
+  const cameras = useAppSelector(selectVisibleCameras)
 
   useSignalPoints()
   useItrData()
+  // The only layer that re-fetches as the camera moves. No-op while it is off.
+  useCameraRegistry()
   useProjectionPitch(projection)
   useTerrain(layerEnabled.terrain)
+  useAircraftLayer(layerEnabled.itr_aircraft)
+  // The trail follows whichever dossier is open, and only that one.
+  useAircraftTrail(layerEnabled.itr_aircraft ? selectedFlightHex : null)
 
   const hoveredFeature = useFeatureHover(HOVERABLE_LAYER_IDS)
+  // Aircraft carry only a `hex`; the tooltip resolves the rest from the store.
+  const hoveredAircraftHex =
+    hoveredFeature?.props.layerId === 'itr_aircraft' ? ((hoveredFeature.props as { hex?: string }).hex ?? null) : null
 
   // Extruded volumes are only mounted once the camera is actually tilted. Straight
   // down, an extrusion looks exactly like its own footprint.
@@ -134,10 +151,27 @@ export function MapCanvas() {
   )
 
   // The pointer must read as clickable over a cluster but not over a danger area,
-  // which is context. Areas and lines get a tooltip and nothing else.
+  // which is context. Areas and lines get a tooltip and nothing else; an aircraft
+  // opens a dossier, so it gets a pointer rather than the `help` cursor.
   const handleMouseMove = useCallback((event: MapLayerMouseEvent) => {
-    event.target.getCanvas().style.cursor = event.features?.length ? 'help' : ''
+    const [feature] = event.features ?? []
+    const cursor = !feature ? '' : feature.properties?.layerId === 'itr_aircraft' ? 'pointer' : 'help'
+    event.target.getCanvas().style.cursor = cursor
   }, [])
+
+  // Clicking a contact opens its dossier. Selection is mirrored into the store so
+  // the map can ring the aircraft the open panel is about.
+  const handleMapClick = useCallback(
+    (event: MapLayerMouseEvent) => {
+      const aircraft = event.features?.find((feature) => feature.properties?.layerId === 'itr_aircraft')
+      const hex = aircraft?.properties?.hex
+      if (typeof hex !== 'string') return
+
+      dispatch(selectFlight(hex))
+      void navigate(`/aircraft/${hex}`)
+    },
+    [dispatch, navigate],
+  )
 
   // Hand the instance to `MapProvider` on mount, and clear it on unmount so a
   // remount never leaves the chrome holding a destroyed map.
@@ -188,6 +222,7 @@ export function MapCanvas() {
         attributionControl={{ compact: false }}
         interactiveLayerIds={HOVERABLE_LAYER_IDS}
         onMouseMove={handleMouseMove}
+        onClick={handleMapClick}
         /*
          * The instance is taken from the ref, not from `onLoad`.
          *
@@ -226,6 +261,13 @@ export function MapCanvas() {
           onSelect={handleSocialSelect}
         />
         <PointMarkers points={visiblePoints} />
+        {/*
+          Above the plotted points and below the watch clusters — see `CAMERA_Z`. A
+          camera is clickable so it must not sit under a marker that is merely
+          hoverable, but eighty of them over a city must never bury the target's own
+          sites and warnings.
+        */}
+        {layerEnabled.cctv && <CameraMarkers cameras={cameras} />}
         <ClusterMarkers
           clusters={clusters}
           enabled={enabled}
@@ -238,12 +280,16 @@ export function MapCanvas() {
 
         {hoveredFeature && (
           <MapTooltip lat={hoveredFeature.lat} lng={hoveredFeature.lng}>
-            <FeatureTooltip
-              layerId={hoveredFeature.props.layerId as DataLayerId}
-              title={hoveredFeature.props.label}
-              detail={hoveredFeature.props.detail || undefined}
-              meta={dataLayer(hoveredFeature.props.layerId as DataLayerId)?.label}
-            />
+            {hoveredAircraftHex ? (
+              <AircraftTooltip hex={hoveredAircraftHex} />
+            ) : (
+              <FeatureTooltip
+                layerId={hoveredFeature.props.layerId as DataLayerId}
+                title={hoveredFeature.props.label}
+                detail={hoveredFeature.props.detail || undefined}
+                meta={dataLayer(hoveredFeature.props.layerId as DataLayerId)?.label}
+              />
+            )}
           </MapTooltip>
         )}
       </MapGL>

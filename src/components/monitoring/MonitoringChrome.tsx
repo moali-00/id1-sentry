@@ -14,6 +14,7 @@ import { ZoomControls } from '@/components/monitoring/ZoomControls'
 import { createDraft, draftFromWatch } from '@/utils/watchDraft'
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts'
 import { useLivePoll } from '@/hooks/useLivePoll'
+import { useFlightStream } from '@/hooks/useFlightStream'
 import { useMapUrlState } from '@/hooks/useMapUrlState'
 import type { SearchHit } from '@/components/monitoring/SearchBar'
 import { useMapController } from '@/components/monitoring/MapContext'
@@ -41,6 +42,7 @@ export function MonitoringChrome() {
   const { flyTo } = useMapController()
 
   useLivePoll()
+  useFlightStream()
   useMapUrlState()
 
   const [formTarget, setFormTarget] = useState<FormTarget | null>(null)

@@ -13,6 +13,36 @@
   # Vite 7 needs ^20.19 || >=22.12; pin so a Netlify default bump cannot break it.
   NODE_VERSION = "22"
 
+[functions]
+  # The camera endpoints. `dist` is a static bundle everywhere else; these three
+  # exist because the camera sources cannot be reached from a browser at all —
+  # no CORS headers, several plain-HTTP hosts, and hotlink checks. See
+  # api/_lib/handlers.ts.
+  directory = "netlify/functions"
+  # Bundled with esbuild so the TypeScript sources need no build step of their own.
+  node_bundler = "esbuild"
+
+# ── Camera endpoints, above the SPA catch-all ──
+#
+# Netlify applies redirects in file order and the first match wins, so these have
+# to precede `/*`. Put them after it and every /api call is rewritten to
+# index.html: the fetch succeeds with HTTP 200 and an HTML body, so the failure
+# surfaces as a JSON parse error rather than as a missing route.
+[[redirects]]
+  from = "/api/cctv"
+  to = "/.netlify/functions/cctv"
+  status = 200
+
+[[redirects]]
+  from = "/api/cctv-frame"
+  to = "/.netlify/functions/cctv-frame"
+  status = 200
+
+[[redirects]]
+  from = "/api/cctv-stream-status"
+  to = "/.netlify/functions/cctv-stream-status"
+  status = 200
+
 # Client-side routes (/target, /watch/:id) must reach index.html rather than
 # 404ing. This duplicates public/_redirects, which is kept so the built `dist`
 # is self-describing if it is ever served by something else.

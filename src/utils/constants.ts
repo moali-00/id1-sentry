@@ -11,7 +11,7 @@ import type { CategoryKey, WatchType } from '@/types/monitoring'
  */
 export const CATEGORIES: Record<CategoryKey, { label: string; color: string }> = {
   political: { label: 'Political signalling', color: '#fbbf24' },
-  military: { label: 'Military movement', color: '#60a5fa' },
+  military: { label: 'Military movement', color: '#2b7fff' },
   conflict: { label: 'Armed conflict', color: '#ff6467' },
   unrest: { label: 'Civil unrest', color: '#c27aff' },
   infra: { label: 'Infrastructure', color: '#2dd4bf' },
@@ -221,9 +221,13 @@ export const TERRAIN_EXAGGERATION = 1
  */
 export const SKY: Record<'light' | 'dark', Record<string, string | number>> = {
   dark: {
-    'sky-color': '#06101a',
-    'horizon-color': '#2a6f9f',
-    'fog-color': '#091523',
+    /* Sky and fog are the page's own background steps — bg-root for the void and
+       bg-elevated for the haze on the terrain — so the globe's edge dissolves into
+       the surrounding canvas instead of sitting on it as a lighter disc. The
+       horizon rim is the accent, which is what makes it read as instrumentation. */
+    'sky-color': '#0d1117',
+    'horizon-color': '#2b7fff',
+    'fog-color': '#161b22',
     'sky-horizon-blend': 0.18,
     'horizon-fog-blend': 0.6,
     'fog-ground-blend': 0.5,
@@ -252,6 +256,31 @@ export const NOMINATIM_URL = 'https://nominatim.openstreetmap.org/search'
 
 /** Opening view — clusters span EMEA, Asia and the Americas. */
 export const INITIAL_VIEW = { center: [18, 40] as [number, number], zoom: 2 }
+
+/**
+ * The region the flight API is asked to track.
+ *
+ * That API tracks **one shared region per server**, set at runtime through
+ * `PUT /v1/config/region` rather than fixed in its deployment. So it can drift,
+ * and it does — we found it pointed at London, which showed an empty aircraft
+ * layer over an island the dashboard exists to watch. The app therefore asserts
+ * its subject on startup instead of trusting what it finds (`ensureFlightRegion`).
+ *
+ * The centre is the island's published position from the API guide, **not**
+ * `VIEW_PRESETS.itr`. That preset sits a little north to frame Chandipur in the
+ * same shot; using it here would offset every `dist_km` and `bearing` the backend
+ * computes from the target.
+ *
+ * 500 km is the API's own default. Past roughly 460 km the upstream providers fall
+ * back to tiled sweeps — more requests per cycle, slightly slower — which is the
+ * documented cost of covering the whole downrange fan rather than just the range.
+ */
+export const FLIGHT_REGION = {
+  name: 'Abdul Kalam Island',
+  lat: 20.746,
+  lon: 87.079,
+  radiusKm: 500,
+} as const
 
 export interface ViewPreset {
   key: string
@@ -301,6 +330,35 @@ export const VIEW_PRESETS: ViewPreset[] = [
   { key: 'east-asia', label: 'East Asia', lat: 30, lng: 118, zoom: 4 },
   { key: 'americas', label: 'Americas', lat: 12, lng: -80, zoom: 3 },
   { key: 'africa', label: 'Africa', lat: 2, lng: 22, zoom: 3 },
+]
+
+/**
+ * Places that actually have open cameras.
+ *
+ * Not a duplicate of `VIEW_PRESETS`, and not merged into it: those are regions an
+ * analyst jumps to for the *subject*, and none of them has camera coverage. These
+ * exist for one reason — **the dashboard's own target has no open cameras**, and
+ * without a way in, switching the layer on near Abdul Kalam Island shows an empty
+ * map and reads as a broken feature rather than as an honest absence.
+ *
+ * Two, matching the two camera regions in `api/_lib/registry.ts`. Each names what you
+ * get there, because that is the actual difference between them: London is the dense
+ * snapshot network, the Balkans is the inline video. Keep this list in step with that
+ * one — a jump target with no source behind it lands on an empty map.
+ */
+export interface CameraPlace {
+  key: string
+  label: string
+  /** What kind of feed you land on. Shown beside the label. */
+  detail: string
+  lat: number
+  lng: number
+  zoom: number
+}
+
+export const CAMERA_PLACES: CameraPlace[] = [
+  { key: 'london', label: 'London', detail: '~900 stills', lat: 51.51, lng: -0.13, zoom: 12 },
+  { key: 'balkans', label: 'Balkan borders', detail: 'live video', lat: 42.15, lng: 22.54, zoom: 9 },
 ]
 
 /** Zoom level the map flies to when a cluster or feed row is selected. */

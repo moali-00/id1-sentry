@@ -20,5 +20,13 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["vite.config.ts"]
+  /* `api` is the serverless side: the camera registry and the frame proxy. It sits
+     in this project rather than the app's because it runs in Node, not the browser
+     — no DOM lib, `@types/node` for `node:dns` and the undici globals.
+
+     The two files it shares with the browser bundle (`src/types/cctv.ts` and
+     `src/utils/cctv.ts`) are therefore typechecked in both projects, which is the
+     point: they have to compile with and without the DOM, and that is what keeps a
+     stray `document` reference out of code the functions run. */
+  "include": ["vite.config.ts", "api", "netlify"]
 }

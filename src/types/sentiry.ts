@@ -189,29 +189,6 @@ export interface LaunchWindowsResponse {
   indefinite_warnings: ActiveWindow[]
 }
 
-/* ── /v1/aircraft/live ───────────────────────────────────────────────────── */
-
-export interface Aircraft {
-  icao24: string
-  callsign: string | null
-  origin_country: string | null
-  longitude: number | null
-  latitude: number | null
-  baro_altitude: number | null
-  geo_altitude: number | null
-  velocity: number | null
-  true_track: number | null
-  on_ground: boolean
-  last_contact: number
-}
-
-export interface AircraftData {
-  snapshot_time?: string
-  aircraft_count: number
-  airborne_count?: number
-  aircraft: Aircraft[]
-}
-
 /* ── /v1/maps/firms/wfs and /v1/thermal/hotspots ─────────────────────────── */
 
 export interface ThermalDetection {

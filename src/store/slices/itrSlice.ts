@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSelector, createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import {
-  fetchAircraft,
   fetchAoi,
   fetchAssessment,
   fetchContext,
@@ -21,8 +20,6 @@ import {
   fetchWeather,
 } from '@/api/sentiry'
 import {
-  aircraftPoints,
-  aircraftProjections,
   aoiZones,
   corridorAreas,
   coupledLines,
@@ -44,7 +41,6 @@ import {
 } from '@/utils/sentiryAdapters'
 import type { Cluster, FeedItem, MapArea, MapLine, MapPoint, Post } from '@/types/monitoring'
 import type {
-  Aircraft,
   AoiResponse,
   AssessmentResponse,
   CoupledTrialsResponse,
@@ -83,7 +79,6 @@ interface ItrState {
   assessment: AssessmentResponse | null
   warnings: MaritimeWarning[]
   windows: LaunchWindowsResponse | null
-  aircraft: Aircraft[]
   thermal: ThermalDetection[]
   imagery: ImageryScene[]
   social: SocialItem[]
@@ -114,7 +109,6 @@ const initialState: ItrState = {
   assessment: null,
   warnings: [],
   windows: null,
-  aircraft: [],
   thermal: [],
   imagery: [],
   social: [],
@@ -157,7 +151,6 @@ export const loadItr = createAsyncThunk('itr/load', async (_: void, { signal }) 
     assessment,
     warnings,
     windows,
-    aircraft,
     thermal,
     imagery,
     social,
@@ -177,7 +170,6 @@ export const loadItr = createAsyncThunk('itr/load', async (_: void, { signal }) 
     fetchAssessment(options),
     fetchMaritimeWarnings(options),
     fetchLaunchWindows(options),
-    fetchAircraft(options),
     fetchThermal(options),
     fetchImagery(options),
     fetchSocial(options),
@@ -206,7 +198,6 @@ export const loadItr = createAsyncThunk('itr/load', async (_: void, { signal }) 
     assessment: take(assessment, 'assessment'),
     warnings: take(warnings, 'maritime warnings')?.warnings ?? [],
     windows: take(windows, 'launch windows'),
-    aircraft: take(aircraft, 'aircraft')?.data.aircraft ?? [],
     thermal: take(thermal, 'thermal')?.data.detections ?? [],
     imagery: take(imagery, 'imagery')?.data.scenes ?? [],
     social: take(social, 'social')?.data.items ?? [],
@@ -270,7 +261,6 @@ const itrSlice = createSlice({
     selectItrStatus: (state) => state.status,
     selectStreamStatus: (state) => state.streamStatus,
     selectFailedFeeds: (state) => state.failed,
-    selectAircraft: (state) => state.aircraft,
     selectThermal: (state) => state.thermal,
     selectImagery: (state) => state.imagery,
   },
@@ -296,7 +286,6 @@ export const {
   selectItrStatus,
   selectStreamStatus,
   selectFailedFeeds,
-  selectAircraft,
   selectThermal,
   selectImagery,
 } = itrSlice.selectors
@@ -336,13 +325,12 @@ export const selectAllSources = createSelector([selectSources, selectSocialPosts
 
 /** Every ITR feature that plots as a point, across all its layers. */
 export const selectItrPoints = createSelector(
-  [selectAoi, selectWarnings, selectThermal, selectAircraft, selectEvacuationPlaces],
-  (aoi, warnings, thermal, aircraft, places): MapPoint[] => [
+  [selectAoi, selectWarnings, selectThermal, selectEvacuationPlaces],
+  (aoi, warnings, thermal, places): MapPoint[] => [
     ...(aoi ? sitePoints(aoi) : []),
     ...warningPoints(warnings),
     ...evacuationPoints(places),
     ...thermalPoints(thermal),
-    ...aircraftPoints(aircraft),
   ],
 )
 
@@ -397,11 +385,8 @@ export const selectItrAreas = createSelector(
 
 /** Open paths — currently the coupled trials' launch-to-impact arcs. */
 export const selectItrLines = createSelector(
-  [selectAoi, selectCoupledTrials, selectAircraft],
-  (aoi, coupled, aircraft): MapLine[] => [
-    ...(aoi && coupled ? coupledLines(coupled.pairs, aoi.target.centre) : []),
-    ...aircraftProjections(aircraft),
-  ],
+  [selectAoi, selectCoupledTrials],
+  (aoi, coupled): MapLine[] => [...(aoi && coupled ? coupledLines(coupled.pairs, aoi.target.centre) : [])],
 )
 
 /**

@@ -42,13 +42,13 @@ export function DayNightLayer({ beforeId }: { beforeId?: string }) {
         id="day-night-fill"
         type="fill"
         beforeId={beforeId}
-        paint={{ 'fill-color': '#0b1220', 'fill-opacity': 0.22 }}
+        paint={{ 'fill-color': '#0d1117', 'fill-opacity': 0.22 }}
       />
       <Layer
         id="day-night-edge"
         type="line"
         beforeId={beforeId}
-        paint={{ 'line-color': '#64748b', 'line-width': 1, 'line-opacity': 0.35 }}
+        paint={{ 'line-color': '#6a7282', 'line-width': 1, 'line-opacity': 0.35 }}
       />
     </Source>
   )

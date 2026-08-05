@@ -1,4 +1,4 @@
-import { env, hasApi } from '@/utils/env'
+import { env } from '@/utils/env'
 
 /**
  * Thin typed wrapper over `fetch` for the monitoring API.
@@ -29,10 +29,25 @@ export interface RequestOptions {
   params?: Record<string, string | number | undefined>
   /** Caller-owned cancellation, combined with the internal timeout. */
   signal?: AbortSignal
+  /**
+   * Service root, defaulting to the monitoring API.
+   *
+   * The flight API is a separate host with the same error shape and timeout
+   * needs, so it passes its own root here rather than duplicating this file.
+   */
+  baseUrl?: string
+  /**
+   * Defaults to GET, which is every read in the app.
+   *
+   * `PUT` exists for exactly one call — repointing the flight API's tracked
+   * region — and it takes its arguments as query parameters rather than a body,
+   * so nothing here needs to learn how to serialise one.
+   */
+  method?: 'GET' | 'PUT'
 }
 
-function buildUrl(path: string, params: RequestOptions['params']): string {
-  const url = new URL(`${env.apiBaseUrl}${path.startsWith('/') ? path : `/${path}`}`)
+function buildUrl(base: string, path: string, params: RequestOptions['params']): string {
+  const url = new URL(`${base}${path.startsWith('/') ? path : `/${path}`}`)
   for (const [key, value] of Object.entries(params ?? {})) {
     if (value === undefined || value === '') continue
     url.searchParams.set(key, String(value))
@@ -46,8 +61,9 @@ function buildUrl(path: string, params: RequestOptions['params']): string {
  * Throws `ApiError` for every failure mode — non-2xx, network error, timeout and
  * unparseable body alike — so callers only ever handle one error type.
  */
-export async function request<T>(path: string, { params, signal }: RequestOptions = {}): Promise<T> {
-  if (!hasApi()) throw new ApiError('No API base URL configured', 0)
+export async function request<T>(path: string, { params, signal, baseUrl, method }: RequestOptions = {}): Promise<T> {
+  const base = baseUrl ?? env.apiBaseUrl
+  if (base.length === 0) throw new ApiError('No API base URL configured', 0)
 
   // `AbortSignal.any` keeps the caller's cancellation working alongside the
   // timeout instead of one replacing the other.
@@ -56,7 +72,8 @@ export async function request<T>(path: string, { params, signal }: RequestOption
 
   let response: Response
   try {
-    response = await fetch(buildUrl(path, params), {
+    response = await fetch(buildUrl(base, path, params), {
+      method: method ?? 'GET',
       signal: combined,
       headers: { Accept: 'application/json' },
       credentials: 'omit',

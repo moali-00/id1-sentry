@@ -39,11 +39,25 @@ const noneLoading = () =>
 
 const initialState: LayersState = {
   enabled: { ...DEFAULT_LAYER_STATE },
-  // A collapsed group hides what the dashboard can do, so the ITR groups open —
-  // that target is the subject. Only the generic demo signal layers start
-  // collapsed, and they are off anyway. `display` is carried for the type's sake
-  // but the rail no longer renders that group; its controls live in `DisplayPanel`.
-  expanded: { watches: true, signals: false, itr_zones: true, itr_feeds: true, display: true },
+  // The ITR groups open, because that target is the subject and a collapsed group
+  // hides what the dashboard can do.
+  //
+  // `watches` is the exception, and closed on purpose: it holds thirteen rows, and
+  // expanded it pushes ZONES and FEEDS — the target's own layers — off the bottom
+  // of the rail. Closed, its header still carries the on/off count and the group
+  // toggle, so nothing is unreachable; one click opens it. `signals` stays closed
+  // for the same reason and is off anyway.
+  //
+  // Expansion is view state and deliberately not persisted: the rail should open
+  // the same way every session. Which watches are *on* is a real choice and does
+  // persist — see `WATCH_VISIBILITY_STORAGE_KEY` in `monitoringSlice`.
+  //
+  // `display` is carried for the type's sake but the rail no longer renders that
+  // group; its controls live in `DisplayPanel`.
+  // `cameras` opens: it is a single row, so expanded it costs one line and shows
+  // that the capability exists. Collapsed, a group with one entry reads as an
+  // empty section.
+  expanded: { watches: false, signals: false, itr_zones: true, itr_feeds: true, cameras: true, display: true },
   points: emptyPoints(),
   loading: noneLoading(),
   basemap: DEFAULT_BASEMAP,

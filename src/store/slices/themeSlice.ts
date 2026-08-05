@@ -11,9 +11,10 @@ export const THEME_STORAGE_KEY = 'sentry-theme'
  * This reverses an earlier call. Light was the default because a dark surface over
  * a dark basemap read as murky — and it did, while the panels were a neutral
  * grey-black with a flat shadow and the basemap was a raster. What fixed it was
- * giving the dark palette a blue-black hue with a cyan rim light on every panel
- * (see `panel-surface` in `index.css`), so a panel now has an edge of its own
- * against the map instead of dissolving into it.
+ * separating the panels from the canvas by a step on the design system's dark ramp
+ * and giving each one a rim light in the accent hue (see `panel-surface` in
+ * `index.css`), so a panel now has an edge of its own against the map instead of
+ * dissolving into it.
  *
  * Light is unchanged and one click away in the status pill.
  */

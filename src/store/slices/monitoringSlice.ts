@@ -7,6 +7,38 @@ import type { CategoryKey, Cluster, FeedItem, Watch, WatchDetail, WatchDraft } f
 /** The two collapsible rails floating over the map. */
 export type RailKey = 'watches' | 'activity'
 
+/** Must match the key the persistence listener writes. */
+export const WATCH_VISIBILITY_STORAGE_KEY = 'sentry-watch-visibility'
+
+/**
+ * Read the persisted per-watch visibility map.
+ *
+ * Which watches an operator has switched off is a deliberate choice about what
+ * they want on the map, so it outlives the tab — unlike hover, selection and
+ * group expansion, which are all view state and reset by design.
+ *
+ * Every entry is validated rather than trusted: this is user-editable storage,
+ * and a hand-mangled value must degrade to "visible" rather than throw on the
+ * first paint. Ids absent from the file simply default to on, which is also how
+ * a brand-new watch behaves.
+ */
+function readStoredVisibility(): Record<string, boolean> {
+  try {
+    const raw = window.localStorage.getItem(WATCH_VISIBILITY_STORAGE_KEY)
+    if (!raw) return {}
+
+    const parsed: unknown = JSON.parse(raw)
+    if (parsed === null || typeof parsed !== 'object' || Array.isArray(parsed)) return {}
+
+    return Object.fromEntries(
+      Object.entries(parsed as Record<string, unknown>).filter(([, value]) => typeof value === 'boolean'),
+    ) as Record<string, boolean>
+  } catch {
+    // Unavailable (Safari private mode) or unparseable — everything starts visible.
+    return {}
+  }
+}
+
 /** Health of the upstream source, surfaced in the status pill. */
 export type SourceStatus = 'idle' | 'loading' | 'ready' | 'error'
 
@@ -43,7 +75,11 @@ const initialState: MonitoringState = {
   clusters: SEED_CLUSTERS,
   details: SEED_DETAILS,
   feed: SEED_FEED,
-  enabled: Object.fromEntries(SEED_WATCHES.map((watch) => [watch.id, true])),
+  // Seeded watches start visible; anything the operator switched off in an
+  // earlier visit wins. Stored ids the current corpus does not contain are kept
+  // rather than dropped, so a watch that comes back from a later snapshot picks
+  // its setting up again — `applySnapshot`'s `??=` finds it already present.
+  enabled: { ...Object.fromEntries(SEED_WATCHES.map((watch) => [watch.id, true])), ...readStoredVisibility() },
   hoveredClusterId: null,
   selectedClusterId: null,
   rails: { watches: true, activity: true },

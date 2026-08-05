@@ -1,9 +1,8 @@
 import { relativeTime, truncate } from '@/utils/format'
-import { destinationPoint, greatCircle } from '@/utils/geodesy'
+import { greatCircle } from '@/utils/geodesy'
 import { verticalExtent } from '@/utils/altitude'
 import type { CategoryKey, Cluster, FeedItem, MapArea, MapLine, MapPoint, Post } from '@/types/monitoring'
 import type {
-  Aircraft,
   AoiBoxKey,
   AoiResponse,
   CoupledTrial,
@@ -325,75 +324,6 @@ export function thermalPoints(detections: ThermalDetection[]): MapPoint[] {
     // letting a 100 MW one swamp the map.
     severity: Math.max(1, Math.min(5, Math.round(Math.log10(Math.max(detection.frp, 1)) * 2 + 1))),
   }))
-}
-
-export function aircraftPoints(aircraft: Aircraft[]): MapPoint[] {
-  return aircraft.flatMap((contact) => {
-    if (contact.latitude === null || contact.longitude === null) return []
-
-    const altitude = contact.baro_altitude ?? contact.geo_altitude
-    const detail = [
-      contact.origin_country,
-      altitude === null ? null : `FL${Math.round(altitude / 30.48)}`,
-      contact.velocity === null ? null : `${Math.round(contact.velocity)} m/s`,
-    ]
-      .filter(Boolean)
-      .join(' · ')
-
-    return [
-      {
-        id: `aircraft-${contact.icao24}`,
-        layerId: 'itr_aircraft' as const,
-        lat: contact.latitude,
-        lng: contact.longitude,
-        label: contact.callsign?.trim() || contact.icao24,
-        detail,
-        severity: contact.on_ground ? 1 : 3,
-        timestamp: contact.last_contact,
-        bearingDeg: contact.true_track ?? undefined,
-        speedMs: contact.velocity ?? undefined,
-        // Barometric first, geometric as the fallback — barometric is what ATC and
-        // the NOTAM limits are both expressed against, so it is the one that can be
-        // compared to a declared ceiling. Null when the contact reports neither,
-        // which is normal for a ground contact.
-        altitudeM: altitude ?? undefined,
-      },
-    ]
-  })
-}
-
-/** How far ahead a contact's leader line projects. */
-const PROJECTION_MINUTES = 5
-
-/**
- * Where each airborne contact will be in a few minutes, by dead reckoning.
- *
- * Straight extrapolation of the reported track and ground speed — it assumes no
- * turn and no wind, so it is a leader line showing *heading*, not a predicted
- * flight path. On a vacancy watch the useful question is which way traffic is
- * going and whether it is routing around something, and that this answers.
- *
- * Contacts on the ground get none: a parked aircraft has a track but no travel.
- */
-export function aircraftProjections(aircraft: Aircraft[]): MapLine[] {
-  return aircraft.flatMap((contact) => {
-    if (contact.latitude === null || contact.longitude === null) return []
-    if (contact.on_ground || !contact.velocity || contact.true_track === null) return []
-
-    const distanceKm = (contact.velocity * PROJECTION_MINUTES * 60) / 1000
-    const ahead = destinationPoint(contact.latitude, contact.longitude, contact.true_track, distanceKm)
-
-    return [
-      {
-        id: `aircraft-track-${contact.icao24}`,
-        layerId: 'itr_aircraft' as const,
-        path: [[contact.longitude, contact.latitude], ahead],
-        label: contact.callsign?.trim() || contact.icao24,
-        detail: `${Math.round(contact.true_track)}° · ${Math.round(contact.velocity * 3.6)} km/h · ${PROJECTION_MINUTES} min ahead`,
-        dashed: true,
-      },
-    ]
-  })
 }
 
 /** Feed rows are one-liners; a headline longer than this is clipped. */

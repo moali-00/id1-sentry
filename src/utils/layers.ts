@@ -13,14 +13,20 @@ import type { DataLayer, DataLayerId, LayerGroupKey, SignalLayerId } from '@/typ
  */
 
 /**
- * Operator-created watches and the generic demo signal layers are switched off:
- * the ITR target is the sole subject for now.
+ * Watches and the generic signal layers.
  *
- * A flag rather than a deletion — every watch component, reducer and fixture is
- * still wired, so flipping this back restores the rail group, the create/edit
- * form and the four demo signal layers with no other change.
+ * On. The ITR target is the primary subject but not the only one: the watch rows
+ * sit above it in the rail, each independently toggleable, and the create/edit
+ * form is reachable from the group's footer.
+ *
+ * Kept as a flag rather than being inlined, because it is the one switch that
+ * turns the dashboard from a single-target instrument into a multi-watch one, and
+ * every consumer reads it to decide whether watch clusters reach the map, the
+ * feed and search (`MapCanvas`, `ActivityFeed`, `SearchBar`, `Legend`,
+ * `LayerRail`). Setting it back to `false` restores single-target mode with no
+ * other change.
  */
-export const WATCHES_ENABLED = false
+export const WATCHES_ENABLED = true
 
 const ALL_GROUPS: { key: LayerGroupKey; label: string }[] = [
   // The rail's own header already reads LAYERS — a group called
@@ -29,6 +35,7 @@ const ALL_GROUPS: { key: LayerGroupKey; label: string }[] = [
   { key: 'signals', label: 'SIGNALS' },
   { key: 'itr_zones', label: 'ZONES' },
   { key: 'itr_feeds', label: 'FEEDS' },
+  { key: 'cameras', label: 'CAMERAS' },
   { key: 'display', label: 'DISPLAY' },
 ]
 
@@ -230,9 +237,9 @@ export const DATA_LAYERS: DataLayer[] = [
     label: 'Aircraft',
     groupKey: 'itr_feeds',
     color: '#38bdf8',
-    hint: 'Aircraft currently transponding inside the airspace watch box',
+    hint: 'Live ADS-B traffic within 500 km, updating every two seconds',
     explain:
-      'An aircraft broadcasting its position. The arrow points along its reported track and the dashed leader projects five minutes ahead — a heading, not a predicted flight path.',
+      'A live aircraft, coloured by altitude and pointing along its reported track. Fixes land every two seconds and the position is dead-reckoned between them — so the motion is continuous, but at any instant between fixes the position is an estimate from the last reported track and speed. A faded contact has not reported in over thirty seconds.',
     defaultOn: true,
   },
   {
@@ -243,6 +250,30 @@ export const DATA_LAYERS: DataLayer[] = [
     hint: 'Recent optical scenes covering the pad, with cloud cover',
     explain:
       'The ground footprint of a recent satellite pass. It shows what has been imaged and how cloudy it was, not what the image contains.',
+    defaultOn: false,
+  },
+
+  /* ── Cameras ──────────────────────────────────────────────────────────────
+   *
+   * One layer for every open camera network, rather than one per country. What
+   * differs between them is how the picture arrives — live video, stills on a
+   * timer, or a link to the provider's own player — and that is drawn on the
+   * marker, where it is visible before you click, instead of split across rail
+   * rows nobody would think to compare.
+   */
+  {
+    id: 'cctv',
+    label: 'Camera feeds',
+    groupKey: 'cameras',
+    // Cyan-leaning teal, used by no other layer. These are the only clickable
+    // markers on the map and they must not be mistaken for a plotted observation.
+    color: '#22d3ee',
+    hint: 'Public cameras — click a marker to view',
+    explain:
+      'A camera whose operator publishes it openly. Most are stills on a timer rather than live video, and the marker and viewer both say which. Nothing here is collected by this system and none of it is a private camera — it is context, not an observation of the subject.',
+    // Off by default, and this one is not a close call: the dashboard opens on the
+    // Odisha coast, where no open camera network exists. On by default would mean
+    // an empty layer at first paint, which reads as broken rather than as absent.
     defaultOn: false,
   },
 
@@ -308,6 +339,16 @@ const LAYER_PRIORITY: Partial<Record<DataLayerId, number>> = {
   itr_social: 150,
   itr_thermal: 0,
 }
+
+/**
+ * Layers whose data is fetched for the current viewport rather than once.
+ *
+ * Only cameras, so far. Kept as a named list because three places need to know
+ * which layers behave this way — the rail row that explains the zoom threshold, the
+ * fetch hook, and anything later that wants to show a "loading for this view"
+ * state — and a hardcoded `=== 'cctv'` in each would drift.
+ */
+export const VIEWPORT_LAYER_IDS: DataLayerId[] = ['cctv']
 
 export const layerPriority = (id: DataLayerId): number => LAYER_PRIORITY[id] ?? 100
 

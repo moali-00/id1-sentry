@@ -178,14 +178,53 @@ Not types, but the closest thing to configuration objects:
 
 ## 4. How data gets in
 
-### Two independent data sources
+### Three independent data sources
 
-| source                           | endpoints             | slice                            | fixture                              |
-| -------------------------------- | --------------------- | -------------------------------- | ------------------------------------ |
-| **Sentiry** — the ITR target     | `/v1/*`, 19 endpoints | `itrSlice`                       | `src/data/sentiry/*.json` (49 files) |
-| **Monitoring** — generic watches | `/monitoring/*`       | `monitoringSlice`, `layersSlice` | `src/data/seed.ts`, `signals.ts`     |
+| source                           | endpoints                           | slice                            | fixture                              |
+| -------------------------------- | ----------------------------------- | -------------------------------- | ------------------------------------ |
+| **Sentiry** — the ITR target     | `/v1/*`, 18 endpoints               | `itrSlice`                       | `src/data/sentiry/*.json` (48 files) |
+| **Monitoring** — generic watches | `/monitoring/*`                     | `monitoringSlice`, `layersSlice` | `src/data/seed.ts`, `signals.ts`     |
+| **Flight** — live ADS-B traffic  | `/v1/aircraft`, `/v1/stream` (ws)   | `flightsSlice`                   | none, deliberately                   |
 
-Only the first is live in the product today.
+Sentiry and Flight are live in the product today; Flight is on its own host, set
+by `VITE_FLIGHT_API_BASE_URL`.
+
+**The Flight API is the one source with no fixture, and that is a decision rather
+than an omission.** Frozen ADS-B is not a degraded copy of live ADS-B — a snapshot
+of aircraft that are no longer airborne, drawn as current traffic, misleads in a
+way an empty layer does not. With no host configured the aircraft layer carries
+nothing and says so in the status pill.
+
+#### The tracked region is server-wide, shared, and drifts
+
+The Flight API does not filter per request. It tracks **one region for the whole
+server**, set at runtime through `PUT /v1/config/region`, unauthenticated, and
+changing it changes what every connected client sees. `bbox` on `/v1/aircraft` and
+on a stream `sub` filters *within* that region — it cannot widen it.
+
+This is not theoretical: the region was found pointed at London, which rendered an
+empty aircraft layer over the island this dashboard exists to watch, with nothing
+on screen to explain why.
+
+So `useFlightStream` asserts the subject on startup via
+`api/flights.ts#ensureFlightRegion`, against `FLIGHT_REGION` in `utils/constants.ts`.
+Three things about it are load-bearing:
+
+- **It reads before it writes.** A `PUT` clears the server's tracked aircraft, so
+  writing unconditionally would blank every client's map on every dashboard load.
+  The write happens only on a real mismatch.
+- **It is not awaited before the socket opens.** Blocking on a round trip would
+  leave the viewport effect with no controller to subscribe through. The socket
+  connects immediately and the check runs alongside it.
+- **A correction calls `resubscribe()`.** Clearing the tracked set reaches an open
+  socket as a delta emptying the map; asking for the subscription again turns that
+  into a snapshot of the new region rather than a slow rebuild, one aircraft per
+  delta.
+
+The centre in `FLIGHT_REGION` is the island's published position, **not**
+`VIEW_PRESETS.itr` — that preset sits slightly north to frame Chandipur in the same
+shot, and using it here would offset every `dist_km` and `bearing` the backend
+computes.
 
 ### The fixture switch
 
@@ -337,6 +376,41 @@ Two constraints show through in the layer list:
   to the cursor would swallow every point inside it, and every AOI box encloses
   the markers that matter.
 
+### The third rendering mode — imperative animated layers
+
+Two of the map's layer families are declarative (`<Source>`/`<Layer>` children of
+`<Map>`, diffed by React). Live aircraft are a third mode, and the reasons are
+worth knowing before adding a fourth:
+
+**Positions change every frame.** ADS-B fixes land every ~2 s, so an aircraft that
+only moves when data arrives visibly jumps. `utils/flights.ts#projectAircraft`
+dead-reckons it forward along the reported `track` at the reported `gs`, and
+`hooks/useAircraftLayer.ts` rewrites the GeoJSON source at ~25 fps. Routing that
+through React would re-render the tree at frame rate.
+
+**So the animation loop reads the store imperatively** — `store.getState()` inside
+the frame, never `useAppSelector`. Redux updates at the stream's 2 s cadence; the
+map renders at 25 fps; neither is coupled to the other. This is what `useAppStore`
+is exported for.
+
+**A basemap switch replaces the whole style**, taking every source, layer *and
+registered image* with it. So `useAircraftLayer` re-applies on `style.load`, the
+same way `useTerrain` does. Any new imperative layer must do this or it silently
+vanishes the first time someone changes basemap.
+
+Three smaller decisions encoded there:
+
+- **`icon-allow-overlap` and `icon-ignore-placement` are both on.** MapLibre's
+  symbol placement hides colliding icons by default, which over a busy airway
+  would silently drop half the traffic. Dropping aircraft from a monitoring
+  display is not a trade the renderer gets to make.
+- **The icons are rasterised at runtime** (`utils/aircraftIcon.ts`), one per
+  altitude band, because their colours are design tokens — a shipped sprite would
+  freeze the palette into an asset and drift the moment it moves.
+- **No text labels.** The app has no other symbol layer with text, so the glyph
+  fontstack is unproven, and a wrong `text-font` fails silently. Identity lives in
+  the hover tooltip, where forty moving labels would not fit anyway.
+
 ### Stacking is explicit
 
 MapLibre draws in layer order, and DOM markers carry a real `zIndex` — so the old
@@ -389,21 +463,35 @@ agree on.
 
 ## 7. State
 
-Four slices, all Redux Toolkit with the `selectors` block style:
+Five slices, all Redux Toolkit with the `selectors` block style:
 
 | slice             | owns                                                                     |
 | ----------------- | ------------------------------------------------------------------------ |
 | `itrSlice`        | every Sentiry feed + all derived map/feed selectors                      |
 | `monitoringSlice` | watches, clusters, feed, rail open/closed, hover/selection               |
 | `layersSlice`     | per-layer on/off, group expansion, basemap, lazily-fetched signal points |
+| `flightsSlice`    | live ADS-B contacts keyed by `hex`, stream status, selection             |
 | `themeSlice`      | light/dark                                                               |
 
 Typed hooks in `store/store.ts` — always use `useAppSelector` / `useAppDispatch`,
 never the raw `react-redux` exports.
 
-**Theme is a listener, not a reducer.** The DOM class swap and the
-`localStorage` write live in `store/themeListener.ts`, because reducers must
-stay pure.
+**Persistence is a listener, not a reducer.** Reducers must stay pure, so every
+`localStorage` write lives in listener middleware, prepended in `store/store.ts`:
+
+| listener                        | persists                    | key                       |
+| ------------------------------- | --------------------------- | ------------------------- |
+| `store/themeListener.ts`        | light/dark, + the DOM class | `sentry-theme`            |
+| `store/watchVisibilityListener` | which watches are on        | `sentry-watch-visibility` |
+
+Hydration is the other half and belongs to the slice, not the listener: both
+`themeSlice` and `monitoringSlice` read their key inside `initialState`, so the
+first paint is already correct and nothing flashes on before being switched off.
+Both readers validate what they find and fall back to the default — this is
+user-editable storage, and a mangled value must not throw during module init.
+
+**What deliberately does not persist:** group expansion, rail open/closed, hover
+and selection. All view state; the rail should open the same way every session.
 
 ---
 
@@ -465,39 +553,64 @@ proved impossible to tell apart at a glance.
 **Content**
 `ActivityFeed`, `FeedRow`, `PostCard`, `AssessmentStrip`, `SourceHealthPanel`.
 
-**Watch authoring** (present but dormant — see below)
+**Watch authoring**
 `WatchFormModal`, `RegionPicker`.
 
 ### `WATCHES_ENABLED`
 
-`utils/layers.ts` exports `export const WATCHES_ENABLED = false`.
+`utils/layers.ts` exports `export const WATCHES_ENABLED = true`.
 
-Operator-created watches and the four generic demo signal layers are switched
-off, because the ITR target is the sole subject. It is **a flag, not a
-deletion** — every watch component, reducer, fixture and form is still wired, so
-flipping it back restores the rail group, the create/edit modal and the demo
-layers with no other change.
+Watches and the four generic signal layers are on. The rail's WATCHES group
+renders the ITR target row first, then one row per watch from `selectWatches`,
+each with its own ON/OFF toggle; the group header's toggle sets all of them at
+once, and the footer button opens the create form.
+
+It stays a flag because it is the single switch between single-target and
+multi-watch mode, and five consumers read it to decide whether watch clusters
+reach the map, the activity feed and search: `LayerRail`, `MapCanvas`,
+`ActivityFeed`, `SearchBar`, `Legend`. Setting it to `false` restores
+single-target mode — every watch component, reducer and fixture stays wired
+either way.
+
+The twelve seeded watches come from `SEED_WATCHES` in `data/seed.ts` and land in
+the store via `monitoringSlice`'s `initialState`. The watches themselves are
+fixtures — a reload restores the seeded set, so renames and newly created watches
+do not survive one — but **which of them are switched on does persist**, under
+`sentry-watch-visibility` (see §7).
+
+The group renders closed by default. Thirteen rows expanded pushed ZONES and
+FEEDS off the bottom of the rail, and those are the target's own layers; the
+collapsed header still carries the count and the group toggle.
 
 ---
 
 ## 9. Routing
 
-`react-router-dom`, four routes, all rendering into the layout's `<Outlet />`:
+`react-router-dom`, five routes, all rendering into the layout's `<Outlet />`:
 
-| path              | page                | shows                   |
-| ----------------- | ------------------- | ----------------------- |
-| `/`               | —                   | just the map and chrome |
-| `/target`         | `target_detail.tsx` | the full ITR dossier    |
-| `/site/:siteId`   | `site_detail.tsx`   | posts naming one site   |
-| `/watch/:watchId` | `watch_detail.tsx`  | a watch's topic panel   |
-| `*`               |                     | redirect to `/`         |
+| path              | page                  | shows                       |
+| ----------------- | --------------------- | --------------------------- |
+| `/`               | —                     | just the map and chrome     |
+| `/target`         | `target_detail.tsx`   | the full ITR dossier        |
+| `/site/:siteId`   | `site_detail.tsx`     | posts naming one site       |
+| `/watch/:watchId` | `watch_detail.tsx`    | a watch's topic panel       |
+| `/aircraft/:hex`  | `aircraft_detail.tsx` | one live aircraft's dossier |
+| `*`               |                       | redirect to `/`             |
 
 Routing rather than component state means a link opens straight into a panel and
 Back closes it.
 
 **Cold deep links must wait for data.** `/site/:id` and `/target` both check
 `status === 'loading'` before redirecting away — otherwise a shared link bounces
-to the map before the feeds land.
+to the map before the feeds land. `/aircraft/:hex` does the same thing from the
+other direction: the stream only carries the current viewport, so an aircraft
+outside it is absent from the store but perfectly real. That panel falls back to a
+one-shot `GET /v1/aircraft/{hex}` and redirects **only** on a 404, which is the
+one answer that means "not tracked".
+
+> `/target` has a live bug here: the check is `!aoi && status !== 'loading'`, and a
+> cold direct load races the AOI fetch, so a pasted `/target` link lands on the map
+> instead of the dossier. Clicking through from the assessment strip works.
 
 The camera and active layers are mirrored into the query string
 (`?lat=&lon=&zoom=&layers=`) by `useMapUrlState`, so a URL carries the whole view
@@ -552,6 +665,139 @@ animation is disabled under `prefers-reduced-motion`.
 
 ---
 
+## 10a. Camera feeds — the one part that is not static
+
+Everything above ships as a static bundle. The camera layer does not, and that is
+the single most important thing to know about it.
+
+### Why it needs a server at all
+
+Three independent blockers, any one of which is fatal on its own:
+
+1. **CORS.** Not one road-authority endpoint sends `Access-Control-Allow-Origin`.
+   A browser fetch of the registry fails before it starts.
+2. **Mixed content.** Several camera hosts are plain `http://`. A page served over
+   HTTPS cannot load them, and no flag changes that.
+3. **Hotlinking and caching.** Some snapshot endpoints refuse a request without a
+   referrer they recognise, and every one of them needs cache-busting per frame.
+
+So there are three functions, written as Web-standard `Request → Response`
+handlers in `api/_lib/handlers.ts` and mounted three ways:
+
+| host          | mechanism                                                        |
+| ------------- | ---------------------------------------------------------------- |
+| Vercel        | `api/*.ts`, via the Node adapter in `api/_lib/node-adapter.ts`    |
+| Netlify       | `netlify/functions/*.ts` — its v2 signature _is_ the Web one      |
+| `pnpm dev`    | a middleware plugin in `vite.config.ts`, calling the same handlers |
+
+There is no second implementation anywhere; the adapters are routing shims. On a
+host with **no** functions (`vite preview`, a plain bucket) the client probes once,
+falls back to `src/data/cctv/registry.json`, and says so in the rail — markers
+appear, frames do not, which is the truth.
+
+### `/api/cctv-frame` is the sensitive one
+
+It turns a caller-supplied URL into a request from our server. Four constraints,
+none optional: `safeFetch` (SSRF guard, every redirect hop re-checked), a per-IP
+rate limit, an **image-only content-type allowlist**, and a size cap checked
+against both the declared `Content-Length` and the bytes actually received.
+Without the allowlist it is an open proxy serving arbitrary content from our
+origin. Verified blocking `169.254.169.254`, `127.0.0.1`, `localhost`, `file://`
+and the decimal-encoded `2130706433`.
+
+### Delivery mode is the domain concept
+
+`utils/cctv.ts` classifies every camera into `video` / `snapshot` / `external`,
+and the whole feature exists to keep that distinction visible. **Most "live
+traffic cameras" are stills on a 20–60 second timer.** Drawing one under a red LIVE
+dot throws away the only thing that decides whether the picture means anything.
+Hence `getCctvOperationalStatus`, and hence `stale` — a snapshot that has stopped
+updating looks identical to one merely between refreshes, and only the clock tells
+them apart. Same instinct as `empty` vs `error` in `SourceHealth`.
+
+`normalizeCctvDelivery` demotes a `feed_url` that is not plausibly an image to an
+`external_url`. Half a dozen agencies list a viewer page in the field named for the
+image; taking them at their word produced cameras permanently reading "offline",
+which is a false negative that looks like a dead camera rather than a provider we
+cannot proxy.
+
+### Viewport-driven, unlike every other layer
+
+Every other layer loads once — a signal layer when first switched on, the ITR feeds
+whole on a poll. Cameras cannot: there are tens of thousands and no view needs more
+than a few hundred. `useCameraRegistry` re-queries on `moveend`, debounced, aborting
+the superseded request. `camerasSlice` drops responses whose bbox no longer matches:
+a warm region answers from cache in milliseconds while a cold one is still fetching,
+so responses genuinely arrive out of order.
+
+**There is no client-side filter between the store and the map.** A segmented
+All / Video / Stills control existed and was removed — the marker already shows which
+kind each camera is, and a control that starts on "all" and is rarely moved is chrome
+earning nothing. `selectVisibleCameras` returns everything held.
+
+> **There is no zoom threshold, and there was.** `CAMERA_MIN_ZOOM` started at 5, on
+> the reasoning that a world view intersects every region and returns a capped smear
+> of markers. That shipped broken: **`INITIAL_VIEW.zoom` is 2**, so the one view every
+> operator meets first was the one view where switching the layer on did nothing at
+> all — no markers, no error, nothing to indicate it was working as designed. It reads
+> as a dead feature, and it was reported as one.
+>
+> The premise was also wrong. A world request returns 400 cameras clustered over
+> London and the Balkans, and that is the genuinely useful first picture: it answers
+> *where does open camera coverage exist* before you have to guess where to look. The
+> cap and ordering in `buildRegistry` already keep the payload honest.
+>
+> The lesson generalises: **a gate whose threshold excludes the app's own opening
+> view is not a gate, it is an off switch.**
+
+Region selection is **rectangle intersection, not centre-point testing**. A viewport
+framing the Channel is centred on water, and centre-testing returns nothing over one
+of the densest camera networks in the set.
+
+### Sources: two, verified
+
+**London** (TfL, ~900 stills on a 60-second timer) and **the Balkans** (three border
+crossings under HLS plus three city cameras). That is the whole demonstration set,
+and it is deliberate: those two exercise every path the layer has — dense snapshot
+network, inline video — and a third road authority proves nothing the first two do
+not while adding another upstream to notice when it dies.
+
+Windy is the exception and is not a demonstration: global, key-gated, and the only
+source with any coverage of India.
+
+Everything here was checked against its live endpoint. That matters more than it
+sounds: four of the reference implementation's regions were long dead and nobody had
+spotted it, precisely because a long list hides a silent zero. `api/_lib/sources/`
+records why WSDOT, FL-511, Travel Midwest, NDW Netherlands, Montréal and Butler
+County Ohio are **not** here — the last is worth reading, since its TLS chain is
+missing an intermediate and every workaround weakens certificate verification in the
+proxy.
+
+Two rules for this file:
+
+- **Nothing is an unsecured private camera.** Aggregators of misconfigured devices
+  are not a source. Those are somebody's shop floor, online by accident.
+- **We identify ourselves.** The implementation this was ported from forged
+  `X-Forwarded-For` from residential ISP ranges and rotated ten browser user agents
+  to evade rate limiting on public-sector endpoints. Not copied — it is also
+  self-defeating, since the failure it invites is being blocked by the exact
+  agencies the layer depends on. Volume is kept down by caching instead.
+
+### Nothing covers our own target
+
+No open camera network exists near Abdul Kalam Island. `WINDY_API_KEY` buys the only
+Indian coverage there is — a handful of tourist cams, nearest around Puri, ~200 km
+from the pad — and without it the layer is empty over India and the rail says so.
+This layer is context, not observation of the subject.
+
+That is also why `CAMERA_PLACES` exists and why the rail carries a **JUMP TO
+CAMERAS** list. An operator who works on the Odisha coast and switches this layer on
+sees an empty map, correctly — and with nowhere to go, correct and broken look
+identical. Each entry names what it lands on (London is stills, the Balkans is the
+only inline video), because that is the real difference between them.
+
+---
+
 ## 11. Build and deploy
 
 **Stack:** React 19, Vite 7, TypeScript 5.9, Tailwind v4, Redux Toolkit,
@@ -586,8 +832,20 @@ pnpm preview      # :4175
 ```
 
 `vite.config.ts` splits vendor code into cacheable chunks —
-`vendor-maplibre`, `vendor-react`, `vendor-router`, `vendor-redux` — so the app
-chunk stays small across deploys. Terser drops `console` and `debugger`.
+`vendor-maplibre`, `vendor-react`, `vendor-router`, `vendor-redux`, `vendor-hls` —
+so the app chunk stays small across deploys. Terser drops `console` and `debugger`.
+
+> **Naming a module in `manualChunks` overrides Rollup's code splitting.** This
+> caught us with hls.js: it is behind a dynamic `import()` in `camera_detail.tsx`
+> precisely so the ~500 kB player is fetched only when a camera actually streams
+> video, and only a handful in the whole registry do. Without an explicit
+> `vendor-hls` branch it fell into the shared `vendor` chunk — which loads on first
+> paint — so every visitor downloaded it and the `import()` bought nothing. Adding
+> the branch took `vendor` from 555 kB to 46 kB.
+>
+> The tell is a `vendor` chunk that grows when you add a lazily-imported
+> dependency. If a dynamic import is meant to defer something, give it its own
+> chunk here or the split is silently undone.
 
 **MapLibre is by far the largest thing in the build** — around 985 kB raw, 254 kB
 gzipped, against Leaflet's 42 kB. That is the price of a GL engine and there is no
@@ -599,9 +857,21 @@ own cache lifetime. `chunkSizeWarningLimit` is 1100 to suit it.
 `netlify.toml` (which also pins `publish = "dist"` — without it Netlify served
 the repo root and the site rendered blank).
 
+> **The `/api/*` routes must be matched before the SPA catch-all.** Both hosts
+> apply redirects in order, so a `/*` rule above them swallows every camera call
+> into `index.html` — which answers HTTP 200 with an HTML body, so the failure
+> surfaces as a JSON parse error rather than as a missing route. `vercel.json` uses
+> a negative lookahead (`/((?!api/).*)`); `netlify.toml` and `_redirects` list the
+> three function routes first.
+
 **`VITE_*` values are baked in at build time as string literals.** Changing
 `.env` after a build has no effect; you must rebuild. No environment variables
 are required — with all of them unset the app runs from fixtures.
+
+**`WINDY_API_KEY` is the exception, and is not a `VITE_` var.** It is read by the
+serverless functions at request time, never reaches the browser, and is not in the
+bundle — so it is set in the host's project settings and takes effect on the next
+invocation rather than needing a rebuild. See §10a.
 
 ---
 

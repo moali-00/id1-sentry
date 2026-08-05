@@ -69,7 +69,7 @@ export function GraticuleLayer({ beforeId }: { beforeId?: string }) {
         type="line"
         beforeId={beforeId}
         paint={{
-          'line-color': '#94a3b8',
+          'line-color': '#99a1af',
           'line-width': ['case', ['get', 'axis'], AXIS_WEIGHT, LINE_WEIGHT],
           'line-opacity': ['case', ['get', 'axis'], 0.5, 0.3],
         }}

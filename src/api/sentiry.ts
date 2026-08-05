@@ -4,7 +4,6 @@ import aoiCapture from '@/data/sentiry/aoi.json'
 import assessmentCapture from '@/data/sentiry/assessment.json'
 import maritimeWarningsCapture from '@/data/sentiry/maritime_warnings.json'
 import launchWindowsCapture from '@/data/sentiry/maritime_launch_windows.json'
-import aircraftCapture from '@/data/sentiry/aircraft_live_airspace.json'
 import thermalCapture from '@/data/sentiry/maps_firms_wfs_downrange.json'
 import imageryCapture from '@/data/sentiry/imagery_optical.json'
 import socialCapture from '@/data/sentiry/social.json'
@@ -18,7 +17,6 @@ import weatherCapture from '@/data/sentiry/connector_weather_3_8_aug.json'
 import hazardsCapture from '@/data/sentiry/connector_hazards_3_8_aug.json'
 import sourcesCapture from '@/data/sentiry/sources.json'
 import type {
-  AircraftData,
   AoiResponse,
   AssessmentResponse,
   ContextConnector,
@@ -94,12 +92,6 @@ export function fetchLaunchWindows(options?: RequestOptions): Promise<LaunchWind
     ...options,
     params: { horizon_hours: 720 },
   })
-}
-
-/** ADS-B contacts. `box=airspace` is the vacancy-watch box, not the pad. */
-export function fetchAircraft(options?: RequestOptions): Promise<FeedEnvelope<AircraftData>> {
-  if (!hasApi()) return fixture<FeedEnvelope<AircraftData>>(aircraftCapture)
-  return request<FeedEnvelope<AircraftData>>('/v1/aircraft/live', { ...options, params: { box: 'airspace' } })
 }
 
 /**

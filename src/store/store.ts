@@ -1,10 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import { useDispatch, useSelector, useStore } from 'react-redux'
+import camerasReducer from '@/store/slices/camerasSlice'
+import flightsReducer from '@/store/slices/flightsSlice'
 import itrReducer from '@/store/slices/itrSlice'
 import layersReducer from '@/store/slices/layersSlice'
 import monitoringReducer from '@/store/slices/monitoringSlice'
 import themeReducer from '@/store/slices/themeSlice'
 import { themeListener } from '@/store/themeListener'
+import { watchVisibilityListener } from '@/store/watchVisibilityListener'
 
 export const store = configureStore({
   reducer: {
@@ -12,8 +15,11 @@ export const store = configureStore({
     monitoring: monitoringReducer,
     layers: layersReducer,
     itr: itrReducer,
+    flights: flightsReducer,
+    cameras: camerasReducer,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().prepend(themeListener.middleware),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().prepend(themeListener.middleware, watchVisibilityListener.middleware),
   devTools: import.meta.env.DEV,
 })
 

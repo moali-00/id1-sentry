@@ -60,6 +60,20 @@ export const env = {
    * case the dashboard starts empty and reports "no source connected".
    */
   apiBaseUrl: trimTrailingSlash(read(import.meta.env.VITE_API_BASE_URL, '')),
+  /**
+   * Root of the Sentry Flight API — live ADS-B traffic around the island.
+   *
+   * A different service from `apiBaseUrl` with its own host, so it gets its own
+   * variable rather than a path under the monitoring API. Unlike that one this
+   * defaults to a working host, because there is no fixture to fall back on: an
+   * aircraft layer with no source is an empty layer, where the basemap and
+   * geocoder defaults above follow the same "works out of the box" rule.
+   *
+   * Set to an empty string to disable live traffic entirely.
+   */
+  flightApiBaseUrl: trimTrailingSlash(
+    read(import.meta.env.VITE_FLIGHT_API_BASE_URL, 'https://id1-demo.elile.ai/sentry-api'),
+  ),
   /** How often the activity feed re-fetches, in ms. */
   feedPollMs: readNumber(import.meta.env.VITE_FEED_POLL_MS, 30_000),
   /**
@@ -74,3 +88,16 @@ export const env = {
 
 /** True once an API root is configured; false means fixtures are in play. */
 export const hasApi = (): boolean => env.apiBaseUrl.length > 0
+
+/** True once a flight API root is configured; false disables the aircraft layer. */
+export const hasFlightApi = (): boolean => env.flightApiBaseUrl.length > 0
+
+/**
+ * The flight stream's WebSocket URL, derived from the REST root.
+ *
+ * Derived rather than configured separately so the two can never disagree, and
+ * upgraded to `wss:` alongside `https:` — a secure page cannot open an insecure
+ * socket, so a mismatch here is a blocked connection with a console-only error.
+ */
+export const flightStreamUrl = (): string =>
+  `${env.flightApiBaseUrl.replace(/^http/, 'ws')}/v1/stream`
