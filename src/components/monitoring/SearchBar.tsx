@@ -7,6 +7,7 @@ import { useAppSelector } from '@/store/store'
 import { selectClusters, selectWatches } from '@/store/slices/monitoringSlice'
 import { selectAoi } from '@/store/slices/itrSlice'
 import { WATCHES_ENABLED } from '@/utils/layers'
+import { useOutsideClick } from '@/hooks/useOutsideClick'
 import { IconButton } from '@/components/ui/IconButton'
 import { Panel } from '@/components/ui/Panel'
 
@@ -54,6 +55,7 @@ interface SearchBarProps {
 export function SearchBar({ onSelect, focusToken = 0 }: SearchBarProps) {
   const listId = useId()
   const inputRef = useRef<HTMLInputElement>(null)
+  const rootRef = useRef<HTMLDivElement>(null)
 
   // Zero is the initial value, so the field is not stolen on first paint.
   useEffect(() => {
@@ -70,6 +72,9 @@ export function SearchBar({ onSelect, focusToken = 0 }: SearchBarProps) {
   const [geocoded, setGeocoded] = useState<{ query: string; hits: SearchHit[] }>({ query: '', hits: [] })
   // Likewise for the highlighted row: it resets by belonging to a query.
   const [highlight, setHighlight] = useState<{ query: string; index: number }>({ query: '', index: 0 })
+  // Clicking away hides the list without discarding what was typed; editing the
+  // query or coming back to the field brings it back.
+  const [dismissed, setDismissed] = useState(false)
 
   const trimmed = query.trim()
 
@@ -171,7 +176,10 @@ export function SearchBar({ onSelect, focusToken = 0 }: SearchBarProps) {
   const searching = shouldGeocode && geocoded.query !== trimmed
 
   const hits = [...localHits, ...places]
-  const open = trimmed.length > 0
+  const open = trimmed.length > 0 && !dismissed
+
+  useOutsideClick([rootRef], () => setDismissed(true), open)
+
   const activeIndex = highlight.query === trimmed ? Math.min(highlight.index, Math.max(hits.length - 1, 0)) : 0
 
   const setActiveIndex = (index: number) => setHighlight({ query: trimmed, index })
@@ -201,7 +209,7 @@ export function SearchBar({ onSelect, focusToken = 0 }: SearchBarProps) {
   }
 
   return (
-    <div className="pointer-events-auto relative w-[340px]">
+    <div ref={rootRef} className="pointer-events-auto relative w-[340px]">
       <Panel className="flex items-center gap-2 rounded-full py-1.5 pr-1.5 pl-3.5">
         {searching ? (
           <Loader2 className="size-3.5 flex-none animate-spin text-fg-subtle" aria-hidden />
@@ -212,7 +220,11 @@ export function SearchBar({ onSelect, focusToken = 0 }: SearchBarProps) {
         <input
           ref={inputRef}
           value={query}
-          onChange={(event) => setQuery(event.target.value)}
+          onChange={(event) => {
+            setQuery(event.target.value)
+            setDismissed(false)
+          }}
+          onFocus={() => setDismissed(false)}
           onKeyDown={handleKeyDown}
           type="search"
           role="combobox"

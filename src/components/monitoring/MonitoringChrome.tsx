@@ -13,6 +13,7 @@ import { WatchFormModal } from '@/components/monitoring/WatchFormModal'
 import { ZoomControls } from '@/components/monitoring/ZoomControls'
 import { createDraft, draftFromWatch } from '@/utils/watchDraft'
 import { useKeyboardShortcuts } from '@/hooks/useKeyboardShortcuts'
+import { useOutsideClick } from '@/hooks/useOutsideClick'
 import { useLivePoll } from '@/hooks/useLivePoll'
 import { useFlightStream } from '@/hooks/useFlightStream'
 import { useMapUrlState } from '@/hooks/useMapUrlState'
@@ -51,6 +52,13 @@ export function MonitoringChrome() {
   const [sourcesOpen, setSourcesOpen] = useState(false)
   const [searchFocusToken, setSearchFocusToken] = useState(0)
   const openDetailTimer = useRef<number | undefined>(undefined)
+
+  // The collection-status panel hangs off the status pill with nothing to catch
+  // a stray click, so it dismisses on one — the pill's own button included, or
+  // its press would close and immediately reopen the panel.
+  const sourcesRef = useRef<HTMLDivElement>(null)
+  const healthRef = useRef<HTMLButtonElement>(null)
+  useOutsideClick([sourcesRef, healthRef], () => setSourcesOpen(false), sourcesOpen)
 
   useEffect(() => () => window.clearTimeout(openDetailTimer.current), [])
 
@@ -128,7 +136,7 @@ export function MonitoringChrome() {
 
   return (
     <div className="pointer-events-none absolute inset-0 z-[1000]">
-      <StatusPill onHealthClick={() => setSourcesOpen((open) => !open)} />
+      <StatusPill healthRef={healthRef} onHealthClick={() => setSourcesOpen((open) => !open)} />
       <LeftColumn
         onCreate={() => setFormTarget({ mode: 'create' })}
         onEdit={(watch) => setFormTarget({ mode: 'edit', watch })}
@@ -151,7 +159,7 @@ export function MonitoringChrome() {
       </div>
 
       {sourcesOpen && (
-        <div className="pointer-events-auto absolute top-[126px] left-1/2 -translate-x-1/2">
+        <div ref={sourcesRef} className="pointer-events-auto absolute top-[126px] left-1/2 -translate-x-1/2">
           <SourceHealthPanel />
         </div>
       )}

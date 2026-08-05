@@ -1,4 +1,4 @@
-import { useSyncExternalStore } from 'react'
+import { useSyncExternalStore, type RefObject } from 'react'
 import { Moon, Radio, Sun } from 'lucide-react'
 import { cn } from '@/utils/cn'
 import { env } from '@/utils/env'
@@ -44,6 +44,15 @@ function formatClock(at: number): string {
   return new Date(at).toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'UTC' })
 }
 
+interface StatusPillProps {
+  onHealthClick?: () => void
+  /**
+   * The health button, exposed so the collection-status panel it opens can treat
+   * a press on it as an inside click rather than a dismissal.
+   */
+  healthRef?: RefObject<HTMLButtonElement | null>
+}
+
 /**
  * Top-centre status pill: product name, source health and the theme toggle.
  *
@@ -51,7 +60,7 @@ function formatClock(at: number): string {
  * decoratively green — an operator has to be able to tell a quiet map from a
  * broken one.
  */
-export function StatusPill({ onHealthClick }: { onHealthClick?: () => void }) {
+export function StatusPill({ onHealthClick, healthRef }: StatusPillProps) {
   const dispatch = useAppDispatch()
   const theme = useAppSelector(selectTheme)
   const status = useAppSelector(selectStatus)
@@ -77,7 +86,11 @@ export function StatusPill({ onHealthClick }: { onHealthClick?: () => void }) {
     !aircraftOn || !hasFlightApi()
       ? null
       : flightDegraded
-        ? { dot: 'bg-status-inferred', label: 'ADS-B STALE', title: 'Upstream ADS-B sources are failing — positions are frozen' }
+        ? {
+            dot: 'bg-status-inferred',
+            label: 'ADS-B STALE',
+            title: 'Upstream ADS-B sources are failing — positions are frozen',
+          }
         : flightStream === 'open'
           ? {
               dot: 'animate-pulse-live bg-status-observed',
@@ -120,6 +133,7 @@ export function StatusPill({ onHealthClick }: { onHealthClick?: () => void }) {
       <span className="h-3.5 w-px bg-line" aria-hidden />
 
       <button
+        ref={healthRef}
         type="button"
         onClick={onHealthClick}
         title={`${health.title} — click for collection status`}
