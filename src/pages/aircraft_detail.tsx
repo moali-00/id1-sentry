@@ -222,8 +222,6 @@ export default function AircraftDetailPage() {
                 ['Squawk', aircraft.squawk],
                 // "none" is the normal state and says nothing worth a row.
                 ['Emergency', aircraft.emergency && aircraft.emergency !== 'none' ? aircraft.emergency : null],
-                ['Position source', aircraft.pos_type],
-                ['Source', aircraft.src],
               ]
                 .filter(([, value]) => Boolean(value))
                 .map(([label, value]) => (
