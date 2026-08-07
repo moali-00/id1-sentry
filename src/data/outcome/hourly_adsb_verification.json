@@ -1,0 +1,229 @@
+{
+  "name": "hourly_adsb_verification",
+  "captured_at": "2026-08-07T07:11:31.922779+00:00",
+  "phase": "after-testing",
+  "status": "PARTIAL \u2014 morning window only; afternoon run 12:00-18:15Z still in progress",
+  "question": "Can hour-by-hour ADS-B confirm whether the published airspace closure actually diverted traffic? The daily-aggregate test in airspace_exclusion_analysis.json was underpowered and could not answer it.",
+  "part_1_historical_data_is_unavailable": {
+    "finding": "No free source serves the 6 August launch hour. All four were tested directly.",
+    "sources_tested": [
+      {
+        "source": "OpenSky /states/all?time=<unix>",
+        "result": "HTTP 403",
+        "message": "Historical data more than 1 hour ago can only be retrieved with /states/own",
+        "note": "/states/own requires operating your own ADS-B receivers, which we do not."
+      },
+      {
+        "source": "OpenSky /flights/all",
+        "result": "HTTP 403"
+      },
+      {
+        "source": "adsb.lol globe_history/2026/08/06/",
+        "result": "HTTP 302 -> 404, not public"
+      },
+      {
+        "source": "airplanes.live globe_history/2026/08/06/",
+        "result": "HTTP 403"
+      }
+    ],
+    "paid_routes_not_held": [
+      "ADS-B Exchange historical (commercial)",
+      "OpenSky Trino/Impala (research account)"
+    ],
+    "consequence": "Yesterday's launch hour cannot be reconstructed. The question is instead being answered forward, using the windows still declared for 7 August."
+  },
+  "part_2_geometry_correction": {
+    "finding": "VED-52 does NOT cover Abdul Kalam Island. It covers Chandipur. This changes what the airspace closure is evidence OF.",
+    "ved52": {
+      "centre": {
+        "lat": 21.3833,
+        "lon": 87.3667
+      },
+      "radius_km": 64.8,
+      "source": "Q-line 2123N08722E035"
+    },
+    "measurements": [
+      {
+        "place": "Abdul Kalam Island",
+        "km_from_centre": 75.4,
+        "inside": false,
+        "margin_km": 10.6,
+        "reading": "10.6 km OUTSIDE the danger area"
+      },
+      {
+        "place": "Chandipur ITR",
+        "km_from_centre": 53.8,
+        "inside": true,
+        "margin_km": 11.0,
+        "reading": "11.0 km INSIDE the danger area"
+      }
+    ],
+    "why_it_matters": "The MoD attributed the launch to 'Integrated Test Range, Chandipur'. The airspace closure encloses Chandipur and excludes the island. Those two facts agree with each other, and both point away from the island this system's AOI is centred on.",
+    "unreconciled_figure": {
+      "captured_value": "distance_to_island_km = 36.1 (results/notams_danger_areas.json)",
+      "true_circle_geometry": "island is 75.4 km from centre, radius 64.8 km -> 10.6 km outside",
+      "bounding_box_geometry": "island is 4.8 km south of the stored box's southern edge",
+      "note": "36.1 km matches neither. The adapter stores a 4-point bounding box for a circle (geometry_source: circle:35nm), so the distance was computed from an approximation. Flagged, not corrected \u2014 the frozen results/ is not edited."
+    }
+  },
+  "part_3_live_sampling_during_an_active_closure": {
+    "window": "A1596/26 VED-52 ACT, 7 Aug 0430-0730Z (SFC-UNL)",
+    "sampled": "2026-08-07T07:01:27.836791+00:00 .. 2026-08-07T07:10:40.493797+00:00 at 60 s cadence, adsb.lol, 250 nm radius",
+    "snapshots": 10,
+    "distinct_aircraft": 32,
+    "airborne": 28,
+    "per_snapshot_total": [
+      22,
+      22,
+      24,
+      21,
+      22,
+      19,
+      18,
+      19,
+      18,
+      20
+    ],
+    "per_snapshot_inside_ved52": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "aircraft_inside_ved52": 1,
+    "the_one_transit": {
+      "callsign": "IGO971P",
+      "hex": "80141c",
+      "track": [
+        {
+          "t": "07:01:27",
+          "lat": 20.892975,
+          "lon": 87.271075,
+          "alt_baro": 32175,
+          "gs": 436.3,
+          "track_deg": 225.65,
+          "km_from_ved52_centre": 55.4,
+          "inside_ved52": true,
+          "km_from_island": 24.4
+        },
+        {
+          "t": "07:02:28",
+          "lat": 20.805908,
+          "lon": 87.176023,
+          "alt_baro": 32475,
+          "gs": 446.9,
+          "track_deg": 225.73,
+          "km_from_ved52_centre": 67.2,
+          "inside_ved52": false,
+          "km_from_island": 10.8
+        },
+        {
+          "t": "07:03:29",
+          "lat": 20.718399,
+          "lon": 87.080533,
+          "alt_baro": 32950,
+          "gs": 451.9,
+          "track_deg": 225.81,
+          "km_from_ved52_centre": 79.7,
+          "inside_ved52": false,
+          "km_from_island": 4.4
+        },
+        {
+          "t": "07:04:30",
+          "lat": 20.634384,
+          "lon": 86.976847,
+          "alt_baro": 33400,
+          "gs": 455.5,
+          "track_deg": 240.4,
+          "km_from_ved52_centre": 92.6,
+          "inside_ved52": false,
+          "km_from_island": 17.8
+        },
+        {
+          "t": "07:05:33",
+          "lat": 20.574097,
+          "lon": 86.853251,
+          "alt_baro": 33925,
+          "gs": 456.7,
+          "track_deg": 242.48,
+          "km_from_ved52_centre": 104.6,
+          "inside_ved52": false,
+          "km_from_island": 31.7
+        },
+        {
+          "t": "07:06:34",
+          "lat": 20.513809,
+          "lon": 86.726859,
+          "alt_baro": 34000,
+          "gs": 460.2,
+          "track_deg": 243.55,
+          "km_from_ved52_centre": 117.3,
+          "inside_ved52": false,
+          "km_from_island": 46.2
+        },
+        {
+          "t": "07:07:35",
+          "lat": 20.45636,
+          "lon": 86.60493,
+          "alt_baro": 34000,
+          "gs": 460.6,
+          "track_deg": 243.43,
+          "km_from_ved52_centre": 129.9,
+          "inside_ved52": false,
+          "km_from_island": 60.2
+        },
+        {
+          "t": "07:08:35",
+          "lat": 20.398407,
+          "lon": 86.481776,
+          "alt_baro": 34000,
+          "gs": 462.0,
+          "track_deg": 243.66,
+          "km_from_ved52_centre": 143.0,
+          "inside_ved52": false,
+          "km_from_island": 74.5
+        },
+        {
+          "t": "07:09:39",
+          "lat": 20.337695,
+          "lon": 86.352839,
+          "alt_baro": 34050,
+          "gs": 461.1,
+          "track_deg": 243.32,
+          "km_from_ved52_centre": 156.9,
+          "inside_ved52": false,
+          "km_from_island": 89.5
+        },
+        {
+          "t": "07:10:40",
+          "lat": 20.279598,
+          "lon": 86.229842,
+          "alt_baro": 33975,
+          "gs": 459.7,
+          "track_deg": 243.38,
+          "km_from_ved52_centre": 170.4,
+          "inside_ved52": false,
+          "km_from_island": 103.8
+        }
+      ],
+      "reading": "Inside the circle at 07:01:27 (55.4 km from centre) and outside from 07:02:28 onward, receding to 143 km by 07:08. Heading 225-244 deg, climbing 32,175 -> 34,000 ft. It was LEAVING the zone on a steady south-westerly track, not routing around it. It passed 4.4 km from Abdul Kalam Island \u2014 which is legal, because the island is outside VED-52."
+    },
+    "interpretation": {
+      "observed": "Across 8 minutes of an active surface-to-unlimited closure, 25 airborne contacts were tracked in a 250 nm circle and exactly one was inside VED-52, on an exiting track. The next-nearest airborne aircraft stayed 154 km from the VED-52 centre.",
+      "consistent_with": "An enforced closure. A 65 km circle sitting empty for 8 consecutive minutes, with the nearest other traffic 154 km away, is what an observed exclusion looks like.",
+      "but_not_yet_evidence": "There is no control. Without the same measurement outside a closure window, an empty zone could equally be ordinary low traffic density over the Bay of Bengal at 07:00Z. The morning run continues past the 07:30Z lift precisely to obtain that control, and the afternoon run covers a full before/during/after cycle."
+    }
+  },
+  "part_4_what_is_still_running": {
+    "morning": "1-min cadence to ~07:56Z \u2014 captures the 07:30Z lift, giving a within-hour before/after on the same airspace.",
+    "afternoon": "12:00-18:15Z, two networks, 1-min cadence. Straddles 819/26 strategic (1230-1530Z), VED-52 (1430-1730Z) and 818/26 (1430-1730Z), so it yields clean pre / during / post segments.",
+    "caveat": "The Agni-4 already flew on 6 August. Today's windows are legally in force but may go unused. A quiet zone today would demonstrate that a closure empties airspace; it would NOT indicate a second launch."
+  },
+  "bottom_line": "Historical verification is impossible with the access held \u2014 that is now a tested, documented fact rather than an assumption. Forward verification is under way and the first 8 minutes are consistent with an enforced exclusion, but no causal claim can be made until the post-closure control is in hand. The substantive finding so far is geometric, not statistical: the airspace danger area encloses Chandipur and excludes Abdul Kalam Island, which agrees with the MoD's own attribution of the launch site."
+}

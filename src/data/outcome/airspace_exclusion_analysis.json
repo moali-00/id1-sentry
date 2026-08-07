@@ -1,0 +1,280 @@
+{
+  "name": "airspace_exclusion_analysis",
+  "captured_at": "2026-08-07T06:48:35.063428+00:00",
+  "phase": "after-testing",
+  "question": "Did the published airspace closure remove aircraft from the sample before the test, biasing any traffic- or GNSS-based reading toward the edges of the exclusion rather than its centre?",
+  "notam": {
+    "id": "A1632/26",
+    "q_code": "QRDCA",
+    "fir": "VECF",
+    "raw_geo": "2123N08722E035",
+    "centre": {
+      "lat": 21.3833,
+      "lon": 87.3667
+    },
+    "radius_nm": 35,
+    "radius_km": 64.8,
+    "vertical": "SFC to UNL",
+    "effective": "2026-08-06 1430Z",
+    "expiration": "2026-08-07 1730Z",
+    "schedule": "1430-1730",
+    "airway_effect": "Q11 NOT AVBL BTN CEA AND MAVLA",
+    "published_alternate": "CEA-DCT-LEGOS-DCT-KAKID-DCT-SURUP",
+    "centre_km_from_island": 75.4,
+    "note": "The NOTAM does not merely advise \u2014 it withdraws airway Q11 between two named waypoints and publishes a replacement routing. That is a hard exclusion with a documented detour."
+  },
+  "cell_overlay": {
+    "aoi_cells": 53,
+    "cells_inside_ved52": 7,
+    "cells_outside": 46,
+    "inside": {
+      "843c889ffffffff": {
+        "centre": {
+          "lat": 21.3858,
+          "lon": 87.0266
+        },
+        "km_from_ved52_centre": 35.2,
+        "km_from_island": 70.1
+      },
+      "843c881ffffffff": {
+        "centre": {
+          "lat": 21.0142,
+          "lon": 87.2368
+        },
+        "km_from_ved52_centre": 43.2,
+        "km_from_island": 32.5
+      },
+      "843c89dffffffff": {
+        "centre": {
+          "lat": 21.3697,
+          "lon": 87.9452
+        },
+        "km_from_ved52_centre": 59.9,
+        "km_from_island": 112.2
+      },
+      "843c88bffffffff": {
+        "centre": {
+          "lat": 21.3784,
+          "lon": 87.4854
+        },
+        "km_from_ved52_centre": 12.3,
+        "km_from_island": 80.5
+      },
+      "843c883ffffffff": {
+        "centre": {
+          "lat": 21.0058,
+          "lon": 87.6955
+        },
+        "km_from_ved52_centre": 54.1,
+        "km_from_island": 69.1
+      },
+      "843c8d5ffffffff": {
+        "centre": {
+          "lat": 21.7493,
+          "lon": 87.2749
+        },
+        "km_from_ved52_centre": 41.8,
+        "km_from_island": 112.0
+      },
+      "843c8d7ffffffff": {
+        "centre": {
+          "lat": 21.7417,
+          "lon": 87.7349
+        },
+        "km_from_ved52_centre": 55.1,
+        "km_from_island": 128.4
+      }
+    }
+  },
+  "daily_traffic": {
+    "2026-07-03": {
+      "inside": 306,
+      "outside": 1676
+    },
+    "2026-07-04": {
+      "inside": 294,
+      "outside": 1616
+    },
+    "2026-07-05": {
+      "inside": 334,
+      "outside": 1597
+    },
+    "2026-07-06": {
+      "inside": 300,
+      "outside": 1748
+    },
+    "2026-07-07": {
+      "inside": 315,
+      "outside": 1606
+    },
+    "2026-07-08": {
+      "inside": 256,
+      "outside": 1531
+    },
+    "2026-07-09": {
+      "inside": 296,
+      "outside": 1642
+    },
+    "2026-07-10": {
+      "inside": 354,
+      "outside": 2090
+    },
+    "2026-07-11": {
+      "inside": 281,
+      "outside": 1698
+    },
+    "2026-07-12": {
+      "inside": 300,
+      "outside": 1684
+    },
+    "2026-07-13": {
+      "inside": 280,
+      "outside": 1666
+    },
+    "2026-07-14": {
+      "inside": 241,
+      "outside": 1485
+    },
+    "2026-07-15": {
+      "inside": 309,
+      "outside": 1558
+    },
+    "2026-07-16": {
+      "inside": 311,
+      "outside": 1618
+    },
+    "2026-07-17": {
+      "inside": 292,
+      "outside": 1689
+    },
+    "2026-07-18": {
+      "inside": 305,
+      "outside": 1657
+    },
+    "2026-07-19": {
+      "inside": 255,
+      "outside": 1703
+    },
+    "2026-07-20": {
+      "inside": 217,
+      "outside": 1005
+    },
+    "2026-07-21": {
+      "inside": 245,
+      "outside": 1434
+    },
+    "2026-07-22": {
+      "inside": 277,
+      "outside": 1464
+    },
+    "2026-07-23": {
+      "inside": 234,
+      "outside": 1498
+    },
+    "2026-07-24": {
+      "inside": 295,
+      "outside": 1667
+    },
+    "2026-07-25": {
+      "inside": 238,
+      "outside": 1606
+    },
+    "2026-07-26": {
+      "inside": 265,
+      "outside": 1593
+    },
+    "2026-07-27": {
+      "inside": 226,
+      "outside": 1534
+    },
+    "2026-07-28": {
+      "inside": 278,
+      "outside": 1454
+    },
+    "2026-07-29": {
+      "inside": 299,
+      "outside": 1499
+    },
+    "2026-07-30": {
+      "inside": 289,
+      "outside": 1632
+    },
+    "2026-07-31": {
+      "inside": 269,
+      "outside": 1529
+    },
+    "2026-08-01": {
+      "inside": 273,
+      "outside": 1524
+    },
+    "2026-08-02": {
+      "inside": 291,
+      "outside": 1647
+    },
+    "2026-08-03": {
+      "inside": 252,
+      "outside": 1687
+    },
+    "2026-08-04": {
+      "inside": 248,
+      "outside": 1618
+    },
+    "2026-08-05": {
+      "inside": 263,
+      "outside": 1717
+    },
+    "2026-08-06": {
+      "inside": 278,
+      "outside": 2068
+    }
+  },
+  "result": {
+    "baseline_days": 34,
+    "inside": {
+      "mean": 279.1,
+      "sd": 30.7,
+      "min": 217,
+      "max": 354,
+      "launch_day": 278,
+      "z": -0.03
+    },
+    "outside": {
+      "mean": 1599.2,
+      "sd": 155.2,
+      "min": 1005,
+      "max": 2090,
+      "launch_day": 2068,
+      "z": 3.02
+    },
+    "inside_share_baseline_pct": 14.9,
+    "inside_share_launch_day_pct": 11.8
+  },
+  "power": {
+    "closure_hours": 3,
+    "fraction_of_day": 0.125,
+    "max_detectable_loss_aircraft": 35.0,
+    "baseline_sd_aircraft": 30.7,
+    "effect_in_sd": 1.14,
+    "verdict": "Underpowered. A TOTAL 3-hour exclusion of uniformly distributed traffic would move the daily count by about 1.1 SD, which is the size of ordinary day-to-day noise. GPSJam publishes daily aggregates only, so this test cannot resolve a 3-hour closure either way."
+  },
+  "finding": {
+    "hypothesis_supported": false,
+    "reasoning": [
+      "Aircraft inside VED-52 on launch day: 278, against a 34-day baseline of 279.1 +/- 30.7. z = -0.03. There is no depression at all \u2014 the cells inside the danger area carried a completely ordinary traffic load.",
+      "The inside SHARE did fall, 14.9% -> 11.8%, but that is driven by the denominator: cells outside spiked to 2,068 against a 1,599 baseline, z = +3.02. The inside count did not move; the surrounding airspace got busier.",
+      "That outside excess (+469 aircraft) is far larger than anything a 279-aircraft zone could shed by rerouting, so it is not the detour signature either \u2014 it reads as a generally busier day or better ADS-B coverage.",
+      "So the premise that aircraft were structurally absent from the sample does not hold at this resolution: the zone was sampled at its normal density."
+    ],
+    "important_caveat": "This does not prove the exclusion had no effect \u2014 it shows the measurement cannot see one. See `power`. A proper test needs hourly ADS-B tracks over the 1430-1730Z window, not daily cell aggregates.",
+    "consequence_for_the_gnss_question": "It does not rescue the GNSS reading. The concern was that thin or absent traffic near the site made any interference footprint unmeasurable. But traffic inside the danger area was at baseline density on launch day, so the sample was not hollowed out. The GNSS material was removed for a different and sufficient reason: 37% of days carry at least one degraded-accuracy aircraft in this AOI, so launch day's three is indistinguishable from background."
+  },
+  "incidental_finding": {
+    "timing_mismatch": {
+      "819/26_maritime_strategic": "1230-1530Z",
+      "818/26_maritime_near_field": "1430-1730Z",
+      "VED-52_airspace": "1430-1730Z",
+      "mod_announcement": "1324Z",
+      "observation": "The captured airspace closure matches the NEAR-FIELD maritime corridor 818/26, not the strategic corridor 819/26 the 3,820 km polygon belongs to. The MoD announcement at 1324Z falls inside 819/26's window and 66 minutes BEFORE VED-52 activated. Either the launch used the earlier maritime window, or a separate airspace notice covering 1230-1530Z was not captured. Announcement time is not launch time, so this is an open question, not a contradiction."
+    }
+  }
+}

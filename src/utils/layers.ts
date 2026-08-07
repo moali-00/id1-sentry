@@ -196,6 +196,19 @@ export const DATA_LAYERS: DataLayer[] = [
     defaultOn: true,
   },
   {
+    id: 'itr_closure',
+    label: 'Closure · verified',
+    groupKey: 'itr_feeds',
+    // Lime, used by no other layer. It has to be told apart from the violet
+    // danger area it is drawn on top of — that pairing is the point of the layer.
+    color: '#a3e635',
+    hint: 'The airspace closure redrawn from its published radius — after-action correction',
+    explain:
+      'VED-52 as the NOTAM actually publishes it: a 35 NM circle around 21-23N 087-22E. The danger-area layer draws the same closure from the four-point bounding box the capture stored, and that box is wide enough to enclose Abdul Kalam Island. The circle does not — the island sits 10.6 km outside it, while Chandipur, the site the Ministry of Defence named, sits 11.0 km inside. Switch both on to see the difference.',
+    // On by default. It is one polygon, and it corrects a shape already drawn.
+    defaultOn: true,
+  },
+  {
     id: 'itr_evacuations',
     label: 'Civil precursors',
     groupKey: 'itr_feeds',

@@ -1,0 +1,157 @@
+{
+  "name": "press_analysis_defencesecurityasia",
+  "captured_at": "2026-08-07T07:31:39.247561+00:00",
+  "phase": "after-testing",
+  "source": {
+    "url": "https://defencesecurityasia.com/en/india-agni-4-nuclear-missile-test-china-indo-pacific",
+    "outlet": "Defence Security Asia",
+    "author": "Admin (Defence Security Asia)",
+    "published": "2026-08-07",
+    "retrieved_via": "WebFetch",
+    "source_class": "third-party defence trade press \u2014 secondary reporting, not a primary document. It carries no direct quotation from the Ministry of Defence, only a paraphrase."
+  },
+  "test_facts_as_reported": {
+    "date": "2026-08-06",
+    "time": "not specified",
+    "launch_site": "Integrated Test Range, Chandipur, Odisha",
+    "conducting_command": "Strategic Forces Command",
+    "supporting_agency": "Defence Research and Development Organisation",
+    "outcome": "flight validated all operational and technical parameters (paraphrased from MoD)"
+  },
+  "technical_specifications_as_reported": {
+    "range_km": 4000,
+    "payload_kg_max": 1000,
+    "propulsion": "two-stage solid-propellant composite rocket motors",
+    "thrust_stage1_kN": 710,
+    "thrust_stage2_kN": 39.5,
+    "length_m": 20,
+    "diameter_m": "1.2-1.3",
+    "launch_weight_tonnes": 17,
+    "casing_stage1": "maraging steel",
+    "casing_stage2": "carbon fibre",
+    "guidance": "ring-laser-gyro inertial navigation, redundant micro-navigation system, digital controls, thrust-vector control",
+    "cep_m": "<100 at maximum range",
+    "reentry_heat_shield_C": "3000-4000 exterior"
+  },
+  "cross_source_agreement": {
+    "note": "Three independent characterisations of the same missile. They agree on physical specification and disagree on class, which is a definitional dispute, not a factual one.",
+    "rows": [
+      {
+        "field": "launch date",
+        "mod": "2026-08-06",
+        "csis": "n/a",
+        "dsa": "2026-08-06",
+        "agree": true
+      },
+      {
+        "field": "launch site",
+        "mod": "Integrated Test Range, Chandipur, Odisha",
+        "csis": "n/a",
+        "dsa": "Integrated Test Range, Chandipur, Odisha",
+        "agree": true
+      },
+      {
+        "field": "conducting authority",
+        "mod": "Strategic Forces Command",
+        "csis": "n/a",
+        "dsa": "Strategic Forces Command",
+        "agree": true
+      },
+      {
+        "field": "class",
+        "mod": "MRBM",
+        "csis": "IRBM",
+        "dsa": "nuclear-capable ballistic missile",
+        "agree": false,
+        "comment": "MRBM vs IRBM is a threshold convention (3,000 km by some definitions, 3,500 km by others), not a disagreement about performance."
+      },
+      {
+        "field": "range km",
+        "mod": "not stated",
+        "csis": "3000-4000",
+        "dsa": "4000",
+        "agree": null,
+        "comment": "DSA quotes the top of the CSIS band as a flat figure."
+      },
+      {
+        "field": "payload kg",
+        "mod": "not stated",
+        "csis": 1000,
+        "dsa": 1000,
+        "agree": true
+      },
+      {
+        "field": "length m",
+        "mod": "not stated",
+        "csis": 20.0,
+        "dsa": 20,
+        "agree": true
+      },
+      {
+        "field": "launch weight",
+        "mod": "not stated",
+        "csis": "17000 kg",
+        "dsa": "17 tonnes",
+        "agree": true
+      },
+      {
+        "field": "stages / propellant",
+        "mod": "not stated",
+        "csis": "2-stage solid",
+        "dsa": "two-stage solid composite",
+        "agree": true
+      },
+      {
+        "field": "guidance",
+        "mod": "not stated",
+        "csis": "inertial with ring laser gyroscopes; flexseal thrust vectoring",
+        "dsa": "ring-laser-gyro inertial + redundant micro-nav, digital controls, TVC",
+        "agree": true
+      },
+      {
+        "field": "CEP",
+        "mod": "not stated",
+        "csis": "<100 at 4,000 km",
+        "dsa": "<100 m at max range",
+        "agree": true
+      }
+    ],
+    "reading": "DSA's thrust figures (710 kN / 39.5 kN), casing materials and CEP are identical to the CSIS profile, so the two are not independent on the technical side \u2014 they share a source lineage. The test facts, by contrast, match the MoD announcement directly and ARE independently corroborating."
+  },
+  "editorial_claims_not_test_facts": [
+    {
+      "claim": "'from suitable deployment areas in eastern or northeastern India, Agni-4 could place strategic centres across most mainland China within reach'",
+      "status": "ANALYSIS, not an observation from this test",
+      "note": "A range-circle inference from a stated 4,000 km figure and hypothetical basing. Nothing in the 6 August event, the NAVAREA warnings or the NOTAMs speaks to deployment location or targeting. Recorded as the outlet's framing."
+    },
+    {
+      "claim": "test 'validated an operational 4,000-kilometre nuclear-capable ballistic missile'",
+      "status": "partly inferential",
+      "note": "The MoD said the launch validated operational and technical parameters. It did not state a range figure, did not say 'operational', and did not mention a nuclear role. Those are the outlet's additions."
+    },
+    {
+      "claim": "No First Use policy and nuclear triad context",
+      "status": "background",
+      "note": "Standing Indian declaratory policy; not derived from this test."
+    }
+  ],
+  "relevance_to_this_collection": {
+    "corroborates": [
+      "launch date 6 August 2026",
+      "site attributed to ITR Chandipur",
+      "Strategic Forces Command as the conducting authority",
+      "successful outcome"
+    ],
+    "adds": [
+      "a flat 4,000 km range figure",
+      "re-entry heat-shield temperature claim",
+      "regional-reach framing"
+    ],
+    "does_not_address": [
+      "launch time",
+      "which of the two declared windows was used",
+      "why the airspace closure (VED-52, 1430-1730Z) does not match the strategic maritime window (819/26, 1230-1530Z)"
+    ],
+    "note": "This is the third source to place the launch at Chandipur rather than Abdul Kalam Island. Taken with the VED-52 geometry \u2014 which encloses Chandipur and excludes the island by 10.6 km \u2014 the weight of evidence is that this launch was NOT from the island this system's AOI is centred on."
+  }
+}

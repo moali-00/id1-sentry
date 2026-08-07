@@ -138,6 +138,7 @@ export type ItrFeedId =
   | 'itr_thermal'
   | 'itr_aircraft'
   | 'itr_imagery'
+  | 'itr_closure'
 
 export type DataLayerId = SignalLayerId | DisplayLayerId | AoiZoneId | ItrFeedId | CameraLayerId
 

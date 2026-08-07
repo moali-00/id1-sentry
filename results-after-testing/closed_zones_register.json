@@ -1,0 +1,531 @@
+{
+  "name": "closed_zones_register",
+  "captured_at": "2026-08-07T07:15:37.711260+00:00",
+  "phase": "after-testing",
+  "valid_as_of": "2026-08-07T07:00Z",
+  "reference_point": {
+    "name": "Dr APJ Abdul Kalam Island (ITR)",
+    "lat": 20.75804,
+    "lon": 87.085533,
+    "note": "All km_from_island / bearing_from_island_deg are measured from here, WGS84, haversine on a 6371.0088 km sphere."
+  },
+  "second_reference": {
+    "name": "Chandipur ITR",
+    "lat": 21.0483,
+    "lon": 86.9926,
+    "km_from_island": 33.7,
+    "bearing_from_island_deg": 343.4
+  },
+  "counts": {
+    "airspace_zones": 2,
+    "maritime_zones": 6,
+    "total_vertices": 29
+  },
+  "zones": [
+    {
+      "zone": "VED-52",
+      "type": "airspace danger area",
+      "shape": "circle",
+      "notams": [
+        {
+          "id": "A1596/26",
+          "effective": "2026-08-07 0430Z",
+          "expiration": "2026-08-07 0730Z",
+          "note": "VED-52 ACT EXC COMMON AREA OF VED-53"
+        },
+        {
+          "id": "A1632/26",
+          "effective": "2026-08-06 1430Z",
+          "expiration": "2026-08-07 1730Z",
+          "schedule": "1430-1730 daily"
+        }
+      ],
+      "q_code": "QRDCA (danger area activated)",
+      "fir": "VECF (Kolkata)",
+      "q_line": "2123N08722E035",
+      "centre": {
+        "as_published": "21-23N 087-22E",
+        "lat": 21.38333,
+        "lon": 87.36667,
+        "km_from_island": 75.4,
+        "bearing_from_island_deg": 22.7
+      },
+      "radius": {
+        "nm": 35,
+        "km": 64.8
+      },
+      "vertical_limits": {
+        "lower": "SFC (surface)",
+        "upper": "UNL (unlimited)"
+      },
+      "airway_effect": {
+        "airway": "Q11",
+        "status": "NOT AVBL BTN CEA AND MAVLA",
+        "published_alternate": "CEA-DCT-LEGOS-DCT-KAKID-DCT-SURUP",
+        "sid": "AVBL FOR RTE Q11"
+      },
+      "boundary_ring_24pt": [
+        {
+          "bearing_deg": 0,
+          "lat": 21.96562,
+          "lon": 87.36667
+        },
+        {
+          "bearing_deg": 15,
+          "lat": 21.94578,
+          "lon": 87.52851
+        },
+        {
+          "bearing_deg": 30,
+          "lat": 21.88761,
+          "lon": 87.67933
+        },
+        {
+          "bearing_deg": 45,
+          "lat": 21.79507,
+          "lon": 87.80884
+        },
+        {
+          "bearing_deg": 60,
+          "lat": 21.67448,
+          "lon": 87.90822
+        },
+        {
+          "bearing_deg": 75,
+          "lat": 21.53404,
+          "lon": 87.97069
+        },
+        {
+          "bearing_deg": 90,
+          "lat": 21.38333,
+          "lon": 87.992
+        },
+        {
+          "bearing_deg": 105,
+          "lat": 21.23263,
+          "lon": 87.97069
+        },
+        {
+          "bearing_deg": 120,
+          "lat": 21.09219,
+          "lon": 87.90822
+        },
+        {
+          "bearing_deg": 135,
+          "lat": 20.9716,
+          "lon": 87.80884
+        },
+        {
+          "bearing_deg": 150,
+          "lat": 20.87906,
+          "lon": 87.67933
+        },
+        {
+          "bearing_deg": 165,
+          "lat": 20.82089,
+          "lon": 87.52851
+        },
+        {
+          "bearing_deg": 180,
+          "lat": 20.80105,
+          "lon": 87.36667
+        },
+        {
+          "bearing_deg": 195,
+          "lat": 20.82089,
+          "lon": 87.20482
+        },
+        {
+          "bearing_deg": 210,
+          "lat": 20.87906,
+          "lon": 87.054
+        },
+        {
+          "bearing_deg": 225,
+          "lat": 20.9716,
+          "lon": 86.92449
+        },
+        {
+          "bearing_deg": 240,
+          "lat": 21.09219,
+          "lon": 86.82511
+        },
+        {
+          "bearing_deg": 255,
+          "lat": 21.23263,
+          "lon": 86.76264
+        },
+        {
+          "bearing_deg": 270,
+          "lat": 21.38333,
+          "lon": 86.74133
+        },
+        {
+          "bearing_deg": 285,
+          "lat": 21.53404,
+          "lon": 86.76264
+        },
+        {
+          "bearing_deg": 300,
+          "lat": 21.67448,
+          "lon": 86.82511
+        },
+        {
+          "bearing_deg": 315,
+          "lat": 21.79507,
+          "lon": 86.92449
+        },
+        {
+          "bearing_deg": 330,
+          "lat": 21.88761,
+          "lon": 87.054
+        },
+        {
+          "bearing_deg": 345,
+          "lat": 21.94578,
+          "lon": 87.20482
+        }
+      ],
+      "containment": [
+        {
+          "place": "Abdul Kalam Island",
+          "lat": 20.75804,
+          "lon": 87.085533,
+          "km_from_centre": 75.4,
+          "inside": false,
+          "margin_km": 10.6,
+          "note": "10.6 km OUTSIDE the circle"
+        },
+        {
+          "place": "Chandipur ITR",
+          "lat": 21.0483,
+          "lon": 86.9926,
+          "km_from_centre": 53.8,
+          "inside": true,
+          "margin_km": 11.0,
+          "note": "11.0 km INSIDE the circle"
+        }
+      ],
+      "caveat": "The captured NOTAM stores a 4-point BOUNDING BOX for this circle (lat 20.80101-21.96562, lon 86.74133-87.99200). The box is 139 x 130 km; the circle it approximates is 130 km across. Any containment test run against the box will wrongly include the island."
+    },
+    {
+      "zone": "VED-53",
+      "type": "airspace danger area",
+      "shape": "unknown",
+      "referenced_by": "A1596/26 \u2014 'VED-52 ACT EXC COMMON AREA OF VED-53'",
+      "geometry": null,
+      "note": "Named as an excluded common area but its own coordinates were never published in any captured NOTAM. Geometry unknown \u2014 recorded so the gap is visible."
+    },
+    {
+      "zone": "819/26",
+      "type": "maritime danger area (NAVAREA VIII)",
+      "shape": "polygon",
+      "title": "BAY OF BENGAL - OFF BALESHWAR",
+      "activity": "EXPERIMENTAL FLIGHT TRIALS",
+      "class": "strategic_self",
+      "windows": [
+        "2026-08-06 1230-1530Z",
+        "2026-08-07 1230-1530Z"
+      ],
+      "cancels": "071630 UTC AUG 26",
+      "vertices": [
+        {
+          "as_published": "20-48.36N 087-02.58E",
+          "lat": 20.806,
+          "lon": 87.043,
+          "km_from_island": 6.9,
+          "bearing_from_island_deg": 320.3
+        },
+        {
+          "as_published": "18-12.36N 086-07.11E",
+          "lat": 18.206,
+          "lon": 86.1185,
+          "km_from_island": 301.3,
+          "bearing_from_island_deg": 199.8
+        },
+        {
+          "as_published": "13-33.4S 085-21.48E",
+          "lat": -13.55667,
+          "lon": 85.358,
+          "km_from_island": 3820.3,
+          "bearing_from_island_deg": 183.0
+        },
+        {
+          "as_published": "12-48.16S 094-31.33E",
+          "lat": -12.80267,
+          "lon": 94.52217,
+          "km_from_island": 3819.3,
+          "bearing_from_island_deg": 167.1
+        },
+        {
+          "as_published": "18-24.16N 088-30.45E",
+          "lat": 18.40267,
+          "lon": 88.5075,
+          "km_from_island": 301.3,
+          "bearing_from_island_deg": 150.1
+        },
+        {
+          "as_published": "20-48.76N 087-07.4E",
+          "lat": 20.81267,
+          "lon": 87.12333,
+          "km_from_island": 7.2,
+          "bearing_from_island_deg": 32.9
+        }
+      ],
+      "extent": {
+        "near_km": 6.9,
+        "far_km": 3820.3,
+        "bearing_deg": 183.0,
+        "span_deg": 239.5
+      },
+      "note": "Starts 6.9 km off the island and reaches 13 deg 33' SOUTH \u2014 the launch corridor and its impact fan in one polygon."
+    },
+    {
+      "zone": "818/26",
+      "type": "maritime danger area (NAVAREA VIII)",
+      "shape": "open polygon",
+      "title": "INDIA EAST COAST - OFF BALESHWAR",
+      "activity": "EXPERIMENTAL FLIGHT TRIALS",
+      "class": "tactical",
+      "windows": [
+        "2026-08-06 1430-1730Z",
+        "2026-08-07 0430-0730Z",
+        "2026-08-07 1430-1730Z"
+      ],
+      "cancels": "071830 UTC AUG 26",
+      "vertices": [
+        {
+          "as_published": "20-57N 086-54E",
+          "lat": 20.95,
+          "lon": 86.9,
+          "km_from_island": 28.8,
+          "bearing_from_island_deg": 317.9
+        },
+        {
+          "as_published": "21-13N 087-23E",
+          "lat": 21.21667,
+          "lon": 87.38333,
+          "km_from_island": 59.6,
+          "bearing_from_island_deg": 31.2
+        },
+        {
+          "as_published": "21-31N 087-42E",
+          "lat": 21.51667,
+          "lon": 87.7,
+          "km_from_island": 105.7,
+          "bearing_from_island_deg": 37.0
+        },
+        {
+          "as_published": "21-41N 087-45E",
+          "lat": 21.68333,
+          "lon": 87.75,
+          "km_from_island": 123.8,
+          "bearing_from_island_deg": 33.7
+        }
+      ],
+      "closure": "AND THEN ALONG COASTLINE TO POINT A \u2014 southern edge is the shoreline, not a stated vertex",
+      "extent": {
+        "near_km": 28.8,
+        "far_km": 123.8,
+        "bearing_deg": 33.7
+      },
+      "note": "Hours match VED-52 exactly (1430-1730Z). This is the near-field corridor the airspace closure mirrors."
+    },
+    {
+      "zone": "811/26",
+      "type": "maritime danger area",
+      "shape": "polygon",
+      "title": "INDIA EAST COAST - OFF BALESHWAR",
+      "activity": "FIRING BY IAF",
+      "windows": [
+        "03-08 AUG 26 0330-0630Z and 0830-1030Z daily"
+      ],
+      "cancels": "081130 UTC AUG 26",
+      "vertices": [
+        {
+          "as_published": "21-37.72N 087-28.58E",
+          "lat": 21.62867,
+          "lon": 87.47633,
+          "km_from_island": 104.9,
+          "bearing_from_island_deg": 22.6
+        },
+        {
+          "as_published": "21-08.82N 088-10.49E",
+          "lat": 21.147,
+          "lon": 88.17483,
+          "km_from_island": 121.1,
+          "bearing_from_island_deg": 68.9
+        },
+        {
+          "as_published": "20-40.45N 087-42.75E",
+          "lat": 20.67417,
+          "lon": 87.7125,
+          "km_from_island": 65.9,
+          "bearing_from_island_deg": 98.0
+        },
+        {
+          "as_published": "21-17.11N 086-49.36E",
+          "lat": 21.28517,
+          "lon": 86.82267,
+          "km_from_island": 64.7,
+          "bearing_from_island_deg": 335.1
+        }
+      ]
+    },
+    {
+      "zone": "809/26",
+      "type": "maritime danger area",
+      "shape": "polygon + arc",
+      "title": "INDIA EAST COAST - OFF GOPALPUR",
+      "activity": "ARMY AIR DEFENCE FIRING",
+      "windows": [
+        "03-08 AUG 26 1930-1829Z",
+        "10-12 AUG 26 0130-1430Z daily"
+      ],
+      "cancels": "121530 UTC AUG 26",
+      "vertices": [
+        {
+          "as_published": "19-14.6N 084-53.7E",
+          "lat": 19.24333,
+          "lon": 84.895,
+          "km_from_island": 284.2,
+          "bearing_from_island_deg": 234.0
+        },
+        {
+          "as_published": "19-07.39N 085-35.94E",
+          "lat": 19.12317,
+          "lon": 85.599,
+          "km_from_island": 239.1,
+          "bearing_from_island_deg": 220.8
+        },
+        {
+          "as_published": "18-33.61N 084-53.74E",
+          "lat": 18.56017,
+          "lon": 84.89567,
+          "km_from_island": 335.1,
+          "bearing_from_island_deg": 223.5
+        }
+      ],
+      "arc": "ARC OF 41 NM RADIUS JOINING POINT B AND C"
+    },
+    {
+      "zone": "822/26",
+      "type": "maritime danger area",
+      "shape": "lat/lon box",
+      "title": "ANDAMAN SEA - OFF MIDDLE ANDAMAN I",
+      "activity": "FIRING PRACTICE BY AIRCRAFT",
+      "windows": [
+        "05 AUG 26 0830-1030Z",
+        "07 AUG 26 0830-1030Z"
+      ],
+      "cancels": "071130 UTC AUG 26",
+      "box": {
+        "south": 12.83333,
+        "north": 13.0,
+        "west": 93.66666666666667,
+        "east": 94.16666666666667
+      },
+      "corners": [
+        {
+          "as_published": "12-50N 093-40E",
+          "lat": 12.83333,
+          "lon": 93.66667,
+          "km_from_island": 1125.3,
+          "bearing_from_island_deg": 140.5
+        },
+        {
+          "as_published": "12-50N 094-10E",
+          "lat": 12.83333,
+          "lon": 94.16667,
+          "km_from_island": 1159.1,
+          "bearing_from_island_deg": 138.4
+        },
+        {
+          "as_published": "13-00N 094-10E",
+          "lat": 13.0,
+          "lon": 94.16667,
+          "km_from_island": 1144.9,
+          "bearing_from_island_deg": 137.8
+        },
+        {
+          "as_published": "13-00N 093-40E",
+          "lat": 13.0,
+          "lon": 93.66667,
+          "km_from_island": 1110.6,
+          "bearing_from_island_deg": 139.9
+        }
+      ]
+    },
+    {
+      "zone": "814/26",
+      "type": "maritime danger area",
+      "shape": "three polygons",
+      "title": "BAY OF BENGAL - OFF BANGLADESH",
+      "activity": "FIRING PRACTICE BY BANGLADESH NAVY",
+      "windows": [
+        "01-31 AUG 26 excluding Fri/Sat, 0001-1600Z"
+      ],
+      "area_A": [
+        {
+          "as_published": "21-20.83N 090-34E",
+          "lat": 21.34717,
+          "lon": 90.56667,
+          "km_from_island": 367.1,
+          "bearing_from_island_deg": 79.1
+        },
+        {
+          "as_published": "21-41N 091-14E",
+          "lat": 21.68333,
+          "lon": 91.23333,
+          "km_from_island": 442.1,
+          "bearing_from_island_deg": 75.8
+        },
+        {
+          "as_published": "21-20.83N 091-28E",
+          "lat": 21.34717,
+          "lon": 91.46667,
+          "km_from_island": 459.3,
+          "bearing_from_island_deg": 81.0
+        },
+        {
+          "as_published": "21-00N 090-47.83E",
+          "lat": 21.0,
+          "lon": 90.79717,
+          "km_from_island": 386.5,
+          "bearing_from_island_deg": 85.3
+        }
+      ],
+      "area_B": [
+        {
+          "as_published": "20-07N 090-52E",
+          "lat": 20.11667,
+          "lon": 90.86667,
+          "km_from_island": 400.4,
+          "bearing_from_island_deg": 99.6
+        },
+        {
+          "as_published": "20-47.6N 091-29.8E",
+          "lat": 20.79333,
+          "lon": 91.49667,
+          "km_from_island": 458.6,
+          "bearing_from_island_deg": 88.7
+        },
+        {
+          "as_published": "20-24N 091-59E",
+          "lat": 20.4,
+          "lon": 91.98333,
+          "km_from_island": 511.4,
+          "bearing_from_island_deg": 93.6
+        },
+        {
+          "as_published": "19-44N 091-21E",
+          "lat": 19.73333,
+          "lon": 91.35,
+          "km_from_island": 459.2,
+          "bearing_from_island_deg": 103.6
+        }
+      ],
+      "note": "Area C truncated in the captured text; not a range-relevant zone."
+    }
+  ]
+}

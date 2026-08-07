@@ -1,0 +1,57 @@
+{
+  "name": "ground_truth",
+  "captured_at": "2026-08-07T06:16:34.923065+00:00",
+  "phase": "after-testing",
+  "event": "Agni-4 MRBM test, 06 August 2026, ITR Chandipur (Strategic Forces Command)",
+  "period": "2026-08-05..2026-08-08",
+  "aoi": "Abdul Kalam Island (ITR), 20.75804N 87.085533E",
+  "sources": [
+    "x.com/SpokespersonMoD",
+    "missilethreat.csis.org/missile/agni-4/"
+  ],
+  "data": {
+    "official_announcement": {
+      "post_url": "https://twitter.com/SpokespersonMoD/status/2085356267493810566",
+      "post_id": "2085356267493810566",
+      "author": "SpokespersonMoD",
+      "author_name": "Ministry of Defence, Government of India",
+      "published": "2026-08-06T13:24:12+00:00",
+      "text": "India successfully test-fired the Medium Range Ballistic Missile (MRBM) Agni-4 from the Integrated Test Range, Chandipur, Odisha on August 06, 2026. The launch, conducted under the aegis of the Strategic Forces Command, successfully validated all operational and technical parameters.\n\n@rajnathsingh \n@DefenceMinIndia \n@SethSanjayMP \n@HQ_IDS_India \n@DefProdnIndia \n@adgpi \n@indiannavy \n@IAF_MCC \n@PIB_India \n@DRDO_India",
+      "view_count": 113265,
+      "like_count": 4142,
+      "retweet_count": 707
+    },
+    "announcement_error": "",
+    "extracted_facts": {
+      "system": "Agni-4",
+      "classification_by_mod": "Medium Range Ballistic Missile (MRBM)",
+      "launch_date": "2026-08-06",
+      "site_as_stated": "Integrated Test Range, Chandipur, Odisha",
+      "conducting_authority": "Strategic Forces Command",
+      "outcome": "successful; all operational and technical parameters validated",
+      "announced_at_utc": "2026-08-06T13:24:12+00:00"
+    },
+    "reference_profile": {
+      "source": "CSIS Missile Threat \u2014 https://missilethreat.csis.org/missile/agni-4/",
+      "designation": "Agni-IV",
+      "class_per_csis": "solid-fuelled intermediate-range ballistic missile (IRBM)",
+      "range_km": {
+        "min": 3000,
+        "max": 4000
+      },
+      "payload_kg": 1000,
+      "warhead": "nuclear or conventional",
+      "stages": 2,
+      "propellant": "solid",
+      "length_m": 20.0,
+      "diameter_m": 1.2,
+      "launch_weight_kg": 17000,
+      "guidance": "inertial with ring laser gyroscopes; flexseal thrust vectoring",
+      "basing": "road-mobile",
+      "cep_m": "<100 at 4,000 km",
+      "first_test": "2010-12-10 (failure)",
+      "status_per_csis": "in development"
+    },
+    "classification_note": "MoD calls Agni-4 an MRBM; CSIS classes it an IRBM at 3,000-4,000 km. The disagreement is definitional (the MRBM/IRBM boundary is drawn at 3,000 km by some conventions and 3,500 km by others), not a factual dispute about range."
+  }
+}

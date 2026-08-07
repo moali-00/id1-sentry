@@ -1,0 +1,295 @@
+{
+  "name": "prediction_scorecard",
+  "captured_at": "2026-08-07T06:43:32.624965+00:00",
+  "phase": "after-testing",
+  "event": "Agni-4 MRBM test, 06 August 2026, ITR Chandipur (Strategic Forces Command)",
+  "period": "2026-08-05..2026-08-08",
+  "aoi": "Abdul Kalam Island (ITR), 20.75804N 87.085533E",
+  "data": {
+    "ground_truth": {
+      "system": "Agni-4",
+      "classification_by_mod": "Medium Range Ballistic Missile (MRBM)",
+      "launch_date": "2026-08-06",
+      "site_as_stated": "Integrated Test Range, Chandipur, Odisha",
+      "conducting_authority": "Strategic Forces Command",
+      "outcome": "successful; all operational and technical parameters validated",
+      "announced_at_utc": "2026-08-06T13:24:12+00:00"
+    },
+    "calls": [
+      {
+        "claim": "A strategic trial is scheduled for 6-7 August",
+        "basis": "819/26 parsed: EXPERIMENTAL FLIGHT TRIALS 06 AND 07 AUG 1230-1530 UTC",
+        "outcome": "CORRECT \u2014 fired 6 August, the first declared day"
+      },
+      {
+        "claim": "Launch falls in the 1230-1530 UTC window",
+        "basis": "819/26 declared hours",
+        "outcome": "CONSISTENT \u2014 MoD announced at 13:24 UTC, inside the window. The announcement time is not the launch time, so this is corroboration, not proof."
+      },
+      {
+        "claim": "Corridor class strategic_self; candidates ['Agni-II', 'Agni-III', 'Agni-IV', 'K-4', 'Agni-V', 'Agni-VI']",
+        "basis": "3,820 km polygon, bearing 183 deg, self-contained",
+        "outcome": "CORRECT \u2014 Agni-4 is in the candidate set. The geometry narrowed 27 systems to 6 and the right one was among them; it did not identify which, and never claimed to."
+      },
+      {
+        "claim": "6 August was the least favourable day (99% cloud, 0/24 favourable hours); if it slipped it would slip to the 7th",
+        "basis": "Open-Meteo forecast over the pad",
+        "outcome": "WRONG, and instructively so. It fired under 100% cloud on a day with 24.3 mm of rain. But inside the declared 1230-1530Z window the weather was the calmest, driest part of that day: 0.0 mm rain and 3.3-3.9 m/s gusts at 12-13Z, with 12.9-15.0 km horizontal visibility. The heuristic failed because cloud cover dominated it at an 80% threshold, and cloud is the wrong variable \u2014 it gates optical tracking, which a Strategic Forces Command user trial of a proven system does not depend on. Wind and rain, the actual physical constraints, were benign exactly when it mattered.",
+        "evidence": [
+          {
+            "time": "2026-08-06T12:00",
+            "cloud_cover": 100,
+            "wind_gusts_10m": 3.3,
+            "precipitation": 0.0,
+            "visibility": 12860.0
+          },
+          {
+            "time": "2026-08-06T13:00",
+            "cloud_cover": 100,
+            "wind_gusts_10m": 3.9,
+            "precipitation": 0.0,
+            "visibility": 14980.0
+          },
+          {
+            "time": "2026-08-06T14:00",
+            "cloud_cover": 100,
+            "wind_gusts_10m": 7.2,
+            "precipitation": 0.2,
+            "visibility": 3980.0
+          },
+          {
+            "time": "2026-08-06T15:00",
+            "cloud_cover": 100,
+            "wind_gusts_10m": 8.1,
+            "precipitation": 1.6,
+            "visibility": 2920.0
+          }
+        ]
+      },
+      {
+        "claim": "Social consensus named Agni-V / Agni-VI",
+        "basis": "pre-event corpus: 29 Agni-V, 21 Agni-VI, 3 Agni-IV",
+        "outcome": "WRONG \u2014 actual system was Agni-4, the third-least mentioned. Volume of speculation was inversely related to accuracy."
+      },
+      {
+        "claim": "A launch would show as a thermal anomaly over the pads",
+        "basis": "thermal_anomaly indicator, weight 0.12",
+        "outcome": "NOT DEMONSTRATED. FIRMS returned ZERO detections over both the pad and range boxes across a 3-day window spanning the launch. A ballistic launch plume lasts seconds; VIIRS/MODIS revisit is twice daily and was looking through 100% cloud. The indicator cannot see an event of this kind and its 0.05 quiet floor was, in hindsight, the only honest reading it could have given."
+      },
+      {
+        "claim": "The declared warnings would cancel once the trial completed",
+        "basis": "819/26 carries CANCEL THIS MSG 071630 UTC AUG 26",
+        "outcome": "NOT YET. Both 818/26 and 819/26 remain in force with 2 windows each as of 07 Aug 06:14 UTC. The second declared window (1230-1530Z today) still stands, so the range has not stood down. 7 of the 34 archived messages have gone and 6 new ones appeared."
+      }
+    ],
+    "pre_event": {
+      "declared_windows_819": [
+        {
+          "warning": "819/26",
+          "kind": "launch_trial",
+          "relevance": "range",
+          "start": "2026-08-06T12:30:00+00:00",
+          "end": "2026-08-06T15:30:00+00:00",
+          "corridor_far_km": 3820.3,
+          "corridor_bearing_deg": 183.0,
+          "class": "strategic_self",
+          "distance_to_island_km": 6.9
+        },
+        {
+          "warning": "819/26",
+          "kind": "launch_trial",
+          "relevance": "range",
+          "start": "2026-08-07T12:30:00+00:00",
+          "end": "2026-08-07T15:30:00+00:00",
+          "corridor_far_km": 3820.3,
+          "corridor_bearing_deg": 183.0,
+          "class": "strategic_self",
+          "distance_to_island_km": 6.9
+        }
+      ],
+      "geometry_candidates": [
+        "Agni-II",
+        "Agni-III",
+        "Agni-IV",
+        "K-4",
+        "Agni-V",
+        "Agni-VI"
+      ],
+      "weather_verdicts_6_aug": [
+        {
+          "start": "2026-08-06T00:01:00+00:00",
+          "end": "2026-08-06T16:00:00+00:00",
+          "hours_covered": 17,
+          "mean_cloud_cover_pct": 99.3,
+          "peak_gust_ms": 9.1,
+          "peak_precipitation_mm": 4.2,
+          "verdict": "unfavourable",
+          "reasons": [
+            "cloud cover 99% >= 80%",
+            "precipitation 4.2 mm >= 2"
+          ],
+          "heuristic": "cloud>=80%, gusts>=15m/s, rain>=2mm \u2014 Sentiry's own thresholds, not published range limits",
+          "warning": "814/26"
+        },
+        {
+          "start": "2026-08-06T01:30:00+00:00",
+          "end": "2026-08-06T14:30:00+00:00",
+          "hours_covered": 14,
+          "mean_cloud_cover_pct": 99.9,
+          "peak_gust_ms": 7.2,
+          "peak_precipitation_mm": 4.2,
+          "verdict": "unfavourable",
+          "reasons": [
+            "cloud cover 100% >= 80%",
+            "precipitation 4.2 mm >= 2"
+          ],
+          "heuristic": "cloud>=80%, gusts>=15m/s, rain>=2mm \u2014 Sentiry's own thresholds, not published range limits",
+          "warning": "809/26"
+        },
+        {
+          "start": "2026-08-06T03:30:00+00:00",
+          "end": "2026-08-06T06:30:00+00:00",
+          "hours_covered": 4,
+          "mean_cloud_cover_pct": 99.8,
+          "peak_gust_ms": 5.8,
+          "peak_precipitation_mm": 4.2,
+          "verdict": "unfavourable",
+          "reasons": [
+            "cloud cover 100% >= 80%",
+            "precipitation 4.2 mm >= 2"
+          ],
+          "heuristic": "cloud>=80%, gusts>=15m/s, rain>=2mm \u2014 Sentiry's own thresholds, not published range limits",
+          "warning": "811/26"
+        },
+        {
+          "start": "2026-08-06T04:30:00+00:00",
+          "end": "2026-08-06T07:30:00+00:00",
+          "hours_covered": 4,
+          "mean_cloud_cover_pct": 99.8,
+          "peak_gust_ms": 5.9,
+          "peak_precipitation_mm": 4.2,
+          "verdict": "unfavourable",
+          "reasons": [
+            "cloud cover 100% >= 80%",
+            "precipitation 4.2 mm >= 2"
+          ],
+          "heuristic": "cloud>=80%, gusts>=15m/s, rain>=2mm \u2014 Sentiry's own thresholds, not published range limits",
+          "warning": "818/26"
+        },
+        {
+          "start": "2026-08-06T08:30:00+00:00",
+          "end": "2026-08-06T10:30:00+00:00",
+          "hours_covered": 3,
+          "mean_cloud_cover_pct": 99.7,
+          "peak_gust_ms": 5.6,
+          "peak_precipitation_mm": 0.3,
+          "verdict": "marginal",
+          "reasons": [
+            "cloud cover 100% >= 80%"
+          ],
+          "heuristic": "cloud>=80%, gusts>=15m/s, rain>=2mm \u2014 Sentiry's own thresholds, not published range limits",
+          "warning": "811/26"
+        },
+        {
+          "start": "2026-08-06T12:30:00+00:00",
+          "end": "2026-08-06T15:30:00+00:00",
+          "hours_covered": 4,
+          "mean_cloud_cover_pct": 100.0,
+          "peak_gust_ms": 7.5,
+          "peak_precipitation_mm": 0.6,
+          "verdict": "marginal",
+          "reasons": [
+            "cloud cover 100% >= 80%"
+          ],
+          "heuristic": "cloud>=80%, gusts>=15m/s, rain>=2mm \u2014 Sentiry's own thresholds, not published range limits",
+          "warning": "819/26"
+        },
+        {
+          "start": "2026-08-06T14:30:00+00:00",
+          "end": "2026-08-06T17:30:00+00:00",
+          "hours_covered": 4,
+          "mean_cloud_cover_pct": 96.5,
+          "peak_gust_ms": 9.1,
+          "peak_precipitation_mm": 2.8,
+          "verdict": "unfavourable",
+          "reasons": [
+            "cloud cover 96% >= 80%",
+            "precipitation 2.8 mm >= 2"
+          ],
+          "heuristic": "cloud>=80%, gusts>=15m/s, rain>=2mm \u2014 Sentiry's own thresholds, not published range limits",
+          "warning": "818/26"
+        },
+        {
+          "start": "2026-08-06T19:30:00+00:00",
+          "end": "2026-08-07T18:29:00+00:00",
+          "hours_covered": 24,
+          "mean_cloud_cover_pct": 89.2,
+          "peak_gust_ms": 8.8,
+          "peak_precipitation_mm": 0.3,
+          "verdict": "marginal",
+          "reasons": [
+            "cloud cover 89% >= 80%"
+          ],
+          "heuristic": "cloud>=80%, gusts>=15m/s, rain>=2mm \u2014 Sentiry's own thresholds, not published range limits",
+          "warning": "809/26"
+        }
+      ],
+      "social_named_systems": {
+        "K-4": 7,
+        "Agni-V": 29,
+        "Agni-VI": 21,
+        "Barak-8 (MR-SAM/LR-SAM)": 4,
+        "Agni-III": 3,
+        "Agni-IV": 3,
+        "Akash": 4,
+        "QRSAM": 2,
+        "Prithvi-II": 3,
+        "BrahMos": 7,
+        "K-15 Sagarika": 1,
+        "Nirbhay": 14,
+        "PDV / PAD": 3,
+        "Agni-Prime": 4,
+        "SMART": 3,
+        "Agni-I": 3,
+        "VSHORADS": 2,
+        "Akash-NG": 1,
+        "Pralay": 4
+      }
+    },
+    "post_event": {
+      "social_named_systems": {
+        "Agni-IV": 58,
+        "Agni-Prime": 7,
+        "Agni-III": 2,
+        "Agni-V": 6,
+        "Prithvi-II": 4,
+        "Agni-I": 3,
+        "Akash": 3,
+        "K-4": 3,
+        "Agni-VI": 2,
+        "Barak-8 (MR-SAM/LR-SAM)": 1
+      }
+    },
+    "social_reversal": {
+      "pre_event": {
+        "Agni-V": 29,
+        "Agni-VI": 21,
+        "Nirbhay": 14,
+        "Agni-IV": 3,
+        "K-4": 7
+      },
+      "post_event": {
+        "Agni-IV": 58,
+        "Agni-Prime": 7,
+        "Agni-V": 6,
+        "Agni-VI": 2,
+        "K-4": 3
+      },
+      "reading": "Agni-IV went from 3 mentions to 58; Agni-V and Agni-VI collapsed from 50 combined to 8. The pre-event corpus was confidently and uniformly wrong, and its confidence was proportional to its wrongness. Geometry narrowed 27 systems to 6 and the right answer was inside that set; speculation named the two systems it was not."
+    },
+    "headline": "The schedule was called correctly and the candidate set contained the answer. Every attempt to go further \u2014 which day within the window, which system, whether sensors would see it \u2014 was either wrong or unsupported.",
+    "not_scored": {
+      "gnss_interference": "Dropped from the scorecard. A 35-day baseline shows 37% of days carry at least one degraded-accuracy aircraft in the AOI, so launch day's 3 is unremarkable and the feed cannot distinguish signal from background here."
+    }
+  }
+}

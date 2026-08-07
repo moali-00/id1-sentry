@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { DEFAULT_PROJECTION, INITIAL_VIEW, TYPE_CATEGORY, type ViewPreset } from '@/utils/constants'
 import { ActivityFeed } from '@/components/monitoring/ActivityFeed'
 import { AssessmentStrip } from '@/components/monitoring/AssessmentStrip'
+import { OutcomeBanner } from '@/components/outcome/OutcomeBanner'
 import { SourceHealthPanel } from '@/components/monitoring/SourceHealthPanel'
 import { CommandBar, type CommandPopover } from '@/components/monitoring/CommandBar'
 import { CoordinateReadout } from '@/components/monitoring/CoordinateReadout'
@@ -153,8 +154,13 @@ export function MonitoringChrome() {
         focusToken={searchFocusToken}
       />
 
-      {/* Bottom-centre: the target's assessment, clear of both rails. */}
+      {/* Bottom-centre: what happened, then what was expected — clear of both
+          rails. The order is deliberate and it is the product's argument in two
+          lines: the resolution sits above the assessment it settles, so an
+          operator reading down the stack meets the outcome before the
+          reasoning that anticipated it. */}
       <div className="pointer-events-none absolute bottom-4 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2">
+        <OutcomeBanner />
         <AssessmentStrip />
       </div>
 

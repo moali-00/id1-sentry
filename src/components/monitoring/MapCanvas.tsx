@@ -18,9 +18,11 @@ import { useTerrain } from '@/hooks/useTerrain'
 import { useAircraftLayer } from '@/hooks/useAircraftLayer'
 import { useAircraftTrail } from '@/hooks/useAircraftTrail'
 import { useItrData } from '@/hooks/useItrData'
+import { useOutcomeData } from '@/hooks/useOutcomeData'
 import { useSignalPoints } from '@/hooks/useSignalPoints'
 import { useCameraRegistry } from '@/hooks/useCameraRegistry'
 import { selectItrAreas, selectItrLines, selectItrPoints, selectSocialClusters } from '@/store/slices/itrSlice'
+import { selectClosureAreas } from '@/store/slices/outcomeSlice'
 import type { Cluster, DataLayerId } from '@/types/monitoring'
 import { useAppDispatch, useAppSelector } from '@/store/store'
 import {
@@ -85,6 +87,7 @@ export function MapCanvas() {
   const layerEnabled = useAppSelector(selectLayerEnabled)
   const itrPoints = useAppSelector(selectItrPoints)
   const itrAreas = useAppSelector(selectItrAreas)
+  const closureAreas = useAppSelector(selectClosureAreas)
   const itrLines = useAppSelector(selectItrLines)
   const socialClusters = useAppSelector(selectSocialClusters)
   const selectedFlightHex = useAppSelector(selectSelectedFlightHex)
@@ -92,6 +95,9 @@ export function MapCanvas() {
 
   useSignalPoints()
   useItrData()
+  // The after-action captures. Needed here for the verified-closure layer, and
+  // by the resolution banner in the chrome.
+  useOutcomeData()
   // The only layer that re-fetches as the camera moves. No-op while it is off.
   useCameraRegistry()
   useProjectionPitch(projection)
@@ -118,7 +124,13 @@ export function MapCanvas() {
     () => [...points, ...itrPoints.filter((point) => layerEnabled[point.layerId])],
     [points, itrPoints, layerEnabled],
   )
-  const visibleAreas = useMemo(() => itrAreas.filter((area) => layerEnabled[area.layerId]), [itrAreas, layerEnabled])
+  // The verified closure is appended rather than merged upstream: it comes from
+  // the after-action capture, not from a live feed, and it is drawn last so it
+  // sits over the danger-area box it corrects.
+  const visibleAreas = useMemo(
+    () => [...itrAreas, ...closureAreas].filter((area) => layerEnabled[area.layerId]),
+    [itrAreas, closureAreas, layerEnabled],
+  )
   const visibleLines = useMemo(() => itrLines.filter((line) => layerEnabled[line.layerId]), [itrLines, layerEnabled])
 
   const handleHover = useCallback(

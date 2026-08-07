@@ -5,6 +5,7 @@ import flightsReducer from '@/store/slices/flightsSlice'
 import itrReducer from '@/store/slices/itrSlice'
 import layersReducer from '@/store/slices/layersSlice'
 import monitoringReducer from '@/store/slices/monitoringSlice'
+import outcomeReducer from '@/store/slices/outcomeSlice'
 import themeReducer from '@/store/slices/themeSlice'
 import { themeListener } from '@/store/themeListener'
 import { watchVisibilityListener } from '@/store/watchVisibilityListener'
@@ -15,6 +16,7 @@ export const store = configureStore({
     monitoring: monitoringReducer,
     layers: layersReducer,
     itr: itrReducer,
+    outcome: outcomeReducer,
     flights: flightsReducer,
     cameras: camerasReducer,
   },
